@@ -24,7 +24,7 @@ function usage(){
 AMAZON_S3_BUCKET=
 
 if [ $# -ne 1 ]; then
-  AMAZON_S3_BUCKET="patricioperpetua.com"
+  AMAZON_S3_BUCKET="ravimo.singleton.com"
 else
   AMAZON_S3_BUCKET=${1}
 fi
