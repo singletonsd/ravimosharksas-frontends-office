@@ -33,6 +33,7 @@ build:
   before_script:
     - apk --no-cache add git bash
     - npm install -g @angular/cli@7.3.8 --no-optional
+    - rm -rf dist
   script:
     - ./scripts/generate_package.sh ${CI_COMMIT_REF_NAME}
   artifacts:

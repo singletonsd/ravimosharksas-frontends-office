@@ -41,13 +41,13 @@ else
   BRANCH=${1}
 fi
 
-if [ ${BRANCH} == "master" ]; then
+if [ "${BRANCH}" == "master" ]; then
   TOTAL_STAGES=2
   echo "Generating ${TOTAL_STAGES} binaries for branch ${BRANCH}"
   TARGETS=(production testing qa)
   PATHS=("${PATH_BASE}latest" "${PATH_BASE}testing" "${PATH_BASE}qa")
 else
-  if [ ${BRANCH} == "develop" ]; then
+  if [ "${BRANCH}" == "develop" ]; then
     TOTAL_STAGES=3
     echo "Generating ${TOTAL_STAGES} binaries for branch ${BRANCH}"
     TARGETS=('staging' 'develop' 'testing-dev' 'qa-dev')
