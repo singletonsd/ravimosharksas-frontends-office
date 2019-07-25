@@ -63,7 +63,7 @@ deploy-image-branches:
     - docker:dind
   variables:
     DOCKER_DRIVER: overlay2
-    DOCKER_REGISTRY: ${CI_REGISTRY_IMAGE}
+    DOCKER_IMAGE_BASE_NAME: ${CI_REGISTRY_IMAGE}
   stage: deploy
   before_script:
     - docker login registry.gitlab.com -u ${REGISTRY_GITLAB_USER} -p ${REGISTRY_GITLAB_PASS}
@@ -74,7 +74,7 @@ deploy-image-branches:
       else
         export DOCKER_IMAGE_TAG=${CI_COMMIT_REF_NAME};
       fi
-    - ./scripts/generate_docker_image.sh ${DOCKER_REGISTRY} ${DOCKER_IMAGE_TAG} ${CI_COMMIT_SHA} 1
+    - ./scripts/generate_docker_image.sh ${DOCKER_IMAGE_BASE_NAME} ${DOCKER_IMAGE_TAG} ${CI_COMMIT_SHA} 1
   when: on_success
 
 deploy-singleton-server:
