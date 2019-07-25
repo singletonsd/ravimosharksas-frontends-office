@@ -78,7 +78,7 @@ deploy-image-branches:
   when: on_success
 
 deploy-singleton-server:
-  image: alpine:latest
+  image: python:3.7.3-alpine3.10
   stage: deploy
   variables:
     AWS_DEFAULT_REGION: eu-west-3 # The region of S3 bucket
@@ -87,6 +87,7 @@ deploy-singleton-server:
   before_script:
     - apk --no-cache add bash lftp
     - export DATE="$(date '+%Y-%m-%d--%H:%M:%S')"
+    - pip install awscli # Install the SDK
   script:
     - ./scripts/uploader_amazon_s3.sh ${AWS_S3_BUCKET_SINGLETON}
   when: on_success
