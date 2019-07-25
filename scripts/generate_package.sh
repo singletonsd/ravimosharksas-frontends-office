@@ -45,7 +45,7 @@ if [ "${BRANCH}" == "master" ]; then
   TOTAL_STAGES=2
   echo "Generating ${TOTAL_STAGES} binaries for branch ${BRANCH}"
   TARGETS=(production testing qa)
-  PATHS=("${PATH_BASE}latest" "${PATH_BASE}testing" "${PATH_BASE}qa")
+  PATHS=("${PATH_BASE}production" "${PATH_BASE}testing" "${PATH_BASE}qa")
 else
   if [ "${BRANCH}" == "develop" ]; then
     TOTAL_STAGES=3
