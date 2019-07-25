@@ -17,7 +17,7 @@ export class ToolbarComponent implements OnInit {
 
   constructor(private readonly breakpointObserver: BreakpointObserver) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

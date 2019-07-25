@@ -10,7 +10,8 @@ describe('ToolbarComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ToolbarComponent ]
     })
-    .compileComponents();
+    .compileComponents()
+    .catch();
   }));
 
   beforeEach(() => {
@@ -20,6 +21,8 @@ describe('ToolbarComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component)
+    .toBeTruthy()
+    .catch();
   });
 });

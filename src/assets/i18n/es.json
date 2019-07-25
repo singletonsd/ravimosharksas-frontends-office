@@ -1,3 +1,11 @@
 {
-
+  "translator":{
+    "title": "Idiomas",
+    "languages": {
+      "es": "ES",
+      "en": "EN",
+      "it": "IT",
+      "fr": "FR"
+    }
+  }
 }

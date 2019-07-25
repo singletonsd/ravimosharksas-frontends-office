@@ -10,16 +10,18 @@ import { MatButtonModule, MatButtonToggleModule, MatIconModule, MatListModule, M
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageSelectorComponent } from './components/basics/language-selector/language-selector.component';
 import { HttpLoaderFactory, LanguageService } from './services/language/language.service';
 
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
 import { GoogleAnalyticsService } from './services/google-analytics/google-analytics.service';
-import { ToolbarComponent } from './components/layout/toolbar/toolbar.component';
-import { FooterComponent } from './components/layout/footer/footer.component';
-import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
+
 import { LayoutModule } from '@angular/cdk/layout';
+import { FooterComponent } from './components/layout/footer/footer.component';
 import { MainComponent } from './components/layout/main/main.component';
+import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
+import { ToolbarComponent } from './components/layout/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { MainComponent } from './components/layout/main/main.component';
     ToolbarComponent,
     FooterComponent,
     SidenavComponent,
-    MainComponent
+    MainComponent,
+    LanguageSelectorComponent
   ],
   imports: [
     BrowserModule,
