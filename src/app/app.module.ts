@@ -15,10 +15,19 @@ import { HttpLoaderFactory, LanguageService } from './services/language/language
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
 import { GoogleAnalyticsService } from './services/google-analytics/google-analytics.service';
+import { ToolbarComponent } from './components/layout/toolbar/toolbar.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
+import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MainComponent } from './components/layout/main/main.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ToolbarComponent,
+    FooterComponent,
+    SidenavComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +56,8 @@ import { GoogleAnalyticsService } from './services/google-analytics/google-analy
       level: NgxLoggerLevel.TRACE,
       // serverLogLevel: NgxLoggerLevel.ERROR,
       disableConsoleLogging: false
-    })
+    }),
+    LayoutModule
   ],
   providers: [
     TranslateService,

@@ -90,5 +90,9 @@ deploy-singleton-server:
     - export DATE="$(date '+%Y-%m-%d--%H:%M:%S')"
     - pip install awscli # Install the SDK
   script:
-    - ./scripts/uploader_amazon_s3.sh ${AWS_S3_BUCKET_SINGLETON_RAVIMO} ${CI_COMMIT_REF_NAME}
+    - if [ "${CI_REGISTRY_IMAGE}" == "registry.gitlab.com/ravimosharksas/frontends/office" ]; then
+        ./scripts/uploader_amazon_s3.sh ${AWS_S3_BUCKET_SINGLETON_RAVIMO} ${CI_COMMIT_REF_NAME}
+      else
+        echo "Deploy to server only in ravimoshark pipeline"
+      fi
   when: on_success
