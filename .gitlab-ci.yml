@@ -90,5 +90,5 @@ deploy-singleton-server:
     - export DATE="$(date '+%Y-%m-%d--%H:%M:%S')"
     - pip install awscli # Install the SDK
   script:
-    - ./scripts/uploader_amazon_s3.sh ${AWS_S3_BUCKET_SINGLETON}
+    - ./scripts/uploader_amazon_s3.sh ${AWS_S3_BUCKET_SINGLETON_RAVIMO} ${CI_COMMIT_REF_NAME}
   when: on_success
