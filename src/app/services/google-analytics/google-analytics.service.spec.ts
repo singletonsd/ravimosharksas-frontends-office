@@ -7,6 +7,8 @@ describe('GoogleAnalyticsService', () => {
 
   it('should be created', () => {
     const service: GoogleAnalyticsService = TestBed.get(GoogleAnalyticsService);
-    expect(service).toBeTruthy();
+    expect(service)
+      .toBeTruthy()
+      .catch();
   });
 });
