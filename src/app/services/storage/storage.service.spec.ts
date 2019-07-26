@@ -7,6 +7,8 @@ describe('StorageService', () => {
 
   it('should be created', () => {
     const service: StorageService = TestBed.get(StorageService);
-    expect(service).toBeTruthy();
+    expect(service)
+    .toBeTruthy()
+    .catch();
   });
 });

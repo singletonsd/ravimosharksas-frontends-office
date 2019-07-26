@@ -12,7 +12,7 @@
   </a>
   <a mat-list-item routerLink='/'>
     <mat-icon matListIcon>home</mat-icon>
-    <span *ngIf="( isOpened() | async)" class="d-none d-sm-block">{{ 'routes.titles.home' | translate }}</span>
+    <span *ngIf="( isOpened() | async)">{{ 'side-nav.home' | translate }}</span>
   </a>
   <div *ngFor="let option of options">
     <app-sidenav-item [opened]="( isOpened() | async)" [option]="option"></app-sidenav-item>

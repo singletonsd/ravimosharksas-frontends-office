@@ -1,9 +1,7 @@
 export const appRoutesNames = {
   ROOT: '/',
   DOCS: '/docs',
-  ABOUT: 'about',
-  CONTACT: 'contact',
-  HOME: 'home',
+  HOME: '/',
   REPORT: 'report',
   NOT: {
     ACCESS: 'not-access',
@@ -16,48 +14,38 @@ export const appRoutesNames = {
       FORGOT: 'user/password/forgot'
     },
     EMAIL: {
-      SUBSCRIPT: 'user/email/subscript',
-      REQUEST: 'user/email/request',
       CHANGE: 'user/email/change'
     },
     LOGIN: 'user/login',
     REGISTER: 'user/register',
     SETTINGS: 'user/settings',
-    ADMIN: {
-      ADD: 'user/admin/add',
-      MAIN: 'user/admin/main'
-    },
-    MY: {
-      ACCOUNT: 'user/my/account',
-      JOURNEY: 'user/my/journey',
-      DELIVERY: 'user/my/delivery'
-    }
+    ADD: 'user/admin/add',
+    MAIN: 'user/admin/main'
   },
-  JOURNEY: {
-    ADD: 'journey/add',
-    MAIN: 'journey/main'
+  TASKS: {
+    ADD: 'tasks/add',
+    MAIN: 'tasks/main',
+    STATE: 'tasks/state'
   },
-  DELIVERY: {
-    ADD: 'delivery/add',
-    MAIN: 'delivery/main'
+  CLIENTS: {
+    ADD: 'clients/add',
+    MAIN: 'clients/main',
+    BLOCK: 'clients/block'
   },
-  ACCOUNT: {
-    ADD: 'account/add',
-    MAIN: 'account/main'
+  ADDRESSES: {
+    ADD: 'addresses/add',
+    MAIN: 'addresses/main'
   },
-  CARRIER: {
-    ADD: 'carrier/add',
+  CONTRACTS: {
+    ADD: 'contracts/add',
+    MAIN: 'contracts/main'
+  },
+  MACHINES: {
+    ADD: 'machines/add',
     MAIN: 'carrier/main'
   },
-  LOCATION: {
+  PIECES: {
     ADD: 'location/add',
     MAIN: 'location/main'
-  },
-  MEMBERSHIP: {
-    ADD: 'membership/add',
-    MAIN: 'membership/main'
-  },
-  TRACKING: {
-    PACKAGE: 'tracking/package'
   }
 };

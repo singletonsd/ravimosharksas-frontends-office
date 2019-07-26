@@ -1,5 +1,7 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,16 @@ export class MenuService {
   private readonly displaySideNavNames = new BehaviorSubject<boolean>(true);
   public readonly $displaySideNavNames = this.displaySideNavNames.asObservable();
 
-  constructor() { }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches)
+    );
+
+  constructor(private readonly breakpointObserver: BreakpointObserver) {
+    // this.breakpointObserver.observe(Breakpoints.Handset).subscribe(result => {
+    //   this.$displaySideNav.subscribe()
+    // })
+  }
 
   public show(): void {
     this.displaySideNav.next(true);

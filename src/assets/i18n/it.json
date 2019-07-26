@@ -7,5 +7,28 @@
       "it": "IT",
       "fr": "FR"
     }
+  },
+  "side-nav": {
+    "home": "Casa",
+    "tasks": "Compiti",
+    "unfinished": "Incompiuto",
+    "clients": "Clienti",
+    "block": "Bloccare",
+    "blocked": "Bloccato",
+    "unblocked": "Sbloccato",
+    "addresses": "Indirizzi",
+    "contracts": "Contratti",
+    "machines": "Macchine",
+    "pieces": "Pezzi",
+    "users": "Utenti",
+    "technicians": "Tecnici",
+    "office": "Ufficio",
+    "actions": "Azioni",
+    "settings": "Impostazioni",
+    "add": "Inserisci",
+    "list": "Elencare",
+    "finished": "Finito",
+    "password": "Cambia la password",
+    "email": "Cambia email"
   }
 }

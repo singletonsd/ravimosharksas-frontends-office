@@ -18,51 +18,60 @@ export interface NavMenu {
 
 export const SIDE_NAV_MENU: Array<NavMenu> = [
   {
-    name: 'trips', accessLevel: [0, 1, 2], icon: 'directions_bus', routes: [
-      { route: appRoutesNames.JOURNEY.ADD, title: 'add', icon: 'directions_bus' },
-      { route: appRoutesNames.JOURNEY.MAIN, title: 'list', icon: 'local_library' },
-      { route: appRoutesNames.JOURNEY.MAIN, queryParams: { filter: 'transit' }, title: 'transit', icon: 'directions_run' },
-      { route: appRoutesNames.JOURNEY.MAIN, queryParams: { filter: 'finished' }, title: 'finished', icon: 'flag' }]
+    name: 'tasks', accessLevel: [0, 1, 2], icon: 'assignment_ind', routes: [
+      { route: appRoutesNames.TASKS.ADD, title: 'add', icon: 'note_add' },
+      { route: appRoutesNames.TASKS.MAIN, title: 'list', icon: 'assignment_returned' },
+      { route: appRoutesNames.TASKS.MAIN, queryParams: { filter: 'unfinished' }, title: 'unfinished', icon: 'assignment_late' },
+      { route: appRoutesNames.TASKS.MAIN, queryParams: { filter: 'finished' }, title: 'finished', icon: 'assignment_turned_in' }
+    ]
   },
   {
-    name: 'dispatches', accessLevel: [0, 1, 2], icon: 'directions_bus', routes: [
-      { route: appRoutesNames.DELIVERY.ADD, title: 'add', icon: 'add_circle_outline' },
-      { route: appRoutesNames.DELIVERY.MAIN, title: 'list', icon: 'link' },
-      { route: appRoutesNames.DELIVERY.MAIN, queryParams: { filter: 'transit' }, title: 'transit', icon: 'flight' },
-      { route: appRoutesNames.DELIVERY.MAIN, queryParams: { filter: 'finished' }, title: 'finished', icon: 'beenhere' },
-      { route: appRoutesNames.DELIVERY.MAIN, queryParams: { filter: 'claimed' }, title: 'claimed', icon: 'traffic' }]
+    name: 'clients', accessLevel: [0, 1, 2], icon: 'person', routes: [
+      { route: appRoutesNames.CLIENTS.ADD, title: 'add', icon: 'person_add' },
+      { route: appRoutesNames.CLIENTS.MAIN, title: 'list', icon: 'people' },
+      { route: appRoutesNames.CLIENTS.MAIN, queryParams: { filter: 'blocked' }, title: 'blocked', icon: 'block' },
+      { route: appRoutesNames.CLIENTS.MAIN, queryParams: { filter: 'unblocked' }, title: 'unblocked', icon: 'check_box' }
+    ]
   },
   {
-    name: 'users', accessLevel: [0, 1, 2], icon: 'directions_bus', routes: [
-      { route: appRoutesNames.USER.ADMIN.ADD, title: 'add', icon: 'person_add' },
-      { route: appRoutesNames.USER.ADMIN.MAIN, title: 'list', icon: 'recent_actors' }]
+    name: 'addresses', accessLevel: [0, 1, 2], icon: 'contacts', routes: [
+      { route: appRoutesNames.ADDRESSES.ADD, title: 'add', icon: 'message' },
+      { route: appRoutesNames.ADDRESSES.MAIN, title: 'list', icon: 'forum' }
+    ]
   },
   {
-    name: 'accounts', accessLevel: [0, 1, 2], icon: 'directions_bus', routes: [
-      { route: appRoutesNames.ACCOUNT.ADD, title: 'add', icon: 'chat' },
-      { route: appRoutesNames.ACCOUNT.MAIN, title: 'list', icon: 'forum' }]
+    name: 'contracts', accessLevel: [0, 1, 2], icon: 'insert_invitation', routes: [
+      { route: appRoutesNames.CONTRACTS.ADD, title: 'add', icon: 'control_point' },
+      { route: appRoutesNames.CONTRACTS.MAIN, title: 'list', icon: 'event_note' },
+      { route: appRoutesNames.CONTRACTS.MAIN, queryParams: { filter: 'unfinished' }, title: 'unfinished', icon: 'event_available' },
+      { route: appRoutesNames.CONTRACTS.MAIN, queryParams: { filter: 'finished' }, title: 'finished', icon: 'event_busy' }
+    ]
   },
   {
-    name: 'transports', accessLevel: [0, 1, 2], icon: 'directions_bus', routes: [
-      { route: appRoutesNames.CARRIER.ADD, title: 'add', icon: 'local_hospital' },
-      { route: appRoutesNames.CARRIER.MAIN, title: 'list', icon: 'local_shipping' }]
+    name: 'machines', accessLevel: [0, 1, 2], icon: 'local_laundry_service', routes: [
+      { route: appRoutesNames.MACHINES.ADD, title: 'add', icon: 'plus_one' },
+      { route: appRoutesNames.MACHINES.MAIN, title: 'list', icon: 'menu' }
+    ]
   },
   {
-    name: 'storehouses', accessLevel: [0, 1, 2], icon: 'directions_bus', routes: [
-      { route: appRoutesNames.LOCATION.ADD, title: 'add', icon: 'add_location' },
-      { route: appRoutesNames.LOCATION.MAIN, title: 'list', icon: 'place' }]
+    name: 'pieces', accessLevel: [0, 1, 2], icon: 'directions_bus', routes: [
+      { route: appRoutesNames.PIECES.ADD, title: 'add', icon: 'local_hospital' },
+      { route: appRoutesNames.PIECES.MAIN, title: 'list', icon: 'local_shipping' }
+    ]
   },
   {
-    name: 'actions', accessLevel: [3], icon: 'directions_bus', routes: [
-      { route: appRoutesNames.USER.MY.JOURNEY, title: 'my.dispatches', icon: 'merge_type' },
-      { route: appRoutesNames.USER.MY.DELIVERY, title: 'my.packages', icon: 'insert_chart_outlined' },
-      { route: appRoutesNames.USER.MY.ACCOUNT, title: 'my.accounts', icon: 'devices_other' }]
+    name: 'users', accessLevel: [0, 1], icon: 'folder_shared', routes: [
+      { route: appRoutesNames.USER.ADD, title: 'add', icon: 'create_new_folder' },
+      { route: appRoutesNames.USER.MAIN, title: 'list', icon: 'folder' },
+      { route: appRoutesNames.USER.MAIN, queryParams: { filter: 'technicians' }, title: 'technicians', icon: 'build' },
+      { route: appRoutesNames.USER.MAIN, queryParams: { filter: 'clients' }, title: 'clients', icon: 'supervised_user_circle' },
+      { route: appRoutesNames.USER.MAIN, queryParams: { filter: 'office' }, title: 'office', icon: 'business' }
+    ]
   },
   {
-    name: 'settings', accessLevel: [0, 1, 2, 3], icon: 'directions_bus', routes: [
+    name: 'settings', accessLevel: [0, 1, 2, 3], icon: 'settings', routes: [
       { route: appRoutesNames.USER.PASSWORD.CHANGE, title: 'password', icon: 'security' }
     , { route: appRoutesNames.USER.EMAIL.CHANGE, title: 'email', icon: 'security' }
-    // , { route: appRoutesNames.USER.EMAIL.SUBSCRIPT, title: 'subscriptions', icon: 'email' }
     ]
   }
 ];

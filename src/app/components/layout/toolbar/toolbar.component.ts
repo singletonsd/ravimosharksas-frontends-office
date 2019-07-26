@@ -1,6 +1,7 @@
+// tslint:disable: no-implicit-dependencies
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-// tslint:disable-next-line: no-implicit-dependencies
+import { appRoutesNames } from '@app/app.routes.names';
 import { MenuService } from '@app/services/menu/menu.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,6 +12,8 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
+
+  public routes = appRoutesNames;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

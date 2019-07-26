@@ -7,5 +7,28 @@
       "it": "IT",
       "fr": "FR"
     }
+  },
+  "side-nav": {
+    "home": "Home",
+    "tasks": "Tasks",
+    "unfinished": "Unfinished",
+    "clients": "Clients",
+    "block": "Block",
+    "blocked": "Blocked",
+    "unblocked": "Unblocked",
+    "addresses": "Addresses",
+    "contracts": "Contracts",
+    "machines": "Machines",
+    "pieces": "Pieces",
+    "users": "Users",
+    "technicians": "Technicians",
+    "office": "Office",
+    "actions": "Actions",
+    "settings": "Settings",
+    "add": "Add",
+    "list": "List",
+    "finished": "Finished",
+    "password": "Change password",
+    "email": "Change Email"
   }
 }

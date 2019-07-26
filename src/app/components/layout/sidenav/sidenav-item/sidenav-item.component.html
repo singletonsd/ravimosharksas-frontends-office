@@ -3,8 +3,8 @@
     <mat-expansion-panel-header>
       <mat-panel-title>
           <mat-icon matListIcon matTooltip="{{ 'pages.nav-bar.' + option.name | translate }}">{{ option.icon }}</mat-icon>
-        <a *ngIf="opened" class="d-none d-sm-block">
-          <span>{{ 'pages.nav-bar.' + option.name | translate }}</span>
+        <a *ngIf="opened">
+          <span>{{ 'side-nav.' + option.name | translate }}</span>
         </a>
       </mat-panel-title>
       <mat-panel-description>
