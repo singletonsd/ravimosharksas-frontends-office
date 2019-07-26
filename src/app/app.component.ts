@@ -10,7 +10,8 @@ declare let gtag: Function;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Ravimoshark - Office';
+
+  public sideNavOpened = true;
 
   constructor(meta: Meta
             , router: Router) {

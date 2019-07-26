@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+// tslint:disable-next-line: no-implicit-dependencies
+import { MenuService } from '@app/services/menu/menu.service';
+import { Observable } from 'rxjs';
+import { SIDE_NAV_MENU } from './sidenav.menu';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,6 +11,15 @@ import { Component } from '@angular/core';
 })
 export class SidenavComponent {
 
-  constructor() {}
+  public options = SIDE_NAV_MENU;
 
+  constructor(private readonly menuService: MenuService) { }
+
+  toggleSideNav(): void {
+    this.menuService.toggleNames();
+  }
+
+  isOpened(): Observable<boolean> {
+    return this.menuService.$displaySideNavNames;
+  }
 }

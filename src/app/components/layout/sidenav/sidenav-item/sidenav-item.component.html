@@ -1,0 +1,15 @@
+<mat-accordion *ngIf="option?.accessLevel.indexOf(guard.getAccessLevel()) > -1">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+          <mat-icon matListIcon matTooltip="{{ 'pages.nav-bar.' + option.name | translate }}">{{ option.icon }}</mat-icon>
+        <a *ngIf="opened" class="d-none d-sm-block">
+          <span>{{ 'pages.nav-bar.' + option.name | translate }}</span>
+        </a>
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-sidenav-subitem [opened]="opened" [routes]="option.routes" [itemName]="option.name"></app-sidenav-subitem>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,6 +1,20 @@
-<mat-toolbar>Menu</mat-toolbar>
+<!-- <mat-toolbar></mat-toolbar> -->
 <mat-nav-list>
-  <a mat-list-item href="#">Link 1</a>
-  <a mat-list-item href="#">Link 2</a>
-  <a mat-list-item href="#">Link 3</a>
+  <a mat-list-item (click)="toggleSideNav()">
+    <span *ngIf="( isOpened() | async); else open">
+        <mat-icon matListIcon>keyboard_arrow_left</mat-icon>
+    </span>
+      <ng-template #open>
+        <span>
+          <mat-icon matListIcon>keyboard_arrow_right</mat-icon>
+        </span>
+      </ng-template>
+  </a>
+  <a mat-list-item routerLink='/'>
+    <mat-icon matListIcon>home</mat-icon>
+    <span *ngIf="( isOpened() | async)" class="d-none d-sm-block">{{ 'routes.titles.home' | translate }}</span>
+  </a>
+  <div *ngFor="let option of options">
+    <app-sidenav-item [opened]="( isOpened() | async)" [option]="option"></app-sidenav-item>
+  </div>
 </mat-nav-list>

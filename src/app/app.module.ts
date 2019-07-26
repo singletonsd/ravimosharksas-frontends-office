@@ -5,8 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { MatButtonModule, MatButtonToggleModule, MatIconModule, MatListModule, MatMenuModule
-  , MatSelectModule, MatSidenavModule, MatSnackBarModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatButtonModule, MatButtonToggleModule, MatExpansionModule, MatIconModule, MatListModule
+  , MatMenuModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -17,11 +18,17 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
 import { GoogleAnalyticsService } from './services/google-analytics/google-analytics.service';
 
-import { LayoutModule } from '@angular/cdk/layout';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { MainComponent } from './components/layout/main/main.component';
-import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
 import { ToolbarComponent } from './components/layout/toolbar/toolbar.component';
+
+import { SidenavItemComponent } from './components/layout/sidenav/sidenav-item/sidenav-item.component';
+import { SidenavSubitemComponent } from './components/layout/sidenav/sidenav-subitem/sidenav-subitem.component';
+import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
+
+import { GuardService } from './services/guard/guard.service';
+import { MenuService } from './services/menu/menu.service';
+import { StorageService } from './services/storage/storage.service';
 
 @NgModule({
   declarations: [
@@ -29,18 +36,21 @@ import { ToolbarComponent } from './components/layout/toolbar/toolbar.component'
     ToolbarComponent,
     FooterComponent,
     SidenavComponent,
+    SidenavItemComponent,
+    SidenavSubitemComponent,
     MainComponent,
     LanguageSelectorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     HttpClientModule,
     MatToolbarModule,
     MatTooltipModule,
     MatButtonModule,
     MatButtonToggleModule,
+    MatExpansionModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
@@ -65,7 +75,10 @@ import { ToolbarComponent } from './components/layout/toolbar/toolbar.component'
   providers: [
     TranslateService,
     LanguageService,
-    GoogleAnalyticsService
+    GoogleAnalyticsService,
+    GuardService,
+    StorageService,
+    MenuService
   ],
   bootstrap: [AppComponent],
   exports: [

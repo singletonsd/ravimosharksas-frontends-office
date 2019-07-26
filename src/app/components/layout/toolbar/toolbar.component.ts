@@ -1,5 +1,7 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+// tslint:disable-next-line: no-implicit-dependencies
+import { MenuService } from '@app/services/menu/menu.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -15,9 +17,13 @@ export class ToolbarComponent implements OnInit {
       map(result => result.matches)
     );
 
-  constructor(private readonly breakpointObserver: BreakpointObserver) { }
+  constructor(private readonly breakpointObserver: BreakpointObserver
+            , private readonly menuService: MenuService) { }
 
   ngOnInit(): void {
   }
 
+  toggleSideNav(): void {
+    this.menuService.toggle();
+  }
 }
