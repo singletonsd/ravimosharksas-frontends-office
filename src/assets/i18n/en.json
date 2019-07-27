@@ -5,7 +5,11 @@
     "close_sidebar": "Close menu",
     "clear_form": "Clean form",
     "submit": "Submit",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "map": {
+      "see": "See on Google Maps",
+      "validate": "Get coordinates"
+    }
   },
   "deletedOptions": {
     "NOT_DELETED": "Active",
@@ -73,7 +77,7 @@
   "fields": {
     "errors": {
       "unknown": "Error unknown, try again",
-      "required": "Madatory field",
+      "required": "Mandatory field",
       "only_numbers": "Only numbers",
       "format": "Format invalid",
       "min": "Must exceed the minimum number of characters",
@@ -117,6 +121,24 @@
     "password": "Change password",
     "email": "Change Email"
   },
+  "models": {
+    "address": {
+      "client":"Client",
+      "name":"Name",
+      "number":"Number",
+      "street":"Street Name",
+      "postal-code":"Postal Code",
+      "complement":"Complement",
+      "city":"City",
+      "country":"Country",
+      "telephone":"Telephone",
+      "attendant":"Attendant",
+      "delivery":"Delivery",
+      "latitude":"Latitude",
+      "longitude":"Longitude",
+      "type":"Type"
+    }
+  },
   "pages": {
     "not-available": {
       "title": "Can't connect to servers",
@@ -142,6 +164,20 @@
       "level": "Your user privilege is {{ levelUser }} and you should be {{ levelPage }} to access.",
       "buttons": {
         "go_back": "Go Back"
+      }
+    },
+    "address": {
+      "title": {
+        "add": "Add Address",
+        "edit": "Edit Address"
+      },
+      "results": {
+        "success": {
+          "add": "Address added successfully: ",
+          "edit": "Address edited successfully: ",
+          "enabled": "Address enabled: ",
+          "disabled": "Address disabled: "
+        }
       }
     }
   }

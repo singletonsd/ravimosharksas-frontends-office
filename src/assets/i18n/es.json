@@ -5,7 +5,11 @@
     "close_sidebar": "Cerrar menu",
     "clear_form": "Limpiar formulario",
     "submit": "Cargar",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "map": {
+      "see": "Ver en Google Maps",
+      "validate": "Obtener coordenadas"
+    }
   },
   "deletedOptions": {
     "NOT_DELETED": "Activos",
@@ -121,6 +125,24 @@
     "password": "Cambiar Contraseña",
     "email": "Cambiar Email"
   },
+  "models": {
+    "address": {
+      "client":"Cliente",
+      "name":"Nombre",
+      "number":"Número",
+      "street":"Calle",
+      "postal-code":"Código Postal",
+      "complement":"Complemento",
+      "city":"Ciudad",
+      "country":"País",
+      "telephone":"Teléfono",
+      "attendant":"Encargado",
+      "delivery":"Entrega",
+      "latitude":"Latitud",
+      "longitude":"Longitud",
+      "type":"Tipo"
+    }
+  },
   "pages": {
     "not-available": {
       "title": "No se ha podido conectar con los servidores",
@@ -146,6 +168,20 @@
       "level": "Tu nivel de usuario es {{ levelUser }} y se necesita ser {{ levelPage }} para acceder.",
       "buttons": {
         "go_back": "Atrás"
+      }
+    },
+    "address": {
+      "title": {
+        "add": "Agregar Dirección",
+        "edit": "Editar Dirección"
+      },
+      "results": {
+        "success": {
+          "add": "Dirección agregada con exito: ",
+          "edit": "Dirección modificada con exito: ",
+          "enabled": "Dirección habilitada: ",
+          "disabled": "Dirección deshabilitada: "
+        }
       }
     }
   }

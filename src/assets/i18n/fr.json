@@ -1,91 +1,95 @@
 {
   "actions": {
-    "print": "Print",
-    "open_sidebar": "Open menu",
-    "close_sidebar": "Close menu",
-    "clear_form": "Clean form",
-    "submit": "Submit",
-    "cancel": "Cancel"
+    "print": "Imprimer",
+    "open_sidebar": "Ouvrir menu",
+    "close_sidebar": "Fermer menu",
+    "clear_form": "Nettoyer formulaire",
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "map": {
+      "see": "Voir surGoogle Maps",
+      "validate": "Obtenir des coordonnées"
+    }
   },
   "deletedOptions": {
-    "NOT_DELETED": "Active",
-    "DELETED": "Deleted",
-    "ALL": "All"
+    "NOT_DELETED": "Actif",
+    "DELETED": "Supprimé",
+    "ALL": "Tout"
   },
   "error": {
     "auth": {
       "token": {
-        "user": "User's token invalid",
-        "app": "App's Token invalid"
+        "user": "Jeton de l'utilisateur invalide",
+        "app": "Jeton de l'application invalide"
       },
-      "unprivileged": "Unprivileged user"
+      "unprivileged": "Utilisateur non privilégié"
     },
     "params": {
-      "missing": "Missing parameters",
+      "missing": "Paramètres manquants",
       "malformed": {
-        "orderby": "Operator OrderBy malformed"
+        "orderby": "Opérateur OrderBy malformé"
       }
     },
     "email": {
-      "not_registered": "Unregistered email",
-      "not_verified": "Not verified user",
+      "not_registered": "Email non enregistré",
+      "not_verified": "Utilisateur non vérifié",
       "verification": {
         "token": {
-          "unrecognized": "Email's Token not recognized",
-          "expired": "Email's Token expired"
+          "unrecognized": "Le jeton de l'e-mail n'est pas reconnu",
+          "expired": "Le jeton de l'e-mail a expiré"
         }
       }
     },
     "password": {
-      "not_matched": "Wrong previous password",
-      "matched": "Previous and new password are equals",
-      "reset": "Reset password, check your email",
-      "insecure": "Password insecure",
+      "not_matched": "Mauvais mot de passe précédent",
+      "matched": "Le mot de passe précédent et nouveau sont égaux",
+      "reset": "Réinitialiser le mot de passe, vérifiez votre email",
+      "insecure": "Mot de passe non sécurisé",
       "verification": {
         "token": {
-          "unrecognized": "Password's token unrecognized",
-          "expired": "Password's token expired"
+          "unrecognized": "Le jeton du mot de passe n'est pas reconnu",
+          "expired": "Le jeton du mot de passe a expiré"
         }
       }
     },
     "validation": {
       "user": {
         "registered": {
-          "email": "Email registered",
-          "identification": "ID registered"
+          "email": "Email enregistré",
+          "identification": "ID enregistré"
         },
-        "email": "Email invalid",
-        "password": "Password insecure or invalid",
-        "role": "Rol invalid",
-        "id": "ID invalid"
+        "email": "Email invalide",
+        "password": "Mot de passe non sécurisé ou invalide",
+        "role": "Rol invalide",
+        "id": "ID invalide"
       },
-      "name": "Name invalid or missing",
+      "name": "Nom invalide ou manquant",
       "id": "ID invalid or missing"
     },
-    "exists": "Entity registered",
+    "exists": "Entité enregistrée",
     "not_exist": {
-      "main": "Entity unregistered",
-      "user": "user unregistered"
+      "main": "Entité non enregistrée",
+      "user": "Utilisateur non enregistré"
     },
-    "not_deleted": "Entity active",
-    "unrecognized": "Error Unrecognized"
+    "not_deleted": "Entité active",
+    "unrecognized": "Erreur non reconnue"
   },
   "fields": {
     "errors": {
-      "unknown": "Error unknown, try again",
-      "required": "Madatory field",
-      "only_numbers": "Only numbers",
-      "format": "Format invalid",
-      "min": "Must exceed the minimum number of characters",
-      "login": "User and password combination invalid",
-      "password": "Password must have 1 number, 1 letter, 1 special character and 8 characters long",
-      "password_repeat": "Passwords not match",
-      "email": "Email invalid",
-      "email_repeat": "Emails not match",
-      "result": "Something happened, try again."
+      "unknown": "Erreur inconnue, réessayez",
+      "required": "Champ obligatoire",
+      "only_numbers": "Seulement chiffres",
+      "format": "Format invalide",
+      "min": "Doit dépasser le nombre minimum de caractères",
+      "login": "Combinaison utilisateur et mot de passe invalide",
+      "password": "Le mot de passe doit comporter 1 chiffre, 1 lettre, 1 caractère spécial et 8 caractères",
+      "password_repeat": "Les mots de passe ne correspondent pas",
+      "email": "Email invalide",
+      "email_repeat": "Les emails ne correspondent pas",
+      "result": "Quelque chose est arrivé, essayez à nouveau."
     }
   },
-  "translator":{
+  "translator": {
     "title": "Langue",
     "languages": {
       "es": "ES",
@@ -117,6 +121,24 @@
     "password": "Changer mot de passe",
     "email": "Changer Email"
   },
+  "models": {
+    "address": {
+      "client": "Client",
+      "name": "Nom",
+      "number": "Nombre",
+      "street": "Nom de rue",
+      "postal-code": "Code Postal",
+      "complement": "Complément",
+      "city": "Ville",
+      "country": "Pays",
+      "telephone": "Téléphone",
+      "attendant": "Servant",
+      "delivery": "Livraison",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "type": "Type"
+    }
+  },
   "pages": {
     "not-available": {
       "title": "Impossible de se connecter aux serveurs",
@@ -142,6 +164,20 @@
       "level": "Votre privilège d'utilisateur est {{ levelUser }} et vous devriez être {{ levelPage }} pour y accéder.",
       "buttons": {
         "go_back": "Retourner"
+      }
+    },
+    "address": {
+      "title": {
+        "add": "Ajouter une adresse",
+        "edit": "Modifier l'adresse"
+      },
+      "results": {
+        "success": {
+          "add": "Adresse ajoutée avec succès: ",
+          "edit": "Adresse modifiée avec succès: ",
+          "enabled": "Adresse activée: ",
+          "disabled": "Adresse désactivée: "
+        }
       }
     }
   }

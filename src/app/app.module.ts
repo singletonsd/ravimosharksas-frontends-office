@@ -49,6 +49,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { AddressesAddFormComponent } from './components/common/addresses/addresses-add-form/addresses-add-form.component';
 import { AddressesAddComponent } from './components/pages/addresses/addresses-add/addresses-add.component';
 import { AddressesMainComponent } from './components/pages/addresses/addresses-main/addresses-main.component';
+import { BaseInputComponent } from './components/basics/forms/base-input/base-input.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
     AddressesAddComponent,
     AddressesMainComponent,
     AddressesAddFormComponent,
-    HomeComponent
+    HomeComponent,
+    BaseInputComponent
   ],
   imports: [
     BrowserModule,

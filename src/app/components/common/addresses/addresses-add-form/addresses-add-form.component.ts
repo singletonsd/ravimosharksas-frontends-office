@@ -12,14 +12,27 @@ import { NGXLogger } from 'ngx-logger';
 })
 export class AddressesAddFormComponent extends BaseFormComponent implements OnInit {
 
-  @Input() account: any;
+  @Input() address: any;
 
   @Output() readonly added = new EventEmitter<any>();
 
   constructor(private readonly logger: NGXLogger
             , private readonly translate: TranslateService) {
     super('ADDRESS_ADD_FORM');
+    this.form.addControl('client', new FormControl('', [ Validators.required ]));
     this.form.addControl('name', new FormControl('', [ Validators.required ]));
+    this.form.addControl('number', new FormControl('', [ ]));
+    this.form.addControl('street', new FormControl('', [ Validators.required ]));
+    this.form.addControl('postalCode', new FormControl('', [ ]));
+    this.form.addControl('complement', new FormControl('', [ ]));
+    this.form.addControl('city', new FormControl('', [ Validators.required ]));
+    this.form.addControl('country', new FormControl('', [ Validators.required ]));
+    this.form.addControl('telephone', new FormControl('', [ ]));
+    this.form.addControl('attendant', new FormControl('', [ ]));
+    this.form.addControl('delivery', new FormControl('', [ ]));
+    this.form.addControl('latitude', new FormControl('', [ ]));
+    this.form.addControl('longitude', new FormControl('', [ ]));
+    this.form.addControl('type', new FormControl('', [ ]));
   }
 
   ngOnInit(): void {
@@ -32,21 +45,21 @@ export class AddressesAddFormComponent extends BaseFormComponent implements OnIn
     }
     const data = this.form.get('name').value;
     this.logger.debug(this.COMPONENT_NAME, 'form submitted. Name:', data);
-    if (this.account) {
-      this.logger.debug(this.COMPONENT_NAME, 'edit', this.account);
-      const prevName = this.account.name;
-      this.account.name = data;
-      // this.accountsService.editAccount(this.account)
+    if (this.address) {
+      this.logger.debug(this.COMPONENT_NAME, 'edit', this.address);
+      const prevName = this.address.name;
+      this.address.name = data;
+      // this.addresssService.editaddress(this.address)
       // .subscribe(() => {
-      //   this.translate.get('pages.account.results.success.edit')
+      //   this.translate.get('pages.address.results.success.edit')
       //     .subscribe(text => {
       //       this.notification.success(text);
-      //       this.logger.debug(this.COMPONENT_NAME, 'success', this.account);
+      //       this.logger.debug(this.COMPONENT_NAME, 'success', this.address);
       //       this.finishAPICall(false);
       //     });
       // }, error => {
       //   const translate = (error && error.error && error.error.message ? error.error.message : 'fields.errors.unknown');
-      //   this.account.name = prevName;
+      //   this.address.name = prevName;
       //   this.translate.get(translate)
       //     .subscribe(text => {
       //       this.notification.error(text);
@@ -56,13 +69,13 @@ export class AddressesAddFormComponent extends BaseFormComponent implements OnIn
       // });
     } else {
       this.logger.debug(this.COMPONENT_NAME, 'add');
-      // this.accountsService.addAccount({ name: data })
-      // .subscribe((newAccount: Accounts) => {
-      //   this.translate.get('pages.account.results.success.add')
+      // this.addresssService.addaddress({ name: data })
+      // .subscribe((newAddress: addresss) => {
+      //   this.translate.get('pages.address.results.success.add')
       //     .subscribe(text => {
       //       this.notification.success(text);
-      //       this.logger.debug(this.COMPONENT_NAME, 'success', newAccount);
-      //       this.added.next(newAccount);
+      //       this.logger.debug(this.COMPONENT_NAME, 'success', newAddress);
+      //       this.added.next(newAddress);
       //       this.finishAPICall(false);
       //     });
       // }, error => {

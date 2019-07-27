@@ -1,91 +1,95 @@
 {
   "actions": {
-    "print": "Print",
-    "open_sidebar": "Open menu",
-    "close_sidebar": "Close menu",
-    "clear_form": "Clean form",
-    "submit": "Submit",
-    "cancel": "Cancel"
+    "print": "Stampare",
+    "open_sidebar": "Apri menu",
+    "close_sidebar": "Chiudi menu",
+    "clear_form": "Pulire modulo",
+    "submit": "Invio",
+    "cancel": "Cancellare",
+    "map": {
+      "see": "Vedi su Google Maps",
+      "validate": "Ottenere coordinate"
+    }
   },
   "deletedOptions": {
-    "NOT_DELETED": "Active",
-    "DELETED": "Deleted",
-    "ALL": "All"
+    "NOT_DELETED": "Attivo",
+    "DELETED": "Eliminata",
+    "ALL": "Tutti"
   },
   "error": {
     "auth": {
       "token": {
-        "user": "User's token invalid",
-        "app": "App's Token invalid"
+        "user": "Token dell'utente non valido",
+        "app": "Token dell'app non valido"
       },
-      "unprivileged": "Unprivileged user"
+      "unprivileged": "Utente non privilegiato"
     },
     "params": {
-      "missing": "Missing parameters",
+      "missing": "Parametri mancanti",
       "malformed": {
-        "orderby": "Operator OrderBy malformed"
+        "orderby": "Operatore OrderBy malformati"
       }
     },
     "email": {
-      "not_registered": "Unregistered email",
-      "not_verified": "Not verified user",
+      "not_registered": "Email non registrata",
+      "not_verified": "Utente non verificato",
       "verification": {
         "token": {
-          "unrecognized": "Email's Token not recognized",
-          "expired": "Email's Token expired"
+          "unrecognized": "Token e-mail non riconosciuto",
+          "expired": "Token email scaduto"
         }
       }
     },
     "password": {
-      "not_matched": "Wrong previous password",
-      "matched": "Previous and new password are equals",
-      "reset": "Reset password, check your email",
-      "insecure": "Password insecure",
+      "not_matched": "Password precedente errata",
+      "matched": "La password precedente e nuova sono uguali",
+      "reset": "Reimposta password, controlla la tua email",
+      "insecure": "Password non sicura",
       "verification": {
         "token": {
-          "unrecognized": "Password's token unrecognized",
-          "expired": "Password's token expired"
+          "unrecognized": "Token della password non riconosciuto",
+          "expired": "Il token della password è scaduto"
         }
       }
     },
     "validation": {
       "user": {
         "registered": {
-          "email": "Email registered",
-          "identification": "ID registered"
+          "email": "Email registrata",
+          "identification": "ID registrato"
         },
-        "email": "Email invalid",
-        "password": "Password insecure or invalid",
-        "role": "Rol invalid",
-        "id": "ID invalid"
+        "email": "Email non valida",
+        "password": "Password non sicura o non valida",
+        "role": "Rol non valido",
+        "id": "ID non valido"
       },
-      "name": "Name invalid or missing",
-      "id": "ID invalid or missing"
+      "name": "Nome non valido o mancante",
+      "id": "ID non valido o mancante"
     },
-    "exists": "Entity registered",
+    "exists": "Entità registrata",
     "not_exist": {
-      "main": "Entity unregistered",
-      "user": "user unregistered"
+      "main": "Entità non registrata",
+      "user": "Utente non registrato"
     },
-    "not_deleted": "Entity active",
+    "not_deleted": "Entità attiva",
     "unrecognized": "Error Unrecognized"
   },
   "fields": {
     "errors": {
-      "unknown": "Error unknown, try again",
-      "required": "Madatory field",
-      "only_numbers": "Only numbers",
-      "format": "Format invalid",
-      "min": "Must exceed the minimum number of characters",
-      "login": "User and password combination invalid",
-      "password": "Password must have 1 number, 1 letter, 1 special character and 8 characters long",
-      "password_repeat": "Passwords not match",
-      "email": "Email invalid",
-      "email_repeat": "Emails not match",
-      "result": "Something happened, try again."
+      "unknown": "Errore sconosciuto, riprovare",
+      "required": "Campo obbligatorio",
+      "only_numbers": "Solo numeri",
+      "format": "Formato non valido",
+      "min": "Deve superare il numero minimo di caratteri",
+      "login": "Combinazione utente e password non valida",
+      "password": "La password deve contenere 1 numero, 1 lettera, 1 carattere speciale e 8 caratteri",
+      "password_repeat": "Le password non corrispondono",
+      "email": "Email non valida",
+      "email_repeat": "Le email non corrispondono",
+      "result": "È successo qualcosa, riprova."
     }
   },
-  "translator":{
+  "translator": {
     "title": "Lingua",
     "languages": {
       "es": "ES",
@@ -117,6 +121,24 @@
     "password": "Cambia la password",
     "email": "Cambia email"
   },
+  "models": {
+    "address": {
+      "client": "Cliente",
+      "name": "Nome",
+      "number": "Numero",
+      "street": "Nome della strada",
+      "postal-code": "Codice Postale",
+      "complement": "Complemento",
+      "city": "Città",
+      "country": "Nazione",
+      "telephone": "Telefono",
+      "attendant": "Servitore",
+      "delivery": "Consegna",
+      "latitude": "Latitudine",
+      "longitude": "Longitudine",
+      "type": "Tipo"
+    }
+  },
   "pages": {
     "not-available": {
       "title": "Impossibile connettersi ai server",
@@ -142,6 +164,20 @@
       "level": "Il tuo privilegio utente è {{ levelUser }} e dovresti essere {{ levelPage }} per accedere.",
       "buttons": {
         "go_back": "Torna indietro"
+      }
+    },
+    "address": {
+      "title": {
+        "add": "Aggiungi indirizzo",
+        "edit": "Modifica indirizzo"
+      },
+      "results": {
+        "success": {
+          "add": "Indirizzo aggiunto correttamente: ",
+          "edit": "Indirizzo modificato con successo: ",
+          "enabled": "Indirizzo abilitato: ",
+          "disabled": "Indirizzo disabilitato: "
+        }
       }
     }
   }
