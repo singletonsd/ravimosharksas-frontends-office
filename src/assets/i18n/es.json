@@ -1,4 +1,94 @@
 {
+  "actions": {
+    "print": "Imprimir",
+    "open_sidebar": "Abrir menu",
+    "close_sidebar": "Cerrar menu",
+    "clear_form": "Limpiar formulario",
+    "submit": "Cargar",
+    "cancel": "Cancelar"
+  },
+  "deletedOptions": {
+    "NOT_DELETED": "Activos",
+    "DELETED": "Eliminados",
+    "ALL": "Todos"
+  },
+  "error": {
+    "auth": {
+      "token": {
+        "user": "Token de usuario inválido",
+        "app": "Token de aplicación invalido"
+      },
+      "unprivileged": "Usuario con privilegios inferiores"
+    },
+    "params": {
+      "missing": "Faltan parámetros",
+      "malformed": {
+        "orderby": "Operador OrderBy mal formado"
+      }
+    },
+    "email": {
+      "not_registered": "Correo electronico no registrado",
+      "not_verified": "Usuario no verificado",
+      "verification": {
+        "token": {
+          "unrecognized": "Email Token no reconocido",
+          "expired": "Email Token expirado"
+        }
+      }
+    },
+    "password": {
+      "not_matched": "Contraseñas anterior errónea",
+      "matched": "Contraseña anterior y nueva son identicas",
+      "reset": "Contraseña reseteada, revise su correo electronico",
+      "insecure": "Contraseña insegura",
+      "verification": {
+        "token": {
+          "unrecognized": "Password token no reconocido",
+          "expired": "Password token expirado"
+        }
+      }
+    },
+    "validation": {
+      "user": {
+        "registered": {
+          "email": "Correo electronico ya registrado",
+          "identification": "DNI / CUIT ya registrado"
+        },
+        "email": "Email inválido",
+        "password": "Password insegura o inválida",
+        "role": "Rol inválido",
+        "id": "Identificador de usuario inválido"
+      },
+      "name": "Nombre invalido o faltante",
+      "id": "Identificador invalido o faltante"
+    },
+    "exists": "Entidad ya existe",
+    "not_exist": {
+      "account": "Cuenta no existe",
+      "carrier": "Transporte no existe",
+      "main": "Entidad inexistente",
+      "membership": "Membresia inexistente",
+      "location": "Depósito inexistente",
+      "user": "usuario inexistente"
+    },
+    "not_deleted": "Entidad activa",
+    "unrecognized": "Error desconocido"
+  },
+  "fields": {
+    "errors": {
+      "unknown": "Error desconocido, reintente",
+      "required": "Este campo es obligatorio",
+      "only_numbers": "Solo números",
+      "format": "El formato del campo es invalido",
+      "min": "Debe superar la mínima cantidad de caracteres",
+      "login": "Usuario y contraseña no válidos",
+      "password": "Contraseña debe tener al menos 1 número, 1 letra, 1 caracter especial y 8 caracteres de longitud",
+      "password_repeat": "Contraseñas no coinciden",
+      "email": "Email formato invalido",
+      "email_repeat": "Emails no coinciden",
+      "result": "Ocurrió un error, reintente."
+    }
+  },
   "translator":{
     "title": "Idiomas",
     "languages": {

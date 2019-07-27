@@ -1,7 +1,7 @@
 export const appRoutesNames = {
-  ROOT: '/',
+  ROOT: '',
   DOCS: '/docs',
-  HOME: '/',
+  HOME: 'home',
   REPORT: 'report',
   NOT: {
     ACCESS: 'not-access',

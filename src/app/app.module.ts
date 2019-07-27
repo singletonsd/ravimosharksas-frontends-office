@@ -5,10 +5,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule, MatButtonToggleModule, MatCardModule, MatExpansionModule, MatIconModule
-  , MatListModule, MatMenuModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule
-  , MatSidenavModule, MatSnackBarModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+  , MatInputModule, MatListModule, MatMenuModule, MatPaginatorModule, MatProgressSpinnerModule
+  , MatSelectModule, MatSidenavModule, MatSnackBarModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -42,6 +44,8 @@ import { MainNotAccessComponent } from './components/pages/not-access/not-access
 import { MainNotAvailableComponent } from './components/pages/not-available/not-available.component';
 import { MainNotFoundComponent } from './components/pages/not-found/not-found.component';
 
+import { HomeComponent } from './components/pages/home/home.component';
+
 import { AddressesAddFormComponent } from './components/common/addresses/addresses-add-form/addresses-add-form.component';
 import { AddressesAddComponent } from './components/pages/addresses/addresses-add/addresses-add.component';
 import { AddressesMainComponent } from './components/pages/addresses/addresses-main/addresses-main.component';
@@ -66,13 +70,16 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
     MainNotFoundComponent,
     AddressesAddComponent,
     AddressesMainComponent,
-    AddressesAddFormComponent
+    AddressesAddFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatTooltipModule,
     MatButtonModule,
@@ -83,6 +90,7 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
     MatPaginatorModule,
     MatCardModule,
     MatIconModule,
+    MatInputModule,
     MatListModule,
     MatMenuModule,
     MatSelectModule,

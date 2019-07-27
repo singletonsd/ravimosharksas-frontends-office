@@ -1,3 +1,45 @@
-<p>
-  addresses-add-form works!
-</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>
+          <ng-container *ngIf="account; else register">
+              <h2>
+                <span>{{ 'pages.account.title.edit' | translate }}</span>
+                <strong> #{{ account.id }}</strong>
+              </h2>
+          </ng-container>
+          <ng-template #register>
+            <h2>{{ 'pages.account.title.add' | translate }}</h2>
+          </ng-template>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="d-flex justify-content-center" *ngIf="(loading$ | async); else loaded">
+          <mat-spinner></mat-spinner>
+        </div>
+        <ng-template #loaded>
+          <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="{{ 'models.user.name' | translate }}" formControlName="name">
+                <mat-error *ngIf="hasFieldError('name')">
+                  {{ 'fields.errors.required' | translate }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </ng-template>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!isValid()">
+          <mat-icon matTooltip="{{ 'actions.submit' | translate }}" matListIcon>add</mat-icon>
+          {{ 'actions.submit' | translate }}
+        </button>
+        <button mat-raised-button color="accent" type="reset" (click)="resetForm()">
+          <mat-icon matTooltip="{{ 'actions.clear_form' | translate }}" matListIcon>clear_all</mat-icon>
+          {{ 'actions.clear_form' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>

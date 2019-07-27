@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// tslint:disable-next-line: no-implicit-dependencies
+import { appRoutesNames } from '@app/app.routes.names';
 
 @Component({
   selector: 'app-addresses-add',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addresses-add.component.scss']
 })
 export class AddressesAddComponent implements OnInit {
+
+  public routes = appRoutesNames;
 
   constructor() { }
 

@@ -1,4 +1,90 @@
 {
+  "actions": {
+    "print": "Print",
+    "open_sidebar": "Open menu",
+    "close_sidebar": "Close menu",
+    "clear_form": "Clean form",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
+  "deletedOptions": {
+    "NOT_DELETED": "Active",
+    "DELETED": "Deleted",
+    "ALL": "All"
+  },
+  "error": {
+    "auth": {
+      "token": {
+        "user": "User's token invalid",
+        "app": "App's Token invalid"
+      },
+      "unprivileged": "Unprivileged user"
+    },
+    "params": {
+      "missing": "Missing parameters",
+      "malformed": {
+        "orderby": "Operator OrderBy malformed"
+      }
+    },
+    "email": {
+      "not_registered": "Unregistered email",
+      "not_verified": "Not verified user",
+      "verification": {
+        "token": {
+          "unrecognized": "Email's Token not recognized",
+          "expired": "Email's Token expired"
+        }
+      }
+    },
+    "password": {
+      "not_matched": "Wrong previous password",
+      "matched": "Previous and new password are equals",
+      "reset": "Reset password, check your email",
+      "insecure": "Password insecure",
+      "verification": {
+        "token": {
+          "unrecognized": "Password's token unrecognized",
+          "expired": "Password's token expired"
+        }
+      }
+    },
+    "validation": {
+      "user": {
+        "registered": {
+          "email": "Email registered",
+          "identification": "ID registered"
+        },
+        "email": "Email invalid",
+        "password": "Password insecure or invalid",
+        "role": "Rol invalid",
+        "id": "ID invalid"
+      },
+      "name": "Name invalid or missing",
+      "id": "ID invalid or missing"
+    },
+    "exists": "Entity registered",
+    "not_exist": {
+      "main": "Entity unregistered",
+      "user": "user unregistered"
+    },
+    "not_deleted": "Entity active",
+    "unrecognized": "Error Unrecognized"
+  },
+  "fields": {
+    "errors": {
+      "unknown": "Error unknown, try again",
+      "required": "Madatory field",
+      "only_numbers": "Only numbers",
+      "format": "Format invalid",
+      "min": "Must exceed the minimum number of characters",
+      "login": "User and password combination invalid",
+      "password": "Password must have 1 number, 1 letter, 1 special character and 8 characters long",
+      "password_repeat": "Passwords not match",
+      "email": "Email invalid",
+      "email_repeat": "Emails not match",
+      "result": "Something happened, try again."
+    }
+  },
   "translator":{
     "title": "Lingua",
     "languages": {
