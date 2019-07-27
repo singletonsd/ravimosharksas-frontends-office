@@ -35,6 +35,7 @@ import { PreviousRouteService } from './services/previous-route/previous-route.s
 import { StorageService } from './services/storage/storage.service';
 
 import { BaseDialogComponent } from './components/basics/dialog/base-dialog/base-dialog.component';
+import { BaseInputComponent } from './components/basics/forms/base-input/base-input.component';
 import { BaseNotificationComponent } from './components/basics/notification/notification.component';
 import { BaseNotificationSimpleComponent } from './components/basics/notification/simple/simple.component';
 import { BaseTableOptionsComponent } from './components/basics/table/base-table-options/base-table-options.component';
@@ -49,7 +50,6 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { AddressesAddFormComponent } from './components/common/addresses/addresses-add-form/addresses-add-form.component';
 import { AddressesAddComponent } from './components/pages/addresses/addresses-add/addresses-add.component';
 import { AddressesMainComponent } from './components/pages/addresses/addresses-main/addresses-main.component';
-import { BaseInputComponent } from './components/basics/forms/base-input/base-input.component';
 
 @NgModule({
   declarations: [

@@ -1,6 +1,6 @@
 <mat-form-field>
-  <input matInput placeholder="{{ placeholder | translate }}" formControlName="controlName" type="type">
-  <mat-error *ngIf="hasFieldError(errorField)">
+  <input matInput placeholder="{{ placeHolder | translate }}" formControlName="controlName" type="type">
+  <mat-error *ngIf="hasError">
     <ng-container *ngFor="let error of errors"></ng-container>
     {{ error | translate }}
   </mat-error>

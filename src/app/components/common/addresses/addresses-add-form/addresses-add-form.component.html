@@ -20,7 +20,7 @@
       <ng-template #loaded>
         <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
         <div class="row">
-          <!-- <app-base-input [controlName]="'client'" [placeHolder]="'models.address.client'"></app-base-input> -->
+          <!-- <app-base-input [controlName]="'client'" [placeHolder]="'models.address.client'" [hasError]="hasFieldError('client')"></app-base-input> -->
           <mat-form-field class="col-12 col-sm-7">
             <input matInput placeholder="{{ 'models.address.client' | translate }}" formControlName="client" type="text">
             <mat-error *ngIf="hasFieldError('client')">

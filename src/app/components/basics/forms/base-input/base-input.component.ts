@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-base-input',
@@ -10,7 +10,7 @@ export class BaseInputComponent implements OnInit {
   @Input() controlName: string;
   @Input() placeHolder: string = this.controlName;
   @Input() type = 'text';
-  @Input() errorField: string = this.controlName;
+  @Input() hasError = false;
   @Input() errors: Array<string> = [ 'fields.errors.required'];
 
   constructor() { }
