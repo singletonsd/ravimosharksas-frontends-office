@@ -30,5 +30,33 @@
     "finished": "Terminados",
     "password": "Cambiar Contraseña",
     "email": "Cambiar Email"
+  },
+  "pages": {
+    "not-available": {
+      "title": "No se ha podido conectar con los servidores",
+      "text": "Parece que no puedes acceder a nuestros servidores o se encuentran temporalmente inhabilitados.",
+      "buttons": {
+        "retry": "Volver a intentar",
+        "report": "Reportar error"
+      }
+    },
+    "not-found": {
+      "title": "Página no encontrada",
+      "text": "Parece que la pagina que buscas no existe, ha sido removida, cambiado su nombre o está temporalmente inhabilitada.",
+      "buttons": {
+        "home": "Ir a Principal",
+        "report": "Reportar error"
+      }
+    },
+    "not-access": {
+      "status": "Código de estado:",
+      "title": "ERROR!! Algo salio mal..",
+      "text": "Parece ser que no tienes acceso a la sección que solicitaste ",
+      "text2": "Por favor ve a la sección anterior o comunicate con el administrador para obtener acceso.",
+      "level": "Tu nivel de usuario es {{ levelUser }} y se necesita ser {{ levelPage }} para acceder.",
+      "buttons": {
+        "go_back": "Atrás"
+      }
+    }
   }
 }

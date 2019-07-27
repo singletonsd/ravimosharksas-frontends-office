@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ text }}</p>
+  </mat-card-content>
+  <mat-card-actions class="text-center">
+    <button (click)="submit()" style="color: green" mat-button><mat-icon matTooltip="{{ 'actions.submit' | translate }}" matListIcon>done</mat-icon>{{  'actions.submit' | translate }}</button>
+    <button (click)="clear()" style="color: red" mat-button><mat-icon matTooltip="{{ 'actions.cancel' | translate }}" matListIcon>clear</mat-icon>{{  'actions.cancel' | translate }}</button>
+  </mat-card-actions>
+</mat-card>

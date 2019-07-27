@@ -1,0 +1,18 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+      <button *ngIf="guard.hasEditorAccess()" mat-icon-button (click)="add()"><mat-icon matTooltip="{{ 'hovers.icons.tables.user.add' | translate }}" matListIcon style="color: blueviolet">add</mat-icon></button>
+      <button mat-icon-button (click)="load()"><mat-icon matTooltip="{{ 'hovers.icons.tables.user.refresh' | translate }}" matListIcon style="color: green">refresh</mat-icon></button>
+      <!-- TODO: uncomment when function export to pdf is ready -->
+      <!-- <button *ngIf="guard.hasViewerAccess()" mat-icon-button (click)="export()"><mat-icon matTooltip="{{ 'hovers.icons.tables.user.export_pdf' | translate }}" matListIcon style="color: black">picture_as_pdf</mat-icon></button> -->
+      <span style="flex: auto;"></span>
+      <mat-form-field>
+        <!-- <mat-label>Favorite food</mat-label> -->
+        <mat-select #deleteSelector [value]="selectedDeletedValue">
+          <mat-option *ngFor="let option of deleteOptions" [value]="option">
+            {{ 'deletedOptions.' + option | translate }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-paginator #paginator></mat-paginator>
+  </mat-toolbar-row>
+</mat-toolbar>

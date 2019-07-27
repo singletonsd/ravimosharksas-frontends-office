@@ -1,0 +1,42 @@
+<div *ngIf="checkStatus()" [ngSwitch]="notification.type">
+  <div *ngSwitchCase="notificationType.ERROR" class="alert alert-danger text-center">
+    <div class="text-right">
+      <button (click)="changeStatus()"><mat-icon class="text-danger" matListIcon>cancel</mat-icon></button>
+    </div>
+    <div class="d-none d-sm-block">
+      <mat-icon class="text-danger" matListIcon>error</mat-icon>
+      <span>{{ notification.text }}</span>
+    </div>
+    <div class="d-block d-sm-none">
+      <mat-icon class="text-danger" matListIcon>error</mat-icon>
+      <span>{{ notification.text }}</span>
+    </div>
+  </div>
+  <div *ngSwitchCase="notificationType.WARNING" class="alert alert-warning text-center">
+      <div class="text-right">
+        <button (click)="changeStatus()"><mat-icon class="text-warning" matListIcon>cancel</mat-icon></button>
+      </div>
+      <div class="d-none d-sm-block">
+        <mat-icon class="text-warning" matListIcon>warning</mat-icon>
+        <span>{{ notification.text }}</span>
+      </div>
+      <div class="d-block d-sm-none">
+        <mat-icon class="text-warning" matListIcon>warning</mat-icon>
+        <span>{{ notification.text }}</span>
+      </div>
+    </div>
+  <div *ngSwitchCase="notificationType.SUCCESS" class="alert alert-success text-center">
+    <div class="text-right">
+        <button (click)="changeStatus()"><mat-icon class="text-success" matListIcon>cancel</mat-icon></button>
+    </div>
+    <div class="d-none d-sm-block">
+      <mat-icon class="text-success" matListIcon>done_outline</mat-icon>
+      <span>{{ notification.text }}</span>
+    </div>
+    <div class="d-block d-sm-none">
+      <mat-icon class="text-success" matListIcon>done_outline</mat-icon>
+      <span>{{ notification.text }}</span>
+    </div>
+  </div>
+  <div *ngSwitchDefault></div>
+</div>

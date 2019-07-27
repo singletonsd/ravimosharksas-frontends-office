@@ -1,0 +1,16 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-2 text-center">
+      <p><i class="fa fa-exclamation-triangle fa-5x"
+          style="color: red"></i><br />{{ 'pages.not-access.status' | translate }} 403</p>
+    </div>
+    <div class="col-md-10">
+      <h3>{{ 'pages.not-access.title' | translate }}</h3>
+      <p>{{ 'pages.not-access.text' | translate }}({{url}}).<br />{{ 'pages.not-access.text2' | translate }}
+      </p>
+      <p>{{ 'pages.not-access.level' | translate:{ levelUser: levelUser, levelPage: levelPage} }}</p>
+      <a class="btn btn-danger" routerLinkActive="active"
+        [routerLink]="previousRouteService.getPreviousUrl()">{{ 'pages.not-access.buttons.go_back' | translate }}</a>
+    </div>
+  </div>
+</div>

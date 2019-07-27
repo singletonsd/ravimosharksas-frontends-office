@@ -1,0 +1,11 @@
+<div id="notfound">
+  <div class="notfound">
+    <div class="notfound-404">
+      <h1>4<span></span>4</h1>
+    </div>
+    <h2>{{ 'pages.not-found.title' | translate }}</h2>
+    <p>{{ 'pages.not-found.text' | translate }}</p>
+    <a routerLinkActive="active" [routerLink]="'/' + routes.HOME" class="mr-1">{{ 'pages.not-found.buttons.home' | translate }}</a>
+    <a routerLinkActive="active" [routerLink]="'/' + routes.REPORT">{{ 'pages.not-found.buttons.report' | translate }}</a>
+  </div>
+</div>

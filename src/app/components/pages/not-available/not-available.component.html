@@ -1,0 +1,16 @@
+<div id="notfound">
+  <div class="notfound">
+    <div class="notfound-404">
+      <h1><span></span></h1>
+    </div>
+    <h2>{{ 'pages.not-available.title' | translate }}</h2>
+    <p>{{ 'pages.not-available.text' | translate }}</p>
+    <div *ngIf="(loading$ | async) === false; else loading">
+      <a class="mr-1" (click)="retry()">{{ 'pages.not-available.buttons.retry' | translate }}</a>
+    <a routerLinkActive="active" [routerLink]="'/' + routes.REPORT">{{ 'pages.not-available.buttons.report' | translate }}</a>
+    </div>
+    <ng-template #loading>
+      <mat-spinner style="display: inline-block"></mat-spinner>
+    </ng-template>
+  </div>
+</div>

@@ -30,5 +30,33 @@
     "finished": "Fini",
     "password": "Changer mot de passe",
     "email": "Changer Email"
+  },
+  "pages": {
+    "not-available": {
+      "title": "Impossible de se connecter aux serveurs",
+      "text": "Il semble que vous ne puissiez pas vous connecter à nos serveurs ou qu'ils ne sont pas disponibles pour le moment.",
+      "buttons": {
+        "retry": "Réessayer",
+        "report": "Signaler une erreur"
+      }
+    },
+    "not-found": {
+      "title": "Page non trouvée",
+      "text": "Il semble que la page que vous recherchez n'existe pas, qu'elle ait été supprimée, que son nom ait été modifié ou qu'elle soit temporairement désactivée.",
+      "buttons": {
+        "home": "Aller à la maison",
+        "report": "Signaler une erreur"
+      }
+    },
+    "not-access": {
+      "status": "Code de statut:",
+      "title": "ERREUR!! Quelque chose a mal tourné ..",
+      "text": "Il semble que vous n'ayez pas accès à la section demandée ",
+      "text2": "Revenez à la section précédente ou contactez l'administrateur pour accorder l'accès.",
+      "level": "Votre privilège d'utilisateur est {{ levelUser }} et vous devriez être {{ levelPage }} pour y accéder.",
+      "buttons": {
+        "go_back": "Retourner"
+      }
+    }
   }
 }

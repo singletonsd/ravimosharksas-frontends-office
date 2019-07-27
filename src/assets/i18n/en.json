@@ -30,5 +30,33 @@
     "finished": "Finished",
     "password": "Change password",
     "email": "Change Email"
+  },
+  "pages": {
+    "not-available": {
+      "title": "Can't connect to servers",
+      "text": "It seems that you can't connect to ours servers or they are not available for the moment.",
+      "buttons": {
+        "retry": "Try again",
+        "report": "Report error"
+      }
+    },
+    "not-found": {
+      "title": "Page not found",
+      "text": "It seems to be that the page you are looking for doesn't exist, have been removed, name changed or it is temporarily disabled.",
+      "buttons": {
+        "home": "Go to Home",
+        "report": "Report error"
+      }
+    },
+    "not-access": {
+      "status": "Status Code:",
+      "title": "ERROR!! Something went wrong..",
+      "text": "It seems that you don't have access to the requested section ",
+      "text2": "Please go back to the previous section or contact administrator to grant access.",
+      "level": "Your user privilege is {{ levelUser }} and you should be {{ levelPage }} to access.",
+      "buttons": {
+        "go_back": "Go Back"
+      }
+    }
   }
 }

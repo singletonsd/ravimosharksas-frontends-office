@@ -6,8 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatButtonModule, MatButtonToggleModule, MatExpansionModule, MatIconModule, MatListModule
-  , MatMenuModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { MatButtonModule, MatButtonToggleModule, MatCardModule, MatExpansionModule, MatIconModule
+  , MatListModule, MatMenuModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule
+  , MatSidenavModule, MatSnackBarModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -28,7 +29,22 @@ import { SidenavComponent } from './components/layout/sidenav/sidenav.component'
 
 import { GuardService } from './services/guard/guard.service';
 import { MenuService } from './services/menu/menu.service';
+import { PreviousRouteService } from './services/previous-route/previous-route.service';
 import { StorageService } from './services/storage/storage.service';
+
+import { BaseDialogComponent } from './components/basics/dialog/base-dialog/base-dialog.component';
+import { BaseNotificationComponent } from './components/basics/notification/notification.component';
+import { BaseNotificationSimpleComponent } from './components/basics/notification/simple/simple.component';
+import { BaseTableOptionsComponent } from './components/basics/table/base-table-options/base-table-options.component';
+import { BaseTableToolbarComponent } from './components/basics/table/base-table-toolbar/base-table-toolbar.component';
+
+import { MainNotAccessComponent } from './components/pages/not-access/not-access.component';
+import { MainNotAvailableComponent } from './components/pages/not-available/not-available.component';
+import { MainNotFoundComponent } from './components/pages/not-found/not-found.component';
+
+import { AddressesAddFormComponent } from './components/common/addresses/addresses-add-form/addresses-add-form.component';
+import { AddressesAddComponent } from './components/pages/addresses/addresses-add/addresses-add.component';
+import { AddressesMainComponent } from './components/pages/addresses/addresses-main/addresses-main.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +55,18 @@ import { StorageService } from './services/storage/storage.service';
     SidenavItemComponent,
     SidenavSubitemComponent,
     MainComponent,
-    LanguageSelectorComponent
+    BaseDialogComponent,
+    BaseNotificationComponent,
+    BaseNotificationSimpleComponent,
+    BaseTableToolbarComponent,
+    BaseTableOptionsComponent,
+    LanguageSelectorComponent,
+    MainNotAccessComponent,
+    MainNotAvailableComponent,
+    MainNotFoundComponent,
+    AddressesAddComponent,
+    AddressesMainComponent,
+    AddressesAddFormComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +79,9 @@ import { StorageService } from './services/storage/storage.service';
     MatButtonToggleModule,
     MatExpansionModule,
     MatSidenavModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
+    MatCardModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,
@@ -78,7 +108,8 @@ import { StorageService } from './services/storage/storage.service';
     GoogleAnalyticsService,
     GuardService,
     StorageService,
-    MenuService
+    MenuService,
+    PreviousRouteService
   ],
   bootstrap: [AppComponent],
   exports: [

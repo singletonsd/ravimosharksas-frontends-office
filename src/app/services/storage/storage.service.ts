@@ -10,4 +10,11 @@ export class StorageService {
   public getCurrentUser(): string {
     return undefined;
   }
+
+  public async reconnect(): Promise<boolean> {
+    // TODO:
+    return new Promise((resolve, reject) => {
+      resolve(true);
+    });
+  }
 }
