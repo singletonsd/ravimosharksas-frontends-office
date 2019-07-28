@@ -17,7 +17,8 @@ export class BaseFormComponent implements OnInit {
   public loading = new BehaviorSubject<boolean>(false);
   public loading$ = this.loading.asObservable();
 
-  constructor(protected readonly COMPONENT_NAME: string) {
+  constructor(protected readonly COMPONENT_NAME: string
+            , public readonly translationBase: string) {
     this.form = new FormGroup({});
   }
 
@@ -34,6 +35,8 @@ export class BaseFormComponent implements OnInit {
       }
     }
     this.notification.state = NotificationStatus.READ;
+    this.submitted = false;
+    this.loading.next(false);
   }
 
   onSubmit(): void {
@@ -45,7 +48,7 @@ export class BaseFormComponent implements OnInit {
     this.loading.next(true);
   }
 
-  hasFieldError(fieldName: string): Boolean {
+  hasFieldError(fieldName: string): boolean {
     if (!this.form.controls[fieldName]) {
       return false;
     }

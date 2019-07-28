@@ -18,12 +18,12 @@ export class AddressesAddFormComponent extends BaseFormComponent implements OnIn
 
   constructor(private readonly logger: NGXLogger
             , private readonly translate: TranslateService) {
-    super('ADDRESS_ADD_FORM');
+    super('ADDRESS_ADD_FORM', 'models.address.');
     this.form.addControl('client', new FormControl('', [ Validators.required ]));
     this.form.addControl('name', new FormControl('', [ Validators.required ]));
     this.form.addControl('number', new FormControl('', [ ]));
     this.form.addControl('street', new FormControl('', [ Validators.required ]));
-    this.form.addControl('postalCode', new FormControl('', [ ]));
+    this.form.addControl('postal-code', new FormControl('', [ ]));
     this.form.addControl('complement', new FormControl('', [ ]));
     this.form.addControl('city', new FormControl('', [ Validators.required ]));
     this.form.addControl('country', new FormControl('', [ Validators.required ]));
@@ -43,8 +43,8 @@ export class AddressesAddFormComponent extends BaseFormComponent implements OnIn
     if (this.form.invalid) {
       return;
     }
-    const data = this.form.get('name').value;
-    this.logger.debug(this.COMPONENT_NAME, 'form submitted. Name:', data);
+    const data = this.form.value;
+    this.logger.debug(this.COMPONENT_NAME, 'form submitted.', data);
     if (this.address) {
       this.logger.debug(this.COMPONENT_NAME, 'edit', this.address);
       const prevName = this.address.name;

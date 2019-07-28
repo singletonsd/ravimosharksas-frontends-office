@@ -1,4 +1,7 @@
+// tslint:disable: no-implicit-dependencies
 import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl } from '@angular/forms';
+import { BaseFormComponent } from '@app/models/base-form.class';
 
 @Component({
   selector: 'app-base-input',
@@ -7,15 +10,35 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BaseInputComponent implements OnInit {
 
+  @Input() parent: BaseFormComponent;
   @Input() controlName: string;
-  @Input() placeHolder: string = this.controlName;
+  @Input() placeHolder: string;
   @Input() type = 'text';
-  @Input() hasError = false;
-  @Input() errors: Array<string> = [ 'fields.errors.required'];
+  @Input() error: string;
+  @Input() errors: Array<string>;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit(): void {
+    if (!this.placeHolder) {
+      this.placeHolder = this.parent.translationBase +  this.controlName;
+    }
+  }
+
+  hasError(): boolean {
+    return this.parent.hasFieldError(this.controlName);
+  }
+
+  getControls(): AbstractControl {
+    return this.parent.form.controls[this.controlName];
+  }
+
+  hasNoControls(): boolean {
+    return this.getControls() === undefined;
+  }
+
+  isRequiredError(): boolean {
+    return this.getControls().errors.required !== undefined;
+  }
 }
