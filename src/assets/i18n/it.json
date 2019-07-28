@@ -9,7 +9,19 @@
     "map": {
       "see": "Vedi su Google Maps",
       "validate": "Ottenere coordinate"
-    }
+    },
+    "refresh": "Ricaricare",
+    "add": "Aggiungere nuova",
+    "show_columns": {
+      "less": "Mostra meno colonne",
+      "more": "Mostra più colonne"
+    },
+    "export": {
+      "pdf": "Esporta in pdf"
+    },
+    "edit": "Modificare",
+    "disable": "Disattivare",
+    "enable": "Abilitare"
   },
   "deletedOptions": {
     "NOT_DELETED": "Attivo",
@@ -123,6 +135,7 @@
   },
   "models": {
     "address": {
+      "complete": "Indirizzo completo",
       "client": "Cliente",
       "name": "Nome",
       "number": "Numero",
@@ -137,6 +150,10 @@
       "latitude": "Latitudine",
       "longitude": "Longitudine",
       "type": "Tipo"
+    },
+    "common": {
+      "id": "#",
+      "options": "Opzioni"
     }
   },
   "pages": {

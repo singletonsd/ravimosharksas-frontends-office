@@ -19,14 +19,15 @@ export class BaseRouterTableOptions<T> {
     route.queryParams.subscribe(params => {
       this.pageIndex = params['pageIndex'];
       this.pageSize = params['pageSize'];
-      switch (params['deletedOption']) {
-        case DeletedParameter.ALL:
-        case DeletedParameter.DELETED:
-        case DeletedParameter.NOT_DELETED:
+      const deleteOption: DeletedParameter = params['deletedOption'];
+      switch (deleteOption) {
+        case 'ALL':
+        case 'DELETED':
+        case 'NOT_DELETED':
           this.deletedOption = params['deletedOption'];
           break;
         default:
-          this.deletedOption = DeletedParameter.NOT_DELETED;
+          this.deletedOption = 'NOT_DELETED';
           break;
       }
       switch (params['orderBy']) {

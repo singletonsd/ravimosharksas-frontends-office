@@ -9,7 +9,19 @@
     "map": {
       "see": "See on Google Maps",
       "validate": "Get coordinates"
-    }
+    },
+    "refresh": "Refresh",
+    "add": "Add new",
+    "show_columns": {
+      "less": "Show less columns",
+      "more": "Show more columns"
+    },
+    "export": {
+      "pdf": "Export to pdf"
+    },
+    "edit": "Edit",
+    "disable": "Disable",
+    "enable": "Enable"
   },
   "deletedOptions": {
     "NOT_DELETED": "Active",
@@ -123,6 +135,7 @@
   },
   "models": {
     "address": {
+      "complete": "Complete Address",
       "client":"Client",
       "name":"Name",
       "number":"Number",
@@ -137,6 +150,10 @@
       "latitude":"Latitude",
       "longitude":"Longitude",
       "type":"Type"
+    },
+    "common": {
+      "id": "#",
+      "options": "Options"
     }
   },
   "pages": {

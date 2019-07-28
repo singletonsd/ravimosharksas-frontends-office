@@ -62,10 +62,11 @@ export abstract class TableDataSourceBase<T> extends DataSource<T> {
       sortDirection = JSON.stringify(object);
     }
     if (!deletedOption) {
-      switch (this.deletedOption.value) {
-        case DeletedParameter.ALL:
-        case DeletedParameter.DELETED:
-        case DeletedParameter.NOT_DELETED:
+      const option: DeletedParameter = this.deletedOption.value;
+      switch (option) {
+        case 'ALL':
+        case 'DELETED':
+        case 'NOT_DELETED':
           deletedOption = this.deletedOption.value;
           break;
         default:

@@ -1,11 +1,12 @@
 // tslint:disable: no-implicit-dependencies
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AfterViewInit, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSelect, MatSort } from '@angular/material';
 // tslint:disable-next-line: max-line-length
 import { BaseTableToolbarComponent, BaseTableToolbarInterface } from '@components/basics/table/base-table-toolbar/base-table-toolbar.component';
 import { NGXLogger } from 'ngx-logger';
-import { fromEvent, merge } from 'rxjs';
-import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
+import { BehaviorSubject, fromEvent, merge, Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { TableDataSourceBase } from './base-table-source-data.class';
 import { DeletedParameter } from './deleted-parameter.class';
 
@@ -22,15 +23,17 @@ export abstract class BaseTableComponent<T> implements OnInit, AfterViewInit, Ba
   @Input() orderBy: string;
   @Input() orderType: 'asc' | 'desc';
   @Input() tableFilter: string;
-
   @Input() localData: Array<T>;
 
   public dataSource: TableDataSourceBase<T>;
 
-  public readonly abstract displayedColumns: Array<string>;
+  public readonly abstract columns: Array<ColumnDefinition>;
+
+  private showOnlyShortColumns = false;
 
   constructor(protected readonly logger: NGXLogger
-            , protected readonly COMPONENT_NAME: string) {
+            , protected readonly COMPONENT_NAME: string
+            , private readonly breakpointObserver: BreakpointObserver) {
   }
 
   ngOnInit(): void {
@@ -78,7 +81,37 @@ export abstract class BaseTableComponent<T> implements OnInit, AfterViewInit, Ba
     this.dataSource.load();
   }
 
+  getDisplayedColumns(): Array<string> {
+    return this.columns
+      .filter(cd => {
+        if (this.breakpointObserver.isMatched(Breakpoints.Handset)) {
+          return cd.showOnMobile;
+        }
+        if (this.showOnlyShortColumns) {
+          return cd.showShort;
+        }
+
+        return true;
+      })
+      .map(cd => cd.name);
+  }
+
+  showAllColumns(): void {
+    this.showOnlyShortColumns = false;
+  }
+
+  showLessColumns(): void {
+    this.showOnlyShortColumns = true ;
+  }
+
   public abstract initComponent(): void;
   public abstract add(): void;
   public abstract export(): void;
+}
+
+export interface ColumnDefinition {
+  name: string;
+  dataName?: string;
+  showOnMobile: boolean;
+  showShort: boolean;
 }

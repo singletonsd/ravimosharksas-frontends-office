@@ -1,3 +1,4 @@
+// tslint:disable: max-line-length
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,9 +9,10 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatButtonModule, MatButtonToggleModule, MatCardModule, MatExpansionModule, MatIconModule
-  , MatInputModule, MatListModule, MatMenuModule, MatPaginatorModule, MatProgressSpinnerModule
-  , MatSelectModule, MatSidenavModule, MatSnackBarModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { MatButtonModule, MatButtonToggleModule, MatCardModule, MatDialogModule, MatExpansionModule
+  , MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatPaginatorModule
+  , MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule
+  , MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -48,6 +50,8 @@ import { MainNotFoundComponent } from './components/pages/not-found/not-found.co
 import { HomeComponent } from './components/pages/home/home.component';
 
 import { AddressesAddFormComponent } from './components/common/addresses/addresses-add-form/addresses-add-form.component';
+import { AddressesTableOptionsComponent } from './components/common/addresses/addresses-table/addresses-table-options/addresses-table-options.component';
+import { AddressesTableComponent } from './components/common/addresses/addresses-table/addresses-table.component';
 import { AddressesAddComponent } from './components/pages/addresses/addresses-add/addresses-add.component';
 import { AddressesMainComponent } from './components/pages/addresses/addresses-main/addresses-main.component';
 
@@ -73,7 +77,9 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
     AddressesMainComponent,
     AddressesAddFormComponent,
     HomeComponent,
-    BaseInputComponent
+    BaseInputComponent,
+    AddressesTableComponent,
+    AddressesTableOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +92,7 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
     MatTooltipModule,
     MatButtonModule,
     MatButtonToggleModule,
+    MatDialogModule,
     MatExpansionModule,
     MatSidenavModule,
     MatProgressSpinnerModule,
@@ -97,6 +104,9 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
     MatMenuModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -124,6 +134,9 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
   bootstrap: [AppComponent],
   exports: [
     TranslateModule
+  ],
+  entryComponents: [
+    AddressesAddFormComponent
   ]
 })
 export class AppModule { }

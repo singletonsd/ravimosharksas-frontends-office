@@ -6,3 +6,35 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .icons-color {
   color: white;
 }
+
+.spinner-container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.spinner-container mat-spinner {
+  margin: auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aligner-item {
+  max-width: 50%;
+}
+
+.aligner-item--top {
+  align-self: flex-start;
+}
+
+.aligner-item--bottom {
+  align-self: flex-end;
+}
