@@ -35,7 +35,7 @@ CI_COMMIT_SHA=$(git rev-parse HEAD | cut -c 1-8)
 PUSH=0
 ASSET_FOLDER="dist-root"
 
-if [ -z ${DOCKER_IMAGE_BASE_NAME+x} ]; then
+if [ ! -z ${DOCKER_IMAGE_BASE_NAME+x} ]; then
   BASENAME=${DOCKER_IMAGE_BASE_NAME}
 fi
 
