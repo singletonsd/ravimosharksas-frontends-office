@@ -4,7 +4,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSelect } from '@angular/material';
 import { DeletedParameter } from '@app/models/deleted-parameter.class';
 import { GuardService } from '@app/services/guard/guard.service';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -22,18 +22,23 @@ export class BaseTableToolbarComponent implements OnInit {
 
   @ViewChild(MatPaginator) readonly paginator: MatPaginator;
 
-  @Input() shortColumns = false;
-
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
+  shortColumns = new BehaviorSubject<boolean>(false);
+  $shortColumns = this.shortColumns.asObservable();
 
   constructor(public readonly guard: GuardService
             , private readonly breakpointObserver: BreakpointObserver) {
   }
 
   ngOnInit(): void {
+    this.breakpointObserver.observe(Breakpoints.Handset)
+      .subscribe(result => {
+        this.shortColumns.next(result.matches);
+        if (result.matches) {
+          this.implementation.showLessColumns();
+        } else {
+          this.implementation.showAllColumns();
+        }
+      });
   }
 
   add(): void {
@@ -50,12 +55,12 @@ export class BaseTableToolbarComponent implements OnInit {
 
   showMore(): void {
     this.implementation.showAllColumns();
-    this.shortColumns = false;
+    this.shortColumns.next(false);
   }
 
   showLess(): void {
     this.implementation.showLessColumns();
-    this.shortColumns = true;
+    this.shortColumns.next(true);
   }
 }
 

@@ -85,7 +85,11 @@ export abstract class BaseTableComponent<T> implements OnInit, AfterViewInit, Ba
     return this.columns
       .filter(cd => {
         if (this.breakpointObserver.isMatched(Breakpoints.Handset)) {
-          return cd.showOnMobile;
+          if (!this.showOnlyShortColumns) {
+            return true;
+          } else {
+            return cd.showOnMobile;
+          }
         }
         if (this.showOnlyShortColumns) {
           return cd.showShort;
