@@ -4,8 +4,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSelect } from '@angular/material';
 import { DeletedParameter } from '@app/models/deleted-parameter.class';
 import { GuardService } from '@app/services/guard/guard.service';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-base-table-toolbar',
