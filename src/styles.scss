@@ -38,3 +38,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .aligner-item--bottom {
   align-self: flex-end;
 }
+
+.dialog-auto-scroll {
+  overflow: auto;
+  max-height: 95%;
+}

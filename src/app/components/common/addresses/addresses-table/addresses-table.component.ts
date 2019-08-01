@@ -39,7 +39,9 @@ export class AddressesTableComponent extends BaseTableComponent<any> implements 
 
   add(): void {
     this.logger.debug(this.COMPONENT_NAME, 'add new');
-    const dialog = this.dialog.open(AddressesAddFormComponent);
+    const dialog = this.dialog.open(AddressesAddFormComponent, {
+      panelClass: 'dialog-auto-scroll'
+    });
     dialog.componentInstance.added.subscribe((newEntity: any) => {
       this.dataSource.addData(newEntity);
     });
