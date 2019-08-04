@@ -37,7 +37,9 @@ export class AddressesTableOptionsComponent extends BaseTableOptions implements 
 
   edit(): void {
     this.logger.debug(this.COMPONENT_NAME, 'edit', this.entity.id);
-    const dialog = this.dialog.open(AddressesAddFormComponent);
+    const dialog = this.dialog.open(AddressesAddFormComponent, {
+      panelClass: 'dialog-auto-scroll'
+    });
     dialog.componentInstance.address = this.entity;
   }
 
