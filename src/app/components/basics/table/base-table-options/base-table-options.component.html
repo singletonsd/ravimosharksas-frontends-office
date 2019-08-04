@@ -7,4 +7,3 @@
 </ng-template>
 <!-- TODO: delete false from condition when see history is implemented. -->
 <button *ngIf="guard.hasViewerAccess() && false" mat-icon-button [disabled]="disableButtonHistory" (click)="implementation.historyShow()"><mat-icon matTooltip="{{ 'actions.history' | translate }}" matListIcon style="color: blue">history</mat-icon></button>
-<!-- TODO: verify if it is in mobile mode, show an icon to popup options.  -->
