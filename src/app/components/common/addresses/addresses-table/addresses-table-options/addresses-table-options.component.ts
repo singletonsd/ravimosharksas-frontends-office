@@ -3,11 +3,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Overlay } from '@angular/cdk/overlay';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatSnackBar } from '@angular/material';
-import { BaseTableOptions } from '@app/components/basics/table/base-table-options/base-table-options.component';
+import { BaseTableOptions, BaseTableOptionsInterface } from '@app/models/base-table-options.class';
 import { TranslateService } from '@ngx-translate/core';
 import { NGXLogger } from 'ngx-logger';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { AddressesAddFormComponent } from '../../addresses-add-form/addresses-add-form.component';
 
 @Component({
@@ -15,7 +13,7 @@ import { AddressesAddFormComponent } from '../../addresses-add-form/addresses-ad
   templateUrl: './addresses-table-options.component.html',
   styleUrls: ['./addresses-table-options.component.scss']
 })
-export class AddressesTableOptionsComponent implements OnInit , BaseTableOptions {
+export class AddressesTableOptionsComponent extends BaseTableOptions implements OnInit , BaseTableOptionsInterface {
 
   private readonly COMPONENT_NAME = 'ADDRESSES_TABLE_OPTIONS';
 
@@ -25,17 +23,14 @@ export class AddressesTableOptionsComponent implements OnInit , BaseTableOptions
   disableButtonAdd = false;
   disableButtonHistory = true;
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
-
   constructor(private readonly dialog: MatDialog
             , private readonly snackBar: MatSnackBar
             , private readonly logger: NGXLogger
             , private readonly translate: TranslateService
             , private readonly overlay: Overlay
-            , private readonly breakpointObserver: BreakpointObserver) { }
+            , breakpointObserver: BreakpointObserver) {
+    super(breakpointObserver);
+  }
 
   ngOnInit(): void {
   }

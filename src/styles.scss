@@ -43,3 +43,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   overflow: auto;
   max-height: 95%;
 }
+
+.mat-cell {
+  white-space: nowrap;
+  padding-right: 10px !important;
+}
+
+// TODO: try to center header columns.
+// .mat-sort-header-container {
+//   display:flex;
+//   justify-content:center;
+//   background: green;
+// }
+
+// .mat-header-cell {
+  // text-align: center;
+  // display:flex;
+  // justify-content:center;
+//   background: blue;
+// }

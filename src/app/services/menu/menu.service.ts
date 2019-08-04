@@ -14,7 +14,7 @@ export class MenuService {
   public readonly $displaySideNavNames = this.displaySideNavNames.asObservable();
 
   constructor(private readonly breakpointObserver: BreakpointObserver) {
-    this.breakpointObserver.observe(Breakpoints.Handset)
+    this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
       .subscribe(result => {
         this.displaySideNav.next(!result.matches);
     });

@@ -1,5 +1,6 @@
 // tslint:disable: no-implicit-dependencies
 import { Component, Input, OnInit } from '@angular/core';
+import { BaseTableOptionsInterface } from '@app/models/base-table-options.class';
 import { GuardService } from '@app/services/guard/guard.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { GuardService } from '@app/services/guard/guard.service';
 export class BaseTableOptionsComponent<T> implements OnInit {
 
   @Input() entity: T;
-  @Input() implementation: BaseTableOptions;
+  @Input() implementation: BaseTableOptionsInterface;
 
   @Input() disableButtonDelete = false;
   @Input() disableButtonAdd = false;
@@ -21,11 +22,4 @@ export class BaseTableOptionsComponent<T> implements OnInit {
   ngOnInit(): void {
   }
 
-}
-
-export interface BaseTableOptions {
-  edit(): void;
-  disable(): void;
-  enable(): void;
-  historyShow(): void;
 }
