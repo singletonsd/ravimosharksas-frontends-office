@@ -11,9 +11,14 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { AddressesAddComponent } from './components/pages/addresses/addresses-add/addresses-add.component';
 import { AddressesMainComponent } from './components/pages/addresses/addresses-main/addresses-main.component';
 
+import { ClientsAddComponent } from './components/pages/clients/clients/clients-add/clients-add.component';
+import { ClientsMainComponent } from './components/pages/clients/clients/clients-main/clients-main.component';
+
 const routes: Routes = [
   { path: appRoutesNames.ADDRESSES.MAIN, component: AddressesMainComponent },
   { path: appRoutesNames.ADDRESSES.ADD, component: AddressesAddComponent },
+  { path: appRoutesNames.CLIENTS.MAIN, component: ClientsMainComponent },
+  { path: appRoutesNames.CLIENTS.ADD, component: ClientsAddComponent },
   { path: appRoutesNames.ROOT, redirectTo: '/home', pathMatch: 'full' },
   { path: appRoutesNames.HOME, component: HomeComponent },
   { path: appRoutesNames.NOT.ACCESS, component: MainNotAccessComponent },

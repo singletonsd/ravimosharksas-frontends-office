@@ -49,6 +49,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding-right: 10px !important;
 }
 
+// Center checkbox with inputs side by side.
+.mat-checkbox.mat-accent {
+  margin: auto;
+}
+
 // TODO: try to center header columns.
 // .mat-sort-header-container {
 //   display:flex;

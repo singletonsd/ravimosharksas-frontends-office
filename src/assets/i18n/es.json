@@ -3,7 +3,7 @@
     "print": "Imprimir",
     "open_sidebar": "Abrir menu",
     "close_sidebar": "Cerrar menu",
-    "clear_form": "Limpiar formulario",
+    "clear_form": "Limpiar",
     "submit": "Cargar",
     "cancel": "Cancelar",
     "map": {
@@ -158,6 +158,19 @@
     "common": {
       "id": "#",
       "options": "Opciones"
+    },
+    "client": {
+      "reference": "Referencia",
+      "nickname": "Apodo",
+      "name": "Nombre",
+      "surname": "Apellido",
+      "group": "Grupo",
+      "company_name": "Empresa",
+      "score": "Puntuación",
+      "sector": "Sector",
+      "email": "Email",
+      "forbidden": "Prohibido",
+      "vat": "IVA"
     }
   },
   "pages": {
@@ -198,6 +211,20 @@
           "edit": "Dirección modificada con exito: ",
           "enabled": "Dirección habilitada: ",
           "disabled": "Dirección deshabilitada: "
+        }
+      }
+    },
+    "client": {
+      "title": {
+        "add": "Agregar Cliente",
+        "edit": "Editar Cliente"
+      },
+      "results": {
+        "success": {
+          "add": "Cliente agregado con exito: ",
+          "edit": "Cliente modificado con exito: ",
+          "enabled": "Cliente habilitado: ",
+          "disabled": "Cliente deshabilitado: "
         }
       }
     }

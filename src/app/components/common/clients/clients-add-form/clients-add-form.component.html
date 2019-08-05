@@ -1,0 +1,54 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>
+        <ng-container *ngIf="client; else register">
+          <h2>
+            <span>{{ 'pages.client.title.edit' | translate }}</span>
+            <strong> #{{ client.reference }}</strong>
+          </h2>
+        </ng-container>
+        <ng-template #register>
+          <h2>{{ 'pages.client.title.add' | translate }}</h2>
+        </ng-template>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex justify-content-center" *ngIf="(loading$ | async); else loaded">
+        <mat-spinner></mat-spinner>
+      </div>
+      <ng-template #loaded>
+        <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
+        <div class="row">
+          <app-base-input class="col-4" [parent]="this" [controlName]="'reference'"></app-base-input>
+          <app-base-input class="col-8" [parent]="this" [controlName]="'nickname'"></app-base-input>
+          <app-base-input class="col-6" [parent]="this" [controlName]="'name'"></app-base-input>
+          <app-base-input class="col-6" [parent]="this" [controlName]="'surname'"></app-base-input>
+          <app-base-input class="col-6" [parent]="this" [controlName]="'group'"></app-base-input>
+          <app-base-input class="col-6" [parent]="this" [controlName]="'company_name'"></app-base-input>
+          <app-base-input class="col-4" [parent]="this" [controlName]="'score'"></app-base-input>
+          <app-base-input class="col-4" [parent]="this" [controlName]="'sector'"></app-base-input>
+          <mat-checkbox class="col-4" formControlName="forbidden">{{ 'models.client.forbidden' | translate }}</mat-checkbox>
+          <app-base-input class="col-12 col-sm-6" [parent]="this" [controlName]="'email'"></app-base-input>
+          <app-base-input class="col-12 col-sm-6" [parent]="this" [controlName]="'vat'"></app-base-input>
+        </div>
+      </ng-template>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="row">
+        <div class="col-6">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!isValid()" style="width: 100%">
+            <mat-icon matTooltip="{{ 'actions.submit' | translate }}" matListIcon>add</mat-icon>
+            {{ 'actions.submit' | translate }}
+          </button>
+        </div>
+        <div class="col-6">
+          <button mat-raised-button color="accent" type="reset" (click)="resetForm()" style="width: 100%">
+            <mat-icon matTooltip="{{ 'actions.clear_form' | translate }}" matListIcon>clear_all</mat-icon>
+            {{ 'actions.clear_form' | translate }}
+          </button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</form>

@@ -3,7 +3,7 @@
     "print": "Print",
     "open_sidebar": "Open menu",
     "close_sidebar": "Close menu",
-    "clear_form": "Clean form",
+    "clear_form": "Clean",
     "submit": "Submit",
     "cancel": "Cancel",
     "map": {
@@ -154,6 +154,19 @@
     "common": {
       "id": "#",
       "options": "Options"
+    },
+    "client": {
+      "reference": "Reference",
+      "nickname": "Nickname",
+      "name": "Name",
+      "surname": "Surname",
+      "group": "Group",
+      "company_name": "Company",
+      "score": "Score",
+      "sector": "Sector",
+      "email": "Email",
+      "forbidden": "Forbidden",
+      "vat": "VAT"
     }
   },
   "pages": {
@@ -194,6 +207,20 @@
           "edit": "Address edited successfully: ",
           "enabled": "Address enabled: ",
           "disabled": "Address disabled: "
+        }
+      }
+    },
+    "client": {
+      "title": {
+        "add": "Add Client",
+        "edit": "Edit Client"
+      },
+      "results": {
+        "success": {
+          "add": "Client added successfully: ",
+          "edit": "Client edited successfully: ",
+          "enabled": "Client enabled: ",
+          "disabled": "Client disabled: "
         }
       }
     }

@@ -3,7 +3,7 @@
     "print": "Imprimer",
     "open_sidebar": "Ouvrir menu",
     "close_sidebar": "Fermer menu",
-    "clear_form": "Nettoyer formulaire",
+    "clear_form": "Nettoyer",
     "submit": "Soumettre",
     "cancel": "Annuler",
     "map": {
@@ -154,6 +154,19 @@
     "common": {
       "id": "#",
       "options": "Options"
+    },
+    "client": {
+      "reference": "Référence",
+      "nickname": "Surnom",
+      "name": "Prénom",
+      "surname": "Nom",
+      "group": "Groupe",
+      "company_name": "Entreprise",
+      "score": "Score",
+      "sector": "Secteur",
+      "email": "Email",
+      "forbidden": "Interdit",
+      "vat": "TVA."
     }
   },
   "pages": {
@@ -194,6 +207,20 @@
           "edit": "Adresse modifiée avec succès: ",
           "enabled": "Adresse activée: ",
           "disabled": "Adresse désactivée: "
+        }
+      }
+    },
+    "client": {
+      "title": {
+        "add": "Ajouter une client",
+        "edit": "Modifier client"
+      },
+      "results": {
+        "success": {
+          "add": "Client ajoutée avec succès: ",
+          "edit": "Client modifiée avec succès: ",
+          "enabled": "Client activée: ",
+          "disabled": "Client désactivée: "
         }
       }
     }

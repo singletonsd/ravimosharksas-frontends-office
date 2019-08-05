@@ -9,10 +9,10 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatButtonModule, MatButtonToggleModule, MatCardModule, MatDialogModule, MatExpansionModule
-  , MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatPaginatorModule
-  , MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule
-  , MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatDialogModule
+  , MatExpansionModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule
+  , MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule
+  , MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -55,6 +55,10 @@ import { AddressesTableComponent } from './components/common/addresses/addresses
 import { AddressesAddComponent } from './components/pages/addresses/addresses-add/addresses-add.component';
 import { AddressesMainComponent } from './components/pages/addresses/addresses-main/addresses-main.component';
 
+import { ClientsAddFormComponent } from './components/common/clients/clients-add-form/clients-add-form.component';
+import { ClientsAddComponent } from './components/pages/clients/clients/clients-add/clients-add.component';
+import { ClientsMainComponent } from './components/pages/clients/clients/clients-main/clients-main.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +83,10 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
     HomeComponent,
     BaseInputComponent,
     AddressesTableComponent,
-    AddressesTableOptionsComponent
+    AddressesTableOptionsComponent,
+    ClientsAddFormComponent,
+    ClientsAddComponent,
+    ClientsMainComponent
   ],
   imports: [
     BrowserModule,
@@ -98,6 +105,7 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
     MatProgressSpinnerModule,
     MatPaginatorModule,
     MatCardModule,
+    MatCheckboxModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
