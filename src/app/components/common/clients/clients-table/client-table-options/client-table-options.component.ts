@@ -1,19 +1,19 @@
-// tslint:disable: no-implicit-dependencies
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Overlay } from '@angular/cdk/overlay';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatSnackBar } from '@angular/material';
-import { BaseTableOptions, BaseTableOptionsInterface } from '@app/models/base-table-options.class';
+// tslint:disable-next-line: no-implicit-dependencies
+import { BaseTableOptions } from '@app/models/base-table-options.class';
 import { TranslateService } from '@ngx-translate/core';
 import { NGXLogger } from 'ngx-logger';
-import { AddressesAddFormComponent } from '../../addresses-add-form/addresses-add-form.component';
+import { ClientsAddFormComponent } from '../../clients-add-form/clients-add-form.component';
 
 @Component({
-  selector: 'app-addresses-table-options',
-  templateUrl: './addresses-table-options.component.html',
-  styleUrls: ['./addresses-table-options.component.scss']
+  selector: 'app-client-table-options',
+  templateUrl: './client-table-options.component.html',
+  styleUrls: ['./client-table-options.component.scss']
 })
-export class AddressesTableOptionsComponent extends BaseTableOptions<any> implements OnInit , BaseTableOptionsInterface {
+export class ClientTableOptionsComponent extends BaseTableOptions<any> implements OnInit {
 
   constructor(private readonly dialog: MatDialog
             , private readonly snackBar: MatSnackBar
@@ -21,7 +21,7 @@ export class AddressesTableOptionsComponent extends BaseTableOptions<any> implem
             , private readonly translate: TranslateService
             , private readonly overlay: Overlay
             , breakpointObserver: BreakpointObserver) {
-    super(breakpointObserver, 'ADDRESSES_TABLE_OPTIONS');
+    super(breakpointObserver, 'CLIENTS_TABLE_OPTIONS');
   }
 
   ngOnInit(): void {
@@ -29,10 +29,10 @@ export class AddressesTableOptionsComponent extends BaseTableOptions<any> implem
 
   edit(): void {
     this.logger.debug(this.COMPONENT_NAME, 'edit', this.entity.id);
-    const dialog = this.dialog.open(AddressesAddFormComponent, {
+    const dialog = this.dialog.open(ClientsAddFormComponent, {
       panelClass: 'dialog-auto-scroll'
     });
-    dialog.componentInstance.address = this.entity;
+    dialog.componentInstance.client = this.entity;
   }
 
   disable(): void {

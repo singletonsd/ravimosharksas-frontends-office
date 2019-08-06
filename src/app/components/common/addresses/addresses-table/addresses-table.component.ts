@@ -1,6 +1,6 @@
 // tslint:disable: no-implicit-dependencies
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { BaseTableComponent, ColumnDefinition } from '@app/models/base-table.class';
 import { NGXLogger } from 'ngx-logger';

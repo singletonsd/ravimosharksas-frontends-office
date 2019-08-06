@@ -56,6 +56,8 @@ import { AddressesAddComponent } from './components/pages/addresses/addresses-ad
 import { AddressesMainComponent } from './components/pages/addresses/addresses-main/addresses-main.component';
 
 import { ClientsAddFormComponent } from './components/common/clients/clients-add-form/clients-add-form.component';
+import { ClientTableOptionsComponent } from './components/common/clients/clients-table/client-table-options/client-table-options.component';
+import { ClientsTableComponent } from './components/common/clients/clients-table/clients-table.component';
 import { ClientsAddComponent } from './components/pages/clients/clients/clients-add/clients-add.component';
 import { ClientsMainComponent } from './components/pages/clients/clients/clients-main/clients-main.component';
 
@@ -86,7 +88,9 @@ import { ClientsMainComponent } from './components/pages/clients/clients/clients
     AddressesTableOptionsComponent,
     ClientsAddFormComponent,
     ClientsAddComponent,
-    ClientsMainComponent
+    ClientsMainComponent,
+    ClientsTableComponent,
+    ClientTableOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -144,7 +148,8 @@ import { ClientsMainComponent } from './components/pages/clients/clients/clients
     TranslateModule
   ],
   entryComponents: [
-    AddressesAddFormComponent
+    AddressesAddFormComponent,
+    ClientsAddFormComponent
   ]
 })
 export class AppModule { }
