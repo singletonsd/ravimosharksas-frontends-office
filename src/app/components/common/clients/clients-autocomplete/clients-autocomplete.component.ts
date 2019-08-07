@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // tslint:disable-next-line: no-implicit-dependencies
 import { BaseInputFormComponent } from '@app/models/base-input.class';
-import { Observable, concat } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
 @Component({
