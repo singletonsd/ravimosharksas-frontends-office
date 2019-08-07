@@ -20,7 +20,8 @@
       <ng-template #loaded>
         <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
         <div class="row">
-          <app-base-input class="col-12 col-sm-7" [parent]="this" [controlName]="'client'"></app-base-input>
+            <app-clients-autocomplete class="col-12 col-sm-7" [parent]="this" [controlName]="'client'"></app-clients-autocomplete>
+          <!-- <app-base-input class="col-12 col-sm-7" [parent]="this" [controlName]="'client'"></app-base-input> -->
           <app-base-input class="col-12 col-sm-5" [parent]="this" [controlName]="'name'"></app-base-input>
           <app-base-input class="col-3" [parent]="this" [controlName]="'number'"></app-base-input>
           <app-base-input class="col-9" [parent]="this" [controlName]="'street'"></app-base-input>

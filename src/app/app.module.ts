@@ -9,10 +9,10 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatDialogModule
-  , MatExpansionModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule
-  , MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule
-  , MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule
+  , MatDialogModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule
+  , MatMenuModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule
+  , MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -56,6 +56,7 @@ import { AddressesAddComponent } from './components/pages/addresses/addresses-ad
 import { AddressesMainComponent } from './components/pages/addresses/addresses-main/addresses-main.component';
 
 import { ClientsAddFormComponent } from './components/common/clients/clients-add-form/clients-add-form.component';
+import { ClientsAutocompleteComponent } from './components/common/clients/clients-autocomplete/clients-autocomplete.component';
 import { ClientTableOptionsComponent } from './components/common/clients/clients-table/client-table-options/client-table-options.component';
 import { ClientsTableComponent } from './components/common/clients/clients-table/clients-table.component';
 import { ClientsAddComponent } from './components/pages/clients/clients/clients-add/clients-add.component';
@@ -90,7 +91,8 @@ import { ClientsMainComponent } from './components/pages/clients/clients/clients
     ClientsAddComponent,
     ClientsMainComponent,
     ClientsTableComponent,
-    ClientTableOptionsComponent
+    ClientTableOptionsComponent,
+    ClientsAutocompleteComponent
   ],
   imports: [
     BrowserModule,
@@ -99,6 +101,7 @@ import { ClientsMainComponent } from './components/pages/clients/clients/clients
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatAutocompleteModule,
     MatToolbarModule,
     MatTooltipModule,
     MatButtonModule,
