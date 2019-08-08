@@ -41,14 +41,14 @@ WEB_FOLDER="dist/"
 if [ ${BRANCH} == "master" ]; then
   DATE="$(date '+%Y-%m-%d--%H:%M:%S')"
   aws s3 mv "s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}production" "s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}${DATE}" --recursive
-  aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}testing --recursive
-  aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}qa --recursive
+  # aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}testing --recursive
+  # aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}qa --recursive
 else
   if [ "${BRANCH}" == "develop" ]; then
     aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}staging --recursive
-    aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}develop --recursive
-    aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}testing-dev --recursive
-    aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}qa-dev --recursive
+    # aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}develop --recursive
+    # aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}testing-dev --recursive
+    # aws s3 rm s3://${AMAZON_S3_BUCKET}${AMAZON_S3_FOLDER}qa-dev --recursive
   fi
 fi
 
