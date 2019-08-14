@@ -5,8 +5,8 @@ import { MatPaginator, MatSelect, MatSort } from '@angular/material';
 // tslint:disable-next-line: max-line-length
 import { BaseTableToolbarComponent, BaseTableToolbarInterface } from '@components/basics/table/base-table-toolbar/base-table-toolbar.component';
 import { NGXLogger } from 'ngx-logger';
-import { BehaviorSubject, fromEvent, merge, Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map, tap } from 'rxjs/operators';
+import { merge } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { TableDataSourceBase } from './base-table-source-data.class';
 import { DeletedParameter } from './deleted-parameter.class';
 

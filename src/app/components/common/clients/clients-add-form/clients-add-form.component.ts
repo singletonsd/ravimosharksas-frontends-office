@@ -1,8 +1,8 @@
-import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
 import { BaseFormComponent } from '@app/models/base-form.class';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { NGXLogger } from 'ngx-logger';
 
 @Component({
@@ -17,8 +17,9 @@ export class ClientsAddFormComponent extends BaseFormComponent implements OnInit
   @Output() readonly added = new EventEmitter<any>();
 
   constructor(private readonly logger: NGXLogger
-            , private readonly translate: TranslateService
-            , private readonly cdr: ChangeDetectorRef) {
+            // , private readonly translate: TranslateService
+            // , private readonly cdr: ChangeDetectorRef
+            ) {
     super('CLIENTS_ADD_FORM', 'models.client.');
     this.form.addControl('reference', new FormControl('', [ Validators.required ]));
     this.form.addControl('nickname', new FormControl('', []));
@@ -73,7 +74,7 @@ export class ClientsAddFormComponent extends BaseFormComponent implements OnInit
     this.logger.debug(this.COMPONENT_NAME, 'form submitted.', data);
     if (this.client) {
       this.logger.debug(this.COMPONENT_NAME, 'edit', this.client);
-      const prevName = this.client.name;
+      // const prevName = this.client.name;
       this.client.name = data;
       // this.addresssService.editaddress(this.client)
       // .subscribe(() => {

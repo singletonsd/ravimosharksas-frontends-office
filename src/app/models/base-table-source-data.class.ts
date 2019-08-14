@@ -91,9 +91,11 @@ export abstract class TableDataSourceBase<T> extends DataSource<T> {
     return this.data.getValue();
   }
 
-  public loadLocal(filter?: string, sortDirection?: string
-                ,  skip?: number, limit?: number
-                ,  deletedOption?: DeletedParameter): void {
+  public loadLocal(
+                //   filter?: string, sortDirection?: string
+                // ,  skip?: number, limit?: number
+                // ,  deletedOption?: DeletedParameter
+                ): void {
     this.logger.debug(this.COMPONENT_NAME, 'running load local data');
   }
   /**
@@ -110,24 +112,24 @@ export abstract class TableDataSourceBase<T> extends DataSource<T> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  protected getSortedData(data: Array<T>): Array<T> {
-    if (!this.sort.active || this.sort.direction === '') {
-      return data;
-    }
+  // protected getSortedData(data: Array<T>): Array<T> {
+  //   if (!this.sort.active || this.sort.direction === '') {
+  //     return data;
+  //   }
 
-    return data.sort((a, b) => {
-      const isAsc = this.sort.direction === 'asc';
-      // TODO: switch by object type.
-      switch (this.sort.active) {
-      //   case 'name': return this.compare(a.name, b.name, isAsc);
-      //   case 'id': return this.compare(+a.id, +b.id, isAsc);
-      //   case 'email': return this.compare(+a.email, +b.email, isAsc);
-      //   case 'identification': return this.compare(+a.identification, +b.identification, isAsc);
-      //   case 'role': return this.compare(+a.role, +b.role, isAsc);
-        default: return 0;
-      }
-    });
-  }
+  //   return data.sort((a, b) => {
+  //     const isAsc = this.sort.direction === 'asc';
+  //     // TODO: switch by object type.
+  //     switch (this.sort.active) {
+  //     //   case 'name': return this.compare(a.name, b.name, isAsc);
+  //     //   case 'id': return this.compare(+a.id, +b.id, isAsc);
+  //     //   case 'email': return this.compare(+a.email, +b.email, isAsc);
+  //     //   case 'identification': return this.compare(+a.identification, +b.identification, isAsc);
+  //     //   case 'role': return this.compare(+a.role, +b.role, isAsc);
+  //       default: return 0;
+  //     }
+  //   });
+  // }
 
   /** Simple sort comparison for example ID/Name columns (for client-side sorting). */
   protected compare(a: any, b: any, isAsc: any): number {

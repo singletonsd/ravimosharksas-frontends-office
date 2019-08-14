@@ -13,7 +13,7 @@ export class StorageService {
 
   public async reconnect(): Promise<boolean> {
     // TODO:
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       resolve(true);
     });
   }

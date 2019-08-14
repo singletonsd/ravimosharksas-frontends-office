@@ -1,10 +1,10 @@
 // tslint:disable: no-implicit-dependencies
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Overlay } from '@angular/cdk/overlay';
-import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { BreakpointObserver } from '@angular/cdk/layout';
+// import { Overlay } from '@angular/cdk/overlay';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import { BaseTableOptions, BaseTableOptionsInterface } from '@app/models/base-table-options.class';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { NGXLogger } from 'ngx-logger';
 import { AddressesAddFormComponent } from '../../addresses-add-form/addresses-add-form.component';
 
@@ -16,10 +16,10 @@ import { AddressesAddFormComponent } from '../../addresses-add-form/addresses-ad
 export class AddressesTableOptionsComponent extends BaseTableOptions<any> implements OnInit , BaseTableOptionsInterface {
 
   constructor(private readonly dialog: MatDialog
-            , private readonly snackBar: MatSnackBar
+            // , private readonly snackBar: MatSnackBar
             , private readonly logger: NGXLogger
-            , private readonly translate: TranslateService
-            , private readonly overlay: Overlay
+            // , private readonly translate: TranslateService
+            // , private readonly overlay: Overlay
             , breakpointObserver: BreakpointObserver) {
     super(breakpointObserver, 'ADDRESSES_TABLE_OPTIONS');
   }

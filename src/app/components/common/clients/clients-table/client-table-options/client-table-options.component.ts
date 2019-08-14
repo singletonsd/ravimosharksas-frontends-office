@@ -1,10 +1,10 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Overlay } from '@angular/cdk/overlay';
+// import { Overlay } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material';
 // tslint:disable-next-line: no-implicit-dependencies
 import { BaseTableOptions } from '@app/models/base-table-options.class';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { NGXLogger } from 'ngx-logger';
 import { ClientsAddFormComponent } from '../../clients-add-form/clients-add-form.component';
 
@@ -16,10 +16,10 @@ import { ClientsAddFormComponent } from '../../clients-add-form/clients-add-form
 export class ClientTableOptionsComponent extends BaseTableOptions<any> implements OnInit {
 
   constructor(private readonly dialog: MatDialog
-            , private readonly snackBar: MatSnackBar
+            // , private readonly snackBar: MatSnackBar
             , private readonly logger: NGXLogger
-            , private readonly translate: TranslateService
-            , private readonly overlay: Overlay
+            // , private readonly translate: TranslateService
+            // , private readonly overlay: Overlay
             , breakpointObserver: BreakpointObserver) {
     super(breakpointObserver, 'CLIENTS_TABLE_OPTIONS');
   }

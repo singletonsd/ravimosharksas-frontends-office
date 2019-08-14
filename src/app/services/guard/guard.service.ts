@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { StorageService } from '../storage/storage.service';
 
 @Injectable({
@@ -7,8 +6,7 @@ import { StorageService } from '../storage/storage.service';
 })
 export class GuardService {
 
-  constructor(private readonly router: Router
-            , private readonly storageService: StorageService) { }
+  constructor(private readonly storageService: StorageService) { }
 
   isLogged(): boolean {
     if (this.storageService.getCurrentUser()) {

@@ -30,8 +30,9 @@ export class BaseRouterTableOptions<T> {
           this.deletedOption = 'NOT_DELETED';
           break;
       }
+      if (typeof this.tableObjectType === 'string') {
+      }
       switch (params['orderBy']) {
-
         // TODO: check this value by parameters of the tableObjectType.
         case 'id':
         case 'Type':

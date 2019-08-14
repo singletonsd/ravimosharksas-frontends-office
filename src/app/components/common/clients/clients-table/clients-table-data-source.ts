@@ -1,7 +1,7 @@
 // tslint:disable: no-implicit-dependencies
 import { MatPaginator, MatSelect, MatSort } from '@angular/material';
 import { TableDataSourceBase } from '@app/models/base-table-source-data.class';
-import { DeletedParameter } from '@app/models/deleted-parameter.class';
+// import { DeletedParameter } from '@app/models/deleted-parameter.class';
 import { NGXLogger } from 'ngx-logger';
 
 /**
@@ -17,8 +17,10 @@ export class ClientsTableDataSource extends TableDataSourceBase<any> {
     super(paginator, sort, deletedOption, logger, 'TABLE_DATA_SOURCE_CLIENTS', localData);
   }
 
-  loadApi(filter?: string, sortDirection?: string, skip?: number, limit?: number
-        , deletedOption?: DeletedParameter): void {
+  loadApi(
+    // filter?: string, sortDirection?: string, skip?: number, limit?: number
+    //     , deletedOption?: DeletedParameter
+        ): void {
            // tslint:disable: align
           //  TODO: change data to real client information.
           this.data.next([

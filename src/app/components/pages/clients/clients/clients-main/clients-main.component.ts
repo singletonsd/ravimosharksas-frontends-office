@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 // tslint:disable-next-line: no-implicit-dependencies
 import { BaseRouterTableOptions } from '@app/models/base-route-table-options.class';
+import { Clients } from '@ravimosharksas/apis-global-libs-angular';
 import { NGXLogger } from 'ngx-logger';
 
 @Component({
@@ -9,7 +10,7 @@ import { NGXLogger } from 'ngx-logger';
   templateUrl: './clients-main.component.html',
   styleUrls: ['./clients-main.component.scss']
 })
-export class ClientsMainComponent extends BaseRouterTableOptions<any> implements OnInit {
+export class ClientsMainComponent extends BaseRouterTableOptions<Clients> implements OnInit {
 
   constructor(logger: NGXLogger
             , route: ActivatedRoute) {

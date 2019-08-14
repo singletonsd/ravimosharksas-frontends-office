@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnIni
 import { FormControl, Validators } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
 import { BaseFormComponent } from '@app/models/base-form.class';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { NGXLogger } from 'ngx-logger';
 
 @Component({
@@ -17,7 +17,7 @@ export class AddressesAddFormComponent extends BaseFormComponent implements OnIn
   @Output() readonly added = new EventEmitter<any>();
 
   constructor(private readonly logger: NGXLogger
-            , private readonly translate: TranslateService
+            // , private readonly translate: TranslateService
             , private readonly cdr: ChangeDetectorRef) {
     super('ADDRESS_ADD_FORM', 'models.address.');
     this.form.addControl('client', new FormControl('', [ Validators.required ]));
@@ -83,7 +83,7 @@ export class AddressesAddFormComponent extends BaseFormComponent implements OnIn
     this.logger.debug(this.COMPONENT_NAME, 'form submitted.', data);
     if (this.address) {
       this.logger.debug(this.COMPONENT_NAME, 'edit', this.address);
-      const prevName = this.address.name;
+      // const prevName = this.address.name;
       this.address.name = data;
       // this.addresssService.editaddress(this.address)
       // .subscribe(() => {

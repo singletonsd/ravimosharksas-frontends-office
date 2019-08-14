@@ -1,9 +1,9 @@
 // tslint:disable: no-implicit-dependencies
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { PreviousRouteService } from '@services/previous-route/previous-route.service';
-import { StorageService } from '@services/storage/storage.service';
+// import { StorageService } from '@services/storage/storage.service';
 
 @Component({
   selector: 'app-main-not-access',
@@ -17,8 +17,8 @@ export class MainNotAccessComponent implements OnInit {
   public levelPage: string;
   public levelUser: string;
   constructor(private readonly route: ActivatedRoute
-            , storage: StorageService
-            , private readonly translate: TranslateService
+            // , storage: StorageService
+            // , private readonly translate: TranslateService
             , public readonly previousRouteService: PreviousRouteService) {
     // let text = 'user.levels.COMMON';
     // if (storage.getCurrentUser()) {
