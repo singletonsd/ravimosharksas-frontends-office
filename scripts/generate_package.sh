@@ -17,8 +17,8 @@ __file="${__dir}/$(basename "${BASH_SOURCE[0]}")"
 __base="$(basename ${__file} .sh)"
 __root="$(cd "$(dirname "${__dir}")" && pwd)"
 
-if ! type "ng" &> /dev/null; then
-  echo "Angular is not installed. Install it and then re launch"
+if ! type "npm" &> /dev/null; then
+  echo "NPM is not installed. Install it and then re launch"
   exit 1
 fi
 
