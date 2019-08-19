@@ -1,5 +1,7 @@
 image: node:8-alpine
 
+variables:
+  - TEST_STATIC_ALL: "true"
 include:
   - project: 'singletonsd/pipelines/npm'
     file: '/src/.gitlab-ci-test-static.yml'
