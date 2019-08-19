@@ -66,13 +66,13 @@ mkdir -p dist
 cd dist
 
 # Create one for root folder
-ng build --prod --build-optimizer #> /dev/null 2>&1
+npm run ng build --prod --build-optimizer #> /dev/null 2>&1
 mv dist dist-root
 
 # Create for each stage
 for i in $( eval echo {0..$TOTAL_STAGES} )
 do
   echo "Task ${i}/${TOTAL_STAGES} - ${TARGETS[$i]}: Generating binaries for path: ${PATHS[$i]}"
-  ng build --prod --build-optimizer --base-href="/${PATHS[${i}]}/" #> /dev/null 2>&1
+  npm run ng build --prod --build-optimizer --base-href="/${PATHS[${i}]}/" #> /dev/null 2>&1
   mv dist ${TARGETS[${i}]}
 done
