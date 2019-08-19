@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "check": "npm-check -i @app* -i @user* -i @password* -i @components* -i @services* -i @env",
+    "check": "npm-check -i @app/* -i @user/* -i @password/* -i @components/* -i @services/* -i @env/* --skip-unused",
     "start": "ng serve",
     "static": "npm run build && ./node_modules/.bin/static dist/dist",
     "build": "ng build --prod",
@@ -58,6 +58,7 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "node-static": "0.7.11",
+    "npm-check": "5.9.0",
     "protractor": "5.4.2",
     "pwmetrics": "4.2.1",
     "rxjs-tslint": "0.1.7",

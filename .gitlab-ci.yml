@@ -1,16 +1,20 @@
 image: node:8-alpine
 
-cache:
-  paths:
-    - node_modules/
-    - dist/
+include:
+  - project: 'singletonsd/pipelines/npm'
+    file: '/src/.gitlab-ci-test-static.yml'
+
+# cache:
+#   paths:
+#     - node_modules/
+#     - dist/
 
 before_script:
   - npm install -g @angular/cli@7.3.8 --no-optional
 
 stages:
   - install
-  - lint
+  - test_static
   - build
   - test
   - deploy
@@ -20,13 +24,16 @@ install:
   before_script: []
   script:
     - npm install --no-optional
+  artifacts:
+    paths:
+      - node_modules/
 
-lint:
-  stage: lint
-  script:
-    - ng lint
-    - npm audit
-  allow_failure: true
+# lint:
+#   stage: lint
+#   script:
+#     - npm run lint
+#     - npm audit
+#   allow_failure: true
 
 build:
   stage: build
