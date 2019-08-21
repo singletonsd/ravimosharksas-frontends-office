@@ -1,4 +1,4 @@
-image: node:8-alpine
+image: "${GLOBAL_IMAGE_NAME}:${GLOBAL_IMAGE_TAG}"
 
 variables:
   GLOBAL_IMAGE_NAME: "node"
