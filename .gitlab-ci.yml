@@ -3,6 +3,7 @@ image: "${GLOBAL_IMAGE_NAME}:${GLOBAL_IMAGE_TAG}"
 variables:
   GLOBAL_IMAGE_NAME: "node"
   GLOBAL_IMAGE_TAG: "10-alpine"
+  TEST_STATIC_IMAGE_TAG: "-6-alpine"
   TEST_STATIC_ALL: "true"
 include:
   - project: 'singletonsd/pipelines/npm'
