@@ -4,6 +4,8 @@ variables:
   GLOBAL_IMAGE_NAME: "node"
   GLOBAL_IMAGE_TAG: "8-alpine"
   TEST_STATIC_ALL: "true"
+  ORIGINAL_REPOSITORY: "ravimosharksas/frontends/office"
+
 include:
   - project: 'singletonsd/pipelines/npm'
     file: '/src/.gitlab-ci-test-static.yml'
@@ -103,3 +105,6 @@ deploy-singleton-server:
         echo "Deploy to server only in ravimoshark pipeline";
       fi
   when: on_success
+  only:
+    variables:
+      - $CI_PROJECT_PATH == $ORIGINAL_REPOSITORY
