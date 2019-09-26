@@ -167,6 +167,17 @@
       "email": "Email",
       "forbidden": "Interdit",
       "vat": "TVA."
+    },
+    "contract": {
+      "refContract": "#",
+      "identification": "Identification",
+      "dateDebut": "Date Début",
+      "dateFin": "Date Fin",
+      "reconduction": "Reconduction",
+      "loyer": "Loyer",
+      "miniconso": "Consommation Min",
+      "reviewed": "Révisé",
+      "valid": "Valide"
     }
   },
   "pages": {
@@ -221,6 +232,20 @@
           "edit": "Client modifiée avec succès: ",
           "enabled": "Client activée: ",
           "disabled": "Client désactivée: "
+        }
+      }
+    },
+    "contract": {
+      "title": {
+        "add": "Ajouter une client",
+        "edit": "Modifier client"
+      },
+      "results": {
+        "success": {
+          "add": "Contrat ajoutée avec succès: ",
+          "edit": "Contrat modifiée avec succès: ",
+          "enabled": "Contrat activée: ",
+          "disabled": "Contrat désactivée: "
         }
       }
     }

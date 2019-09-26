@@ -62,6 +62,10 @@ import { ClientsTableComponent } from './components/common/clients/clients-table
 import { ClientsAddComponent } from './components/pages/clients/clients/clients-add/clients-add.component';
 import { ClientsMainComponent } from './components/pages/clients/clients/clients-main/clients-main.component';
 
+import { ContractsAddFormComponent } from './components/common/contracts/contracts-add-form/contracts-add-form.component';
+import { ContractsAddComponent } from './components/pages/contracts/contracts-add/contracts-add.component';
+import { ContractsMainComponent } from './components/pages/contracts/contracts-main/contracts-main.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,7 +96,10 @@ import { ClientsMainComponent } from './components/pages/clients/clients/clients
     ClientsMainComponent,
     ClientsTableComponent,
     ClientTableOptionsComponent,
-    ClientsAutocompleteComponent
+    ClientsAutocompleteComponent,
+    ContractsAddFormComponent,
+    ContractsAddComponent,
+    ContractsMainComponent
   ],
   imports: [
     BrowserModule,

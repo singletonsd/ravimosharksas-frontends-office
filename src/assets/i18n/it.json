@@ -167,6 +167,17 @@
       "email": "Email",
       "forbidden": "Proibito",
       "vat": "IVA"
+    },
+    "contract": {
+      "refContract": "#",
+      "identification": "Identificazione",
+      "dateDebut": "Data Inizio",
+      "dateFin": "Data Fine",
+      "reconduction": "Rinnovo",
+      "loyer": "Affito",
+      "miniconso": "Consumo Min",
+      "reviewed": "Rivisto",
+      "valid": "Valido"
     }
   },
   "pages": {
@@ -221,6 +232,20 @@
           "edit": "Cliente modificato con successo: ",
           "enabled": "Cliente abilitato: ",
           "disabled": "Cliente disabilitato: "
+        }
+      }
+    },
+    "contract": {
+      "title": {
+        "add": "Aggiungi Contratto",
+        "edit": "Modifica Contratto"
+      },
+      "results": {
+        "success": {
+          "add": "Contratto aggiunto correttamente: ",
+          "edit": "Contratto modificato con successo: ",
+          "enabled": "Contratto abilitato: ",
+          "disabled": "Contratto disabilitato: "
         }
       }
     }

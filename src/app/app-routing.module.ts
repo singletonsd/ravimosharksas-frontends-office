@@ -14,11 +14,16 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
 import { ClientsAddComponent } from './components/pages/clients/clients/clients-add/clients-add.component';
 import { ClientsMainComponent } from './components/pages/clients/clients/clients-main/clients-main.component';
 
+import { ContractsAddComponent } from './components/pages/contracts/contracts-add/contracts-add.component';
+import { ContractsMainComponent } from './components/pages/contracts/contracts-main/contracts-main.component';
+
 const routes: Routes = [
   { path: appRoutesNames.ADDRESSES.MAIN, component: AddressesMainComponent },
   { path: appRoutesNames.ADDRESSES.ADD, component: AddressesAddComponent },
   { path: appRoutesNames.CLIENTS.MAIN, component: ClientsMainComponent },
   { path: appRoutesNames.CLIENTS.ADD, component: ClientsAddComponent },
+  { path: appRoutesNames.CONTRACTS.MAIN, component: ContractsMainComponent },
+  { path: appRoutesNames.CONTRACTS.ADD, component: ContractsAddComponent },
   { path: appRoutesNames.ROOT, redirectTo: '/home', pathMatch: 'full' },
   { path: appRoutesNames.HOME, component: HomeComponent },
   { path: appRoutesNames.NOT.ACCESS, component: MainNotAccessComponent },

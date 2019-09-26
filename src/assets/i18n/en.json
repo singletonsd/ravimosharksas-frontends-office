@@ -167,6 +167,17 @@
       "email": "Email",
       "forbidden": "Forbidden",
       "vat": "VAT"
+    },
+    "contract": {
+      "refContract": "#",
+      "identification": "Identification",
+      "dateDebut": "Date From",
+      "dateFin": "Date Until",
+      "reconduction": "Renew",
+      "loyer": "Rent",
+      "miniconso": "Consommation Min",
+      "reviewed": "Reviewed",
+      "valid": "Valid"
     }
   },
   "pages": {
@@ -221,6 +232,20 @@
           "edit": "Client edited successfully: ",
           "enabled": "Client enabled: ",
           "disabled": "Client disabled: "
+        }
+      }
+    },
+    "contract": {
+      "title": {
+        "add": "Add Contract",
+        "edit": "Edit Contract"
+      },
+      "results": {
+        "success": {
+          "add": "Contract added successfully: ",
+          "edit": "Contract edited successfully: ",
+          "enabled": "Contract enabled: ",
+          "disabled": "Contract disabled: "
         }
       }
     }

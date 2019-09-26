@@ -171,6 +171,17 @@
       "email": "Email",
       "forbidden": "Prohibido",
       "vat": "IVA"
+    },
+    "contract": {
+      "refContract": "#",
+      "identification": "Identificación",
+      "dateDebut": "Desde",
+      "dateFin": "Hasta",
+      "reconduction": "Renovación",
+      "loyer": "Renta",
+      "miniconso": "Consumisión",
+      "reviewed": "Visto",
+      "valid": "Válido"
     }
   },
   "pages": {
@@ -225,6 +236,20 @@
           "edit": "Cliente modificado con exito: ",
           "enabled": "Cliente habilitado: ",
           "disabled": "Cliente deshabilitado: "
+        }
+      }
+    },
+    "contract": {
+      "title": {
+        "add": "Agregar Contrato",
+        "edit": "Editar Contrato"
+      },
+      "results": {
+        "success": {
+          "add": "Contrato agregado con exito: ",
+          "edit": "Contrato modificado con exito: ",
+          "enabled": "Contrato habilitado: ",
+          "disabled": "Contrato deshabilitado: "
         }
       }
     }
