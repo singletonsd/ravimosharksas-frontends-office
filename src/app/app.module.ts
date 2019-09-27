@@ -63,6 +63,8 @@ import { ClientsAddComponent } from './components/pages/clients/clients/clients-
 import { ClientsMainComponent } from './components/pages/clients/clients/clients-main/clients-main.component';
 
 import { ContractsAddFormComponent } from './components/common/contracts/contracts-add-form/contracts-add-form.component';
+import { ContractTableOptionsComponent } from './components/common/contracts/contracts-table/contract-table-options/contract-table-options.component';
+import { ContractsTableComponent } from './components/common/contracts/contracts-table/contracts-table.component';
 import { ContractsAddComponent } from './components/pages/contracts/contracts-add/contracts-add.component';
 import { ContractsMainComponent } from './components/pages/contracts/contracts-main/contracts-main.component';
 
@@ -99,7 +101,9 @@ import { ContractsMainComponent } from './components/pages/contracts/contracts-m
     ClientsAutocompleteComponent,
     ContractsAddFormComponent,
     ContractsAddComponent,
-    ContractsMainComponent
+    ContractsMainComponent,
+    ContractsTableComponent,
+    ContractTableOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -159,7 +163,8 @@ import { ContractsMainComponent } from './components/pages/contracts/contracts-m
   ],
   entryComponents: [
     AddressesAddFormComponent,
-    ClientsAddFormComponent
+    ClientsAddFormComponent,
+    ContractsAddFormComponent
   ]
 })
 export class AppModule { }

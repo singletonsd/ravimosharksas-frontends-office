@@ -1,0 +1,682 @@
+[
+  {
+    "refContract": 123,
+    "identification": "CONTRAT VA/10092014-0002",
+    "dateDebut": "2005-12-31T23:00:00.000Z",
+    "dateFin": "2020-12-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:25.512Z",
+    "updatedAt": "2019-09-23T10:17:25.512Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4004",
+      "abrege": ".REPOTEL \"SIEGE\"",
+      "nom": ".2I INTER INVESTI",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 123,
+        "identification": "LOCATION GLOBALE Machines adou",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:50.718Z",
+        "updatedAt": "2019-09-23T13:11:50.718Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 123
+      }
+    ],
+    "refClient": "C4004"
+  },
+  {
+    "refContract": 350,
+    "identification": "VA/30012012-0001",
+    "dateDebut": "2007-03-31T22:00:00.000Z",
+    "dateFin": "2020-12-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:25.606Z",
+    "updatedAt": "2019-09-23T10:17:25.606Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4004",
+      "abrege": ".REPOTEL \"SIEGE\"",
+      "nom": ".2I INTER INVESTI",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 350,
+        "identification": "LOCATION GLOBALE FOURS",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:50.858Z",
+        "updatedAt": "2019-09-23T13:11:50.858Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 350
+      }
+    ],
+    "refClient": "C4004"
+  },
+  {
+    "refContract": 419,
+    "identification": "CONTRAT CADRE",
+    "dateDebut": "2013-06-30T22:00:00.000Z",
+    "dateFin": "2019-12-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:39.106Z",
+    "updatedAt": "2019-09-23T10:17:39.106Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4696",
+      "abrege": "BUFFALO SIEGE",
+      "nom": "BUFFALO GRILL SA",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 419,
+        "identification": "MAINTENANCE SIEGE",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:51.046Z",
+        "updatedAt": "2019-09-23T13:11:51.046Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 419
+      }
+    ],
+    "refClient": "C4696"
+  },
+  {
+    "refContract": 445,
+    "identification": "VA/15112017-0003VA",
+    "dateDebut": "2019-01-31T23:00:00.000Z",
+    "dateFin": "2023-01-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:27.637Z",
+    "updatedAt": "2019-09-23T10:17:27.637Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4070",
+      "abrege": ".BABY GRAND LOUIS",
+      "nom": ".BABY GRAND RESTAURANTS",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 445,
+        "identification": "ODEON A CAPOT ADOU 8 L",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:51.218Z",
+        "updatedAt": "2019-09-23T13:11:51.218Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 445
+      }
+    ],
+    "refClient": "C4070"
+  },
+  {
+    "refContract": 530,
+    "identification": "MRA/130  tacite reconduction",
+    "dateDebut": "2008-07-31T22:00:00.000Z",
+    "dateFin": "2027-12-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:41.591Z",
+    "updatedAt": "2019-09-23T10:17:41.591Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4761",
+      "abrege": ".PETIT FER A CHEV",
+      "nom": ".PETIT FER A CHEVAL",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 530,
+        "identification": "ADOU 30 L VF_2002494-007",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:51.374Z",
+        "updatedAt": "2019-09-23T13:11:51.374Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 530
+      }
+    ],
+    "refClient": "C4761"
+  },
+  {
+    "refContract": 538,
+    "identification": "VA/19042018-0001VA",
+    "dateDebut": "2019-06-30T22:00:00.000Z",
+    "dateFin": "2021-06-29T22:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:31.153Z",
+    "updatedAt": "2019-09-23T10:17:31.153Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4190",
+      "abrege": ".VIN ET MAREE MUR",
+      "nom": "VIN ET MAREE \"MURAT\"",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 538,
+        "identification": "TT420/A",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:51.562Z",
+        "updatedAt": "2019-09-23T13:11:51.562Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 538
+      }
+    ],
+    "refClient": "C4190"
+  },
+  {
+    "refContract": 557,
+    "identification": "MRA/129 tacite reconduction",
+    "dateDebut": "2008-11-30T23:00:00.000Z",
+    "dateFin": "2027-12-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:15.637Z",
+    "updatedAt": "2019-09-23T10:17:15.637Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C3340",
+      "abrege": ".ETOILE MANQUANTE",
+      "nom": ".ETOILE MANQUANTE",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 557,
+        "identification": "ADOU 30 L_0804-2094443-007",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:51.733Z",
+        "updatedAt": "2019-09-23T13:11:51.733Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 557
+      }
+    ],
+    "refClient": "C3340"
+  },
+  {
+    "refContract": 562,
+    "identification": "VA/19112018-0001",
+    "dateDebut": "2020-02-29T23:00:00.000Z",
+    "dateFin": "2024-02-28T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:26.887Z",
+    "updatedAt": "2019-09-23T10:17:26.887Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4060",
+      "abrege": ".BRASSERIE DES AR",
+      "nom": ".CAFE DES ARTS ET METIERS",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 562,
+        "identification": "FOUR COMPACT MAGIC CHG + SOCLE INSE",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:51.890Z",
+        "updatedAt": "2019-09-23T13:11:51.890Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 562
+      }
+    ],
+    "refClient": "C4060"
+  },
+  {
+    "refContract": 668,
+    "identification": "VA/28072016-0004",
+    "dateDebut": "2018-06-30T22:00:00.000Z",
+    "dateFin": "2025-06-29T22:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:09.762Z",
+    "updatedAt": "2019-09-23T10:17:09.762Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C1998",
+      "abrege": ".CAFE BASTILLE ST",
+      "nom": ".CAFE BASTILLE STE COSEPT",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 668,
+        "identification": "C20HDI 1720654 OFFICE",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:52.046Z",
+        "updatedAt": "2019-09-23T13:11:52.046Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 668
+      }
+    ],
+    "refClient": "C1998"
+  },
+  {
+    "refContract": 689,
+    "identification": "VA/01062017-0002 SUR 8 ANS",
+    "dateDebut": "2018-06-30T22:00:00.000Z",
+    "dateFin": "2025-06-29T22:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:13.231Z",
+    "updatedAt": "2019-09-23T10:17:13.231Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C3116",
+      "abrege": ".MABILLON RESTAUR",
+      "nom": "MABILLON  - GROUPE BOURDONCLE SAS",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 689,
+        "identification": "F10IE15 C30HDI TT620 RO150 ADOU 50L",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:52.218Z",
+        "updatedAt": "2019-09-23T13:11:52.218Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 689
+      }
+    ],
+    "refClient": "C3116"
+  },
+  {
+    "refContract": 691,
+    "identification": "VA/01062017-0004 SUR 5 ANS",
+    "dateDebut": "2018-06-30T22:00:00.000Z",
+    "dateFin": "2022-06-29T22:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:13.137Z",
+    "updatedAt": "2019-09-23T10:17:13.137Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C3116",
+      "abrege": ".MABILLON RESTAUR",
+      "nom": "MABILLON  - GROUPE BOURDONCLE SAS",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 691,
+        "identification": "FOUR COMPACT MAGIC CH.G",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:52.358Z",
+        "updatedAt": "2019-09-23T13:11:52.358Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 691
+      }
+    ],
+    "refClient": "C3116"
+  },
+  {
+    "refContract": 723,
+    "identification": "VA/25102016-0004",
+    "dateDebut": "2018-10-31T23:00:00.000Z",
+    "dateFin": "2025-10-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:15.544Z",
+    "updatedAt": "2019-09-23T10:17:15.544Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C3325",
+      "abrege": ".MAITRE PIERRE",
+      "nom": ".MAITRE PIERRE RESTAURANT",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 723,
+        "identification": "C30HDI",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:52.515Z",
+        "updatedAt": "2019-09-23T13:11:52.515Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 723
+      }
+    ],
+    "refClient": "C3325"
+  },
+  {
+    "refContract": 735,
+    "identification": "VA/08112016-0004",
+    "dateDebut": "2018-11-30T23:00:00.000Z",
+    "dateFin": "2025-11-29T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:07.731Z",
+    "updatedAt": "2019-09-23T10:17:07.731Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C0907",
+      "abrege": ".INDIANA DENFERT",
+      "nom": ".INDIANA DENFERT SA U.ORIENTAL",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 735,
+        "identification": "C30IE-TT620 RO60 TUNNEL/TABLE",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:52.687Z",
+        "updatedAt": "2019-09-23T13:11:52.687Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 735
+      }
+    ],
+    "refClient": "C0907"
+  },
+  {
+    "refContract": 737,
+    "identification": "VA/26102016-0002",
+    "dateDebut": "2018-12-31T23:00:00.000Z",
+    "dateFin": "2025-12-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:03.090Z",
+    "updatedAt": "2019-09-23T10:17:03.090Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C0269",
+      "abrege": ".INDIANA MAINE",
+      "nom": ".INDIANA MAINE",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 737,
+        "identification": "C20IE",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:52.968Z",
+        "updatedAt": "2019-09-23T13:11:52.968Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 737
+      }
+    ],
+    "refClient": "C0269"
+  },
+  {
+    "refContract": 739,
+    "identification": "VA/24012018-0002VA",
+    "dateDebut": "2019-01-31T23:00:00.000Z",
+    "dateFin": "2026-01-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:45.560Z",
+    "updatedAt": "2019-09-23T10:17:45.560Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4912",
+      "abrege": ".BAR DU CENTRAL",
+      "nom": "LE BAR DU CENTRAL",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 739,
+        "identification": "TT520",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:53.140Z",
+        "updatedAt": "2019-09-23T13:11:53.140Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 739
+      }
+    ],
+    "refClient": "C4912"
+  },
+  {
+    "refContract": 782,
+    "identification": "MAINTVA/786 SUR 3 ANS",
+    "dateDebut": "2018-02-28T23:00:00.000Z",
+    "dateFin": "2021-02-27T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:11.090Z",
+    "updatedAt": "2019-09-23T10:17:11.090Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C2708",
+      "abrege": ".CHEZ FRANCOISE",
+      "nom": ".CONTINENTAL CIRCUS",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 782,
+        "identification": "ADOU  50L_10022469722-002",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:53.296Z",
+        "updatedAt": "2019-09-23T13:11:53.296Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 782
+      }
+    ],
+    "refClient": "C2708"
+  },
+  {
+    "refContract": 838,
+    "identification": "VA25062019-0002",
+    "dateDebut": "2020-07-31T22:00:00.000Z",
+    "dateFin": "2024-07-30T22:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:35.919Z",
+    "updatedAt": "2019-09-23T10:17:35.919Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4425",
+      "abrege": ".JARDINS DE LA VI",
+      "nom": ".JARDINS DE LA VIEILLE FONTAINE",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 838,
+        "identification": "TT620/R RO41/R",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:53.468Z",
+        "updatedAt": "2019-09-23T13:11:53.468Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 838
+      }
+    ],
+    "refClient": "C4425"
+  },
+  {
+    "refContract": 844,
+    "identification": "VA/12022019-0004 SUR 5 ANS",
+    "dateDebut": "2020-03-31T22:00:00.000Z",
+    "dateFin": "2024-03-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:31.263Z",
+    "updatedAt": "2019-09-23T10:17:31.263Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4190",
+      "abrege": ".VIN ET MAREE MUR",
+      "nom": "VIN ET MAREE \"MURAT\"",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 844,
+        "identification": "FOUR MIXTE COMPACT CLASSIC",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:53.655Z",
+        "updatedAt": "2019-09-23T13:11:53.655Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 844
+      }
+    ],
+    "refClient": "C4190"
+  },
+  {
+    "refContract": 860,
+    "identification": "VA/10081601 SUR 8 ANS--°PROLONG",
+    "dateDebut": "2010-09-30T22:00:00.000Z",
+    "dateFin": "2019-12-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:03.200Z",
+    "updatedAt": "2019-09-23T10:17:03.200Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C0335",
+      "abrege": ".INDIANA MONTPARN",
+      "nom": ".INDIANA CAFE MONTPARNASSE",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 860,
+        "identification": "TT620/RET-C30HDI-RO150-TUNNEL/TAB",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:53.827Z",
+        "updatedAt": "2019-09-23T13:11:53.827Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 860
+      }
+    ],
+    "refClient": "C0335"
+  },
+  {
+    "refContract": 865,
+    "identification": "VA/07122017-0003",
+    "dateDebut": "2018-01-31T23:00:00.000Z",
+    "dateFin": "2020-01-30T23:00:00.000Z",
+    "reconduction": null,
+    "loyer": null,
+    "miniconso": null,
+    "reviewed": false,
+    "valid": false,
+    "createdAt": "2019-09-23T10:17:34.013Z",
+    "updatedAt": "2019-09-23T10:17:34.013Z",
+    "deleted": false,
+    "client": {
+      "refClient": "C4305",
+      "abrege": ".OPEN CAFE",
+      "nom": ".OPEN CAFE TREJA BATEAU BLANC",
+      "deleted": false
+    },
+    "locations": [],
+    "importedMachines": [
+      {
+        "id": 865,
+        "identification": "TT520/A",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:53.999Z",
+        "updatedAt": "2019-09-23T13:11:53.999Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 865
+      }
+    ],
+    "refClient": "C4305"
+  }
+]

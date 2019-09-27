@@ -28,7 +28,7 @@
     "@angular/router": "7.2.15",
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
-    "@ravimosharksas/apis-contract-libs-angular": "1.0.0-SNAPSHOT.190924134440",
+    "@ravimosharksas/apis-contract-libs-typescript": "^1.0.0-SNAPSHOT.190927094420",
     "@ravimosharksas/apis-global-libs-angular": "1.0.0-SNAPSHOT.190808211430",
     "bootstrap": "4.3.1",
     "core-js": "2.6.5",
