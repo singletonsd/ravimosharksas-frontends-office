@@ -1,0 +1,1002 @@
+[
+  {
+    "refArticle": "000001",
+    "designationArticle": "CELLULE DETECTION DE CASIER",
+    "deleted": false
+  },
+  {
+    "refArticle": "000002",
+    "designationArticle": "POMPE DE VIDANGE C20/C30",
+    "deleted": false
+  },
+  {
+    "refArticle": "00035840",
+    "designationArticle": "TIGE DOUCHETTE AQUALYS MINI TAILLE SPECIALE",
+    "deleted": false
+  },
+  {
+    "refArticle": "00036940",
+    "designationArticle": "TIGE DOUCHETTE AQUALYS COL DE CYGNE (457MM)",
+    "deleted": false
+  },
+  {
+    "refArticle": "00037240",
+    "designationArticle": "TIGE DOUCHETTE AQUALYS SIMPLE (610MM)",
+    "deleted": false
+  },
+  {
+    "refArticle": "0004952",
+    "designationArticle": "GANT MAPA DUO MIX T.8/8.5",
+    "deleted": false
+  },
+  {
+    "refArticle": "00052265",
+    "designationArticle": "FORET BETON STANDARD 5X85",
+    "deleted": false
+  },
+  {
+    "refArticle": "00052266",
+    "designationArticle": "FORET BETON STANDARD 6X100",
+    "deleted": false
+  },
+  {
+    "refArticle": "00052268",
+    "designationArticle": "FORET BETON STANDARD 8X120",
+    "deleted": false
+  },
+  {
+    "refArticle": "0006759",
+    "designationArticle": "GANTS MAPA JERSEY BLEUS 7/7.5 POUR PLONGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0007054",
+    "designationArticle": "SERPILLERE GAUFREE ECO 50X100",
+    "deleted": false
+  },
+  {
+    "refArticle": "0007203",
+    "designationArticle": "MAPA GANT DUO MIX T7/7.5",
+    "deleted": false
+  },
+  {
+    "refArticle": "0007286",
+    "designationArticle": "SERPILLERE BLANCHIE 70X10 (PAQUET DE 5)",
+    "deleted": false
+  },
+  {
+    "refArticle": "0007781",
+    "designationArticle": "CANARD WC GEL ANTITARTRE 750ML",
+    "deleted": false
+  },
+  {
+    "refArticle": "00082140",
+    "designationArticle": "RACCORD ENTRE TIGE ET FLEXIBLE DOUCHETTE AQUALYS",
+    "deleted": false
+  },
+  {
+    "refArticle": "0008250",
+    "designationArticle": "BOLDAIR MECHE MARINE 375ML",
+    "deleted": false
+  },
+  {
+    "refArticle": "00088845",
+    "designationArticle": "RESSORT REP N° 7",
+    "deleted": false
+  },
+  {
+    "refArticle": "0008953",
+    "designationArticle": "BOLDAIR MECHE MENTHE 375ML",
+    "deleted": false
+  },
+  {
+    "refArticle": "001",
+    "designationArticle": "SEPTIGEL SOLUTION pour la desinfection des mains (2X5L)",
+    "deleted": false
+  },
+  {
+    "refArticle": "001.0456B",
+    "designationArticle": "SOCLE SANS PORTE",
+    "deleted": false
+  },
+  {
+    "refArticle": "001.0457B",
+    "designationArticle": "SOCLE AVEC PORTE",
+    "deleted": false
+  },
+  {
+    "refArticle": "001.0459EC",
+    "designationArticle": "SURCHAUFFEUR 6 KW 400 V /WD4-E",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010000",
+    "designationArticle": "ELECTRO AIMANT VIDANGE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010005",
+    "designationArticle": "ELECTRO- AIMANT VIDANGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010200",
+    "designationArticle": "SUPPORT ELECTRO AIMANT",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010300",
+    "designationArticle": "BARRE FIXATION ELECTRO AIMANT",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010400",
+    "designationArticle": "LAVE VAISSELLE F10",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010400EC",
+    "designationArticle": "LAVE VAISSELLE F10IE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010401",
+    "designationArticle": "CACHE WD 4",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010451",
+    "designationArticle": "DESSUS DE MACHINE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010452",
+    "designationArticle": "COTE LATERAL GAUCHE F10IE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010453",
+    "designationArticle": "COTE LATERAL DROIT F10IE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010456B",
+    "designationArticle": "SOCLE POUR WD4",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010486",
+    "designationArticle": "MOTEUR DE VIDANGE OPTI.",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010500",
+    "designationArticle": "RESSORT VIDANGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "001-0555E",
+    "designationArticle": "POMPE DE VIDANGE POUR F10IE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010582",
+    "designationArticle": "RESSOR RAPPEL DE VIDANGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010600",
+    "designationArticle": "RONDELLE DE VIDANGE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010882",
+    "designationArticle": "TIGE DE RAPPEL DE VIDANGE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0010982",
+    "designationArticle": "AXE DE VIDANGE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0011007",
+    "designationArticle": "CHAINETTE BONDE DE VIDANGE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0011103",
+    "designationArticle": "CORPS DE VIDANGE B2",
+    "deleted": false
+  },
+  {
+    "refArticle": "0011106",
+    "designationArticle": "CORPS DE VIDANGE AH*",
+    "deleted": false
+  },
+  {
+    "refArticle": "00111410",
+    "designationArticle": "RACCORD EN LAITON",
+    "deleted": false
+  },
+  {
+    "refArticle": "0011203",
+    "designationArticle": "JOINT CORPS DE VIDANGE B2.",
+    "deleted": false
+  },
+  {
+    "refArticle": "0011206",
+    "designationArticle": "JOINT CORPS DE VIDANGE AH*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0011350",
+    "designationArticle": "TE DE VIDANGE TOUS TYPE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0011400",
+    "designationArticle": "JOINT KLING. SIEGE VIDANGE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0011503",
+    "designationArticle": "FILTRE DE CUVE B2*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0011506",
+    "designationArticle": "FILTRE ROND AH/C2*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0011585",
+    "designationArticle": "FILTRE VIDANGE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0012000",
+    "designationArticle": "THERMOMETRE AH/C2/B2",
+    "deleted": false
+  },
+  {
+    "refArticle": "0012100",
+    "designationArticle": "BONDE VIDANGE AH/C2/B2*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0012152",
+    "designationArticle": "CAOUTCHOUC BONDE VIDANGE.",
+    "deleted": false
+  },
+  {
+    "refArticle": "0012160",
+    "designationArticle": "JOINT DE VIDANGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0012450",
+    "designationArticle": "SIEGE DE VIDANGE INOX*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0012500",
+    "designationArticle": "JOINT CAOUTCHOUC SIEGE VIDANGE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0013000",
+    "designationArticle": "BOUCHON DU TE DE VIDANGE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0014431",
+    "designationArticle": "WC NET BLOC CUV SOLIDE PANACHE",
+    "deleted": false
+  },
+  {
+    "refArticle": "00151184",
+    "designationArticle": "SUPPORT MOTEUR VIDANGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "002.00760",
+    "designationArticle": "HOTTE D'ASPIRATION C30/HDI",
+    "deleted": false
+  },
+  {
+    "refArticle": "002.0660",
+    "designationArticle": "HOTTE D'ASPIRATION C20/IE/HDI*",
+    "deleted": false
+  },
+  {
+    "refArticle": "002.0760",
+    "designationArticle": "HOTTE D'ASPIRATION C30IE/HDI",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020105",
+    "designationArticle": "MOTEUR LAVAGE.",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020200",
+    "designationArticle": "FLASQUE DE POMPE LAVAGE TS TYP*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020209",
+    "designationArticle": "FLASQUE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020300",
+    "designationArticle": "TURBINE DE LAVAGE A PAROIS T.T",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020305",
+    "designationArticle": "TURBINE DE LAVAGE 1/2",
+    "deleted": false
+  },
+  {
+    "refArticle": "00204.05",
+    "designationArticle": "GRANG ESCARGOT",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020500",
+    "designationArticle": "JOINT DE POMPE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020600",
+    "designationArticle": "JOINT CYCLAM *",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020605C",
+    "designationArticle": "LAVE VAISSELLE TRIUMPH C20IE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020607B",
+    "designationArticle": "LAVE VAISSELLE C20HDI",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020648",
+    "designationArticle": "PANNEAU DE CONTROL C40/60 DUO",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020651EAB",
+    "designationArticle": "POMPE POUR LAVE VAISSELLE WD-6EA/7EH",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020651EB",
+    "designationArticle": "POMPE WD6E/7E",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020700",
+    "designationArticle": "ECROU DE POMPE LAVAGE *",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020704B",
+    "designationArticle": "LAVE VAISSELLE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0020800",
+    "designationArticle": "JOINT TUBULURE POMPE LAVAGE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0021450",
+    "designationArticle": "RACCORDS*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0022000",
+    "designationArticle": "ROBINET ESCARGOT*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0022100",
+    "designationArticle": "RACCORD MOTEUR-BRAS LAVAGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "00225000000",
+    "designationArticle": "JOINT RACCORD MOTEUR-BRAS LAVA",
+    "deleted": false
+  },
+  {
+    "refArticle": "00232640",
+    "designationArticle": "CHASSIS",
+    "deleted": false
+  },
+  {
+    "refArticle": "0023800",
+    "designationArticle": "BOUCHON CORP DE POMPE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0023903",
+    "designationArticle": "RACCORD DE POMPE GAUCHE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0024003",
+    "designationArticle": "TUBE D'ASPIRATION B2*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0024603",
+    "designationArticle": "TUBE ASPIRATION GAUCHE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0024604",
+    "designationArticle": "TUBE D'ASPIRATION B2*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0024613",
+    "designationArticle": "TUBE ASPIRATION DROIT",
+    "deleted": false
+  },
+  {
+    "refArticle": "0024623",
+    "designationArticle": "MOTEUR TUBE ASPIRATION",
+    "deleted": false
+  },
+  {
+    "refArticle": "00285640",
+    "designationArticle": "PISTON POMMEAU DOUCHETTE AQUALYS",
+    "deleted": false
+  },
+  {
+    "refArticle": "003.0331V",
+    "designationArticle": "LAVE VAISSELLE AVANCEMENT A5221IE",
+    "deleted": false
+  },
+  {
+    "refArticle": "003.1511EH",
+    "designationArticle": "CONNECTION EAU FROIDE A5221IE D-G",
+    "deleted": false
+  },
+  {
+    "refArticle": "003.1511EV",
+    "designationArticle": "CONNECTION EAU FROIDE WD-241E G-D",
+    "deleted": false
+  },
+  {
+    "refArticle": "003.4060",
+    "designationArticle": "CHARGEUR D'ANGLE L =630",
+    "deleted": false
+  },
+  {
+    "refArticle": "003.4110",
+    "designationArticle": "CONNECTION EAU FROIDE AU SOL",
+    "deleted": false
+  },
+  {
+    "refArticle": "003.4506V",
+    "designationArticle": "COURBE MOTORISEE 90°",
+    "deleted": false
+  },
+  {
+    "refArticle": "003.4512",
+    "designationArticle": "BAC SIMPLE LONGUEUR 1200",
+    "deleted": false
+  },
+  {
+    "refArticle": "003.5253",
+    "designationArticle": "PANIER INOX POUR LAVE BATTERIE LB40HDI.",
+    "deleted": false
+  },
+  {
+    "refArticle": "003.6151KV",
+    "designationArticle": "TEXTE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030050",
+    "designationArticle": "SUPPORT INFERIEUR AH",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030051",
+    "designationArticle": "SUPPORT INFERIEUR AH",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030052",
+    "designationArticle": "INSERT TOURNIQUET",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030054",
+    "designationArticle": "RONDELLE CALAGE LOGEMENT TOURN",
+    "deleted": false
+  },
+  {
+    "refArticle": "00301.51",
+    "designationArticle": "SUPPORT TOURNIQUET SUPERIEUR",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030151H",
+    "designationArticle": "LAVE VAISSELLE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030200",
+    "designationArticle": "JOINT SUPPORT TOURNIQUET",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030250",
+    "designationArticle": "JOINT PLAT TUBULURE LAVAGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030251",
+    "designationArticle": "JOINT TORIQUE TUBULURE LAVAGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030302",
+    "designationArticle": "TUBULURE LAVAGE AH",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030303",
+    "designationArticle": "TUBULURE LAVAGE B2",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030331V",
+    "designationArticle": "LAVE VAISSELLE AVANCEMENT A5221 IE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030332",
+    "designationArticle": "TUBULURE DE LAVAGE AH",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030333",
+    "designationArticle": "TUBULLURE DE LAVAGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030406",
+    "designationArticle": "BRAS DE LAVAGE AH/C2",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030583",
+    "designationArticle": "TOURNIQUET (NEW MODELE)",
+    "deleted": false
+  },
+  {
+    "refArticle": "0030850",
+    "designationArticle": "EMBOUT TOURNIQUET TOUS TYPES.",
+    "deleted": false
+  },
+  {
+    "refArticle": "003-1510E",
+    "designationArticle": "CONNECTION EAU FROIDE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0031510EH",
+    "designationArticle": "CONNECTION EAU FROIDE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0032600",
+    "designationArticle": "ROULEMENT GD",
+    "deleted": false
+  },
+  {
+    "refArticle": "003340",
+    "designationArticle": "SERRURE TYPE 23000-02",
+    "deleted": false
+  },
+  {
+    "refArticle": "003341",
+    "designationArticle": "CAME FERMETURE 10829-02",
+    "deleted": false
+  },
+  {
+    "refArticle": "003-4010H",
+    "designationArticle": "TUNNEL DE SECHAGE T90",
+    "deleted": false
+  },
+  {
+    "refArticle": "0034056",
+    "designationArticle": "TABLETTE 1200MM RACCORDEMENT PRM - MACHINE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0034100",
+    "designationArticle": "ROULEMENT TOURNIQUET AH/C2/B2*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0034110",
+    "designationArticle": "KIT ROULEMENT TOURNIQUET",
+    "deleted": false
+  },
+  {
+    "refArticle": "00341550",
+    "designationArticle": "CACHE RILSANT",
+    "deleted": false
+  },
+  {
+    "refArticle": "0034182",
+    "designationArticle": "ROULEMENT DE TOURNIQUET",
+    "deleted": false
+  },
+  {
+    "refArticle": "0034261H",
+    "designationArticle": "CONNECTION AU SOL 150/330",
+    "deleted": false
+  },
+  {
+    "refArticle": "0034400",
+    "designationArticle": "JONCTION",
+    "deleted": false
+  },
+  {
+    "refArticle": "003-4504",
+    "designationArticle": "FIN DE COURSE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0034505",
+    "designationArticle": "VIRAGE A 90° MECANISE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0034517",
+    "designationArticle": "TABLETTE DE CONNECTION 700MM",
+    "deleted": false
+  },
+  {
+    "refArticle": "0034699",
+    "designationArticle": "MODIFICATION",
+    "deleted": false
+  },
+  {
+    "refArticle": "0035253",
+    "designationArticle": ".",
+    "deleted": false
+  },
+  {
+    "refArticle": "0035253ES",
+    "designationArticle": "PANIER INOX POUR LAVE BATTERIE LB40IE/HDI ECHANGE STANDARD",
+    "deleted": false
+  },
+  {
+    "refArticle": "0036010",
+    "designationArticle": "SUPPORT BRAS LAV/RINCAGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0036016",
+    "designationArticle": "SUPPORT RIDEAU EXTRACTEUR.",
+    "deleted": false
+  },
+  {
+    "refArticle": "0036084",
+    "designationArticle": "SUPPORT TOURNIQUET (NEW)",
+    "deleted": false
+  },
+  {
+    "refArticle": "0036110",
+    "designationArticle": "SUPPORT DE TOURNIQUET*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0036300",
+    "designationArticle": "CLIQUET FIXATION DE TOURNIQUET*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0036410",
+    "designationArticle": "SUPPORT BRAS NEW",
+    "deleted": false
+  },
+  {
+    "refArticle": "0037176",
+    "designationArticle": "ROULEAU EGOUTTOIR 620*375 MM (SACHET DE 5)",
+    "deleted": false
+  },
+  {
+    "refArticle": "0037354",
+    "designationArticle": "SUPPORT CASSEROLES POUR 100GR",
+    "deleted": false
+  },
+  {
+    "refArticle": "0037358",
+    "designationArticle": "SUPPORT SEPARATEUR POUR 100GR",
+    "deleted": false
+  },
+  {
+    "refArticle": "0038350",
+    "designationArticle": "CHARIOT ELEVATEUR ADAPTE A LA WD 40BRE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0038638",
+    "designationArticle": "MANCHE BOIS 145CM",
+    "deleted": false
+  },
+  {
+    "refArticle": "0038646",
+    "designationArticle": "BALAI TETE SOIE NOIRE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0038810",
+    "designationArticle": "BALAI COCO 29CM",
+    "deleted": false
+  },
+  {
+    "refArticle": "0038836",
+    "designationArticle": "BALAI DROIT 29CM",
+    "deleted": false
+  },
+  {
+    "refArticle": "0038935",
+    "designationArticle": "BALAI MOUSTACHE COCO D.38CM",
+    "deleted": false
+  },
+  {
+    "refArticle": "0039271",
+    "designationArticle": "DEBOUCHE EVIER CAOUTCHOUC",
+    "deleted": false
+  },
+  {
+    "refArticle": "0040400",
+    "designationArticle": "CONTACTEUR MOTEUR A MERCURE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0040405",
+    "designationArticle": "RELAIS A MERCURE 220 VOLT*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0040605",
+    "designationArticle": "AMPOULE VERTE L1",
+    "deleted": false
+  },
+  {
+    "refArticle": "0040705",
+    "designationArticle": "MINUTERIE 90 SECONDE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0040709",
+    "designationArticle": "RACLETTE PLASTIQUE VITRES 25CM",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041005",
+    "designationArticle": "MINUTERIE 72 SEC",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041100",
+    "designationArticle": "MICRO SWICH (M1+MINUTERIE)",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041178",
+    "designationArticle": "BROSSE A MAIN NYLON",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041200",
+    "designationArticle": "FIXATION MICRO MINUTERIE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041277",
+    "designationArticle": "GOUPILLON LITRE NYLON",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041305",
+    "designationArticle": "COMPTEUR DE CYCLE TOUS TYPES",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041335",
+    "designationArticle": "BALAI BROSSE BLC 38CM",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041505",
+    "designationArticle": "POMPE PRODUIT ASSEMBLEE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041513",
+    "designationArticle": "MAILLON CHAINE A PALETTE 1/2 LUNE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041605",
+    "designationArticle": "MOTEUR POMPE PRODUIT*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041700",
+    "designationArticle": "FLASQUE POMPE PRODUIT*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041800",
+    "designationArticle": "COUVERCLE POMPE*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041900",
+    "designationArticle": "ROTOR MOTEUR DOSEUR*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0041947",
+    "designationArticle": "BALAI BROSSE A VIS",
+    "deleted": false
+  },
+  {
+    "refArticle": "0042000",
+    "designationArticle": "FEUTRES POMPE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0042140",
+    "designationArticle": "BOUTON MARCHE/REMPLISSAGE POUR C2",
+    "deleted": false
+  },
+  {
+    "refArticle": "0042150",
+    "designationArticle": "INTER A BASCULE MARCHE/REMPLIS",
+    "deleted": false
+  },
+  {
+    "refArticle": "004253",
+    "designationArticle": "CHARIOT MODELE C.T.C",
+    "deleted": false
+  },
+  {
+    "refArticle": "0042571",
+    "designationArticle": "RILSAN BLEU",
+    "deleted": false
+  },
+  {
+    "refArticle": "0042573",
+    "designationArticle": "RILSAN ROUGE - TUBE POLYETHYLENE 4.32*6.35",
+    "deleted": false
+  },
+  {
+    "refArticle": "0042574",
+    "designationArticle": "RILSAN BLANC",
+    "deleted": false
+  },
+  {
+    "refArticle": "004285",
+    "designationArticle": "CAPOT SUPÉRIEUR TT520/620 ANCIENNE VERSION",
+    "deleted": false
+  },
+  {
+    "refArticle": "004318",
+    "designationArticle": "CAPOT SUPÉRIEUR POUR TT520/520A VERSION 2017",
+    "deleted": false
+  },
+  {
+    "refArticle": "004320",
+    "designationArticle": "CAPOT SUPERIEUR TT420 2017",
+    "deleted": false
+  },
+  {
+    "refArticle": "00432620",
+    "designationArticle": "CHARIOT DE STOCKAGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "00432632",
+    "designationArticle": "CHARIOT A DECHET K121/S",
+    "deleted": false
+  },
+  {
+    "refArticle": "00432640",
+    "designationArticle": "CHASSIS POUR CHARIOT A DECHETS K121/S",
+    "deleted": false
+  },
+  {
+    "refArticle": "0043300",
+    "designationArticle": "INTER PRINCIPAL MARCHE/ARRET*",
+    "deleted": false
+  },
+  {
+    "refArticle": "00434253",
+    "designationArticle": "CHARIOT",
+    "deleted": false
+  },
+  {
+    "refArticle": "00434600",
+    "designationArticle": "JOINT SUPPORT BRAS",
+    "deleted": false
+  },
+  {
+    "refArticle": "0043530",
+    "designationArticle": "JOINT PRODUIT*",
+    "deleted": false
+  },
+  {
+    "refArticle": "0044000",
+    "designationArticle": "OPTION RACCORD 4EME POMPE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0044001",
+    "designationArticle": "UNITE DE REPOSITIONNEMENT DES PLATEAUX",
+    "deleted": false
+  },
+  {
+    "refArticle": "0044300",
+    "designationArticle": "CAME A PRODUITS",
+    "deleted": false
+  },
+  {
+    "refArticle": "00451",
+    "designationArticle": "SURCHAUFFEUR",
+    "deleted": false
+  },
+  {
+    "refArticle": "0045559",
+    "designationArticle": "10 LAVETTES NT FIN BLEUES CHR",
+    "deleted": false
+  },
+  {
+    "refArticle": "0045716",
+    "designationArticle": "TOILE EMERI GRAIN AST (50 FEUILLES)",
+    "deleted": false
+  },
+  {
+    "refArticle": "004682W",
+    "designationArticle": "DOUILLE 1/4 R.10",
+    "deleted": false
+  },
+  {
+    "refArticle": "00470331",
+    "designationArticle": "TUYAU RACCORDEMENT FLEXIBLE VIDANGE",
+    "deleted": false
+  },
+  {
+    "refArticle": "0047290",
+    "designationArticle": "RECHARGE MOUILLEUR 45CM",
+    "deleted": false
+  },
+  {
+    "refArticle": "0047464",
+    "designationArticle": "RACLETTE VITRE 25CM INOX",
+    "deleted": false
+  },
+  {
+    "refArticle": "0047480",
+    "designationArticle": "RACLETTE VITRE INOX 35 CM",
+    "deleted": false
+  }
+]
