@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
 import { BaseFormComponent } from '@app/models/base-form.class';
+import { Clients } from '@ravimosharksas/apis-contract-libs-typescript';
 // import { TranslateService } from '@ngx-translate/core';
 import { NGXLogger } from 'ngx-logger';
 
@@ -12,16 +13,16 @@ import { NGXLogger } from 'ngx-logger';
 })
 export class ClientsAddFormComponent extends BaseFormComponent implements OnInit, AfterViewInit {
 
-  @Input() client: any;
+  @Input() client: Clients;
 
-  @Output() readonly added = new EventEmitter<any>();
+  @Output() readonly added = new EventEmitter<Clients>();
 
   constructor(private readonly logger: NGXLogger
             // , private readonly translate: TranslateService
-            // , private readonly cdr: ChangeDetectorRef
+            , private readonly cdr: ChangeDetectorRef
             ) {
     super('CLIENTS_ADD_FORM', 'models.client.');
-    this.form.addControl('reference', new FormControl('', [ Validators.required ]));
+    this.form.addControl('refClient', new FormControl('', [ Validators.required ]));
     this.form.addControl('nickname', new FormControl('', []));
     this.form.addControl('name', new FormControl('', []));
     this.form.addControl('surname', new FormControl('', []));
@@ -39,29 +40,30 @@ export class ClientsAddFormComponent extends BaseFormComponent implements OnInit
 
   ngAfterViewInit(): void {
     if (this.client) {
-      this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.client.id);
-      this.form.get('reference')
-        .setValue(this.client.reference);
+      this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.client.refClient);
+      this.form.get('refClient')
+        .setValue(this.client.refClient);
       this.form.get('nickname')
-      .setValue(this.client.nickname);
+      .setValue(this.client.abrege);
       this.form.get('name')
-      .setValue(this.client.name);
-      this.form.get('surname')
-      .setValue(this.client.surname);
-      this.form.get('group')
-      .setValue(this.client.group);
-      this.form.get('company_name')
-      .setValue(this.client.company_name);
-      this.form.get('score')
-      .setValue(this.client.score);
-      this.form.get('sector')
-      .setValue(this.client.sector);
-      this.form.get('email')
-      .setValue(this.client.email);
-      this.form.get('forbidden')
-      .setValue(this.client.forbidden);
-      this.form.get('vat')
-      .setValue(this.client.vat);
+      .setValue(this.client.nom);
+      // this.form.get('surname')
+      // .setValue(this.client.abrege);
+      // this.form.get('group')
+      // .setValue(this.client.group);
+      // this.form.get('company_name')
+      // .setValue(this.client.company_name);
+      // this.form.get('score')
+      // .setValue(this.client.score);
+      // this.form.get('sector')
+      // .setValue(this.client.sector);
+      // this.form.get('email')
+      // .setValue(this.client.email);
+      // this.form.get('forbidden')
+      // .setValue(this.client.forbidden);
+      // this.form.get('vat')
+      // .setValue(this.client.vat);
+      this.cdr.detectChanges();
     }
   }
 
@@ -75,7 +77,7 @@ export class ClientsAddFormComponent extends BaseFormComponent implements OnInit
     if (this.client) {
       this.logger.debug(this.COMPONENT_NAME, 'edit', this.client);
       // const prevName = this.client.name;
-      this.client.name = data;
+      this.client = data;
       // this.addresssService.editaddress(this.client)
       // .subscribe(() => {
       //   this.translate.get('pages.client.results.success.edit')

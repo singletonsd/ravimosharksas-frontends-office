@@ -16,16 +16,15 @@ export class ClientsTableComponent extends BaseTableComponent<any> implements On
 
   columns: Array<ColumnDefinition> = [
     { name: 'reference', showOnMobile: true, showShort: true },
-    { name: 'nickname', showOnMobile: false, showShort: false },
     { name: 'name', showOnMobile: false, showShort: true },
-    { name: 'surname', showOnMobile: false, showShort: true },
-    { name: 'group', showOnMobile: false, showShort: false },
-    { name: 'company_name', showOnMobile: true, showShort: false },
-    { name: 'score', showOnMobile: false, showShort: false },
-    { name: 'sector', showOnMobile: false, showShort: false },
-    { name: 'email', showOnMobile: true, showShort: false },
-    { name: 'forbidden', showOnMobile: true, showShort: true },
-    { name: 'vat', showOnMobile: true, showShort: true },
+    { name: 'nickname', showOnMobile: false, showShort: true },
+    // { name: 'group', showOnMobile: false, showShort: false },
+    // { name: 'company_name', showOnMobile: true, showShort: false },
+    // { name: 'score', showOnMobile: false, showShort: false },
+    // { name: 'sector', showOnMobile: false, showShort: false },
+    // { name: 'email', showOnMobile: true, showShort: false },
+    // { name: 'forbidden', showOnMobile: true, showShort: true },
+    // { name: 'vat', showOnMobile: true, showShort: true },
     { name: 'options', showOnMobile: true, showShort: true }
   ];
 

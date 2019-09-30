@@ -1,6 +1,7 @@
 // tslint:disable: no-implicit-dependencies
 import { MatPaginator, MatSelect, MatSort } from '@angular/material';
 import { TableDataSourceBase } from '@app/models/base-table-source-data.class';
+import { environment } from '@env/environment';
 // import { DeletedParameter } from '@app/models/deleted-parameter.class';
 import { NGXLogger } from 'ngx-logger';
 
@@ -9,6 +10,7 @@ import { NGXLogger } from 'ngx-logger';
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
+declare var require: any;
 export class ClientsTableDataSource extends TableDataSourceBase<any> {
 
   constructor(paginator: MatPaginator, sort: MatSort
@@ -23,26 +25,10 @@ export class ClientsTableDataSource extends TableDataSourceBase<any> {
         ): void {
            // tslint:disable: align
           //  TODO: change data to real client information.
-          this.data.next([
-            { reference: '', nickname: '', name: '', surname: ''
-            , group: '', company_name: '', score: '', sector: ''
-            , email: '', forbidden: true, vat: '' },
-            { reference: '', nickname: '', name: '', surname: ''
-            , group: '', company_name: '', score: '', sector: ''
-            , email: '', forbidden: false, vat: '' },
-            { reference: '', nickname: '', name: '', surname: ''
-            , group: '', company_name: '', score: '', sector: ''
-            , email: '', forbidden: true, vat: '' },
-            { reference: '', nickname: '', name: '', surname: ''
-            , group: '', company_name: '', score: '', sector: ''
-            , email: '', forbidden: false, vat: '' },
-            { reference: '', nickname: '', name: '', surname: ''
-            , group: '', company_name: '', score: '', sector: ''
-            , email: '', forbidden: true, vat: '' },
-            { reference: '', nickname: '', name: '', surname: ''
-            , group: '', company_name: '', score: '', sector: ''
-            , email: '', forbidden: false, vat: '' }
-          ]);
+          if (!environment.production) {
+            // tslint:disable-next-line:no-require-imports
+            this.data.next(require('../../../../../../test/mock_data/clients.json'));
+          }
           this.loadingSubject.next(false);
     // this.accountsService.getAccounts(skip, limit, sortDirection
     //   , filter, deletedOption, true)
