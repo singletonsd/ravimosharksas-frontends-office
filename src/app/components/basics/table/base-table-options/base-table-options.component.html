@@ -1,9 +1,9 @@
 <button *ngIf="guard.hasEditorAccess()" mat-icon-button (click)="implementation.edit()"><mat-icon matTooltip="{{ 'actions.edit' | translate }}" matListIcon style="color: blue">edit</mat-icon></button>
 <ng-container *ngIf="entity.deleted; else noDeleted">
-  <button *ngIf="guard.hasEditorAccess()" mat-icon-button [disabled]="disableButtonAdd" (click)="implementation.enable()"><mat-icon matTooltip="{{ 'actions.enable' | translate }}" matListIcon style="color: green">add_circle_outline</mat-icon></button>
+  <button *ngIf="guard.hasEditorAccess()" mat-icon-button [disabled]="disableButtonAdd" (click)="implementation.enable()"><mat-icon matTooltip="{{ 'actions.insert' | translate }}" matListIcon style="color: green">add_circle_outline</mat-icon></button>
 </ng-container>
 <ng-template #noDeleted>
-  <button *ngIf="guard.hasEditorAccess()" mat-icon-button [disabled]="disableButtonDelete" (click)="implementation.disable()"><mat-icon matTooltip="{{ 'actions.disable' | translate }}" matListIcon style="color: red">clear</mat-icon></button>
+  <button *ngIf="guard.hasEditorAccess()" mat-icon-button [disabled]="disableButtonDelete" (click)="implementation.disable()"><mat-icon matTooltip="{{ 'actions.delete' | translate }}" matListIcon style="color: red">clear</mat-icon></button>
 </ng-template>
 <!-- TODO: delete false from condition when see history is implemented. -->
 <button *ngIf="guard.hasViewerAccess() && false" mat-icon-button [disabled]="disableButtonHistory" (click)="implementation.historyShow()"><mat-icon matTooltip="{{ 'actions.history' | translate }}" matListIcon style="color: blue">history</mat-icon></button>

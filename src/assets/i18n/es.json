@@ -12,6 +12,24 @@
     },
     "refresh": "Refrescar",
     "add": "Agregar nuevo",
+    "valid": {
+      "state": "Valido",
+      "verb": "Validar"
+    },
+    "invalid":  {
+      "state": "Invalido",
+      "verb": "Invalidar"
+    },
+    "review": {
+      "state": "Revisado",
+      "verb": "Colocar como No Revisado"
+    },
+    "not_review": {
+      "state": "No revisado",
+      "verb": "Revisar"
+    },
+    "show_more": "Mostrar más",
+    "show_less": "Mostrar menos",
     "show_columns": {
       "less": "Mostrar menos columnas",
       "more": "Mostrar más columnas"
@@ -21,7 +39,9 @@
     },
     "edit": "Editar",
     "disable": "Deshabilitar",
-    "enable": "Habilitar"
+    "enable": "Habilitar",
+    "delete": "Eliminar",
+    "insert": "Insertar"
   },
   "deletedOptions": {
     "NOT_DELETED": "Activos",
@@ -80,11 +100,7 @@
     },
     "exists": "Entidad ya existe",
     "not_exist": {
-      "account": "Cuenta no existe",
-      "carrier": "Transporte no existe",
       "main": "Entidad inexistente",
-      "membership": "Membresia inexistente",
-      "location": "Depósito inexistente",
       "user": "usuario inexistente"
     },
     "not_deleted": "Entidad activa",
@@ -131,6 +147,9 @@
     "office": "Oficina",
     "actions": "Acciones",
     "settings": "Configuraciones",
+    "review": "A revisar",
+    "valid": "Invalido",
+    "invalid": "Valido",
     "add": "Agregar",
     "list": "Listar",
     "finished": "Terminados",
@@ -174,6 +193,7 @@
     },
     "contract": {
       "refContract": "#",
+      "client":"Cliente",
       "identification": "Identificación",
       "dateDebut": "Desde",
       "dateFin": "Hasta",

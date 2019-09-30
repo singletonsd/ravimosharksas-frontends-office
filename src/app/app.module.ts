@@ -9,10 +9,12 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule
-  , MatDialogModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule
-  , MatMenuModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule
-  , MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatAutocompleteModule, MatButtonModule
+  , MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule
+  , MatExpansionModule, MatIconModule, MatInputModule, MatListModule
+  , MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import { CUSTOM_FORMATS } from './app.dates.formats';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -38,6 +40,7 @@ import { StorageService } from './services/storage/storage.service';
 
 import { BaseDialogComponent } from './components/basics/dialog/base-dialog/base-dialog.component';
 import { BaseInputComponent } from './components/basics/forms/base-input/base-input.component';
+import { DateInputComponent } from './components/basics/forms/date-input/date-input.component';
 import { BaseNotificationComponent } from './components/basics/notification/notification.component';
 import { BaseNotificationSimpleComponent } from './components/basics/notification/simple/simple.component';
 import { BaseTableOptionsComponent } from './components/basics/table/base-table-options/base-table-options.component';
@@ -57,13 +60,15 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
 
 import { ClientsAddFormComponent } from './components/common/clients/clients-add-form/clients-add-form.component';
 import { ClientsAutocompleteComponent } from './components/common/clients/clients-autocomplete/clients-autocomplete.component';
+import { ClientsCellComponent } from './components/common/clients/clients-cell/clients-cell.component';
 import { ClientTableOptionsComponent } from './components/common/clients/clients-table/client-table-options/client-table-options.component';
 import { ClientsTableComponent } from './components/common/clients/clients-table/clients-table.component';
 import { ClientsAddComponent } from './components/pages/clients/clients/clients-add/clients-add.component';
 import { ClientsMainComponent } from './components/pages/clients/clients/clients-main/clients-main.component';
 
 import { ContractsAddFormComponent } from './components/common/contracts/contracts-add-form/contracts-add-form.component';
-import { ContractTableOptionsComponent } from './components/common/contracts/contracts-table/contract-table-options/contract-table-options.component';
+import { ContractsTableOptionsComponent } from './components/common/contracts/contracts-table/contracts-table-options/contracts-table-options.component';
+import { ContractsTableToolbarComponent } from './components/common/contracts/contracts-table/contracts-table-toolbar/contracts-table-toolbar.component';
 import { ContractsTableComponent } from './components/common/contracts/contracts-table/contracts-table.component';
 import { ContractsAddComponent } from './components/pages/contracts/contracts-add/contracts-add.component';
 import { ContractsMainComponent } from './components/pages/contracts/contracts-main/contracts-main.component';
@@ -103,7 +108,10 @@ import { ContractsMainComponent } from './components/pages/contracts/contracts-m
     ContractsAddComponent,
     ContractsMainComponent,
     ContractsTableComponent,
-    ContractTableOptionsComponent
+    ContractsTableOptionsComponent,
+    ClientsCellComponent,
+    ContractsTableToolbarComponent,
+    DateInputComponent
   ],
   imports: [
     BrowserModule,
@@ -118,6 +126,8 @@ import { ContractsMainComponent } from './components/pages/contracts/contracts-m
     MatButtonModule,
     MatButtonToggleModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatExpansionModule,
     MatSidenavModule,
     MatProgressSpinnerModule,
@@ -155,7 +165,9 @@ import { ContractsMainComponent } from './components/pages/contracts/contracts-m
     GuardService,
     StorageService,
     MenuService,
-    PreviousRouteService
+    PreviousRouteService,
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: CUSTOM_FORMATS }
   ],
   bootstrap: [AppComponent],
   exports: [

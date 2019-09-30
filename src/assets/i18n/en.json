@@ -12,6 +12,24 @@
     },
     "refresh": "Refresh",
     "add": "Add new",
+    "valid": {
+      "state": "Valid",
+      "verb": "Validate"
+    },
+    "invalid":  {
+      "state": "Invalid",
+      "verb": "Invalidate"
+    },
+    "review": {
+      "state": "Reviewed",
+      "verb": "Set Not Reviewed"
+    },
+    "not_review": {
+      "state": "Not Reviewed",
+      "verb": "Review"
+    },
+    "show_more": "Show more",
+    "show_less": "Show less",
     "show_columns": {
       "less": "Show less columns",
       "more": "Show more columns"
@@ -21,7 +39,9 @@
     },
     "edit": "Edit",
     "disable": "Disable",
-    "enable": "Enable"
+    "enable": "Enable",
+    "delete": "Delete",
+    "insert": "Insert"
   },
   "deletedOptions": {
     "NOT_DELETED": "Active",
@@ -127,6 +147,9 @@
     "office": "Office",
     "actions": "Actions",
     "settings": "Settings",
+    "review": "To Review",
+    "valid": "Valid",
+    "invalid": "Invalid",
     "add": "Add",
     "list": "List",
     "finished": "Finished",
@@ -170,6 +193,7 @@
     },
     "contract": {
       "refContract": "#",
+      "client": "Client",
       "identification": "Identification",
       "dateDebut": "Date From",
       "dateFin": "Date Until",

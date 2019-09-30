@@ -1,0 +1,21 @@
+<ng-container *ngIf="(isHandset$ | async); else phoneMenu">
+    <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon matTooltip="{{ 'actions.disable' | translate }}">more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <app-base-table-options
+        [implementation]="this" [entity]="entity"
+        [disableButtonDelete]="disableButtonDelete"
+        [disableButtonAdd]="disableButtonAdd"
+        [disableButtonHistory]="disableButtonAdd">
+      </app-base-table-options>
+    </mat-menu>
+  </ng-container>
+  <ng-template #phoneMenu>
+      <app-base-table-options
+      [implementation]="this" [entity]="entity"
+      [disableButtonDelete]="disableButtonDelete"
+      [disableButtonAdd]="disableButtonAdd"
+      [disableButtonHistory]="disableButtonAdd">
+    </app-base-table-options>
+  </ng-template>

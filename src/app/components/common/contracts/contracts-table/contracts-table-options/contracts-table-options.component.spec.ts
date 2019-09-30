@@ -1,21 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContractTableOptionsComponent } from './contract-table-options.component';
+import { ContractsTableOptionsComponent } from './contracts-table-options.component';
 
-describe('ContractTableOptionsComponent', () => {
-  let component: ContractTableOptionsComponent;
-  let fixture: ComponentFixture<ContractTableOptionsComponent>;
+describe('ContractsTableOptionsComponent', () => {
+  let component: ContractsTableOptionsComponent;
+  let fixture: ComponentFixture<ContractsTableOptionsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContractTableOptionsComponent ]
+      declarations: [ ContractsTableOptionsComponent ]
     })
     .compileComponents()
     .catch();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContractTableOptionsComponent);
+    fixture = TestBed.createComponent(ContractsTableOptionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

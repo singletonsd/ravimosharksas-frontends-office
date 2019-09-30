@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
 import { BaseFormComponent } from '@app/models/base-form.class';
-import { Contracts } from '@ravimosharksas/apis-global-libs-angular';
+import { Contracts } from '@ravimosharksas/apis-contract-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
+// import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contracts-add-form',
@@ -18,12 +19,12 @@ export class ContractsAddFormComponent extends BaseFormComponent implements OnIn
 
   constructor(private readonly logger: NGXLogger
             // , private readonly translate: TranslateService
-            // , private readonly cdr: ChangeDetectorRef
+            , private readonly cdr: ChangeDetectorRef
             ) {
     super('CONTRACTS_ADD_FORM', 'models.contract.');
     this.form.addControl('refContract', new FormControl('', [ Validators.required ]));
     this.form.addControl('identification', new FormControl('', []));
-    this.form.addControl('dateDebut', new FormControl('', [ Validators.required ]));
+    this.form.addControl('dateDebut', new FormControl('', [ ]));
     this.form.addControl('dateFin', new FormControl('', [ Validators.required ]));
     this.form.addControl('reconduction', new FormControl('', []));
     this.form.addControl('loyer', new FormControl('', []));
@@ -50,12 +51,13 @@ export class ContractsAddFormComponent extends BaseFormComponent implements OnIn
       .setValue(this.contract.miniconso);
       this.form.get('reconduction')
       .setValue(this.contract.reconduction);
-      // this.form.get('identification')
-      // .setValue(this.contract.);
-      // this.form.get('reviewed')
-      // .setValue(this.contract.);
-      // this.form.get('valid')
-      // .setValue(this.contract.);
+      this.form.get('identification')
+      .setValue(this.contract.identification);
+      this.form.get('reviewed')
+      .setValue(this.contract.reviewed);
+      this.form.get('valid')
+      .setValue(this.contract.valid);
+      this.cdr.detectChanges();
     }
   }
 

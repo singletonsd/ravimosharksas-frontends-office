@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
+// tslint:disable-next-line:no-implicit-dependencies
+import { environment } from '@env/environment';
+import { NGXLogger } from 'ngx-logger';
 
 declare let gtag: Function;
 
@@ -14,7 +17,8 @@ export class AppComponent {
   public sideNavOpened = true;
 
   constructor(meta: Meta
-            , router: Router) {
+            , router: Router
+            , logger: NGXLogger) {
     meta.addTag({
       name: 'description',
       content: `Ravimoshark Office web application.`
@@ -42,5 +46,10 @@ export class AppComponent {
           );
     }
     });
+    if (!environment.production) {
+      logger.debug('Running with development environment');
+    } else {
+      logger.debug('Running with production environment');
+    }
   }
 }

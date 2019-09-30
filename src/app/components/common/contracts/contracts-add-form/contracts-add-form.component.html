@@ -20,10 +20,10 @@
       <ng-template #loaded>
         <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
         <div class="row">
-            <app-base-input class="col-4 col-sm-3" [parent]="this" [controlName]="'refContract'"></app-base-input>
+          <app-base-input class="col-4 col-sm-3" [parent]="this" [controlName]="'refContract'"></app-base-input>
           <app-base-input class="col-8 col-sm-9" [parent]="this" [controlName]="'identification'"></app-base-input>
-          <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateDebut'"></app-base-input>
-          <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateFin'"></app-base-input>
+          <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateDebut'"></app-date-input>
+          <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateFin'"></app-date-input>
           <div class="row col-12 col-sm-4">
               <mat-checkbox class="col-6" formControlName="reviewed">{{ 'models.contract.reviewed' | translate }}</mat-checkbox>
               <mat-checkbox class="col-6" formControlName="valid">{{ 'models.contract.valid' | translate }}</mat-checkbox>

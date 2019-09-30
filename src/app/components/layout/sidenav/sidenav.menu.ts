@@ -42,10 +42,13 @@ export const SIDE_NAV_MENU: Array<NavMenu> = [
   },
   {
     id: 4, name: 'contracts', accessLevel: [0, 1, 2], icon: 'insert_invitation', routes: [
+      { route: appRoutesNames.CONTRACTS.MAIN, queryParams: { reviewed: 'false' }, title: 'review', icon: 'report' },
       { route: appRoutesNames.CONTRACTS.ADD, title: 'add', icon: 'control_point' },
       { route: appRoutesNames.CONTRACTS.MAIN, title: 'list', icon: 'event_note' },
       { route: appRoutesNames.CONTRACTS.MAIN, queryParams: { filter: 'unfinished' }, title: 'unfinished', icon: 'event_available' },
-      { route: appRoutesNames.CONTRACTS.MAIN, queryParams: { filter: 'finished' }, title: 'finished', icon: 'event_busy' }
+      { route: appRoutesNames.CONTRACTS.MAIN, queryParams: { filter: 'finished' }, title: 'finished', icon: 'event_busy' },
+      { route: appRoutesNames.CONTRACTS.MAIN, queryParams: { valid: 'false' }, title: 'valid', icon: 'done' },
+      { route: appRoutesNames.CONTRACTS.MAIN, queryParams: { valid: 'true' }, title: 'invalid', icon: 'clear' }
     ]
   },
   {

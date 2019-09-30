@@ -12,6 +12,24 @@
     },
     "refresh": "Rafraîchir",
     "add": "Ajouter un nouveau",
+    "valid": {
+      "state": "Valide",
+      "verb": "Valider"
+    },
+    "invalid":  {
+      "state": "Invalide",
+      "verb": "Invalider"
+    },
+    "review": {
+      "state": "Examiné",
+      "verb": "Ensemble non examiné"
+    },
+    "not_review": {
+      "state": "Pas révisé",
+      "verb": "Réviser"
+    },
+    "show_more": "Afficher plus",
+    "show_less": "Afficher moins",
     "show_columns": {
       "less": "Afficher moins de colonnes",
       "more": "Afficher plus de colonnes"
@@ -21,7 +39,9 @@
     },
     "edit": "Modifier",
     "disable": "Désactiver",
-    "enable": "Activer"
+    "enable": "Activer",
+    "delete": "Supprimer",
+    "insert": "Insérer"
   },
   "deletedOptions": {
     "NOT_DELETED": "Actif",
@@ -127,6 +147,9 @@
     "office": "Bureau",
     "actions": "Actions",
     "settings": "Paramètres",
+    "review": "Réviser",
+    "valid": "Valide",
+    "invalid": "Invalide",
     "add": "Ajouter",
     "list": "Liste",
     "finished": "Fini",
@@ -170,6 +193,7 @@
     },
     "contract": {
       "refContract": "#",
+      "client": "Client",
       "identification": "Identification",
       "dateDebut": "Date Début",
       "dateFin": "Date Fin",

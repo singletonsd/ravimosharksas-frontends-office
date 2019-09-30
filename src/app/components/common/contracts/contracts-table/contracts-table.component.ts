@@ -17,22 +17,20 @@ export class ContractsTableComponent  extends BaseTableComponent<Contracts> impl
 
   columns: Array<ColumnDefinition> = [
     { name: 'reference', showOnMobile: true, showShort: true },
-    { name: 'identification', showOnMobile: false, showShort: false },
-    { name: 'client', showOnMobile: false, showShort: true },
+    { name: 'identification', showOnMobile: false, showShort: true },
+    { name: 'client', showOnMobile: true, showShort: true },
     { name: 'dateDebut', showOnMobile: false, showShort: true },
-    { name: 'dateFin', showOnMobile: false, showShort: false },
+    { name: 'dateFin', showOnMobile: false, showShort: true },
     { name: 'reconduction', showOnMobile: false, showShort: false },
     { name: 'loyer', showOnMobile: false, showShort: false },
-    { name: 'miniconso', showOnMobile: true, showShort: false },
-    { name: 'valid', showOnMobile: true, showShort: true },
-    { name: 'reviewed', showOnMobile: true, showShort: true },
+    { name: 'miniconso', showOnMobile: false, showShort: false },
     { name: 'options', showOnMobile: true, showShort: true }
   ];
 
   constructor(logger: NGXLogger
             , private readonly dialog: MatDialog
             , breakpointObserver: BreakpointObserver) {
-    super(logger, 'CLIENTS_TABLE', breakpointObserver);
+    super(logger, 'CONTRACTS_TABLE', breakpointObserver);
 }
 
   initComponent(): void {
@@ -56,4 +54,18 @@ export class ContractsTableComponent  extends BaseTableComponent<Contracts> impl
     // TODO: export data to a pdf file and download.
   }
 
+  changeValidation(contract: Contracts): void {
+    const newContract = {...contract};
+    this.logger.debug(this.COMPONENT_NAME, 'changeValidation', contract.refContract, newContract);
+    newContract.valid = !newContract.valid;
+    newContract.reviewed = true;
+    const dialog = this.dialog.open(ContractsAddFormComponent, {
+      panelClass: 'dialog-auto-scroll'
+    });
+    dialog.componentInstance.added.subscribe((newEntity: any) => {
+      Object.assign(contract, newEntity);
+      this.dataSource.addData(newEntity);
+    });
+    dialog.componentInstance.contract = newContract;
+  }
 }

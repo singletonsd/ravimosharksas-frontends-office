@@ -1,7 +1,7 @@
 // tslint:disable: no-implicit-dependencies
 import { MatPaginator, MatSelect, MatSort } from '@angular/material';
 import { TableDataSourceBase } from '@app/models/base-table-source-data.class';
-import { environment } from '@env/environment.prod';
+import { environment } from '@env/environment';
 import { Contracts } from '@ravimosharksas/apis-contract-libs-typescript';
 // import { DeletedParameter } from '@app/models/deleted-parameter.class';
 import { NGXLogger } from 'ngx-logger';

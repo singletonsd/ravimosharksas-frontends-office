@@ -1,0 +1,10 @@
+<mat-form-field [formGroup]="parent.form" style="width: 100%">
+  <input matInput placeholder="{{ placeHolder | translate }}" formControlName="{{ controlName }}" [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error *ngIf="hasError()">
+    <ng-container *ngIf="isRequiredError()">
+      {{ 'fields.errors.required' | translate }}
+    </ng-container>
+  </mat-error>
+</mat-form-field>

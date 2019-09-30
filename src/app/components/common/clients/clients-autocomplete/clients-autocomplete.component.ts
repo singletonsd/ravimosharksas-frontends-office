@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { BaseInputFormComponent } from '@app/models/base-input.class';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { Clients } from '@ravimosharksas/apis-contract-libs-typescript';
 
 @Component({
   selector: 'app-clients-autocomplete',
@@ -70,5 +71,9 @@ export class ClientsAutocompleteComponent extends BaseInputFormComponent impleme
       .setValue('');
     this.parent.form.get('client')
       .markAsUntouched();
+  }
+
+  identify(item: Clients): Number {
+    return item.refClient;
   }
 }

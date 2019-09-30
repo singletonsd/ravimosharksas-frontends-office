@@ -6,7 +6,7 @@
 <div class="mat-elevation-z8 table-responsive">
   <table mat-table class="col-12" [dataSource]="dataSource" matSort aria-label="Elements">
 
-    <ng-container matColumnDef="refContract" sticky>
+    <ng-container matColumnDef="reference" sticky>
       <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'models.contract.refContract' | translate }}</th>
       <td mat-cell *matCellDef="let row" class="col-fit">
         {{row.refContract}}
@@ -18,14 +18,21 @@
       <td mat-cell *matCellDef="let row" class="col-fit">{{row.identification}}</td>
     </ng-container>
 
+    <ng-container matColumnDef="client">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'models.contract.client' | translate }}</th>
+      <td mat-cell *matCellDef="let row" class="col-fit">
+        <app-clients-cell [client]="row.client" [refClient]="row.refClient"></app-clients-cell>
+      </td>
+    </ng-container>
+
     <ng-container matColumnDef="dateDebut">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'models.contract.dateDebut' | translate }}</th>
-      <td mat-cell *matCellDef="let row" class="col-fit">{{row.dateDebut}}</td>
+      <td mat-cell *matCellDef="let row" class="col-fit">{{row.dateDebut | date: 'MM/dd/yyyy' }}</td>
     </ng-container>
 
     <ng-container matColumnDef="dateFin">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'models.contract.dateFin' | translate }}</th>
-      <td mat-cell *matCellDef="let row" class="col-fit">{{row.dateFin}}</td>
+      <td mat-cell *matCellDef="let row" class="col-fit">{{row.dateFin | date: 'MM/dd/yyyy' }}</td>
     </ng-container>
 
     <ng-container matColumnDef="loyer">
@@ -43,36 +50,24 @@
       <td mat-cell *matCellDef="let row" class="col-fit">{{row.reconduction}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="reviewed">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'models.contract.reviewed' | translate }}</th>
-      <td mat-cell *matCellDef="let row" class="col-fit">
-        <ng-container *ngIf="!row.reviewed; else reviewed">
-            <button mat-icon-button (click)="implementation.disable()"><mat-icon matTooltip="{{ 'actions.disable' | translate }}" matListIcon style="color: red">not_interested</mat-icon></button>
-        </ng-container>
-        <ng-template #reviewed>
-            <button mat-icon-button (click)="implementation.enable()"><mat-icon matTooltip="{{ 'actions.enable' | translate }}" matListIcon style="color: green">done</mat-icon></button>
-        </ng-template>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="valid">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'models.contract.valid' | translate }}</th>
-      <td mat-cell *matCellDef="let row" class="col-fit">
-        <ng-container *ngIf="!row.valid; else valid">
-            <button mat-icon-button (click)="implementation.disable()"><mat-icon matTooltip="{{ 'actions.disable' | translate }}" matListIcon style="color: red">not_interested</mat-icon></button>
-        </ng-container>
-        <ng-template #valid>
-            <button mat-icon-button (click)="implementation.enable()"><mat-icon matTooltip="{{ 'actions.enable' | translate }}" matListIcon style="color: green">done</mat-icon></button>
-        </ng-template>
-      </td>
-    </ng-container>
-
     <ng-container matColumnDef="options" stickyEnd>
       <th mat-header-cell *matHeaderCellDef>
         <mat-icon matTooltip="{{ 'models.common.options' | translate }}" matListIcon>settings</mat-icon>
       </th>
       <td mat-cell *matCellDef="let row">
-        <app-client-table-options [entity]="row"></app-client-table-options>
+        <ng-container *ngIf="!row.reviewed; else reviewed">
+            <button mat-icon-button (click)="changeValidation(row)"><mat-icon matTooltip="{{ 'actions.not_review.verb' | translate }}" matListIcon style="color: red">report</mat-icon></button>
+        </ng-container>
+        <ng-template #reviewed>
+            <button mat-icon-button><mat-icon matTooltip="{{ 'actions.review.state' | translate }}" matListIcon style="color: green">done</mat-icon></button>
+        </ng-template>
+        <ng-container *ngIf="!row.valid; else valid">
+            <button mat-icon-button (click)="changeValidation(row)"><mat-icon matTooltip="{{ 'actions.valid.verb' | translate }}" matListIcon style="color: gray">flag</mat-icon></button>
+        </ng-container>
+        <ng-template #valid>
+            <button mat-icon-button (click)="changeValidation(row)"><mat-icon matTooltip="{{ 'actions.invalid.verb' | translate }}" matListIcon style="color: green">flag</mat-icon></button>
+        </ng-template>
+        <app-contracts-table-options [entity]="row"></app-contracts-table-options>
       </td>
     </ng-container>
 
