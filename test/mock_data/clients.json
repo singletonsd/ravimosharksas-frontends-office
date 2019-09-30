@@ -1,242 +1,242 @@
 [
   {
     "refClient": "C0",
-    "abrege": "DO NOT DELETE",
-    "nom": "DO NOT DELETE",
+    "nickname": "DO NOT DELETE",
+    "name": "DO NOT DELETE",
     "deleted": false
   },
   {
     "refClient": "C000000",
-    "abrege": "Pato",
-    "nom": "Patricio Rafael",
+    "nickname": "Pato",
+    "name": "Patricio Rafael",
     "deleted": false
   },
   {
     "refClient": "C0001",
-    "abrege": "DEPOT",
-    "nom": "DEPOT",
+    "nickname": "DEPOT",
+    "name": "DEPOT",
     "deleted": false
   },
   {
     "refClient": "C0002",
-    "abrege": "RAVIMO",
-    "nom": "RAVIMO",
+    "nickname": "RAVIMO",
+    "name": "RAVIMO",
     "deleted": false
   },
   {
     "refClient": "C0023",
-    "abrege": ".JULIEN",
-    "nom": ".JULIEN",
+    "nickname": ".JULIEN",
+    "name": ".JULIEN",
     "deleted": false
   },
   {
     "refClient": "C0024",
-    "abrege": ".VAUDEVILLE",
-    "nom": ".VAUDEVILLE",
+    "nickname": ".VAUDEVILLE",
+    "name": ".VAUDEVILLE",
     "deleted": false
   },
   {
     "refClient": "C0025",
-    "abrege": ".BRASSERIE FLO.",
-    "nom": ".BRASSERIE FLO",
+    "nickname": ".BRASSERIE FLO.",
+    "name": ".BRASSERIE FLO",
     "deleted": false
   },
   {
     "refClient": "C0040",
-    "abrege": ".HIPPO MONTPARNA",
-    "nom": "HIPPO GESTION MONTPARNASSE",
+    "nickname": ".HIPPO MONTPARNA",
+    "name": "HIPPO GESTION MONTPARNASSE",
     "deleted": false
   },
   {
     "refClient": "C0086",
-    "abrege": ".HOPITAL MARIE LA",
-    "nom": ".HOPITAL MARIE LANNELONGUE",
+    "nickname": ".HOPITAL MARIE LA",
+    "name": ".HOPITAL MARIE LANNELONGUE",
     "deleted": false
   },
   {
     "refClient": "C0089",
-    "abrege": ".DRUGSTORE CHAMP",
-    "nom": ".DRUGSTORES CHAMPS ELYSEES",
+    "nickname": ".DRUGSTORE CHAMP",
+    "name": ".DRUGSTORES CHAMPS ELYSEES",
     "deleted": false
   },
   {
     "refClient": "C0090",
-    "abrege": ".VESUVIO ELYSEES",
-    "nom": ".VESUVIO PIZZA \"CH.ELYSEE",
+    "nickname": ".VESUVIO ELYSEES",
+    "name": ".VESUVIO PIZZA \"CH.ELYSEE",
     "deleted": false
   },
   {
     "refClient": "C0101",
-    "abrege": ".COUPOLE",
-    "nom": "COUPOLE",
+    "nickname": ".COUPOLE",
+    "name": "COUPOLE",
     "deleted": false
   },
   {
     "refClient": "C0102",
-    "abrege": ".JARDIN D'ARCADIE",
-    "nom": ".JARDIN D'ARCADIE",
+    "nickname": ".JARDIN D'ARCADIE",
+    "name": ".JARDIN D'ARCADIE",
     "deleted": false
   },
   {
     "refClient": "C0136",
-    "abrege": ".CAFE DE L'ATELIE",
-    "nom": ".CAFE DE L'ATELIER",
+    "nickname": ".CAFE DE L'ATELIE",
+    "name": ".CAFE DE L'ATELIER",
     "deleted": false
   },
   {
     "refClient": "C0141",
-    "abrege": ".PINO MONTPARNASS",
-    "nom": ".PINO MONTPARNASSE",
+    "nickname": ".PINO MONTPARNASS",
+    "name": ".PINO MONTPARNASSE",
     "deleted": false
   },
   {
     "refClient": "C0142",
-    "abrege": ".ROTONDE DE LA MU",
-    "nom": ".ROTONDE DE LA MUETTE",
+    "nickname": ".ROTONDE DE LA MU",
+    "name": ".ROTONDE DE LA MUETTE",
     "deleted": false
   },
   {
     "refClient": "C0158",
-    "abrege": ".FLO CAFE FLO",
-    "nom": ".FLO CONCESS SNC CAFE FLO",
+    "nickname": ".FLO CAFE FLO",
+    "name": ".FLO CONCESS SNC CAFE FLO",
     "deleted": false
   },
   {
     "refClient": "C0161",
-    "abrege": ".DOME",
-    "nom": ".DOME",
+    "nickname": ".DOME",
+    "name": ".DOME",
     "deleted": false
   },
   {
     "refClient": "C0165",
-    "abrege": ".DUVAL TRAITEUR",
-    "nom": ".DUVAL TRAITEUR",
+    "nickname": ".DUVAL TRAITEUR",
+    "name": ".DUVAL TRAITEUR",
     "deleted": false
   },
   {
     "refClient": "C0171",
-    "abrege": ".CAFE FRANCAIS",
-    "nom": ".CAFE FRANCAIS",
+    "nickname": ".CAFE FRANCAIS",
+    "name": ".CAFE FRANCAIS",
     "deleted": false
   },
   {
     "refClient": "C0182",
-    "abrege": ".BOFINGER BRASSER",
-    "nom": ".BOFINGER BRASSERIE",
+    "nickname": ".BOFINGER BRASSER",
+    "name": ".BOFINGER BRASSERIE",
     "deleted": false
   },
   {
     "refClient": "C0199",
-    "abrege": ".PIERRE DU MARAIS",
-    "nom": ".PIERRE DU MARAIS Remplace C4123",
+    "nickname": ".PIERRE DU MARAIS",
+    "name": ".PIERRE DU MARAIS Remplace C4123",
     "deleted": false
   },
   {
     "refClient": "C0214",
-    "abrege": ".FLAMS \"MAINE\"",
-    "nom": ".AC MONTPARNASSE",
+    "nickname": ".FLAMS \"MAINE\"",
+    "name": ".AC MONTPARNASSE",
     "deleted": false
   },
   {
     "refClient": "C0228",
-    "abrege": ".PAVILLON BLEU",
-    "nom": ".PAVILLON BLEU WARM'UP",
+    "nickname": ".PAVILLON BLEU",
+    "name": ".PAVILLON BLEU WARM'UP",
     "deleted": false
   },
   {
     "refClient": "C0255",
-    "abrege": ".MEATING",
-    "nom": ".MEATING S.A CHEZ MICHEL PEREIRE",
+    "nickname": ".MEATING",
+    "name": ".MEATING S.A CHEZ MICHEL PEREIRE",
     "deleted": false
   },
   {
     "refClient": "C0269",
-    "abrege": ".INDIANA MAINE",
-    "nom": ".INDIANA MAINE",
+    "nickname": ".INDIANA MAINE",
+    "name": ".INDIANA MAINE",
     "deleted": false
   },
   {
     "refClient": "C0276",
-    "abrege": ".BISTROT 121",
-    "nom": ".BISTROT 121",
+    "nickname": ".BISTROT 121",
+    "name": ".BISTROT 121",
     "deleted": false
   },
   {
     "refClient": "C0277",
-    "abrege": ".CAFE DU TROCADER",
-    "nom": ".CAFE DU TROCADERO",
+    "nickname": ".CAFE DU TROCADER",
+    "name": ".CAFE DU TROCADERO",
     "deleted": false
   },
   {
     "refClient": "C0278",
-    "abrege": ".COTE ST JACQUES",
-    "nom": ".COTE ST JACQUES",
+    "nickname": ".COTE ST JACQUES",
+    "name": ".COTE ST JACQUES",
     "deleted": false
   },
   {
     "refClient": "C0283",
-    "abrege": ".HIPPO WAGRAM",
-    "nom": "HIPPO GESTION WAGRAM",
+    "nickname": ".HIPPO WAGRAM",
+    "name": "HIPPO GESTION WAGRAM",
     "deleted": false
   },
   {
     "refClient": "C0287",
-    "abrege": ".HIPPO BASTILLE",
-    "nom": "HIPPO GESTION BASTILLE",
+    "nickname": ".HIPPO BASTILLE",
+    "name": "HIPPO GESTION BASTILLE",
     "deleted": false
   },
   {
     "refClient": "C0288",
-    "abrege": ".HIPPO OPERA",
-    "nom": "HIPPO GESTION OPERA",
+    "nickname": ".HIPPO OPERA",
+    "name": "HIPPO GESTION OPERA",
     "deleted": false
   },
   {
     "refClient": "C0290",
-    "abrege": ".HIPPO LAGRANGE",
-    "nom": ".HIPPOPOTAMUS LAGRANGE",
+    "nickname": ".HIPPO LAGRANGE",
+    "name": ".HIPPOPOTAMUS LAGRANGE",
     "deleted": false
   },
   {
     "refClient": "C0299",
-    "abrege": ".RIVER  CAFE SERI",
-    "nom": ".RIVER CAFE SERIM SA",
+    "nickname": ".RIVER  CAFE SERI",
+    "name": ".RIVER CAFE SERIM SA",
     "deleted": false
   },
   {
     "refClient": "C0302",
-    "abrege": ".HIPPO VAVIN",
-    "nom": "HIPPO GESTION VAVIN",
+    "nickname": ".HIPPO VAVIN",
+    "name": "HIPPO GESTION VAVIN",
     "deleted": false
   },
   {
     "refClient": "C0303",
-    "abrege": ".HIPPO GEORGES V",
-    "nom": "HIPPO GESTION GEORGES V",
+    "nickname": ".HIPPO GEORGES V",
+    "name": "HIPPO GESTION GEORGES V",
     "deleted": false
   },
   {
     "refClient": "C0312",
-    "abrege": ".HIPPO MAINE",
-    "nom": "HIPPO GESTION MAINE",
+    "nickname": ".HIPPO MAINE",
+    "name": "HIPPO GESTION MAINE",
     "deleted": false
   },
   {
     "refClient": "C0313",
-    "abrege": ".EL RANCHO VERSAI",
-    "nom": ".EL RANCHO VERSAILLES",
+    "nickname": ".EL RANCHO VERSAI",
+    "name": ".EL RANCHO VERSAILLES",
     "deleted": false
   },
   {
     "refClient": "C0318",
-    "abrege": ".EL RANCHO THIAIS",
-    "nom": ".EL RANCHO SA CONCEPT BELLE EPINE",
+    "nickname": ".EL RANCHO THIAIS",
+    "name": ".EL RANCHO SA CONCEPT BELLE EPINE",
     "deleted": false
   },
   {
     "refClient": "C0322",
-    "abrege": ".EL RANCHO ST QUE",
-    "nom": ".EL RANCHO ST QUENTIN MEX RESTAURAT",
+    "nickname": ".EL RANCHO ST QUE",
+    "name": ".EL RANCHO ST QUENTIN MEX RESTAURAT",
     "deleted": false
   }
 ]

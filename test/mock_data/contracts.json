@@ -14,8 +14,8 @@
     "deleted": false,
     "client": {
       "refClient": "C4004",
-      "abrege": ".REPOTEL \"SIEGE\"",
-      "nom": ".2I INTER INVESTI",
+      "nickname": ".REPOTEL \"SIEGE\"",
+      "name": ".2I INTER INVESTI",
       "deleted": false
     },
     "locations": [],
@@ -48,8 +48,8 @@
     "deleted": false,
     "client": {
       "refClient": "C4004",
-      "abrege": ".REPOTEL \"SIEGE\"",
-      "nom": ".2I INTER INVESTI",
+      "nickname": ".REPOTEL \"SIEGE\"",
+      "name": ".2I INTER INVESTI",
       "deleted": false
     },
     "locations": [],
@@ -82,8 +82,8 @@
     "deleted": false,
     "client": {
       "refClient": "C4696",
-      "abrege": "BUFFALO SIEGE",
-      "nom": "BUFFALO GRILL SA",
+      "nickname": "BUFFALO SIEGE",
+      "name": "BUFFALO GRILL SA",
       "deleted": false
     },
     "locations": [],
@@ -116,8 +116,8 @@
     "deleted": false,
     "client": {
       "refClient": "C4070",
-      "abrege": ".BABY GRAND LOUIS",
-      "nom": ".BABY GRAND RESTAURANTS",
+      "nickname": ".BABY GRAND LOUIS",
+      "name": ".BABY GRAND RESTAURANTS",
       "deleted": false
     },
     "locations": [],
@@ -150,8 +150,8 @@
     "deleted": false,
     "client": {
       "refClient": "C4761",
-      "abrege": ".PETIT FER A CHEV",
-      "nom": ".PETIT FER A CHEVAL",
+      "nickname": ".PETIT FER A CHEV",
+      "name": ".PETIT FER A CHEVAL",
       "deleted": false
     },
     "locations": [],
@@ -184,8 +184,8 @@
     "deleted": false,
     "client": {
       "refClient": "C4190",
-      "abrege": ".VIN ET MAREE MUR",
-      "nom": "VIN ET MAREE \"MURAT\"",
+      "nickname": ".VIN ET MAREE MUR",
+      "name": "VIN ET MAREE \"MURAT\"",
       "deleted": false
     },
     "locations": [],
@@ -218,8 +218,8 @@
     "deleted": false,
     "client": {
       "refClient": "C3340",
-      "abrege": ".ETOILE MANQUANTE",
-      "nom": ".ETOILE MANQUANTE",
+      "nickname": ".ETOILE MANQUANTE",
+      "name": ".ETOILE MANQUANTE",
       "deleted": false
     },
     "locations": [],
@@ -252,8 +252,8 @@
     "deleted": false,
     "client": {
       "refClient": "C4060",
-      "abrege": ".BRASSERIE DES AR",
-      "nom": ".CAFE DES ARTS ET METIERS",
+      "nickname": ".BRASSERIE DES AR",
+      "name": ".CAFE DES ARTS ET METIERS",
       "deleted": false
     },
     "locations": [],
@@ -286,8 +286,8 @@
     "deleted": false,
     "client": {
       "refClient": "C1998",
-      "abrege": ".CAFE BASTILLE ST",
-      "nom": ".CAFE BASTILLE STE COSEPT",
+      "nickname": ".CAFE BASTILLE ST",
+      "name": ".CAFE BASTILLE STE COSEPT",
       "deleted": false
     },
     "locations": [],
@@ -320,8 +320,8 @@
     "deleted": false,
     "client": {
       "refClient": "C3116",
-      "abrege": ".MABILLON RESTAUR",
-      "nom": "MABILLON  - GROUPE BOURDONCLE SAS",
+      "nickname": ".MABILLON RESTAUR",
+      "name": "MABILLON  - GROUPE BOURDONCLE SAS",
       "deleted": false
     },
     "locations": [],
@@ -354,8 +354,8 @@
     "deleted": false,
     "client": {
       "refClient": "C3116",
-      "abrege": ".MABILLON RESTAUR",
-      "nom": "MABILLON  - GROUPE BOURDONCLE SAS",
+      "nickname": ".MABILLON RESTAUR",
+      "name": "MABILLON  - GROUPE BOURDONCLE SAS",
       "deleted": false
     },
     "locations": [],
@@ -388,8 +388,8 @@
     "deleted": false,
     "client": {
       "refClient": "C3325",
-      "abrege": ".MAITRE PIERRE",
-      "nom": ".MAITRE PIERRE RESTAURANT",
+      "nickname": ".MAITRE PIERRE",
+      "name": ".MAITRE PIERRE RESTAURANT",
       "deleted": false
     },
     "locations": [],
@@ -422,8 +422,8 @@
     "deleted": false,
     "client": {
       "refClient": "C0907",
-      "abrege": ".INDIANA DENFERT",
-      "nom": ".INDIANA DENFERT SA U.ORIENTAL",
+      "nickname": ".INDIANA DENFERT",
+      "name": ".INDIANA DENFERT SA U.ORIENTAL",
       "deleted": false
     },
     "locations": [],
@@ -456,8 +456,8 @@
     "deleted": false,
     "client": {
       "refClient": "C0269",
-      "abrege": ".INDIANA MAINE",
-      "nom": ".INDIANA MAINE",
+      "nickname": ".INDIANA MAINE",
+      "name": ".INDIANA MAINE",
       "deleted": false
     },
     "locations": [],
@@ -490,8 +490,8 @@
     "deleted": false,
     "client": {
       "refClient": "C4912",
-      "abrege": ".BAR DU CENTRAL",
-      "nom": "LE BAR DU CENTRAL",
+      "nickname": ".BAR DU CENTRAL",
+      "name": "LE BAR DU CENTRAL",
       "deleted": false
     },
     "locations": [],
@@ -524,8 +524,8 @@
     "deleted": false,
     "client": {
       "refClient": "C2708",
-      "abrege": ".CHEZ FRANCOISE",
-      "nom": ".CONTINENTAL CIRCUS",
+      "nickname": ".CHEZ FRANCOISE",
+      "name": ".CONTINENTAL CIRCUS",
       "deleted": false
     },
     "locations": [],
@@ -558,8 +558,8 @@
     "deleted": true,
     "client": {
       "refClient": "C4425",
-      "abrege": ".JARDINS DE LA VI",
-      "nom": ".JARDINS DE LA VIEILLE FONTAINE",
+      "nickname": ".JARDINS DE LA VI",
+      "name": ".JARDINS DE LA VIEILLE FONTAINE",
       "deleted": false
     },
     "locations": [],
@@ -592,8 +592,8 @@
     "deleted": true,
     "client": {
       "refClient": "C4190",
-      "abrege": ".VIN ET MAREE MUR",
-      "nom": "VIN ET MAREE \"MURAT\"",
+      "nickname": ".VIN ET MAREE MUR",
+      "name": "VIN ET MAREE \"MURAT\"",
       "deleted": false
     },
     "locations": [],
@@ -626,8 +626,8 @@
     "deleted": false,
     "client": {
       "refClient": "C0335",
-      "abrege": ".INDIANA MONTPARN",
-      "nom": ".INDIANA CAFE MONTPARNASSE",
+      "nickname": ".INDIANA MONTPARN",
+      "name": ".INDIANA CAFE MONTPARNASSE",
       "deleted": false
     },
     "locations": [],
@@ -660,8 +660,8 @@
     "deleted": false,
     "client": {
       "refClient": "C4305",
-      "abrege": ".OPEN CAFE",
-      "nom": ".OPEN CAFE TREJA BATEAU BLANC",
+      "nickname": ".OPEN CAFE",
+      "name": ".OPEN CAFE TREJA BATEAU BLANC",
       "deleted": false
     },
     "locations": [],
