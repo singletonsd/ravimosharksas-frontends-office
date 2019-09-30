@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-// tslint:disable-next-line: no-implicit-dependencies
+import { Component, Input, OnInit } from '@angular/core';
+// tslint:disable: no-implicit-dependencies
 import { BaseInputFormComponent } from '@app/models/base-input.class';
+import { environment } from '@env/environment';
+import { Clients } from '@ravimosharksas/apis-contract-libs-typescript';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { Clients } from '@ravimosharksas/apis-contract-libs-typescript';
 
+declare var require: any;
 @Component({
   selector: 'app-clients-autocomplete',
   templateUrl: './clients-autocomplete.component.html',
@@ -12,68 +14,70 @@ import { Clients } from '@ravimosharksas/apis-contract-libs-typescript';
 })
 export class ClientsAutocompleteComponent extends BaseInputFormComponent implements OnInit {
 
+  @Input() useGlobal = true;
+
   // TODO: check how to set value to input from edit.
-  // tslint:disable: align
-  options: Array<any> = [
-    { reference: 'C3435', nickname: '', name: 'Prueba', surname: ''
-      , group: '', company_name: '', score: '', sector: ''
-      , email: '', forbidden: true, vat: '' }
-    , { reference: 'C3453', nickname: '', name: 'Carlos', surname: ''
-      , group: '', company_name: '', score: '', sector: ''
-      , email: '', forbidden: false, vat: '' }
-    , { reference: 'C3450', nickname: '', name: 'Miguel', surname: ''
-      , group: '', company_name: '', score: '', sector: ''
-      , email: '', forbidden: true, vat: '' }
-    , { reference: 'C3431', nickname: '', name: 'Ramon', surname: ''
-      , group: '', company_name: '', score: '', sector: ''
-      , email: '', forbidden: false, vat: '' }
-    , { reference: 'C3444', nickname: '', name: 'Santiago', surname: ''
-      , group: '', company_name: '', score: '', sector: ''
-      , email: '', forbidden: true, vat: '' }
-    // , { reference: '', nickname: '', name: '', surname: ''
-    //   , group: '', company_name: '', score: '', sector: ''
-    //   , email: '', forbidden: false, vat: '' }
-  ];
+  options: Array<Clients> = [];
 
   filteredOptions: Observable<Array<any>>;
 
   constructor() {
     super();
+    if (!environment.production) {
+      // tslint:disable-next-line:no-require-imports
+      this.options.push(...require('../../../../../../test/mock_data/clients.json'));
+    }
   }
 
   ngOnInit(): void {
     super.ngOnInit();
+    if (this.useGlobal) {
     this.filteredOptions = this.parent.form.controls[this.controlName].valueChanges
       .pipe(
         startWith(''),
         // map(value => this._filter(value))
-        map(value => typeof value === 'string' ? value : value.reference),
+        map(value => typeof value === 'string' ? value : value),
         map(name => name ? this._filter(name) : this.options.slice())
       );
+    }
   }
 
-  private _filter(name: string): Array<any> {
+  private _filter(name: Clients | string): Array<Clients> {
+    if (typeof name === 'object') {
+      return [];
+    }
     const filterValue = name.toLowerCase();
 
-    return this.options.filter(option =>
-      option.name.toLowerCase()
-        .includes(filterValue) ||
-      option.reference.toLowerCase()
-        .includes(filterValue));
+    return this.options.filter((option: Clients) => {
+      if (option.refClient && option.refClient.toLowerCase()
+        .includes(filterValue)) {
+        return true;
+      }
+      if (option.name && option.name.toLowerCase()
+        .includes(filterValue)) {
+        return true;
+      }
+      if (option.nickname && option.nickname.toLowerCase()
+        .includes(filterValue)) {
+        return true;
+      }
+    });
   }
 
-  displayFn(client?: any): string | undefined {
-    return client ? `${client.reference} - ${client.name}` : undefined;
+  displayFn(client?: Clients): string | undefined {
+    return client ? `${client.refClient} - ${client.name}` : undefined;
   }
 
   clear(): void {
-    this.parent.form.get('client')
-      .setValue('');
-    this.parent.form.get('client')
-      .markAsUntouched();
+    if (this.parent.form.get(this.controlName).enabled) {
+      this.parent.form.get(this.controlName)
+        .setValue('');
+      this.parent.form.get(this.controlName)
+        .markAsUntouched();
+    }
   }
 
-  identify(item: Clients): Number {
+  identify(item: Clients): String {
     return item.refClient;
   }
 }

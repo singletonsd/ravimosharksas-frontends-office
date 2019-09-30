@@ -44,9 +44,9 @@ export class ClientsAddFormComponent extends BaseFormComponent implements OnInit
       this.form.get('refClient')
         .setValue(this.client.refClient);
       this.form.get('nickname')
-      .setValue(this.client.abrege);
+      .setValue(this.client.nickname);
       this.form.get('name')
-      .setValue(this.client.nom);
+      .setValue(this.client.name);
       // this.form.get('surname')
       // .setValue(this.client.abrege);
       // this.form.get('group')
