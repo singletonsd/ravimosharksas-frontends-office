@@ -9,6 +9,7 @@ export interface NavOptions {
 }
 
 export interface NavMenu {
+  id: Number;
   routes: Array<NavOptions>;
   name: String;
   accessLevel: Array<number>;
@@ -18,7 +19,7 @@ export interface NavMenu {
 
 export const SIDE_NAV_MENU: Array<NavMenu> = [
   {
-    name: 'tasks', accessLevel: [0, 1, 2], icon: 'assignment_ind', routes: [
+    id: 1, name: 'tasks', accessLevel: [0, 1, 2], icon: 'assignment_ind', routes: [
       { route: appRoutesNames.TASKS.ADD, title: 'add', icon: 'note_add' },
       { route: appRoutesNames.TASKS.MAIN, title: 'list', icon: 'assignment_returned' },
       { route: appRoutesNames.TASKS.MAIN, queryParams: { filter: 'unfinished' }, title: 'unfinished', icon: 'assignment_late' },
@@ -26,7 +27,7 @@ export const SIDE_NAV_MENU: Array<NavMenu> = [
     ]
   },
   {
-    name: 'clients', accessLevel: [0, 1, 2], icon: 'person', routes: [
+    id: 2, name: 'clients', accessLevel: [0, 1, 2], icon: 'person', routes: [
       { route: appRoutesNames.CLIENTS.ADD, title: 'add', icon: 'person_add' },
       { route: appRoutesNames.CLIENTS.MAIN, title: 'list', icon: 'people' },
       { route: appRoutesNames.CLIENTS.MAIN, queryParams: { filter: 'blocked' }, title: 'blocked', icon: 'block' },
@@ -34,13 +35,13 @@ export const SIDE_NAV_MENU: Array<NavMenu> = [
     ]
   },
   {
-    name: 'addresses', accessLevel: [0, 1, 2], icon: 'contacts', routes: [
+    id: 3, name: 'addresses', accessLevel: [0, 1, 2], icon: 'contacts', routes: [
       { route: appRoutesNames.ADDRESSES.ADD, title: 'add', icon: 'message' },
       { route: appRoutesNames.ADDRESSES.MAIN, title: 'list', icon: 'forum' }
     ]
   },
   {
-    name: 'contracts', accessLevel: [0, 1, 2], icon: 'insert_invitation', routes: [
+    id: 4, name: 'contracts', accessLevel: [0, 1, 2], icon: 'insert_invitation', routes: [
       { route: appRoutesNames.CONTRACTS.ADD, title: 'add', icon: 'control_point' },
       { route: appRoutesNames.CONTRACTS.MAIN, title: 'list', icon: 'event_note' },
       { route: appRoutesNames.CONTRACTS.MAIN, queryParams: { filter: 'unfinished' }, title: 'unfinished', icon: 'event_available' },
@@ -48,19 +49,19 @@ export const SIDE_NAV_MENU: Array<NavMenu> = [
     ]
   },
   {
-    name: 'machines', accessLevel: [0, 1, 2], icon: 'local_laundry_service', routes: [
+    id: 5, name: 'machines', accessLevel: [0, 1, 2], icon: 'local_laundry_service', routes: [
       { route: appRoutesNames.MACHINES.ADD, title: 'add', icon: 'plus_one' },
       { route: appRoutesNames.MACHINES.MAIN, title: 'list', icon: 'menu' }
     ]
   },
   {
-    name: 'pieces', accessLevel: [0, 1, 2], icon: 'directions_bus', routes: [
+    id: 6, name: 'pieces', accessLevel: [0, 1, 2], icon: 'directions_bus', routes: [
       { route: appRoutesNames.PIECES.ADD, title: 'add', icon: 'local_hospital' },
       { route: appRoutesNames.PIECES.MAIN, title: 'list', icon: 'local_shipping' }
     ]
   },
   {
-    name: 'users', accessLevel: [0, 1], icon: 'folder_shared', routes: [
+    id: 7, name: 'users', accessLevel: [0, 1], icon: 'folder_shared', routes: [
       { route: appRoutesNames.USER.ADD, title: 'add', icon: 'create_new_folder' },
       { route: appRoutesNames.USER.MAIN, title: 'list', icon: 'folder' },
       { route: appRoutesNames.USER.MAIN, queryParams: { filter: 'technicians' }, title: 'technicians', icon: 'build' },
@@ -69,7 +70,7 @@ export const SIDE_NAV_MENU: Array<NavMenu> = [
     ]
   },
   {
-    name: 'settings', accessLevel: [0, 1, 2, 3], icon: 'settings', routes: [
+    id: 8, name: 'settings', accessLevel: [0, 1, 2, 3], icon: 'settings', routes: [
       { route: appRoutesNames.USER.PASSWORD.CHANGE, title: 'password', icon: 'security' }
     , { route: appRoutesNames.USER.EMAIL.CHANGE, title: 'email', icon: 'security' }
     ]

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 // tslint:disable-next-line: no-implicit-dependencies
 import { MenuService } from '@app/services/menu/menu.service';
 import { Observable } from 'rxjs';
-import { SIDE_NAV_MENU } from './sidenav.menu';
+import { SIDE_NAV_MENU, NavMenu } from './sidenav.menu';
 
 @Component({
   selector: 'app-sidenav',
@@ -21,5 +21,9 @@ export class SidenavComponent {
 
   isOpened(): Observable<boolean> {
     return this.menuService.$displaySideNavNames;
+  }
+
+  identify(item: NavMenu): Number {
+    return item.id;
   }
 }

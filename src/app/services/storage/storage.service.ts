@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class StorageService {
 
-  constructor() { }
-
   public getCurrentUser(): string {
     return undefined;
   }

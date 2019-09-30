@@ -11,9 +11,10 @@ export class BaseNotificationComponent implements OnInit {
   notifications: Array<NotificationClass> = [];
   status: NotificationStatus = NotificationStatus.UNREAD;
 
-  constructor() { }
-
   ngOnInit(): void {
   }
 
+  identify(item: NotificationClass): String {
+    return item.text;
+  }
 }

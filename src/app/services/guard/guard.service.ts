@@ -11,9 +11,9 @@ export class GuardService {
   isLogged(): boolean {
     if (this.storageService.getCurrentUser()) {
       return true;
-    } else {
-      return false;
     }
+
+    return false;
   }
 
   getAccessLevel(): number {

@@ -61,6 +61,10 @@ export class BaseTableToolbarComponent implements OnInit {
     this.implementation.showLessColumns();
     this.shortColumns.next(true);
   }
+
+  identify(item: String): String {
+    return item;
+  }
 }
 
 export interface BaseTableToolbarInterface {

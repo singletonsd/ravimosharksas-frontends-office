@@ -14,7 +14,7 @@
     <mat-icon matListIcon>home</mat-icon>
     <span *ngIf="( isOpened() | async)">{{ 'side-nav.home' | translate }}</span>
   </a>
-  <div *ngFor="let option of options">
+  <div *ngFor="let option of options; trackBy: identify">
     <app-sidenav-item [opened]="( isOpened() | async)" [option]="option"></app-sidenav-item>
   </div>
 </mat-nav-list>

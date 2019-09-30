@@ -11,8 +11,6 @@ export class MainNotFoundComponent implements OnInit {
 
   public routes = appRoutesNames;
 
-  constructor() { }
-
   ngOnInit(): void {
   }
 

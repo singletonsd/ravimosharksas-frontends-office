@@ -87,9 +87,9 @@ export abstract class BaseTableComponent<T> implements OnInit, AfterViewInit, Ba
         if (this.breakpointObserver.isMatched(Breakpoints.Handset)) {
           if (!this.showOnlyShortColumns) {
             return true;
-          } else {
-            return cd.showOnMobile;
           }
+
+          return cd.showOnMobile;
         }
         if (this.showOnlyShortColumns) {
           return cd.showShort;

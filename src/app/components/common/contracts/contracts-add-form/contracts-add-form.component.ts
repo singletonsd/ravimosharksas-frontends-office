@@ -50,12 +50,12 @@ export class ContractsAddFormComponent extends BaseFormComponent implements OnIn
       .setValue(this.contract.miniconso);
       this.form.get('reconduction')
       .setValue(this.contract.reconduction);
-      /*this.form.get('identification')
-      .setValue(this.contract.);
-      this.form.get('reviewed')
-      .setValue(this.contract.);
-      this.form.get('valid')
-      .setValue(this.contract.);*/
+      // this.form.get('identification')
+      // .setValue(this.contract.);
+      // this.form.get('reviewed')
+      // .setValue(this.contract.);
+      // this.form.get('valid')
+      // .setValue(this.contract.);
     }
   }
 

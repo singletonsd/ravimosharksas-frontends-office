@@ -35,6 +35,7 @@
     "template-conditional-complexity": [true, 4],
     "template-cyclomatic-complexity": [true, 5],
     "template-use-track-by-function": true,
+    "template-i18n": [false, "check-id", "check-text"],
     "use-pipe-transform-interface": true,
     "deprecation": {
       "severity": "error"

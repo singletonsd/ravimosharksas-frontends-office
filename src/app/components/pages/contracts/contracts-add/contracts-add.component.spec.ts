@@ -10,7 +10,8 @@ describe('ContractsAddComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ContractsAddComponent ]
     })
-    .compileComponents();
+    .compileComponents()
+    .catch();
   }));
 
   beforeEach(() => {
@@ -20,6 +21,7 @@ describe('ContractsAddComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component)
+      .toBeTruthy();
   });
 });

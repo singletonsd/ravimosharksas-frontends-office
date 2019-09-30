@@ -8,13 +8,14 @@ import { NavOptions } from '../sidenav.menu';
 })
 export class SidenavSubitemComponent implements OnInit {
 
-  @Input() routes: NavOptions;
+  @Input() routes: Array<NavOptions>;
   @Input() itemName: string;
   @Input() opened: boolean;
-
-  constructor() { }
 
   ngOnInit(): void {
   }
 
+  identify(item: NavOptions): String {
+    return item.title;
+  }
 }

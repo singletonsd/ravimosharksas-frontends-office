@@ -24,4 +24,7 @@ export class LanguageSelectorComponent implements OnInit {
     this.languageService.setLanguage(newLanguage);
   }
 
+  identify(item: String): String {
+    return item;
+  }
 }

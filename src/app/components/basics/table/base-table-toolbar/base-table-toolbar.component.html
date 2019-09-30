@@ -24,7 +24,7 @@
     </ng-template>
     <mat-form-field style="width: 120px;">
       <mat-select #deleteSelector [value]="selectedDeletedValue">
-        <mat-option *ngFor="let option of deleteOptions" [value]="option">
+        <mat-option *ngFor="let option of deleteOptions; trackBy: identify" [value]="option">
           {{ 'deletedOptions.' + option | translate }}
         </mat-option>
       </mat-select>

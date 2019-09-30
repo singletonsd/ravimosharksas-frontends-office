@@ -11,8 +11,6 @@ export class ClientsAddComponent implements OnInit {
 
   public routes = appRoutesNames;
 
-  constructor() { }
-
   ngOnInit(): void {
   }
 

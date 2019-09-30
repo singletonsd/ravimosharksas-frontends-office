@@ -7,8 +7,6 @@ declare let gtag: Function;
 })
 export class GoogleAnalyticsService {
 
-  constructor() { }
-
   public eventEmitter(
     eventName: string,
     eventCategory: string,

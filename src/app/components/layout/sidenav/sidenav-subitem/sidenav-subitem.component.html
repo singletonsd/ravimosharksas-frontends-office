@@ -1,4 +1,4 @@
-<a *ngFor="let route of routes" mat-list-item [routerLink]="route.route" [queryParams]='route.queryParams'>
+<a *ngFor="let route of routes; trackBy: identify" mat-list-item [routerLink]="route.route" [queryParams]='route.queryParams'>
   <mat-icon matListIcon matTooltip="{{ 'side-nav.' + route.title | translate }} {{ 'side-nav.' + itemName | translate }}">{{ route.icon }}</mat-icon>
   <span *ngIf="opened">{{ 'side-nav.' + route.title | translate }}</span>
 </a>

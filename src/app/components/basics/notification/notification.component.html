@@ -1,1 +1,1 @@
-<app-base-notification-simple *ngFor="let notification of notifications" [notification]="notification" [status]="status"></app-base-notification-simple>
+<app-base-notification-simple *ngFor="let notification of notifications; trackBy: identify" [notification]="notification" [status]="status"></app-base-notification-simple>

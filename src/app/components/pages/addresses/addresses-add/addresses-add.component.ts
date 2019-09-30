@@ -11,8 +11,6 @@ export class AddressesAddComponent implements OnInit {
 
   public routes = appRoutesNames;
 
-  constructor() { }
-
   ngOnInit(): void {
   }
 
