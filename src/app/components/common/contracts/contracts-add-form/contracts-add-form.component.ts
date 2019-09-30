@@ -22,7 +22,8 @@ export class ContractsAddFormComponent extends BaseFormComponent implements OnIn
             , private readonly cdr: ChangeDetectorRef
             ) {
     super('CONTRACTS_ADD_FORM', 'models.contract.');
-    this.form.addControl('refContract', new FormControl('', [ Validators.required ]));
+    this.form.addControl('refContract', new FormControl('', [ ]));
+    this.form.addControl('client', new FormControl('', [ Validators.required ]));
     this.form.addControl('identification', new FormControl('', []));
     this.form.addControl('dateDebut', new FormControl('', [ ]));
     this.form.addControl('dateFin', new FormControl('', [ Validators.required ]));
@@ -31,6 +32,14 @@ export class ContractsAddFormComponent extends BaseFormComponent implements OnIn
     this.form.addControl('miniconso', new FormControl('', []));
     this.form.addControl('reviewed', new FormControl('', []));
     this.form.addControl('valid', new FormControl('', []));
+    // this.form.get('client')
+    //   .disable();
+    this.form.get('refContract')
+      .disable();
+    this.form.get('dateDebut')
+      .disable();
+    this.form.get('dateFin')
+      .disable();
   }
 
   ngOnInit(): void {
@@ -53,6 +62,8 @@ export class ContractsAddFormComponent extends BaseFormComponent implements OnIn
       .setValue(this.contract.reconduction);
       this.form.get('identification')
       .setValue(this.contract.identification);
+      this.form.get('client')
+      .setValue(this.contract.client);
       this.form.get('reviewed')
       .setValue(this.contract.reviewed);
       this.form.get('valid')
