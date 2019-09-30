@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 col-sm-auto">
-    <button *ngIf="guard.hasEditorAccess()" mat-icon-button (click)="add()">
+    <button *ngIf="guard.hasEditorAccess()" [disabled]="disableAdd" mat-icon-button (click)="add()">
       <mat-icon matTooltip="{{ 'actions.add' | translate }}" matListIcon style="color: blueviolet">add
       </mat-icon>
     </button>

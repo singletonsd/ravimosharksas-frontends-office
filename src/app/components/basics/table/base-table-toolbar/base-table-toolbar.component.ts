@@ -13,6 +13,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class BaseTableToolbarComponent implements OnInit {
 
+  @Input() disableAdd = false;
+
   @Input() implementation: BaseTableToolbarInterface;
   @Input() selectedDeletedValue: DeletedParameter = 'NOT_DELETED';
 

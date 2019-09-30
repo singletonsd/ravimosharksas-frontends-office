@@ -21,6 +21,12 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { LanguageSelectorComponent } from './components/basics/language-selector/language-selector.component';
 import { HttpLoaderFactory, LanguageService } from './services/language/language.service';
 
+import { ApiModule as ApiRavimoContractModule, BASE_PATH } from '@ravimosharksas/apis-contract-libs-typescript';
+
+// tslint:disable-next-line: no-implicit-dependencies
+import { environment } from '@env/environment';
+import { apiConfigFactory } from './app.configuration';
+
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
 import { GoogleAnalyticsService } from './services/google-analytics/google-analytics.service';
@@ -162,7 +168,8 @@ import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-a
       // serverLogLevel: NgxLoggerLevel.ERROR,
       disableConsoleLogging: false
     }),
-    LayoutModule
+    LayoutModule,
+    ApiRavimoContractModule.forRoot(apiConfigFactory)
   ],
   providers: [
     TranslateService,
@@ -173,7 +180,8 @@ import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-a
     MenuService,
     PreviousRouteService,
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
-    { provide: MAT_DATE_FORMATS, useValue: CUSTOM_FORMATS }
+    { provide: MAT_DATE_FORMATS, useValue: CUSTOM_FORMATS },
+    { provide: BASE_PATH, useValue: environment.apiRavimoContract.API_BASE_PATH }
   ],
   bootstrap: [AppComponent],
   exports: [
