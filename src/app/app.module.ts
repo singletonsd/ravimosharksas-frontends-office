@@ -73,6 +73,10 @@ import { ContractsTableComponent } from './components/common/contracts/contracts
 import { ContractsAddComponent } from './components/pages/contracts/contracts-add/contracts-add.component';
 import { ContractsMainComponent } from './components/pages/contracts/contracts-main/contracts-main.component';
 
+import { MachinesAddFormComponent } from './components/common/machines/machines-add-form/machines-add-form.component';
+
+import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-auto-complete/pieces-auto-complete.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,7 +115,9 @@ import { ContractsMainComponent } from './components/pages/contracts/contracts-m
     ContractsTableOptionsComponent,
     ClientsCellComponent,
     ContractsTableToolbarComponent,
-    DateInputComponent
+    DateInputComponent,
+    MachinesAddFormComponent,
+    PiecesAutoCompleteComponent
   ],
   imports: [
     BrowserModule,
