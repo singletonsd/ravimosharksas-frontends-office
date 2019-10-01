@@ -1,11 +1,13 @@
 import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-// tslint:disable-next-line: no-implicit-dependencies
+// tslint:disable: no-implicit-dependencies
 import { BaseFormComponent } from '@app/models/base-form.class';
+import { environment } from '@env/environment';
 import { Contracts } from '@ravimosharksas/apis-contract-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
 // import { TranslateService } from '@ngx-translate/core';
 
+declare var require: any;
 @Component({
   selector: 'app-contracts-add-form',
   templateUrl: './contracts-add-form.component.html',
@@ -40,6 +42,12 @@ export class ContractsAddFormComponent extends BaseFormComponent implements OnIn
       .disable();
     this.form.get('dateFin')
       .disable();
+    if (!environment.production && !this.contract) {
+      this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
+      // tslint:disable-next-line:no-require-imports
+      this.contract = require('../../../../../../test/mock_data/contracts.json')[0];
+      this.logger.debug(this.contract);
+    }
   }
 
   ngOnInit(): void {
@@ -68,8 +76,8 @@ export class ContractsAddFormComponent extends BaseFormComponent implements OnIn
       .setValue(this.contract.reviewed);
       this.form.get('valid')
       .setValue(this.contract.valid);
-      this.cdr.detectChanges();
     }
+    this.cdr.detectChanges();
   }
 
   onSubmit(): void {
