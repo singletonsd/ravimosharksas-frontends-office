@@ -29,6 +29,16 @@
         "deleted": false,
         "machine": null,
         "refContract": 123
+      },
+      {
+        "id": 562,
+        "identification": "FOUR COMPACT MAGIC CHG + SOCLE INSE",
+        "reviewed": false,
+        "createdAt": "2019-09-23T13:11:51.890Z",
+        "updatedAt": "2019-09-23T13:11:51.890Z",
+        "deleted": false,
+        "machine": null,
+        "refContract": 562
       }
     ],
     "refClient": "C4004"
