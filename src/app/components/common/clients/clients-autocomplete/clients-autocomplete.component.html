@@ -1,8 +1,9 @@
 <mat-form-field [formGroup]="parent.form" style="width: 100%">
-  <input placeholder="{{ placeHolder | translate }}" formControlName="{{ controlName }}" [matAutocomplete]="auto" matInput type="{{ type }}">
+  <input placeholder="{{ placeHolder | translate }}" formControlName="{{ controlName }}" [matAutocomplete]="auto" matInput type="{{ type }}" (keydown)=onKeydownEvent($event)>
   <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption [displayWith]="displayFn" position="below">
-    <mat-option *ngFor="let option of filteredOptions | async; trackBy: identify" [value]="option">
-      {{ option.refClient }} - {{ option.name }}
+    <mat-option *ngFor="let option of filteredOptions$ | async; trackBy: identify" [value]="option">
+      <span>{{ option.refClient }}</span> |
+      <small>{{ option.name }}</small>
     </mat-option>
   </mat-autocomplete>
   <mat-error *ngIf="hasError()">
