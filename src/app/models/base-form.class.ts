@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit, Input } from '@angular/core';
 import { FormGroup, ValidatorFn } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
 import { NotificationClass, NotificationStatus } from '@components/basics/notification/simple/notification-simple.class';
@@ -6,9 +6,12 @@ import { BehaviorSubject } from 'rxjs';
 
 export class BaseFormComponent implements OnInit {
 
-// tslint:disable-next-line: max-line-length
+  // tslint:disable-next-line: max-line-length
   public static emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   public static passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+  @Input() public showButtons = true;
+  @Input() public showTitle = false;
 
   public notification: NotificationClass = new NotificationClass();
   public form: FormGroup;

@@ -1,0 +1,49 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header *ngIf="showTitle">
+      <mat-card-title>
+        <ng-container *ngIf="item; else register">
+          <h2>
+            <span>{{ 'pages.imported_machine.title.edit' | translate }}</span>
+            <strong> #{{ item.refContract }}</strong>
+          </h2>
+        </ng-container>
+        <ng-template #register>
+          <h2>{{ 'pages.imported_machine.title.add' | translate }}</h2>
+        </ng-template>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex justify-content-center" *ngIf="(loading$ | async); else loaded">
+        <mat-spinner></mat-spinner>
+      </div>
+      <ng-template #loaded>
+        <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
+        <div class="row">
+          <app-base-input class="col-12 col-sm-6" [parent]="this" [controlName]="'identification'"></app-base-input>
+          <app-contracts-auto-complete class="col-12 col-sm-6" [parent]="this" [controlName]="'contract'"></app-contracts-auto-complete>
+          <app-pieces-auto-complete class="col-12 col-sm-6" [parent]="this" [controlName]="'machine.piece'" [useGlobal]="false"></app-pieces-auto-complete>
+          <app-base-input class="col-12 col-sm-6" [parent]="this" [controlName]="'machine.serial_number'"></app-base-input>
+          <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'id'"></app-base-input>
+          <mat-checkbox class="col-6 col-sm-4" formControlName="reviewed">{{ 'models.contract.reviewed' | translate }}</mat-checkbox>
+        </div>
+      </ng-template>
+    </mat-card-content>
+    <mat-card-actions *ngIf="showButtons">
+      <div class="row">
+        <div class="col-6">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!isValid()" style="width: 100%">
+            <mat-icon matTooltip="{{ 'actions.submit' | translate }}" matListIcon>add</mat-icon>
+            {{ 'actions.submit' | translate }}
+          </button>
+        </div>
+        <div class="col-6">
+          <button mat-raised-button color="accent" type="reset" (click)="resetForm()" style="width: 100%">
+            <mat-icon matTooltip="{{ 'actions.clear_form' | translate }}" matListIcon>clear_all</mat-icon>
+            {{ 'actions.clear_form' | translate }}
+          </button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</form>

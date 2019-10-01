@@ -12,7 +12,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatAutocompleteModule, MatButtonModule
   , MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule
   , MatExpansionModule, MatIconModule, MatInputModule, MatListModule
-  , MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+  , MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule, MatBadgeModule } from '@angular/material';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { CUSTOM_FORMATS } from './app.dates.formats';
 
@@ -74,17 +74,23 @@ import { ClientsAddComponent } from './components/pages/clients/clients/clients-
 import { ClientsMainComponent } from './components/pages/clients/clients/clients-main/clients-main.component';
 
 import { ContractsAddFormComponent } from './components/common/contracts/contracts-add-form/contracts-add-form.component';
+import { ContractsAutoCompleteComponent } from './components/common/contracts/contracts-auto-complete/contracts-auto-complete.component';
+import { ContractsMachinePanelComponent } from './components/common/contracts/contracts-machine-panel/contracts-machine-panel.component';
 import { ContractsTableOptionsComponent } from './components/common/contracts/contracts-table/contracts-table-options/contracts-table-options.component';
 import { ContractsTableToolbarComponent } from './components/common/contracts/contracts-table/contracts-table-toolbar/contracts-table-toolbar.component';
 import { ContractsTableComponent } from './components/common/contracts/contracts-table/contracts-table.component';
 import { ContractsAddComponent } from './components/pages/contracts/contracts-add/contracts-add.component';
 import { ContractsMainComponent } from './components/pages/contracts/contracts-main/contracts-main.component';
 
+import { ImportedMachinesAddFormComponent } from './components/common/importedMachines/imported-machines-add-form/imported-machines-add-form.component';
+
 import { MachinesAddFormComponent } from './components/common/machines/machines-add-form/machines-add-form.component';
 import { MachinesAutoCompleteComponent } from './components/common/machines/machines-auto-complete/machines-auto-complete.component';
 import { MachinesAddComponent } from './components/pages/machines/machines-add/machines-add.component';
 
 import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-auto-complete/pieces-auto-complete.component';
+
+import { ImportedMachinesAutoCompleteComponent } from './components/common/importedMachines/imported-machines-auto-complete/imported-machines-auto-complete.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +135,11 @@ import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-a
     MachinesAddFormComponent,
     MachinesAutoCompleteComponent,
     MachinesAddComponent,
-    PiecesAutoCompleteComponent
+    PiecesAutoCompleteComponent,
+    ImportedMachinesAddFormComponent,
+    ImportedMachinesAutoCompleteComponent,
+    ContractsAutoCompleteComponent,
+    ContractsMachinePanelComponent
   ],
   imports: [
     BrowserModule,
@@ -141,6 +151,7 @@ import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-a
     MatAutocompleteModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatBadgeModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatDialogModule,
@@ -197,6 +208,7 @@ import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-a
     AddressesAddFormComponent,
     ClientsAddFormComponent,
     ContractsAddFormComponent,
+    ImportedMachinesAddFormComponent,
     MachinesAddFormComponent
   ]
 })
