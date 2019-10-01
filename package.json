@@ -4,14 +4,17 @@
   "scripts": {
     "ng": "ng",
     "check": "npm-check -i @app/* -i @user/* -i @password/* -i @components/* -i @services/* -i @env/* --skip-unused",
-    "start": "ng serve",
+    "start": "npm run docker-run && ng serve",
     "static": "npm run build && static dist/dist",
+    "serve": "npm run ng serve",
     "build": "ng build --prod --build-Optimizer",
     "build-all": "./scripts/generate_package.sh master",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "docker-generate": "./scripts/generate_docker_image.sh y"
+    "docker-generate": "./scripts/generate_docker_image.sh y",
+    "docker-run": "npm run docker-pull && docker-compose up -d",
+    "docker-pull": "docker pull registry.gitlab.com/ravimosharksas/apis/contract/app-nodejs/alpine:8-alpine-latest"
   },
   "private": true,
   "dependencies": {

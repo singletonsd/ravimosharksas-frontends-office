@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiRavimoContract: {
-    API_BASE_PATH: 'http://127.0.0.1:8000'
+    API_BASE_PATH: 'http://127.0.0.1:4201'
   }
 };
 
