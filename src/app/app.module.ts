@@ -45,6 +45,7 @@ import { PreviousRouteService } from './services/previous-route/previous-route.s
 import { StorageService } from './services/storage/storage.service';
 
 import { BaseDialogComponent } from './components/basics/dialog/base-dialog/base-dialog.component';
+import { BaseAutoCompleteComponent } from './components/basics/forms/base-auto-complete/base-auto-complete.component';
 import { BaseInputComponent } from './components/basics/forms/base-input/base-input.component';
 import { DateInputComponent } from './components/basics/forms/date-input/date-input.component';
 import { BaseNotificationComponent } from './components/basics/notification/notification.component';
@@ -65,7 +66,7 @@ import { AddressesAddComponent } from './components/pages/addresses/addresses-ad
 import { AddressesMainComponent } from './components/pages/addresses/addresses-main/addresses-main.component';
 
 import { ClientsAddFormComponent } from './components/common/clients/clients-add-form/clients-add-form.component';
-import { ClientsAutocompleteComponent } from './components/common/clients/clients-autocomplete/clients-autocomplete.component';
+import { ClientsAutocompleteComponent } from './components/common/clients/clients-auto-complete/clients-auto-complete.component';
 import { ClientsCellComponent } from './components/common/clients/clients-cell/clients-cell.component';
 import { ClientTableOptionsComponent } from './components/common/clients/clients-table/client-table-options/client-table-options.component';
 import { ClientsTableComponent } from './components/common/clients/clients-table/clients-table.component';
@@ -80,6 +81,8 @@ import { ContractsAddComponent } from './components/pages/contracts/contracts-ad
 import { ContractsMainComponent } from './components/pages/contracts/contracts-main/contracts-main.component';
 
 import { MachinesAddFormComponent } from './components/common/machines/machines-add-form/machines-add-form.component';
+import { MachinesAutoCompleteComponent } from './components/common/machines/machines-auto-complete/machines-auto-complete.component';
+import { MachinesAddComponent } from './components/pages/machines/machines-add/machines-add.component';
 
 import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-auto-complete/pieces-auto-complete.component';
 
@@ -91,21 +94,23 @@ import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-a
     SidenavComponent,
     SidenavItemComponent,
     SidenavSubitemComponent,
-    MainComponent,
+    BaseInputComponent,
+    BaseAutoCompleteComponent,
     BaseDialogComponent,
     BaseNotificationComponent,
     BaseNotificationSimpleComponent,
     BaseTableToolbarComponent,
     BaseTableOptionsComponent,
+    DateInputComponent,
     LanguageSelectorComponent,
+    MainComponent,
+    HomeComponent,
     MainNotAccessComponent,
     MainNotAvailableComponent,
     MainNotFoundComponent,
     AddressesAddComponent,
-    AddressesMainComponent,
     AddressesAddFormComponent,
-    HomeComponent,
-    BaseInputComponent,
+    AddressesMainComponent,
     AddressesTableComponent,
     AddressesTableOptionsComponent,
     ClientsAddFormComponent,
@@ -114,15 +119,16 @@ import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-a
     ClientsTableComponent,
     ClientTableOptionsComponent,
     ClientsAutocompleteComponent,
+    ClientsCellComponent,
     ContractsAddFormComponent,
     ContractsAddComponent,
     ContractsMainComponent,
     ContractsTableComponent,
     ContractsTableOptionsComponent,
-    ClientsCellComponent,
     ContractsTableToolbarComponent,
-    DateInputComponent,
     MachinesAddFormComponent,
+    MachinesAutoCompleteComponent,
+    MachinesAddComponent,
     PiecesAutoCompleteComponent
   ],
   imports: [
@@ -190,7 +196,8 @@ import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-a
   entryComponents: [
     AddressesAddFormComponent,
     ClientsAddFormComponent,
-    ContractsAddFormComponent
+    ContractsAddFormComponent,
+    MachinesAddFormComponent
   ]
 })
 export class AppModule { }

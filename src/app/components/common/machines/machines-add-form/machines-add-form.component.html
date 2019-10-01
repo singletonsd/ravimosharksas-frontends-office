@@ -1,3 +1,46 @@
-<p>
-  machines-add-form works!
-</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>
+        <ng-container *ngIf="item; else register">
+          <h2>
+            <span>{{ 'pages.machine.title.edit' | translate }}</span>
+            <strong> #{{ item.refContract }}</strong>
+          </h2>
+        </ng-container>
+        <ng-template #register>
+          <h2>{{ 'pages.machine.title.add' | translate }}</h2>
+        </ng-template>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex justify-content-center" *ngIf="(loading$ | async); else loaded">
+        <mat-spinner></mat-spinner>
+      </div>
+      <ng-template #loaded>
+        <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
+        <div class="row">
+          <app-base-input class="col-3 col-sm-3" [parent]="this" [controlName]="'id'"></app-base-input>
+          <app-base-input class="col-9 col-sm-9" [parent]="this" [controlName]="'numSerie'"></app-base-input>
+          <app-pieces-auto-complete class="col-12" [parent]="this" [controlName]="'piece'" [useGlobal]="false"></app-pieces-auto-complete>
+        </div>
+      </ng-template>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="row">
+        <div class="col-6">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!isValid()" style="width: 100%">
+            <mat-icon matTooltip="{{ 'actions.submit' | translate }}" matListIcon>add</mat-icon>
+            {{ 'actions.submit' | translate }}
+          </button>
+        </div>
+        <div class="col-6">
+          <button mat-raised-button color="accent" type="reset" (click)="resetForm()" style="width: 100%">
+            <mat-icon matTooltip="{{ 'actions.clear_form' | translate }}" matListIcon>clear_all</mat-icon>
+            {{ 'actions.clear_form' | translate }}
+          </button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</form>

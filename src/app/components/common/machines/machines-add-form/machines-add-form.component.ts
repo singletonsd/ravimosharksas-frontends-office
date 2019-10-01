@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
 import { BaseFormComponent } from '@app/models/base-form.class';
@@ -11,58 +11,37 @@ import { NGXLogger } from 'ngx-logger';
   templateUrl: './machines-add-form.component.html',
   styleUrls: ['./machines-add-form.component.scss']
 })
-export class MachinesAddFormComponent  extends BaseFormComponent implements OnInit, AfterViewInit {
+export class MachinesAddFormComponent extends BaseFormComponent implements OnInit, AfterViewInit {
 
-  @Input() client: any;
+  @Input() item: Machines;
 
   @Output() readonly added = new EventEmitter<Machines>();
 
   constructor(private readonly logger: NGXLogger
             // , private readonly translate: TranslateService
-            // , private readonly cdr: ChangeDetectorRef
+            , private readonly cdr: ChangeDetectorRef
             ) {
-    super('MACHINES_ADD_FORM', 'models.client.');
-    this.form.addControl('reference', new FormControl('', [ Validators.required ]));
-    this.form.addControl('nickname', new FormControl('', []));
-    this.form.addControl('name', new FormControl('', []));
-    this.form.addControl('surname', new FormControl('', []));
-    this.form.addControl('group', new FormControl('', []));
-    this.form.addControl('company_name', new FormControl('', []));
-    this.form.addControl('score', new FormControl('', []));
-    this.form.addControl('sector', new FormControl('', []));
-    this.form.addControl('email', new FormControl('', []));
-    this.form.addControl('forbidden', new FormControl('', []));
-    this.form.addControl('vat', new FormControl('', []));
+    super('MACHINES_ADD_FORM', 'models.machine.');
+    this.form.addControl('id', new FormControl('', [ ]));
+    this.form.addControl('numSerie', new FormControl('', [ Validators.required ]));
+    this.form.addControl('piece', new FormControl('', [ Validators.required ]));
+    this.form.get('id')
+      .disable();
   }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
-    if (this.client) {
-      this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.client.id);
+    if (this.item) {
+      this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
       this.form.get('id')
-        .setValue(this.client.reference);
-      this.form.get('nickname')
-      .setValue(this.client.nickname);
-      this.form.get('name')
-      .setValue(this.client.name);
-      this.form.get('surname')
-      .setValue(this.client.surname);
-      this.form.get('group')
-      .setValue(this.client.group);
-      this.form.get('company_name')
-      .setValue(this.client.company_name);
-      this.form.get('score')
-      .setValue(this.client.score);
-      this.form.get('sector')
-      .setValue(this.client.sector);
-      this.form.get('email')
-      .setValue(this.client.email);
-      this.form.get('forbidden')
-      .setValue(this.client.forbidden);
-      this.form.get('vat')
-      .setValue(this.client.vat);
+      .setValue(this.item.id);
+      this.form.get('numSerie')
+      .setValue(this.item.numSerie);
+      this.form.get('piece')
+      .setValue(this.item.piece);
+      this.cdr.detectChanges();
     }
   }
 
@@ -73,21 +52,21 @@ export class MachinesAddFormComponent  extends BaseFormComponent implements OnIn
     }
     const data = this.form.value;
     this.logger.debug(this.COMPONENT_NAME, 'form submitted.', data);
-    if (this.client) {
-      this.logger.debug(this.COMPONENT_NAME, 'edit', this.client);
-      // const prevName = this.client.name;
-      this.client.name = data;
-      // this.addresssService.editaddress(this.client)
+    if (this.item) {
+      this.logger.debug(this.COMPONENT_NAME, 'edit', this.item);
+      // const prevName = this.item.name;
+      this.item = data;
+      // this.addresssService.editaddress(this.item)
       // .subscribe(() => {
-      //   this.translate.get('pages.client.results.success.edit')
+      //   this.translate.get('pages.item.results.success.edit')
       //     .subscribe(text => {
       //       this.notification.success(text);
-      //       this.logger.debug(this.COMPONENT_NAME, 'success', this.client);
+      //       this.logger.debug(this.COMPONENT_NAME, 'success', this.item);
       //       this.finishAPICall(false);
       //     });
       // }, error => {
       //   const translate = (error && error.error && error.error.message ? error.error.message : 'fields.errors.unknown');
-      //   this.client.name = prevName;
+      //   this.item.name = prevName;
       //   this.translate.get(translate)
       //     .subscribe(text => {
       //       this.notification.error(text);
@@ -99,7 +78,7 @@ export class MachinesAddFormComponent  extends BaseFormComponent implements OnIn
       this.logger.debug(this.COMPONENT_NAME, 'add');
       // this.addresssService.addaddress({ name: data })
       // .subscribe((newAddress: addresss) => {
-      //   this.translate.get('pages.client.results.success.add')
+      //   this.translate.get('pages.item.results.success.add')
       //     .subscribe(text => {
       //       this.notification.success(text);
       //       this.logger.debug(this.COMPONENT_NAME, 'success', newAddress);
