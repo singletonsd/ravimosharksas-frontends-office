@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClientsAutocompleteComponent } from './clients-autocomplete.component';
+import { ClientsAutocompleteComponent } from './clients-auto-complete.component';
 
 describe('ClientsAutocompleteComponent', () => {
   let component: ClientsAutocompleteComponent;

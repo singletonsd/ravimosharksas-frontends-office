@@ -6,7 +6,7 @@
     </ng-container>
     <ng-template #loaded>
       <mat-option *ngFor="let option of filteredOptions$ | async; trackBy: identify" [value]="option">
-        <span>{{ option.refArticle }}</span> |
+        <span>{{ option.refClient }}</span> |
         <small>{{ option.name }}</small>
       </mat-option>
     </ng-template>

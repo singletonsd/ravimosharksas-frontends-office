@@ -6,16 +6,16 @@ import { NGXLogger } from 'ngx-logger';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-clients-autocomplete',
-  templateUrl: './clients-autocomplete.component.html',
-  styleUrls: ['./clients-autocomplete.component.scss']
+  selector: 'app-clients-auto-complete',
+  templateUrl: './clients-auto-complete.component.html',
+  styleUrls: ['./clients-auto-complete.component.scss']
 })
 export class ClientsAutocompleteComponent extends BaseAutocompleteComponent<Clients>
   implements OnInit {
 
   constructor(private readonly clientService: ClientsService,
               logger: NGXLogger) {
-    super(logger, 'CLIENTS_AUTOCOMPLETE', 'clients');
+    super(logger, 'CLIENTS_AUTO_COMPLETE', 'clients');
   }
 
   ngOnInit(): void {
