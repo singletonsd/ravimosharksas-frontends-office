@@ -12,6 +12,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "pull": "git pull origin master && npm i",
     "docker-generate": "./scripts/generate_docker_image.sh y",
     "docker-run": "npm run docker-pull && docker-compose up -d",
     "docker-pull": "docker pull registry.gitlab.com/ravimosharksas/apis/contract/app-nodejs/alpine:8-alpine-latest"
