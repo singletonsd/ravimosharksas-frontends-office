@@ -1,7 +1,7 @@
-import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 // tslint:disable: no-implicit-dependencies
-import { BaseFormComponent } from '@app/models/base-form.class';
+import { BaseFormAddComponent } from '@app/models/base-form-add.class';
 import { environment } from '@env/environment';
 import { Contracts } from '@ravimosharksas/apis-contract-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
@@ -13,17 +13,13 @@ declare var require: any;
   templateUrl: './contracts-add-form.component.html',
   styleUrls: ['./contracts-add-form.component.scss']
 })
-export class ContractsAddFormComponent extends BaseFormComponent implements OnInit, AfterViewInit {
-
-  @Input() contract: Contracts;
-
-  @Output() readonly added = new EventEmitter<Contracts>();
+export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> implements OnInit {
 
   constructor(private readonly logger: NGXLogger
             // , private readonly translate: TranslateService
-            , private readonly cdr: ChangeDetectorRef
+            , cdr: ChangeDetectorRef
             ) {
-    super('CONTRACTS_ADD_FORM', 'models.contract.');
+    super('CONTRACTS_ADD_FORM', 'models.contract.', cdr);
     this.form.addControl('refContract', new FormControl('', [ ]));
     this.form.addControl('client', new FormControl('', [ Validators.required ]));
     this.form.addControl('identification', new FormControl('', []));
@@ -42,55 +38,48 @@ export class ContractsAddFormComponent extends BaseFormComponent implements OnIn
       .disable();
     this.form.get('dateFin')
       .disable();
-    if (!environment.production && !this.contract) {
+    if (!environment.production && !this.item) {
       this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
       // tslint:disable-next-line:no-require-imports
-      this.contract = require('../../../../../../test/mock_data/contracts.json')[0];
-      this.logger.debug(this.contract);
+      this.item = require('../../../../../../test/mock_data/contracts.json')[0];
+      this.logger.debug(this.item);
     }
   }
 
   ngOnInit(): void {
   }
 
-  ngAfterViewInit(): void {
-    if (this.contract) {
-      this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.contract.refContract);
-      this.form.get('refContract')
-        .setValue(this.contract.refContract);
-      this.form.get('dateDebut')
-      .setValue(this.contract.dateDebut);
-      this.form.get('dateFin')
-      .setValue(this.contract.dateFin);
-      this.form.get('loyer')
-      .setValue(this.contract.loyer);
-      this.form.get('miniconso')
-      .setValue(this.contract.miniconso);
-      this.form.get('reconduction')
-      .setValue(this.contract.reconduction);
-      this.form.get('identification')
-      .setValue(this.contract.identification);
-      this.form.get('client')
-      .setValue(this.contract.client);
-      this.form.get('reviewed')
-      .setValue(this.contract.reviewed);
-      this.form.get('valid')
-      .setValue(this.contract.valid);
-    }
-    this.cdr.detectChanges();
+  protected fillForm(): void {
+    this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.refContract);
+    this.form.get('refContract')
+      .setValue(this.item.refContract);
+    this.form.get('dateDebut')
+    .setValue(this.item.dateDebut);
+    this.form.get('dateFin')
+    .setValue(this.item.dateFin);
+    this.form.get('loyer')
+    .setValue(this.item.loyer);
+    this.form.get('miniconso')
+    .setValue(this.item.miniconso);
+    this.form.get('reconduction')
+    .setValue(this.item.reconduction);
+    this.form.get('identification')
+    .setValue(this.item.identification);
+    this.form.get('client')
+    .setValue(this.item.client);
+    this.form.get('reviewed')
+    .setValue(this.item.reviewed);
+    this.form.get('valid')
+    .setValue(this.item.valid);
   }
 
-  onSubmit(): void {
-    super.onSubmit();
-    if (this.form.invalid) {
-      return;
-    }
+  finishSubmit(): void {
     const data = this.form.value;
     this.logger.debug(this.COMPONENT_NAME, 'form submitted.', data);
-    if (this.contract) {
-      this.logger.debug(this.COMPONENT_NAME, 'edit', this.contract);
+    if (this.item) {
+      this.logger.debug(this.COMPONENT_NAME, 'edit', this.item);
       // const prevName = this.contract.name;
-      this.contract = data;
+      this.item = data;
       // this.addresssService.editaddress(this.contract)
       // .subscribe(() => {
       //   this.translate.get('pages.contract.results.success.edit')

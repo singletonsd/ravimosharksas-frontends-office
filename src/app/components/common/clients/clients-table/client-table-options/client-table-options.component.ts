@@ -32,7 +32,7 @@ export class ClientTableOptionsComponent extends BaseTableOptions<any> implement
     const dialog = this.dialog.open(ClientsAddFormComponent, {
       panelClass: 'dialog-auto-scroll'
     });
-    dialog.componentInstance.client = this.entity;
+    dialog.componentInstance.item = this.entity;
   }
 
   disable(): void {

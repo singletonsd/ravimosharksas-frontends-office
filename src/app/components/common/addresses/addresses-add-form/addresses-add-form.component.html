@@ -2,7 +2,7 @@
   <mat-card class="shipping-card">
     <mat-card-header>
       <mat-card-title>
-        <ng-container *ngIf="address; else register">
+        <ng-container *ngIf="item; else register">
           <h2>
             <span>{{ 'pages.address.title.edit' | translate }}</span>
             <strong> #{{ address.id }}</strong>
@@ -49,7 +49,7 @@
     <mat-card-actions>
       <div class="row">
         <div class="col-6">
-          <button mat-raised-button color="primary" type="submit" [disabled]="!isValid()" style="width: 100%">
+          <button mat-raised-button color="primary" type="submit" [disabled]="buttonSubmitDisabled" style="width: 100%">
             <mat-icon matTooltip="{{ 'actions.submit' | translate }}" matListIcon>add</mat-icon>
             {{ 'actions.submit' | translate }}
           </button>

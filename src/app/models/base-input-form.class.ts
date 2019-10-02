@@ -1,10 +1,10 @@
 import { Input, OnInit } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { BaseFormComponent } from './base-form.class';
+import { BaseFormNewComponent } from './base-form-new.class';
 
 export class BaseInputFormComponent implements OnInit {
 
-  @Input() parent: BaseFormComponent;
+  @Input() parent: BaseFormNewComponent;
   @Input() controlName: string;
   @Input() placeHolder: string;
   @Input() type = 'text';

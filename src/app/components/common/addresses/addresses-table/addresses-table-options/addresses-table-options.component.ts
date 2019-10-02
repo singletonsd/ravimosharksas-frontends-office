@@ -32,7 +32,7 @@ export class AddressesTableOptionsComponent extends BaseTableOptions<any> implem
     const dialog = this.dialog.open(AddressesAddFormComponent, {
       panelClass: 'dialog-auto-scroll'
     });
-    dialog.componentInstance.address = this.entity;
+    dialog.componentInstance.item = this.entity;
   }
 
   disable(): void {

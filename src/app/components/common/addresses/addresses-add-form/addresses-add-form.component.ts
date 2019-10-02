@@ -1,7 +1,7 @@
-import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
-import { BaseFormComponent } from '@app/models/base-form.class';
+import { BaseFormAddComponent } from '@app/models/base-form-add.class';
 // import { TranslateService } from '@ngx-translate/core';
 import { NGXLogger } from 'ngx-logger';
 
@@ -10,16 +10,12 @@ import { NGXLogger } from 'ngx-logger';
   templateUrl: './addresses-add-form.component.html',
   styleUrls: ['./addresses-add-form.component.scss']
 })
-export class AddressesAddFormComponent extends BaseFormComponent implements OnInit, AfterViewInit {
-
-  @Input() address: any;
-
-  @Output() readonly added = new EventEmitter<any>();
+export class AddressesAddFormComponent extends BaseFormAddComponent<any> implements OnInit {
 
   constructor(private readonly logger: NGXLogger
             // , private readonly translate: TranslateService
-            , private readonly cdr: ChangeDetectorRef) {
-    super('ADDRESS_ADD_FORM', 'models.address.');
+            , cdr: ChangeDetectorRef) {
+    super('ADDRESS_ADD_FORM', 'models.address.', cdr);
     this.form.addControl('client', new FormControl('', [ Validators.required ]));
     this.form.addControl('name', new FormControl('', [ Validators.required ]));
     this.form.addControl('number', new FormControl('', [ ]));
@@ -39,63 +35,56 @@ export class AddressesAddFormComponent extends BaseFormComponent implements OnIn
   ngOnInit(): void {
   }
 
-  ngAfterViewInit(): void {
-    if (this.address) {
-      this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.address.id);
-      this.form.get('client')
-        .setValue(this.address.client);
-      this.form.get('name')
-        .setValue(this.address.name);
-      this.form.get('number')
-        .setValue(this.address.number);
-      this.form.get('street')
-        .setValue(this.address.street);
-      this.form.get('postal_code')
-        .setValue(this.address.postal_code);
-      this.form.get('complement')
-      .setValue(this.address.complement);
-      this.form.get('city')
-        .setValue(this.address.city);
-      this.form.get('country')
-      .setValue(this.address.country);
-      this.form.get('telephone')
-        .setValue(this.address.telephone);
-      this.form.get('restaurant_name')
-        .setValue(this.address.restaurant_name);
-      this.form.get('delivery')
-        .setValue(this.address.delivery);
-      this.form.get('latitude')
-        .setValue(this.address.latitude);
-      this.form.get('longitude')
-        .setValue(this.address.longitude);
-      this.form.get('type')
-        .setValue(this.address.type);
-      this.cdr.detectChanges();
-    }
+  fillForm(): void {
+    this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
+    this.form.get('client')
+      .setValue(this.item.client);
+    this.form.get('name')
+      .setValue(this.item.name);
+    this.form.get('number')
+      .setValue(this.item.number);
+    this.form.get('street')
+      .setValue(this.item.street);
+    this.form.get('postal_code')
+      .setValue(this.item.postal_code);
+    this.form.get('complement')
+    .setValue(this.item.complement);
+    this.form.get('city')
+      .setValue(this.item.city);
+    this.form.get('country')
+    .setValue(this.item.country);
+    this.form.get('telephone')
+      .setValue(this.item.telephone);
+    this.form.get('restaurant_name')
+      .setValue(this.item.restaurant_name);
+    this.form.get('delivery')
+      .setValue(this.item.delivery);
+    this.form.get('latitude')
+      .setValue(this.item.latitude);
+    this.form.get('longitude')
+      .setValue(this.item.longitude);
+    this.form.get('type')
+      .setValue(this.item.type);
   }
 
-  onSubmit(): void {
-    super.onSubmit();
-    if (this.form.invalid) {
-      return;
-    }
+  finishSubmit(): void {
     const data = this.form.value;
     this.logger.debug(this.COMPONENT_NAME, 'form submitted.', data);
-    if (this.address) {
-      this.logger.debug(this.COMPONENT_NAME, 'edit', this.address);
-      // const prevName = this.address.name;
-      this.address.name = data;
-      // this.addresssService.editaddress(this.address)
+    if (this.item) {
+      this.logger.debug(this.COMPONENT_NAME, 'edit', this.item);
+      // const prevName = this.item.name;
+      this.item.name = data;
+      // this.addresssService.editaddress(this.item)
       // .subscribe(() => {
       //   this.translate.get('pages.address.results.success.edit')
       //     .subscribe(text => {
       //       this.notification.success(text);
-      //       this.logger.debug(this.COMPONENT_NAME, 'success', this.address);
+      //       this.logger.debug(this.COMPONENT_NAME, 'success', this.item);
       //       this.finishAPICall(false);
       //     });
       // }, error => {
       //   const translate = (error && error.error && error.error.message ? error.error.message : 'fields.errors.unknown');
-      //   this.address.name = prevName;
+      //   this.item.name = prevName;
       //   this.translate.get(translate)
       //     .subscribe(text => {
       //       this.notification.error(text);

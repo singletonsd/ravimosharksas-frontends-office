@@ -1,7 +1,7 @@
-import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
-import { BaseFormComponent } from '@app/models/base-form.class';
+import { BaseFormAddComponent } from '@app/models/base-form-add.class';
 import { Clients } from '@ravimosharksas/apis-contract-libs-typescript';
 // import { TranslateService } from '@ngx-translate/core';
 import { NGXLogger } from 'ngx-logger';
@@ -11,17 +11,13 @@ import { NGXLogger } from 'ngx-logger';
   templateUrl: './clients-add-form.component.html',
   styleUrls: ['./clients-add-form.component.scss']
 })
-export class ClientsAddFormComponent extends BaseFormComponent implements OnInit, AfterViewInit {
-
-  @Input() client: Clients;
-
-  @Output() readonly added = new EventEmitter<Clients>();
+export class ClientsAddFormComponent extends BaseFormAddComponent<Clients> implements OnInit {
 
   constructor(private readonly logger: NGXLogger
             // , private readonly translate: TranslateService
-            , private readonly cdr: ChangeDetectorRef
+            , cdr: ChangeDetectorRef
             ) {
-    super('CLIENTS_ADD_FORM', 'models.client.');
+    super('CLIENTS_ADD_FORM', 'models.client.', cdr);
     this.form.addControl('refClient', new FormControl('', [ Validators.required ]));
     this.form.addControl('nickname', new FormControl('', []));
     this.form.addControl('name', new FormControl('', []));
@@ -38,57 +34,50 @@ export class ClientsAddFormComponent extends BaseFormComponent implements OnInit
   ngOnInit(): void {
   }
 
-  ngAfterViewInit(): void {
-    if (this.client) {
-      this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.client.refClient);
-      this.form.get('refClient')
-        .setValue(this.client.refClient);
-      this.form.get('nickname')
-      .setValue(this.client.nickname);
-      this.form.get('name')
-      .setValue(this.client.name);
-      // this.form.get('surname')
-      // .setValue(this.client.abrege);
-      // this.form.get('group')
-      // .setValue(this.client.group);
-      // this.form.get('company_name')
-      // .setValue(this.client.company_name);
-      // this.form.get('score')
-      // .setValue(this.client.score);
-      // this.form.get('sector')
-      // .setValue(this.client.sector);
-      // this.form.get('email')
-      // .setValue(this.client.email);
-      // this.form.get('forbidden')
-      // .setValue(this.client.forbidden);
-      // this.form.get('vat')
-      // .setValue(this.client.vat);
-      this.cdr.detectChanges();
-    }
+  fillForm(): void {
+    this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.refClient);
+    this.form.get('refClient')
+      .setValue(this.item.refClient);
+    this.form.get('nickname')
+    .setValue(this.item.nickname);
+    this.form.get('name')
+    .setValue(this.item.name);
+    // this.form.get('surname')
+    // .setValue(this.item.abrege);
+    // this.form.get('group')
+    // .setValue(this.item.group);
+    // this.form.get('company_name')
+    // .setValue(this.item.company_name);
+    // this.form.get('score')
+    // .setValue(this.item.score);
+    // this.form.get('sector')
+    // .setValue(this.item.sector);
+    // this.form.get('email')
+    // .setValue(this.item.email);
+    // this.form.get('forbidden')
+    // .setValue(this.item.forbidden);
+    // this.form.get('vat')
+    // .setValue(this.item.vat);
   }
 
-  onSubmit(): void {
-    super.onSubmit();
-    if (this.form.invalid) {
-      return;
-    }
+  finishSubmit(): void {
     const data = this.form.value;
     this.logger.debug(this.COMPONENT_NAME, 'form submitted.', data);
-    if (this.client) {
-      this.logger.debug(this.COMPONENT_NAME, 'edit', this.client);
-      // const prevName = this.client.name;
-      this.client = data;
-      // this.addresssService.editaddress(this.client)
+    if (this.item) {
+      this.logger.debug(this.COMPONENT_NAME, 'edit', this.item);
+      // const prevName = this.item.name;
+      this.item = data;
+      // this.addresssService.editaddress(this.item)
       // .subscribe(() => {
       //   this.translate.get('pages.client.results.success.edit')
       //     .subscribe(text => {
       //       this.notification.success(text);
-      //       this.logger.debug(this.COMPONENT_NAME, 'success', this.client);
+      //       this.logger.debug(this.COMPONENT_NAME, 'success', this.item);
       //       this.finishAPICall(false);
       //     });
       // }, error => {
       //   const translate = (error && error.error && error.error.message ? error.error.message : 'fields.errors.unknown');
-      //   this.client.name = prevName;
+      //   this.item.name = prevName;
       //   this.translate.get(translate)
       //     .subscribe(text => {
       //       this.notification.error(text);

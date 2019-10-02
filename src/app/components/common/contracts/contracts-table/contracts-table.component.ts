@@ -66,6 +66,6 @@ export class ContractsTableComponent  extends BaseTableComponent<Contracts> impl
       Object.assign(contract, newEntity);
       this.dataSource.addData(newEntity);
     });
-    dialog.componentInstance.contract = newContract;
+    dialog.componentInstance.item = newContract;
   }
 }

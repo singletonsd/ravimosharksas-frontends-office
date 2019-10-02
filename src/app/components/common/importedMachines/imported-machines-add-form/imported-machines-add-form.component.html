@@ -1,6 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
-    <mat-card-header *ngIf="showTitle">
+    <mat-card-header>
       <mat-card-title>
         <ng-container *ngIf="item; else register">
           <h2>
@@ -29,10 +29,10 @@
         </div>
       </ng-template>
     </mat-card-content>
-    <mat-card-actions *ngIf="showButtons">
+    <mat-card-actions>
       <div class="row">
         <div class="col-6">
-          <button mat-raised-button color="primary" type="submit" [disabled]="!isValid()" style="width: 100%">
+          <button mat-raised-button color="primary" type="submit" [disabled]="buttonSubmitDisabled" style="width: 100%">
             <mat-icon matTooltip="{{ 'actions.submit' | translate }}" matListIcon>add</mat-icon>
             {{ 'actions.submit' | translate }}
           </button>

@@ -32,7 +32,7 @@ export class ContractsTableOptionsComponent extends BaseTableOptions<any> implem
     const dialog = this.dialog.open(ContractsAddFormComponent, {
       panelClass: 'dialog-auto-scroll'
     });
-    dialog.componentInstance.contract = this.entity;
+    dialog.componentInstance.item = this.entity;
   }
 
   disable(): void {

@@ -1,7 +1,7 @@
-import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 // tslint:disable: no-implicit-dependencies
-import { BaseFormComponent } from '@app/models/base-form.class';
+import { BaseFormAddComponent } from '@app/models/base-form-add.class';
 import { environment } from '@env/environment';
 import { ImportedMachines } from '@ravimosharksas/apis-contract-libs-typescript';
 // import { TranslateService } from '@ngx-translate/core';
@@ -13,16 +13,12 @@ declare var require: any;
   templateUrl: './imported-machines-add-form.component.html',
   styleUrls: ['./imported-machines-add-form.component.scss']
 })
-export class ImportedMachinesAddFormComponent extends BaseFormComponent implements OnInit, AfterViewInit {
-
-  @Input() item: ImportedMachines;
-
-  @Output() readonly added = new EventEmitter<ImportedMachines>();
+export class ImportedMachinesAddFormComponent extends BaseFormAddComponent<ImportedMachines> implements OnInit {
 
   constructor(private readonly logger: NGXLogger
             // , private readonly translate: TranslateService
-            , private readonly cdr: ChangeDetectorRef) {
-    super('IMPORTED_MACHINES_ADD_FORM', 'models.machine.');
+            , cdr: ChangeDetectorRef) {
+    super('IMPORTED_MACHINES_ADD_FORM', 'models.machine.', cdr);
     this.form.addControl('id', new FormControl('', [ ]));
     this.form.addControl('identification', new FormControl('', [ Validators.required ]));
     this.form.addControl('machine.piece', new FormControl('', [ Validators.required ]));
@@ -46,37 +42,30 @@ export class ImportedMachinesAddFormComponent extends BaseFormComponent implemen
   ngOnInit(): void {
   }
 
-  ngAfterViewInit(): void {
-    if (this.item) {
-      this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
-      this.form.get('id')
+  protected fillForm(): void {
+    this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
+    this.form.get('id')
       .setValue(this.item.id);
-      this.form.get('identification')
-      .setValue(this.item.identification);
-      if (this.item.machine) {
-        this.form.get('machine.piece')
-        .setValue(this.item.machine.piece);
-        this.form.get('machine.serial_number')
-        .setValue(this.item.machine.numSerie);
-      }
-      if (this.item.contract) {
-        this.form.get('contract')
-          .setValue(this.item.contract);
-      } else {
-        this.form.get('contract')
-          .setValue(this.item.refContract);
-      }
-      this.form.get('reviewed')
-        .setValue(this.item.reviewed);
-      this.cdr.detectChanges();
+    this.form.get('identification')
+    .setValue(this.item.identification);
+    if (this.item.machine) {
+      this.form.get('machine.piece')
+      .setValue(this.item.machine.piece);
+      this.form.get('machine.serial_number')
+      .setValue(this.item.machine.numSerie);
     }
+    if (this.item.contract) {
+      this.form.get('contract')
+        .setValue(this.item.contract);
+    } else {
+      this.form.get('contract')
+        .setValue(this.item.refContract);
+    }
+    this.form.get('reviewed')
+      .setValue(this.item.reviewed);
   }
 
-  onSubmit(): void {
-    super.onSubmit();
-    if (this.form.invalid) {
-      return;
-    }
+  finishSubmit(): void {
     const data = this.form.value;
     this.logger.debug(this.COMPONENT_NAME, 'form submitted.', data);
     if (this.item) {

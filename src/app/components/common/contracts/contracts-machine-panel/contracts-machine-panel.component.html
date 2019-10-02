@@ -13,11 +13,10 @@
     <mat-expansion-panel-header>
       <mat-panel-title>
         <span>{{ 'pages.contract.imported_machines' | translate }} <span *ngIf="imports?.length" class="badge badge-danger">{{ imports?.length }}</span></span>
-
       </mat-panel-title>
     </mat-expansion-panel-header>
     <ng-container *ngFor="let importedMachine of imports; trackBy: identifyImport">
-      <app-imported-machines-add-form [item]="importedMachine" [showButtons]="false" [showTitle]="false"></app-imported-machines-add-form>
+      <app-imported-machines-add-form [item]="importedMachine"></app-imported-machines-add-form>
       <br>
     </ng-container>
   </mat-expansion-panel>
