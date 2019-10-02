@@ -66,7 +66,7 @@ export class ImportedMachinesAddFormComponent extends BaseFormComponent implemen
         this.form.get('contract')
           .setValue(this.item.refContract);
       }
-      this.form.get('contract')
+      this.form.get('reviewed')
         .setValue(this.item.reviewed);
       this.cdr.detectChanges();
     }
