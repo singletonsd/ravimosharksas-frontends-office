@@ -1,5 +1,6 @@
-import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+// import { FormControl, Validators } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
 import { BaseFormComponent } from '@app/models/base-form.class';
 import { Machines } from '@ravimosharksas/apis-contract-libs-typescript';
@@ -19,30 +20,30 @@ export class MachinesAddFormComponent extends BaseFormComponent implements OnIni
 
   constructor(private readonly logger: NGXLogger
             // , private readonly translate: TranslateService
-            , private readonly cdr: ChangeDetectorRef
+            // , private readonly cdr: ChangeDetectorRef
             ) {
     super('MACHINES_ADD_FORM', 'models.machine.');
-    this.form.addControl('id', new FormControl('', [ ]));
-    this.form.addControl('numSerie', new FormControl('', [ Validators.required ]));
-    this.form.addControl('piece', new FormControl('', [ Validators.required ]));
-    this.form.get('id')
-      .disable();
+    // this.form.addControl('id', new FormControl('', [ ]));
+    // this.form.addControl('numSerie', new FormControl('', [ Validators.required ]));
+    // this.form.addControl('piece', new FormControl('', [ Validators.required ]));
+    // this.form.get('id')
+    //   .disable();
   }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
-    if (this.item) {
-      this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
-      this.form.get('id')
-      .setValue(this.item.id);
-      this.form.get('numSerie')
-      .setValue(this.item.numSerie);
-      this.form.get('piece')
-      .setValue(this.item.piece);
-      this.cdr.detectChanges();
-    }
+    // if (this.item) {
+    //   this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
+    //   this.form.get('id')
+    //   .setValue(this.item.id);
+    //   this.form.get('numSerie')
+    //   .setValue(this.item.numSerie);
+    //   this.form.get('piece')
+    //   .setValue(this.item.piece);
+    //   this.cdr.detectChanges();
+    // }
   }
 
   onSubmit(): void {
@@ -97,4 +98,7 @@ export class MachinesAddFormComponent extends BaseFormComponent implements OnIni
     }
   }
 
+  formInitialized(name: string, form: FormGroup): void {
+    this.form.setControl(name, form);
+  }
 }
