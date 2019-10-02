@@ -9,10 +9,10 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatAutocompleteModule, MatButtonModule
-  , MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule
-  , MatExpansionModule, MatIconModule, MatInputModule, MatListModule
-  , MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule, MatBadgeModule } from '@angular/material';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatAutocompleteModule, MatBadgeModule
+  , MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule
+  , MatDatepickerModule, MatDialogModule, MatExpansionModule, MatIconModule, MatInputModule
+  , MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { CUSTOM_FORMATS } from './app.dates.formats';
 
@@ -91,6 +91,7 @@ import { MachinesAddComponent } from './components/pages/machines/machines-add/m
 import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-auto-complete/pieces-auto-complete.component';
 
 import { ImportedMachinesAutoCompleteComponent } from './components/common/importedMachines/imported-machines-auto-complete/imported-machines-auto-complete.component';
+import { MachinesFormComponent } from './components/common/machines/machines-form/machines-form.component';
 
 @NgModule({
   declarations: [
@@ -135,6 +136,7 @@ import { ImportedMachinesAutoCompleteComponent } from './components/common/impor
     MachinesAddFormComponent,
     MachinesAutoCompleteComponent,
     MachinesAddComponent,
+    MachinesFormComponent,
     PiecesAutoCompleteComponent,
     ImportedMachinesAddFormComponent,
     ImportedMachinesAutoCompleteComponent,
@@ -154,6 +156,7 @@ import { ImportedMachinesAutoCompleteComponent } from './components/common/impor
     MatBadgeModule,
     MatButtonModule,
     MatButtonToggleModule,
+    MatChipsModule,
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,

@@ -1,6 +1,6 @@
 // tslint:disable: no-implicit-dependencies
 import { Component } from '@angular/core';
-import { BaseInputFormComponent } from '@app/models/base-input.class';
+import { BaseInputFormComponent } from '@app/models/base-input-form.class';
 
 @Component({
   selector: 'app-base-input',

@@ -4,7 +4,7 @@ import { environment } from '@env/environment';
 import { NGXLogger } from 'ngx-logger';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, finalize, map, startWith, switchMap, tap } from 'rxjs/operators';
-import { BaseInputFormComponent } from './base-input.class';
+import { BaseInputFormComponent } from './base-input-form.class';
 
 declare var require: any;
 export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponent
