@@ -23,7 +23,7 @@ export abstract class BaseFormAddComponent<T> implements AfterViewInit {
             , public readonly translationBase: string
             , private readonly cdr: ChangeDetectorRef
             , public readonly logger: NGXLogger
-            , public readonly formRootName?: string) {
+            , public readonly formRootName: string) {
   }
 
   ngAfterViewInit(): void {

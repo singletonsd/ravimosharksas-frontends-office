@@ -1,5 +1,5 @@
 <mat-accordion>
-  <mat-expansion-panel [disabled]="locations?.length === 0">
+  <!-- <mat-expansion-panel [disabled]="locations?.length === 0">
     <mat-expansion-panel-header>
       <mat-panel-title>
         <span>{{ 'pages.contract.machines' | translate }} <span *ngIf="locations?.length" class="badge badge-success">{{ locations?.length }}</span></span>
@@ -8,16 +8,28 @@
     <ng-container *ngFor="let location of locations; trackBy: identifyLocation">
       <app-imported-machines-add-form></app-imported-machines-add-form>
     </ng-container>
-  </mat-expansion-panel>
-  <mat-expansion-panel [disabled]="imports?.length === 0">
+  </mat-expansion-panel> -->
+  <mat-expansion-panel [disabled]="item?.length === 0">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <span>{{ 'pages.contract.imported_machines' | translate }} <span *ngIf="imports?.length" class="badge badge-danger">{{ imports?.length }}</span></span>
+        <h4 style="display: table; text-align: center;">{{ 'pages.contract.imported_machines' | translate }}<span *ngIf="item?.length" class="badge badge-danger">{{ item?.length }}</span></h4>
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <ng-container *ngFor="let importedMachine of imports; trackBy: identifyImport">
-      <app-imported-machines-add-form [item]="importedMachine"></app-imported-machines-add-form>
-      <br>
-    </ng-container>
+    <mat-accordion>
+      <ng-container *ngFor="let importedMachine of item; trackBy: identifyImport; let i = index">
+        <mat-expansion-panel [expanded]="expansionStep === i" (opened)="setStep(i)">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h5><span *ngIf="!items.at(i)?.valid; else invalid" class="badge badge-success">{{ 'actions.valid.state' | translate }}</span> <ng-template #invalid class="badge badge-success">{{ 'actions.valid.state' | translate }}</ng-template>{{ importedMachine.identification }}</h5>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-imported-machines-form [item]="importedMachine" (formReady)="childInitialized($event)"></app-imported-machines-form>
+          <mat-action-row>
+            <button type="button" mat-stroked-button color="warn" (click)="prevStep()" *ngIf="expansionStep !== 0">Previous</button>
+            <button type="button" mat-stroked-button color="accent" (click)="nextStep()" *ngIf="expansionStep !== item.length -1">Next</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </ng-container>
+  </mat-accordion>
   </mat-expansion-panel>
 </mat-accordion>

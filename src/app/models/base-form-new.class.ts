@@ -1,5 +1,5 @@
 import { EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup, ValidatorFn } from '@angular/forms';
+import { FormArray, FormGroup, ValidatorFn } from '@angular/forms';
 import { NGXLogger } from 'ngx-logger';
 
 export abstract class BaseFormNewComponent<T> implements OnInit {
@@ -9,18 +9,25 @@ export abstract class BaseFormNewComponent<T> implements OnInit {
   public static passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
   @Input() item: T;
-  @Output() readonly formReady = new EventEmitter<{form: FormGroup, name: string }>();
+  @Output() readonly formReady = new EventEmitter<{form: FormGroup | FormArray, name: string }>();
 
-  public form: FormGroup = new FormGroup({});
+  public form: FormGroup;
 
   constructor(protected readonly COMPONENT_NAME: string
             , public readonly translationBase: string
             , public readonly logger: NGXLogger
-            , public readonly formName?: string) {
+            , public readonly formName: string
+            , protected readonly items?: FormArray) {
+    // this.form = formArray ? formArray : new FormGroup({});
+    this.form = new FormGroup({});
   }
 
   ngOnInit(): void {
-    this.formReady.emit({ form: this.form, name: this.formName });
+    if (this.items) {
+      this.formReady.emit({ form: this.items, name: this.formName });
+    } else {
+      this.formReady.emit({ form: this.form, name: this.formName });
+    }
     if (this.item) {
       this.fillForm();
     }
@@ -34,8 +41,12 @@ export abstract class BaseFormNewComponent<T> implements OnInit {
     return this.form.controls[fieldName].invalid && (this.form.controls[fieldName].touched);
   }
 
-  childInitialized(value: {form: FormGroup, name: string}): void {
-    this.formReady.emit(value);
+  childInitialized(value: {form: FormGroup | FormArray, name: string}): void {
+    if (this.items) {
+      this.items.push(value.form);
+    } else {
+      this.form.setControl(value.name, value.form);
+    }
   }
   protected abstract fillForm(): void;
 }
