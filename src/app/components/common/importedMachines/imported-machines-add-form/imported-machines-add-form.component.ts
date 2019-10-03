@@ -15,10 +15,10 @@ declare var require: any;
 })
 export class ImportedMachinesAddFormComponent extends BaseFormAddComponent<ImportedMachines> implements OnInit {
 
-  constructor(private readonly logger: NGXLogger
+  constructor(logger: NGXLogger
             // , private readonly translate: TranslateService
             , cdr: ChangeDetectorRef) {
-    super('IMPORTED_MACHINES_ADD_FORM', 'models.machine.', cdr);
+    super('IMPORTED_MACHINES_ADD_FORM', 'models.machine.', cdr, logger);
     this.form.addControl('id', new FormControl('', [ ]));
     this.form.addControl('identification', new FormControl('', [ Validators.required ]));
     this.form.addControl('machine.piece', new FormControl('', [ Validators.required ]));

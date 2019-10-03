@@ -15,11 +15,11 @@ declare var require: any;
 })
 export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> implements OnInit {
 
-  constructor(private readonly logger: NGXLogger
+  constructor(logger: NGXLogger
             // , private readonly translate: TranslateService
             , cdr: ChangeDetectorRef
             ) {
-    super('CONTRACTS_ADD_FORM', 'models.contract.', cdr);
+    super('CONTRACTS_ADD_FORM', 'models.contract.', cdr, logger);
     this.form.addControl('refContract', new FormControl('', [ ]));
     this.form.addControl('client', new FormControl('', [ Validators.required ]));
     this.form.addControl('identification', new FormControl('', []));

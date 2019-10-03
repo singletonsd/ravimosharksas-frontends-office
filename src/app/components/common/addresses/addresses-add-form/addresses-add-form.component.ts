@@ -12,10 +12,10 @@ import { NGXLogger } from 'ngx-logger';
 })
 export class AddressesAddFormComponent extends BaseFormAddComponent<any> implements OnInit {
 
-  constructor(private readonly logger: NGXLogger
+  constructor(logger: NGXLogger
             // , private readonly translate: TranslateService
             , cdr: ChangeDetectorRef) {
-    super('ADDRESS_ADD_FORM', 'models.address.', cdr);
+    super('ADDRESS_ADD_FORM', 'models.address.', cdr, logger);
     this.form.addControl('client', new FormControl('', [ Validators.required ]));
     this.form.addControl('name', new FormControl('', [ Validators.required ]));
     this.form.addControl('number', new FormControl('', [ ]));

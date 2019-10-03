@@ -1,46 +1,40 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-// tslint:disable-next-line: no-implicit-dependencies
+import { ChangeDetectorRef, Component } from '@angular/core';
+// tslint:disable: no-implicit-dependencies
 import { BaseFormAddComponent } from '@app/models/base-form-add.class';
+import { environment } from '@env/environment';
 import { Clients } from '@ravimosharksas/apis-contract-libs-typescript';
 // import { TranslateService } from '@ngx-translate/core';
 import { NGXLogger } from 'ngx-logger';
 
+declare var require: any;
 @Component({
   selector: 'app-clients-add-form',
   templateUrl: './clients-add-form.component.html',
   styleUrls: ['./clients-add-form.component.scss']
 })
-export class ClientsAddFormComponent extends BaseFormAddComponent<Clients> implements OnInit {
+export class ClientsAddFormComponent extends BaseFormAddComponent<Clients> {
 
-  constructor(private readonly logger: NGXLogger
+  // require: any;
+  constructor(logger: NGXLogger
             // , private readonly translate: TranslateService
             , cdr: ChangeDetectorRef
             ) {
-    super('CLIENTS_ADD_FORM', 'models.client.', cdr);
-    this.form.addControl('refClient', new FormControl('', [ Validators.required ]));
-    this.form.addControl('nickname', new FormControl('', []));
-    this.form.addControl('name', new FormControl('', []));
-    this.form.addControl('surname', new FormControl('', []));
-    this.form.addControl('group', new FormControl('', []));
-    this.form.addControl('company_name', new FormControl('', []));
-    this.form.addControl('score', new FormControl('', []));
-    this.form.addControl('sector', new FormControl('', []));
-    this.form.addControl('email', new FormControl('', []));
-    this.form.addControl('forbidden', new FormControl('', []));
-    this.form.addControl('vat', new FormControl('', []));
-  }
-
-  ngOnInit(): void {
+    super('CLIENTS_ADD_FORM', 'models.client.', cdr, logger);
+    if (!environment.production && !this.item) {
+      this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
+      // tslint:disable-next-line:no-require-imports
+      this.item = require('../../../../../../test/mock_data/clients.json')[0];
+      this.logger.debug(this.item);
+    }
   }
 
   fillForm(): void {
     this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.refClient);
-    this.form.get('refClient')
+    this.form.get('client.refClient')
       .setValue(this.item.refClient);
-    this.form.get('nickname')
+    this.form.get('client.nickname')
     .setValue(this.item.nickname);
-    this.form.get('name')
+    this.form.get('client.name')
     .setValue(this.item.name);
     // this.form.get('surname')
     // .setValue(this.item.abrege);

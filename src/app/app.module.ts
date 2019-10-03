@@ -68,7 +68,8 @@ import { AddressesMainComponent } from './components/pages/addresses/addresses-m
 import { ClientsAddFormComponent } from './components/common/clients/clients-add-form/clients-add-form.component';
 import { ClientsAutocompleteComponent } from './components/common/clients/clients-auto-complete/clients-auto-complete.component';
 import { ClientsCellComponent } from './components/common/clients/clients-cell/clients-cell.component';
-import { ClientTableOptionsComponent } from './components/common/clients/clients-table/client-table-options/client-table-options.component';
+import { ClientsFormComponent } from './components/common/clients/clients-form/clients-form.component';
+import { ClientsTableOptionsComponent } from './components/common/clients/clients-table/clients-table-options/clients-table-options.component';
 import { ClientsTableComponent } from './components/common/clients/clients-table/clients-table.component';
 import { ClientsAddComponent } from './components/pages/clients/clients/clients-add/clients-add.component';
 import { ClientsMainComponent } from './components/pages/clients/clients/clients-main/clients-main.component';
@@ -122,9 +123,10 @@ import { MachinesFormComponent } from './components/common/machines/machines-for
     AddressesTableOptionsComponent,
     ClientsAddFormComponent,
     ClientsAddComponent,
+    ClientsFormComponent,
     ClientsMainComponent,
     ClientsTableComponent,
-    ClientTableOptionsComponent,
+    ClientsTableOptionsComponent,
     ClientsAutocompleteComponent,
     ClientsCellComponent,
     ContractsAddFormComponent,

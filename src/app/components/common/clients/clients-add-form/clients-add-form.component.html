@@ -5,7 +5,7 @@
         <ng-container *ngIf="item; else register">
           <h2>
             <span>{{ 'pages.client.title.edit' | translate }}</span>
-            <strong> #{{ client.reference }}</strong>
+            <strong> #{{ item.refClient }}</strong>
           </h2>
         </ng-container>
         <ng-template #register>
@@ -19,19 +19,7 @@
       </div>
       <ng-template #loaded>
         <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
-        <div class="row">
-          <app-base-input class="col-4" [parent]="this" [controlName]="'refClient'"></app-base-input>
-          <app-base-input class="col-8" [parent]="this" [controlName]="'nickname'"></app-base-input>
-          <app-base-input class="col-6" [parent]="this" [controlName]="'name'"></app-base-input>
-          <!-- <app-base-input class="col-6" [parent]="this" [controlName]="'surname'"></app-base-input>
-          <app-base-input class="col-6" [parent]="this" [controlName]="'group'"></app-base-input>
-          <app-base-input class="col-6" [parent]="this" [controlName]="'company_name'"></app-base-input>
-          <app-base-input class="col-4" [parent]="this" [controlName]="'score'"></app-base-input>
-          <app-base-input class="col-4" [parent]="this" [controlName]="'sector'"></app-base-input> -->
-          <!-- <mat-checkbox class="col-4" formControlName="forbidden">{{ 'models.client.forbidden' | translate }}</mat-checkbox>
-          <app-base-input class="col-12 col-sm-6" [parent]="this" [controlName]="'email'"></app-base-input>
-          <app-base-input class="col-12 col-sm-6" [parent]="this" [controlName]="'vat'"></app-base-input> -->
-        </div>
+        <app-clients-form (formReady)="formInitialized('client', $event)"></app-clients-form>
       </ng-template>
     </mat-card-content>
     <mat-card-actions>

@@ -13,11 +13,11 @@ import { NGXLogger } from 'ngx-logger';
 })
 export class MachinesAddFormComponent extends BaseFormAddComponent<Machines> implements OnInit {
 
-  constructor(private readonly logger: NGXLogger
+  constructor(logger: NGXLogger
             // , private readonly translate: TranslateService
             , cdr: ChangeDetectorRef
             ) {
-    super('MACHINES_ADD_FORM', 'models.machine.', cdr);
+    super('MACHINES_ADD_FORM', 'models.machine.', cdr, logger);
     if (!this.item && !environment.production) {
       this.item = { id: 123123, numSerie: '12312123', piece: { refArticle: '12345', name: 'C20'} };
     }

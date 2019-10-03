@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, EventEmitter, Input, Output } from '@
 import { FormGroup } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
 import { NotificationClass, NotificationStatus } from '@components/basics/notification/simple/notification-simple.class';
+import { NGXLogger } from 'ngx-logger';
 import { BehaviorSubject } from 'rxjs';
 
 export abstract class BaseFormAddComponent<T> implements AfterViewInit {
@@ -20,7 +21,8 @@ export abstract class BaseFormAddComponent<T> implements AfterViewInit {
 
   constructor(protected readonly COMPONENT_NAME: string
             , public readonly translationBase: string
-            , private readonly cdr: ChangeDetectorRef) {
+            , private readonly cdr: ChangeDetectorRef
+            , public readonly logger: NGXLogger) {
   }
 
   ngAfterViewInit(): void {
@@ -74,6 +76,7 @@ export abstract class BaseFormAddComponent<T> implements AfterViewInit {
 
   formInitialized(name: string, form: FormGroup): void {
     this.form.setControl(name, form);
+    this.logger.debug(this.COMPONENT_NAME, ` Added ${name}`);
     if (this.item) {
       this.fillForm(name);
     }
