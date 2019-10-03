@@ -20,6 +20,7 @@ export class MachinesAddFormComponent extends BaseFormAddComponent<Machines> imp
     super('MACHINES_ADD_FORM', 'models.machine.', cdr, logger, 'machine');
     if (!this.item && !environment.production) {
       this.item = { id: 123123, numSerie: '12312123', piece: { refArticle: '12345', name: 'C20'} };
+      this.logger.info(this.COMPONENT_NAME, 'Added mock data', this.item);
     }
   }
 
@@ -27,13 +28,6 @@ export class MachinesAddFormComponent extends BaseFormAddComponent<Machines> imp
   }
 
   protected fillForm(): void {
-    this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
-    this.form.get('id')
-    .setValue(this.item.id);
-    this.form.get('numSerie')
-    .setValue(this.item.numSerie);
-    this.form.get('piece')
-    .setValue(this.item.piece);
   }
 
   finishSubmit(): void {

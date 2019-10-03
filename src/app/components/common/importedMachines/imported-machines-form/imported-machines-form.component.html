@@ -4,4 +4,4 @@
   <app-base-input class="col-6" [parent]="this" [controlName]="'id'"></app-base-input>
   <mat-checkbox class="col-6" formControlName="reviewed">{{ 'models.contract.reviewed' | translate }}</mat-checkbox>
 </div>
-<app-machines-form (formReady)="childInitialized($event)"></app-machines-form>
+<app-machines-form [item]="item?.machine" (formReady)="childInitialized($event)"></app-machines-form>

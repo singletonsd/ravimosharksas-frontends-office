@@ -29,29 +29,6 @@ export class ClientsAddFormComponent extends BaseFormAddComponent<Clients> {
   }
 
   fillForm(): void {
-    this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.refClient);
-    this.form.get('refClient')
-      .setValue(this.item.refClient);
-    this.form.get('nickname')
-    .setValue(this.item.nickname);
-    this.form.get('name')
-    .setValue(this.item.name);
-    // this.form.get('surname')
-    // .setValue(this.item.abrege);
-    // this.form.get('group')
-    // .setValue(this.item.group);
-    // this.form.get('company_name')
-    // .setValue(this.item.company_name);
-    // this.form.get('score')
-    // .setValue(this.item.score);
-    // this.form.get('sector')
-    // .setValue(this.item.sector);
-    // this.form.get('email')
-    // .setValue(this.item.email);
-    // this.form.get('forbidden')
-    // .setValue(this.item.forbidden);
-    // this.form.get('vat')
-    // .setValue(this.item.vat);
   }
 
   finishSubmit(): void {

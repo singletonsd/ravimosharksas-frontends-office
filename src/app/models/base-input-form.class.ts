@@ -4,7 +4,7 @@ import { BaseFormNewComponent } from './base-form-new.class';
 
 export class BaseInputFormComponent implements OnInit {
 
-  @Input() parent: BaseFormNewComponent;
+  @Input() parent: BaseFormNewComponent<any>;
   @Input() controlName: string;
   @Input() placeHolder: string;
   @Input() translateHolder: string;

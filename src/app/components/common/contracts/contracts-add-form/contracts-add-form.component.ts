@@ -39,27 +39,6 @@ export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> i
   }
 
   protected fillForm(): void {
-    this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.refContract);
-    this.form.get('refContract')
-      .setValue(this.item.refContract);
-    this.form.get('dateDebut')
-    .setValue(this.item.dateDebut);
-    this.form.get('dateFin')
-    .setValue(this.item.dateFin);
-    this.form.get('loyer')
-    .setValue(this.item.loyer);
-    this.form.get('miniconso')
-    .setValue(this.item.miniconso);
-    this.form.get('reconduction')
-    .setValue(this.item.reconduction);
-    this.form.get('identification')
-    .setValue(this.item.identification);
-    this.form.get('client')
-    .setValue(this.item.client);
-    this.form.get('reviewed')
-    .setValue(this.item.reviewed);
-    this.form.get('valid')
-    .setValue(this.item.valid);
   }
 
   finishSubmit(): void {

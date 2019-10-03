@@ -36,33 +36,7 @@ export class ImportedMachinesAddFormComponent extends BaseFormAddComponent<Impor
   ngOnInit(): void {
   }
 
-  protected fillForm(name: string): void {
-    if (name === this.formRootName) {
-      this.logger.debug(this.COMPONENT_NAME, `filling form root with data of ${this.item.id}`);
-      this.form.get(`id`)
-      .setValue(this.item.id);
-      this.form.get(`identification`)
-      .setValue(this.item.identification);
-      if (this.item.contract) {
-        this.form.get(`contract`)
-          .setValue(this.item.contract);
-      } else {
-        this.form.get(`contract`)
-          .setValue(this.item.refContract);
-      }
-      this.form.get(`reviewed`)
-        .setValue(this.item.reviewed);
-    }
-    if (name === 'machine') {
-      if (this.item.machine) {
-        this.form.get(`${name}.id`)
-        .setValue(this.item.id);
-        this.form.get(`${name}.piece`)
-        .setValue(this.item.machine.piece);
-        this.form.get(`${name}.numSerie`)
-        .setValue(this.item.machine.numSerie);
-      }
-    }
+  protected fillForm(): void {
   }
 
   finishSubmit(): void {
