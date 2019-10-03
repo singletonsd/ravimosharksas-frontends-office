@@ -15,9 +15,9 @@ export class BaseInputFormComponent implements OnInit {
   ngOnInit(): void {
     // tslint:disable-next-line:prefer-conditional-expression
     if (this.translateHolder) {
-      this.placeHolder = `${this.parent.translationBase} ${this.translateHolder}`;
+      this.placeHolder = `${this.parent.translationBase}${this.translateHolder}`;
     } else if (!this.placeHolder) {
-      this.placeHolder = `${this.parent.translationBase} ${this.controlName}`;
+      this.placeHolder = `${this.parent.translationBase}${this.controlName}`;
     }
   }
 
