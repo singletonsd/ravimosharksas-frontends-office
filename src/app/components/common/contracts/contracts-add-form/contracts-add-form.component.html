@@ -5,7 +5,7 @@
         <ng-container *ngIf="item; else register">
           <h2>
             <span>{{ 'pages.contract.title.edit' | translate }}</span>
-            <strong> #{{ contract.refContract }}</strong>
+            <strong> #{{ item.refContract }}</strong>
           </h2>
         </ng-container>
         <ng-template #register>
@@ -19,20 +19,7 @@
       </div>
       <ng-template #loaded>
         <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
-        <div class="row">
-          <app-base-input class="col-4 col-sm-2" [parent]="this" [controlName]="'refContract'"></app-base-input>
-          <app-base-input class="col-8 col-sm-5" [parent]="this" [controlName]="'identification'"></app-base-input>
-          <app-clients-auto-complete class="col-12 col-sm-5" [parent]="this" [controlName]="'client'" [useGlobal]="false"></app-clients-auto-complete>
-          <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateDebut'"></app-date-input>
-          <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateFin'"></app-date-input>
-          <div class="row col-12 col-sm-4">
-              <mat-checkbox class="col-6" formControlName="reviewed">{{ 'models.contract.reviewed' | translate }}</mat-checkbox>
-              <mat-checkbox class="col-6" formControlName="valid">{{ 'models.contract.valid' | translate }}</mat-checkbox>
-            </div>
-          <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'loyer'"></app-base-input>
-          <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'miniconso'"></app-base-input>
-          <app-base-input class="col-12 col-sm-4" [parent]="this" [controlName]="'reconduction'"></app-base-input>
-        </div>
+        <app-contracts-form (formReady)="formInitialized('contract', $event)"></app-contracts-form>
       </ng-template>
       <app-contracts-machine-panel [locations]="item?.locations" [imports]="item?.importedMachines"></app-contracts-machine-panel>
     </mat-card-content>

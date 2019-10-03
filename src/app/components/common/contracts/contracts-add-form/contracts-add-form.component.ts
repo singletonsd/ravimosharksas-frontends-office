@@ -1,5 +1,4 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 // tslint:disable: no-implicit-dependencies
 import { BaseFormAddComponent } from '@app/models/base-form-add.class';
 import { environment } from '@env/environment';
@@ -20,24 +19,14 @@ export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> i
             , cdr: ChangeDetectorRef
             ) {
     super('CONTRACTS_ADD_FORM', 'models.contract.', cdr, logger);
-    this.form.addControl('refContract', new FormControl('', [ ]));
-    this.form.addControl('client', new FormControl('', [ Validators.required ]));
-    this.form.addControl('identification', new FormControl('', []));
-    this.form.addControl('dateDebut', new FormControl('', [ ]));
-    this.form.addControl('dateFin', new FormControl('', [ Validators.required ]));
-    this.form.addControl('reconduction', new FormControl('', []));
-    this.form.addControl('loyer', new FormControl('', []));
-    this.form.addControl('miniconso', new FormControl('', []));
-    this.form.addControl('reviewed', new FormControl('', []));
-    this.form.addControl('valid', new FormControl('', []));
     // this.form.get('client')
     //   .disable();
-    this.form.get('refContract')
-      .disable();
-    this.form.get('dateDebut')
-      .disable();
-    this.form.get('dateFin')
-      .disable();
+    // this.form.get('refContract')
+    //   .disable();
+    // this.form.get('dateDebut')
+    //   .disable();
+    // this.form.get('dateFin')
+    //   .disable();
     if (!environment.production && !this.item) {
       this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
       // tslint:disable-next-line:no-require-imports
@@ -51,25 +40,25 @@ export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> i
 
   protected fillForm(): void {
     this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.refContract);
-    this.form.get('refContract')
+    this.form.get('contract.refContract')
       .setValue(this.item.refContract);
-    this.form.get('dateDebut')
+    this.form.get('contract.dateDebut')
     .setValue(this.item.dateDebut);
-    this.form.get('dateFin')
+    this.form.get('contract.dateFin')
     .setValue(this.item.dateFin);
-    this.form.get('loyer')
+    this.form.get('contract.loyer')
     .setValue(this.item.loyer);
-    this.form.get('miniconso')
+    this.form.get('contract.miniconso')
     .setValue(this.item.miniconso);
-    this.form.get('reconduction')
+    this.form.get('contract.reconduction')
     .setValue(this.item.reconduction);
-    this.form.get('identification')
+    this.form.get('contract.identification')
     .setValue(this.item.identification);
-    this.form.get('client')
+    this.form.get('contract.client')
     .setValue(this.item.client);
-    this.form.get('reviewed')
+    this.form.get('contract.reviewed')
     .setValue(this.item.reviewed);
-    this.form.get('valid')
+    this.form.get('contract.valid')
     .setValue(this.item.valid);
   }
 

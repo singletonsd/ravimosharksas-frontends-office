@@ -76,6 +76,7 @@ import { ClientsMainComponent } from './components/pages/clients/clients/clients
 
 import { ContractsAddFormComponent } from './components/common/contracts/contracts-add-form/contracts-add-form.component';
 import { ContractsAutoCompleteComponent } from './components/common/contracts/contracts-auto-complete/contracts-auto-complete.component';
+import { ContractsFormComponent } from './components/common/contracts/contracts-form/contracts-form.component';
 import { ContractsMachinePanelComponent } from './components/common/contracts/contracts-machine-panel/contracts-machine-panel.component';
 import { ContractsTableOptionsComponent } from './components/common/contracts/contracts-table/contracts-table-options/contracts-table-options.component';
 import { ContractsTableToolbarComponent } from './components/common/contracts/contracts-table/contracts-table-toolbar/contracts-table-toolbar.component';
@@ -131,6 +132,9 @@ import { MachinesFormComponent } from './components/common/machines/machines-for
     ClientsCellComponent,
     ContractsAddFormComponent,
     ContractsAddComponent,
+    ContractsAutoCompleteComponent,
+    ContractsFormComponent,
+    ContractsMachinePanelComponent,
     ContractsMainComponent,
     ContractsTableComponent,
     ContractsTableOptionsComponent,
@@ -141,9 +145,7 @@ import { MachinesFormComponent } from './components/common/machines/machines-for
     MachinesFormComponent,
     PiecesAutoCompleteComponent,
     ImportedMachinesAddFormComponent,
-    ImportedMachinesAutoCompleteComponent,
-    ContractsAutoCompleteComponent,
-    ContractsMachinePanelComponent
+    ImportedMachinesAutoCompleteComponent
   ],
   imports: [
     BrowserModule,
