@@ -19,7 +19,7 @@
       </div>
       <ng-template #loaded>
         <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
-        <app-contracts-form (formReady)="formInitialized('contract', $event)"></app-contracts-form>
+        <app-contracts-form (formReady)="formInitialized($event)"></app-contracts-form>
       </ng-template>
       <app-contracts-machine-panel [locations]="item?.locations" [imports]="item?.importedMachines"></app-contracts-machine-panel>
     </mat-card-content>

@@ -18,7 +18,7 @@ export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> i
             // , private readonly translate: TranslateService
             , cdr: ChangeDetectorRef
             ) {
-    super('CONTRACTS_ADD_FORM', 'models.contract.', cdr, logger);
+    super('CONTRACTS_ADD_FORM', 'models.contract.', cdr, logger, 'contract');
     // this.form.get('client')
     //   .disable();
     // this.form.get('refContract')
@@ -40,25 +40,25 @@ export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> i
 
   protected fillForm(): void {
     this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.refContract);
-    this.form.get('contract.refContract')
+    this.form.get('refContract')
       .setValue(this.item.refContract);
-    this.form.get('contract.dateDebut')
+    this.form.get('dateDebut')
     .setValue(this.item.dateDebut);
-    this.form.get('contract.dateFin')
+    this.form.get('dateFin')
     .setValue(this.item.dateFin);
-    this.form.get('contract.loyer')
+    this.form.get('loyer')
     .setValue(this.item.loyer);
-    this.form.get('contract.miniconso')
+    this.form.get('miniconso')
     .setValue(this.item.miniconso);
-    this.form.get('contract.reconduction')
+    this.form.get('reconduction')
     .setValue(this.item.reconduction);
-    this.form.get('contract.identification')
+    this.form.get('identification')
     .setValue(this.item.identification);
-    this.form.get('contract.client')
+    this.form.get('client')
     .setValue(this.item.client);
-    this.form.get('contract.reviewed')
+    this.form.get('reviewed')
     .setValue(this.item.reviewed);
-    this.form.get('contract.valid')
+    this.form.get('valid')
     .setValue(this.item.valid);
   }
 

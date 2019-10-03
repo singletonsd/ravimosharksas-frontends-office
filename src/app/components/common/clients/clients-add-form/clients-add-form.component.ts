@@ -19,7 +19,7 @@ export class ClientsAddFormComponent extends BaseFormAddComponent<Clients> {
             // , private readonly translate: TranslateService
             , cdr: ChangeDetectorRef
             ) {
-    super('CLIENTS_ADD_FORM', 'models.client.', cdr, logger);
+    super('CLIENTS_ADD_FORM', 'models.client.', cdr, logger, 'client');
     if (!environment.production && !this.item) {
       this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
       // tslint:disable-next-line:no-require-imports
@@ -30,11 +30,11 @@ export class ClientsAddFormComponent extends BaseFormAddComponent<Clients> {
 
   fillForm(): void {
     this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.refClient);
-    this.form.get('client.refClient')
+    this.form.get('refClient')
       .setValue(this.item.refClient);
-    this.form.get('client.nickname')
+    this.form.get('nickname')
     .setValue(this.item.nickname);
-    this.form.get('client.name')
+    this.form.get('name')
     .setValue(this.item.name);
     // this.form.get('surname')
     // .setValue(this.item.abrege);

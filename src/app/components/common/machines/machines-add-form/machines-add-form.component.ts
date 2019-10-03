@@ -17,7 +17,7 @@ export class MachinesAddFormComponent extends BaseFormAddComponent<Machines> imp
             // , private readonly translate: TranslateService
             , cdr: ChangeDetectorRef
             ) {
-    super('MACHINES_ADD_FORM', 'models.machine.', cdr, logger);
+    super('MACHINES_ADD_FORM', 'models.machine.', cdr, logger, 'machine');
     if (!this.item && !environment.production) {
       this.item = { id: 123123, numSerie: '12312123', piece: { refArticle: '12345', name: 'C20'} };
     }
@@ -28,11 +28,11 @@ export class MachinesAddFormComponent extends BaseFormAddComponent<Machines> imp
 
   protected fillForm(): void {
     this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
-    this.form.get('machine.id')
+    this.form.get('id')
     .setValue(this.item.id);
-    this.form.get('machine.numSerie')
+    this.form.get('numSerie')
     .setValue(this.item.numSerie);
-    this.form.get('machine.piece')
+    this.form.get('piece')
     .setValue(this.item.piece);
   }
 

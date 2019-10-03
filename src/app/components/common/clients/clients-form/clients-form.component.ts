@@ -11,7 +11,7 @@ import { BaseFormNewComponent } from '@app/models/base-form-new.class';
 export class ClientsFormComponent extends BaseFormNewComponent {
 
   constructor() {
-    super('CLIENTS_FORM', 'models.client.');
+    super('CLIENTS_FORM', 'models.client.', 'client');
     this.form.addControl('refClient', new FormControl('', [ Validators.required ]));
     this.form.addControl('nickname', new FormControl('', []));
     this.form.addControl('name', new FormControl('', []));

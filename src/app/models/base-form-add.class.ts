@@ -22,7 +22,8 @@ export abstract class BaseFormAddComponent<T> implements AfterViewInit {
   constructor(protected readonly COMPONENT_NAME: string
             , public readonly translationBase: string
             , private readonly cdr: ChangeDetectorRef
-            , public readonly logger: NGXLogger) {
+            , public readonly logger: NGXLogger
+            , public readonly formRootName?: string) {
   }
 
   ngAfterViewInit(): void {
@@ -74,11 +75,15 @@ export abstract class BaseFormAddComponent<T> implements AfterViewInit {
     }
   }
 
-  formInitialized(name: string, form: FormGroup): void {
-    this.form.setControl(name, form);
-    this.logger.debug(this.COMPONENT_NAME, ` Added ${name}`);
+  formInitialized(value: {name: string, form: FormGroup}): void {
+    if (value.name === this.formRootName) {
+      this.form = value.form;
+    } else {
+      this.form.setControl(value.name, value.form);
+    }
+    this.logger.debug(this.COMPONENT_NAME, ` Added ${value.name}`);
     if (this.item) {
-      this.fillForm(name);
+      this.fillForm(value.name);
     }
   }
 

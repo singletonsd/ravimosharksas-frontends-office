@@ -19,7 +19,7 @@
       </div>
       <ng-template #loaded>
         <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
-        <app-machines-form (formReady)="formInitialized('machine', $event)"></app-machines-form>
+        <app-machines-form (formReady)="formInitialized($event)"></app-machines-form>
       </ng-template>
     </mat-card-content>
     <mat-card-actions>

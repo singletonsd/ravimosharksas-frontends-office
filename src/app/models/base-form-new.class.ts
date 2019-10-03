@@ -7,16 +7,17 @@ export class BaseFormNewComponent implements OnInit {
   public static emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   public static passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
-  @Output() readonly formReady = new EventEmitter<FormGroup>();
+  @Output() readonly formReady = new EventEmitter<{form: FormGroup, name: string }>();
 
   public form: FormGroup = new FormGroup({});
 
   constructor(protected readonly COMPONENT_NAME: string
-            , public readonly translationBase: string) {
+            , public readonly translationBase: string
+            , public readonly formName?: string) {
   }
 
   ngOnInit(): void {
-    this.formReady.emit(this.form);
+    this.formReady.emit({ form: this.form, name: this.formName });
   }
 
   hasFieldError(fieldName: string): boolean {
@@ -27,6 +28,9 @@ export class BaseFormNewComponent implements OnInit {
     return this.form.controls[fieldName].invalid && (this.form.controls[fieldName].touched);
   }
 
+  childInitialized(value: {form: FormGroup, name: string}): void {
+    this.formReady.emit(value);
+  }
 }
 
 export const equalValueValidator = (targetKey: string, toMatchKey: string): ValidatorFn => {

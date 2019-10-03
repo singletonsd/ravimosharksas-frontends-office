@@ -11,7 +11,7 @@ import { BaseFormNewComponent } from '@app/models/base-form-new.class';
 export class ImportedMachinesFormComponent extends BaseFormNewComponent {
 
   constructor() {
-    super('IMPORTED_MACHINES_FORM', 'models.contract.');
+    super('IMPORTED_MACHINES_FORM', 'models.contract.', 'imported_machine');
     this.form.addControl('id', new FormControl('', [ ]));
     this.form.addControl('identification', new FormControl('', [ Validators.required ]));
     this.form.addControl('contract', new FormControl('', [ Validators.required ]));

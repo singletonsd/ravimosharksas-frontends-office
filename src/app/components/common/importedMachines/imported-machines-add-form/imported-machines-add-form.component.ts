@@ -17,7 +17,7 @@ export class ImportedMachinesAddFormComponent extends BaseFormAddComponent<Impor
   constructor(logger: NGXLogger
             // , private readonly translate: TranslateService
             , cdr: ChangeDetectorRef) {
-    super('IMPORTED_MACHINES_ADD_FORM', 'models.machine.', cdr, logger);
+    super('IMPORTED_MACHINES_ADD_FORM', 'models.machine.', cdr, logger, 'imported_machine');
     // this.form.get('id')
     //   .disable();
     // this.form.get('identification')
@@ -37,20 +37,20 @@ export class ImportedMachinesAddFormComponent extends BaseFormAddComponent<Impor
   }
 
   protected fillForm(name: string): void {
-    if (name === 'imported_machine') {
-      this.logger.debug(this.COMPONENT_NAME, `filling form ${name} with data of ${this.item.id}`);
-      this.form.get(`${name}.id`)
+    if (name === this.formRootName) {
+      this.logger.debug(this.COMPONENT_NAME, `filling form root with data of ${this.item.id}`);
+      this.form.get(`id`)
       .setValue(this.item.id);
-      this.form.get(`${name}.identification`)
+      this.form.get(`identification`)
       .setValue(this.item.identification);
       if (this.item.contract) {
-        this.form.get(`${name}.contract`)
+        this.form.get(`contract`)
           .setValue(this.item.contract);
       } else {
-        this.form.get(`${name}.contract`)
+        this.form.get(`contract`)
           .setValue(this.item.refContract);
       }
-      this.form.get(`${name}.reviewed`)
+      this.form.get(`reviewed`)
         .setValue(this.item.reviewed);
     }
     if (name === 'machine') {
