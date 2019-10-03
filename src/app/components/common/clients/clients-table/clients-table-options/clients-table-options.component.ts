@@ -9,11 +9,11 @@ import { NGXLogger } from 'ngx-logger';
 import { ClientsAddFormComponent } from '../../clients-add-form/clients-add-form.component';
 
 @Component({
-  selector: 'app-client-table-options',
-  templateUrl: './client-table-options.component.html',
-  styleUrls: ['./client-table-options.component.scss']
+  selector: 'app-clients-table-options',
+  templateUrl: './clients-table-options.component.html',
+  styleUrls: ['./clients-table-options.component.scss']
 })
-export class ClientTableOptionsComponent extends BaseTableOptions<any> implements OnInit {
+export class ClientsTableOptionsComponent extends BaseTableOptions<any> implements OnInit {
 
   constructor(private readonly dialog: MatDialog
             // , private readonly snackBar: MatSnackBar
