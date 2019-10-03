@@ -1,5 +1,4 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 // tslint:disable: no-implicit-dependencies
 import { BaseFormAddComponent } from '@app/models/base-form-add.class';
 import { environment } from '@env/environment';
@@ -19,22 +18,17 @@ export class ImportedMachinesAddFormComponent extends BaseFormAddComponent<Impor
             // , private readonly translate: TranslateService
             , cdr: ChangeDetectorRef) {
     super('IMPORTED_MACHINES_ADD_FORM', 'models.machine.', cdr, logger);
-    this.form.addControl('id', new FormControl('', [ ]));
-    this.form.addControl('identification', new FormControl('', [ Validators.required ]));
-    this.form.addControl('machine.piece', new FormControl('', [ Validators.required ]));
-    this.form.addControl('machine.serial_number', new FormControl('', [ Validators.required ]));
-    this.form.addControl('contract', new FormControl('', [ Validators.required ]));
-    this.form.addControl('reviewed', new FormControl('', [ Validators.required ]));
-    this.form.get('id')
-      .disable();
-    this.form.get('identification')
-      .disable();
-    this.form.get('contract')
-      .disable();
+    // this.form.get('id')
+    //   .disable();
+    // this.form.get('identification')
+    //   .disable();
+    // this.form.get('contract')
+    //   .disable();
     if (!environment.production && !this.item) {
       this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
       // tslint:disable-next-line:no-require-imports
       this.item = require('../../../../../../test/mock_data/imported_machines.json')[0];
+      this.item.machine = { id: 123355, numSerie: 'serialDS', piece: { name: 'C20', refArticle: '12as2'}};
       this.logger.debug(this.item);
     }
   }
@@ -42,27 +36,33 @@ export class ImportedMachinesAddFormComponent extends BaseFormAddComponent<Impor
   ngOnInit(): void {
   }
 
-  protected fillForm(): void {
-    this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
-    this.form.get('id')
+  protected fillForm(name: string): void {
+    if (name === 'imported_machine') {
+      this.logger.debug(this.COMPONENT_NAME, `filling form ${name} with data of ${this.item.id}`);
+      this.form.get(`${name}.id`)
       .setValue(this.item.id);
-    this.form.get('identification')
-    .setValue(this.item.identification);
-    if (this.item.machine) {
-      this.form.get('machine.piece')
-      .setValue(this.item.machine.piece);
-      this.form.get('machine.serial_number')
-      .setValue(this.item.machine.numSerie);
+      this.form.get(`${name}.identification`)
+      .setValue(this.item.identification);
+      if (this.item.contract) {
+        this.form.get(`${name}.contract`)
+          .setValue(this.item.contract);
+      } else {
+        this.form.get(`${name}.contract`)
+          .setValue(this.item.refContract);
+      }
+      this.form.get(`${name}.reviewed`)
+        .setValue(this.item.reviewed);
     }
-    if (this.item.contract) {
-      this.form.get('contract')
-        .setValue(this.item.contract);
-    } else {
-      this.form.get('contract')
-        .setValue(this.item.refContract);
+    if (name === 'machine') {
+      if (this.item.machine) {
+        this.form.get(`${name}.id`)
+        .setValue(this.item.id);
+        this.form.get(`${name}.piece`)
+        .setValue(this.item.machine.piece);
+        this.form.get(`${name}.numSerie`)
+        .setValue(this.item.machine.numSerie);
+      }
     }
-    this.form.get('reviewed')
-      .setValue(this.item.reviewed);
   }
 
   finishSubmit(): void {

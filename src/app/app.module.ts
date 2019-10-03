@@ -88,12 +88,13 @@ import { ImportedMachinesAddFormComponent } from './components/common/importedMa
 
 import { MachinesAddFormComponent } from './components/common/machines/machines-add-form/machines-add-form.component';
 import { MachinesAutoCompleteComponent } from './components/common/machines/machines-auto-complete/machines-auto-complete.component';
+import { MachinesFormComponent } from './components/common/machines/machines-form/machines-form.component';
 import { MachinesAddComponent } from './components/pages/machines/machines-add/machines-add.component';
 
 import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-auto-complete/pieces-auto-complete.component';
 
 import { ImportedMachinesAutoCompleteComponent } from './components/common/importedMachines/imported-machines-auto-complete/imported-machines-auto-complete.component';
-import { MachinesFormComponent } from './components/common/machines/machines-form/machines-form.component';
+import { ImportedMachinesFormComponent } from './components/common/importedMachines/imported-machines-form/imported-machines-form.component';
 
 @NgModule({
   declarations: [
@@ -145,7 +146,8 @@ import { MachinesFormComponent } from './components/common/machines/machines-for
     MachinesFormComponent,
     PiecesAutoCompleteComponent,
     ImportedMachinesAddFormComponent,
-    ImportedMachinesAutoCompleteComponent
+    ImportedMachinesAutoCompleteComponent,
+    ImportedMachinesFormComponent
   ],
   imports: [
     BrowserModule,
