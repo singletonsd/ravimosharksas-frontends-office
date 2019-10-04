@@ -9,10 +9,14 @@
       <app-imported-machines-add-form></app-imported-machines-add-form>
     </ng-container>
   </mat-expansion-panel> -->
-  <mat-expansion-panel [disabled]="item?.length === 0">
+  <mat-expansion-panel [disabled]="item?.length === 0" [expanded]="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <h4 style="display: table; text-align: center;">{{ 'pages.contract.imported_machines' | translate }}<span *ngIf="item?.length" class="badge badge-danger">{{ item?.length }}</span></h4>
+        <h4 style="display: table; text-align: center;">
+          <app-badge [isInvalid]="items?.invalid"></app-badge>
+          {{ 'pages.contract.imported_machines' | translate }}
+          <span *ngIf="item?.length" class="badge" [ngClass]="(items?.invalid) ? 'badge-danger' : 'badge-success'">{{ item?.length }}</span>
+        </h4>
       </mat-panel-title>
     </mat-expansion-panel-header>
     <mat-accordion>
@@ -20,7 +24,9 @@
         <mat-expansion-panel [expanded]="expansionStep === i" (opened)="setStep(i)">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              <h5><span *ngIf="!items.at(i)?.valid; else invalid" class="badge badge-success">{{ 'actions.valid.state' | translate }}</span> <ng-template #invalid class="badge badge-success">{{ 'actions.valid.state' | translate }}</ng-template>{{ importedMachine.identification }}</h5>
+              <h5>
+                <app-badge [isInvalid]="items.at(i)?.invalid"></app-badge>
+                {{ importedMachine.identification }}</h5>
             </mat-panel-title>
           </mat-expansion-panel-header>
           <app-imported-machines-form [item]="importedMachine" (formReady)="childInitialized($event)"></app-imported-machines-form>

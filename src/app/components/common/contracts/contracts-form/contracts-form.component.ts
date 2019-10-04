@@ -48,5 +48,16 @@ export class ContractsFormComponent extends BaseFormNewComponent<Contracts> {
     .setValue(this.item.reviewed);
     this.form.get('valid')
     .setValue(this.item.valid);
+
+    this.form.get('refContract')
+      .disable();
+    this.form.get('client')
+      .disable();
+    this.form.get('refContract')
+      .disable();
+    this.form.get('dateDebut')
+      .disable();
+    this.form.get('dateFin')
+      .disable();
   }
 }

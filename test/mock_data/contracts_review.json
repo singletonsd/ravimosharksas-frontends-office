@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "first": 0,
+    "last": 1131,
+    "next": 5,
+    "prev": 0,
+    "self": 0
+  },
+  "items": [
+    {
+      "refContract": 123,
+      "identification": "CONTRAT VA/10092014-0002",
+      "dateDebut": "2005-12-31T23:00:00.000Z",
+      "dateFin": "2020-12-30T23:00:00.000Z",
+      "reconduction": null,
+      "loyer": null,
+      "miniconso": null,
+      "reviewed": false,
+      "valid": false,
+      "createdAt": "2019-09-23T10:17:25.512Z",
+      "updatedAt": "2019-09-23T10:17:25.512Z",
+      "deleted": false,
+      "client": {
+        "refClient": "C4004",
+        "nickname": ".REPOTEL \"SIEGE\"",
+        "name": ".2I INTER INVESTI",
+        "deleted": false
+      },
+      "locations": [],
+      "importedMachines": [
+        {
+          "id": 123,
+          "identification": "LOCATION GLOBALE Machines adou",
+          "reviewed": false,
+          "createdAt": "2019-09-23T13:11:50.718Z",
+          "updatedAt": "2019-09-23T13:11:50.718Z",
+          "deleted": false,
+          "machine": null,
+          "refContract": 123
+        }
+      ],
+      "refClient": "C4004"
+    },
+    {
+      "refContract": 350,
+      "identification": "VA/30012012-0001",
+      "dateDebut": "2007-03-31T22:00:00.000Z",
+      "dateFin": "2020-12-30T23:00:00.000Z",
+      "reconduction": null,
+      "loyer": null,
+      "miniconso": null,
+      "reviewed": false,
+      "valid": false,
+      "createdAt": "2019-09-23T10:17:25.606Z",
+      "updatedAt": "2019-09-23T10:17:25.606Z",
+      "deleted": false,
+      "client": {
+        "refClient": "C4004",
+        "nickname": ".REPOTEL \"SIEGE\"",
+        "name": ".2I INTER INVESTI",
+        "deleted": false
+      },
+      "locations": [],
+      "importedMachines": [
+        {
+          "id": 350,
+          "identification": "LOCATION GLOBALE FOURS",
+          "reviewed": false,
+          "createdAt": "2019-09-23T13:11:50.858Z",
+          "updatedAt": "2019-09-23T13:11:50.858Z",
+          "deleted": false,
+          "machine": null,
+          "refContract": 350
+        }
+      ],
+      "refClient": "C4004"
+    },
+    {
+      "refContract": 419,
+      "identification": "CONTRAT CADRE",
+      "dateDebut": "2013-06-30T22:00:00.000Z",
+      "dateFin": "2019-12-30T23:00:00.000Z",
+      "reconduction": null,
+      "loyer": null,
+      "miniconso": null,
+      "reviewed": false,
+      "valid": false,
+      "createdAt": "2019-09-23T10:17:39.106Z",
+      "updatedAt": "2019-09-23T10:17:39.106Z",
+      "deleted": false,
+      "client": {
+        "refClient": "C4696",
+        "nickname": "BUFFALO SIEGE",
+        "name": "BUFFALO GRILL SA",
+        "deleted": false
+      },
+      "locations": [],
+      "importedMachines": [
+        {
+          "id": 419,
+          "identification": "MAINTENANCE SIEGE",
+          "reviewed": false,
+          "createdAt": "2019-09-23T13:11:51.046Z",
+          "updatedAt": "2019-09-23T13:11:51.046Z",
+          "deleted": false,
+          "machine": null,
+          "refContract": 419
+        }
+      ],
+      "refClient": "C4696"
+    },
+    {
+      "refContract": 445,
+      "identification": "VA/15112017-0003VA",
+      "dateDebut": "2019-01-31T23:00:00.000Z",
+      "dateFin": "2023-01-30T23:00:00.000Z",
+      "reconduction": null,
+      "loyer": null,
+      "miniconso": null,
+      "reviewed": false,
+      "valid": false,
+      "createdAt": "2019-09-23T10:17:27.637Z",
+      "updatedAt": "2019-09-23T10:17:27.637Z",
+      "deleted": false,
+      "client": {
+        "refClient": "C4070",
+        "nickname": ".BABY GRAND LOUIS",
+        "name": ".BABY GRAND RESTAURANTS",
+        "deleted": false
+      },
+      "locations": [],
+      "importedMachines": [
+        {
+          "id": 445,
+          "identification": "ODEON A CAPOT ADOU 8 L",
+          "reviewed": false,
+          "createdAt": "2019-09-23T13:11:51.218Z",
+          "updatedAt": "2019-09-23T13:11:51.218Z",
+          "deleted": false,
+          "machine": null,
+          "refContract": 445
+        }
+      ],
+      "refClient": "C4070"
+    },
+    {
+      "refContract": 530,
+      "identification": "MRA/130  tacite reconduction",
+      "dateDebut": "2008-07-31T22:00:00.000Z",
+      "dateFin": "2027-12-30T23:00:00.000Z",
+      "reconduction": null,
+      "loyer": null,
+      "miniconso": null,
+      "reviewed": false,
+      "valid": false,
+      "createdAt": "2019-09-23T10:17:41.591Z",
+      "updatedAt": "2019-09-23T10:17:41.591Z",
+      "deleted": false,
+      "client": {
+        "refClient": "C4761",
+        "nickname": ".PETIT FER A CHEV",
+        "name": ".PETIT FER A CHEVAL",
+        "deleted": false
+      },
+      "locations": [],
+      "importedMachines": [
+        {
+          "id": 530,
+          "identification": "ADOU 30 L VF_2002494-007",
+          "reviewed": false,
+          "createdAt": "2019-09-23T13:11:51.374Z",
+          "updatedAt": "2019-09-23T13:11:51.374Z",
+          "deleted": false,
+          "machine": null,
+          "refContract": 530
+        }
+      ],
+      "refClient": "C4761"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 <div [formGroup]="form" class="row">
   <app-base-input class="col-4 col-sm-2" [parent]="this" [controlName]="'refContract'" [translateHolder]="'reference'"></app-base-input>
-  <app-base-input class="col-8 col-sm-5" [parent]="this" [controlName]="'identification'"></app-base-input>
-  <app-clients-auto-complete class="col-12 col-sm-5" [parent]="this" [controlName]="'client'" [useGlobal]="false"></app-clients-auto-complete>
+  <app-clients-auto-complete class="col-8 col-sm-5" [parent]="this" [controlName]="'client'" [useGlobal]="false"></app-clients-auto-complete>
+  <app-base-input class="col-12 col-sm-5" [parent]="this" [controlName]="'identification'"></app-base-input>
   <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateDebut'"></app-date-input>
   <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateFin'"></app-date-input>
   <div class="row col-12 col-sm-4">

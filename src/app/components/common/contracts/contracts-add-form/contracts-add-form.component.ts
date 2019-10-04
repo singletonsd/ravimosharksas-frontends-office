@@ -19,23 +19,15 @@ export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> i
             , cdr: ChangeDetectorRef
             ) {
     super('CONTRACTS_ADD_FORM', 'models.contract.', cdr, logger, 'contract');
-    // this.form.get('client')
-    //   .disable();
-    // this.form.get('refContract')
-    //   .disable();
-    // this.form.get('dateDebut')
-    //   .disable();
-    // this.form.get('dateFin')
-    //   .disable();
+  }
+
+  ngOnInit(): void {
     if (!environment.production && !this.item) {
       this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
       // tslint:disable-next-line:no-require-imports
       this.item = require('../../../../../../test/mock_data/contracts.json')[0];
       this.logger.debug(this.item);
     }
-  }
-
-  ngOnInit(): void {
   }
 
   protected fillForm(): void {
@@ -87,6 +79,8 @@ export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> i
       //     });
       // });
     }
+    this.added.next(data);
+    // this.finishAPICall();
   }
 
 }

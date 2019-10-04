@@ -41,7 +41,9 @@
     "disable": "Disable",
     "enable": "Enable",
     "delete": "Delete",
-    "insert": "Insert"
+    "insert": "Insert",
+    "completed": "Completed",
+    "load": "Load"
   },
   "deletedOptions": {
     "NOT_DELETED": "Active",
@@ -270,6 +272,17 @@
           "edit": "Contract edited successfully: ",
           "enabled": "Contract enabled: ",
           "disabled": "Contract disabled: "
+        }
+      },
+      "review": {
+        "title": "Contracts to Review: ",
+        "subtitle": "Displaying ",
+        "subtitle_2": "contracts",
+        "buttons": {
+          "load": "Load contracts"
+        },
+        "no_data": {
+          "title": "All good! Nothing to do"
         }
       }
     }
