@@ -18,13 +18,13 @@ export class MachinesAddFormComponent extends BaseFormAddComponent<Machines> imp
             , cdr: ChangeDetectorRef
             ) {
     super('MACHINES_ADD_FORM', 'models.machine.', cdr, logger, 'machine');
+  }
+
+  ngOnInit(): void {
     if (!this.item && !environment.production) {
       this.item = { id: 123123, numSerie: '12312123', piece: { refArticle: '12345', name: 'C20'} };
       this.logger.info(this.COMPONENT_NAME, 'Added mock data', this.item);
     }
-  }
-
-  ngOnInit(): void {
   }
 
   protected fillForm(): void {

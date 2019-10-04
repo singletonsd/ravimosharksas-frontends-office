@@ -1,6 +1,6 @@
-<ng-container *ngIf="isInvalid; else invalid">
-  <span class="badge badge-danger">{{ 'actions.invalid.state' | translate }}</span>
+<ng-container *ngIf="isInvalid; else valid">
+  <span *ngIf="showInValid" class="badge badge-danger">{{ textInvalid | translate }}</span>
 </ng-container>
-<ng-template #invalid >
-  <span class="badge badge-success">{{ 'actions.valid.state' | translate }}</span>
+<ng-template #valid>
+  <span *ngIf="showValid" class="badge badge-success">{{ textValid | translate }}</span>
 </ng-template>

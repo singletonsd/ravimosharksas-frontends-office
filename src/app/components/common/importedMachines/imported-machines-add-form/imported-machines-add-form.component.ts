@@ -24,6 +24,9 @@ export class ImportedMachinesAddFormComponent extends BaseFormAddComponent<Impor
     //   .disable();
     // this.form.get('contract')
     //   .disable();
+  }
+
+  ngOnInit(): void {
     if (!environment.production && !this.item) {
       this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
       // tslint:disable-next-line:no-require-imports
@@ -31,9 +34,6 @@ export class ImportedMachinesAddFormComponent extends BaseFormAddComponent<Impor
       this.item.machine = { id: 123355, numSerie: 'serialDS', piece: { name: 'C20', refArticle: '12as2'}};
       this.logger.debug(this.item);
     }
-  }
-
-  ngOnInit(): void {
   }
 
   protected fillForm(): void {
