@@ -1,0 +1,6 @@
+<ng-container *ngIf="isInvalid; else invalid">
+  <span class="badge badge-danger">{{ 'actions.invalid.state' | translate }}</span>
+</ng-container>
+<ng-template #invalid >
+  <span class="badge badge-success">{{ 'actions.valid.state' | translate }}</span>
+</ng-template>

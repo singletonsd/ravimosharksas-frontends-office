@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, EventEmitter, Input, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormArray, FormGroup } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
 import { NotificationClass, NotificationStatus } from '@components/basics/notification/simple/notification-simple.class';
 import { NGXLogger } from 'ngx-logger';
@@ -35,12 +35,21 @@ export abstract class BaseFormAddComponent<T> implements AfterViewInit {
   }
 
   resetForm(): void {
-    this.form.reset();
+    // this.form.reset();
     this.submitted = false;
     for (const i in this.form.controls) {
       if (this.form.controls[i]) {
-        this.form.controls[i].clearValidators();
-        this.form.controls[i].updateValueAndValidity();
+        if (this.form.controls[i] instanceof FormArray) {
+          const array = this.form.get(i) as FormArray;
+          while (array.length !== 0) {
+            array.removeAt(0);
+          }
+        }
+        if (this.form.controls[i].enabled) {
+          this.form.controls[i].reset();
+          this.form.controls[i].clearValidators();
+          this.form.controls[i].updateValueAndValidity();
+        }
       }
     }
     this.notification.state = NotificationStatus.READ;
@@ -58,7 +67,7 @@ export abstract class BaseFormAddComponent<T> implements AfterViewInit {
     this.finishSubmit();
   }
   protected abstract finishSubmit(): void;
-
+  button
   hasFieldError(fieldName: string): boolean {
     if (!this.form.controls[fieldName]) {
       return false;
