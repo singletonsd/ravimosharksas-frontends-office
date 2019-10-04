@@ -38,7 +38,8 @@ export const appRoutesNames = {
   },
   CONTRACTS: {
     ADD: 'contracts/add',
-    MAIN: 'contracts/main'
+    MAIN: 'contracts/main',
+    REVIEW: 'contracts/review'
   },
   MACHINES: {
     ADD: 'machines/add',

@@ -12,7 +12,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatAutocompleteModule, MatBadgeModule
   , MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule
   , MatDatepickerModule, MatDialogModule, MatExpansionModule, MatIconModule, MatInputModule
-  , MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+  , MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule, MatProgressBarModule } from '@angular/material';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { CUSTOM_FORMATS } from './app.dates.formats';
 
@@ -44,6 +44,7 @@ import { MenuService } from './services/menu/menu.service';
 import { PreviousRouteService } from './services/previous-route/previous-route.service';
 import { StorageService } from './services/storage/storage.service';
 
+import { BadgeComponent } from './components/basics/badge/badge.component';
 import { BaseDialogComponent } from './components/basics/dialog/base-dialog/base-dialog.component';
 import { BaseAutoCompleteComponent } from './components/basics/forms/base-auto-complete/base-auto-complete.component';
 import { BaseInputComponent } from './components/basics/forms/base-input/base-input.component';
@@ -78,11 +79,14 @@ import { ContractsAddFormComponent } from './components/common/contracts/contrac
 import { ContractsAutoCompleteComponent } from './components/common/contracts/contracts-auto-complete/contracts-auto-complete.component';
 import { ContractsFormComponent } from './components/common/contracts/contracts-form/contracts-form.component';
 import { ContractsMachinePanelComponent } from './components/common/contracts/contracts-machine-panel/contracts-machine-panel.component';
+
 import { ContractsTableOptionsComponent } from './components/common/contracts/contracts-table/contracts-table-options/contracts-table-options.component';
 import { ContractsTableToolbarComponent } from './components/common/contracts/contracts-table/contracts-table-toolbar/contracts-table-toolbar.component';
 import { ContractsTableComponent } from './components/common/contracts/contracts-table/contracts-table.component';
+import { ContractsReviewFormComponent } from './components/common/contracts/review/contracts-review-form/contracts-review-form.component';
 import { ContractsAddComponent } from './components/pages/contracts/contracts-add/contracts-add.component';
 import { ContractsMainComponent } from './components/pages/contracts/contracts-main/contracts-main.component';
+import { ContractsReviewComponent } from './components/pages/contracts/contracts-review/contracts-review.component';
 
 import { ImportedMachinesAddFormComponent } from './components/common/importedMachines/imported-machines-add-form/imported-machines-add-form.component';
 
@@ -104,6 +108,7 @@ import { ImportedMachinesFormComponent } from './components/common/importedMachi
     SidenavComponent,
     SidenavItemComponent,
     SidenavSubitemComponent,
+    BadgeComponent,
     BaseInputComponent,
     BaseAutoCompleteComponent,
     BaseDialogComponent,
@@ -137,6 +142,7 @@ import { ImportedMachinesFormComponent } from './components/common/importedMachi
     ContractsFormComponent,
     ContractsMachinePanelComponent,
     ContractsMainComponent,
+    ContractsReviewComponent,
     ContractsTableComponent,
     ContractsTableOptionsComponent,
     ContractsTableToolbarComponent,
@@ -147,7 +153,8 @@ import { ImportedMachinesFormComponent } from './components/common/importedMachi
     PiecesAutoCompleteComponent,
     ImportedMachinesAddFormComponent,
     ImportedMachinesAutoCompleteComponent,
-    ImportedMachinesFormComponent
+    ImportedMachinesFormComponent,
+    ContractsReviewFormComponent
   ],
   imports: [
     BrowserModule,
@@ -176,6 +183,7 @@ import { ImportedMachinesFormComponent } from './components/common/importedMachi
     MatInputModule,
     MatListModule,
     MatMenuModule,
+    MatProgressBarModule,
     MatSelectModule,
     MatSnackBarModule,
     MatTableModule,

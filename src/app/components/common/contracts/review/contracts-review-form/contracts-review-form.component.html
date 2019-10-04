@@ -1,0 +1,40 @@
+<mat-progress-bar *ngIf="this.loading" mode="indeterminate"></mat-progress-bar>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="d-flex">
+      <ng-container *ngIf="data.items.length; else noItems">
+        <h3>{{ 'pages.contract.review.title' | translate}}<strong *ngIf="!this.loading">{{ data?.metadata?.last }}</strong>
+        </h3>
+        <button *ngIf="!this.loading" type="button" mat-raised-button color="accent" (click)="load()">{{ 'pages.contract.review.buttons.load' | translate }}</button>
+      </ng-container>
+      <ng-template #noItems>
+        <h1>{{ 'pages.contract.review.no_data.title' | translate}}<mat-icon>insert_emoticon</mat-icon></h1>
+      </ng-template>
+    </mat-card-title>
+    <mat-card-subtitle *ngIf="data.items.length">
+        {{ 'pages.contract.review.subtitle' | translate}} <strong *ngIf="!this.loading">{{ data?.metadata?.next - data?.metadata?.first }}</strong> {{ 'pages.contract.review.subtitle_2' | translate}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-accordion *ngIf="!this.loading">
+        <ng-container *ngFor="let contract of data?.items; trackBy: identify; let i = index">
+          <mat-expansion-panel [expanded]="expansionStep === i" (opened)="setStep(i)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h5>{{ contract.identification }} <app-badge [showInValid]="false" [isInvalid]="!done[i]" [textValid]="'actions.completed'"></app-badge></h5>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-contracts-add-form [item]="contract" (added)="setDone(i)"></app-contracts-add-form>
+            <mat-action-row>
+              <button type="button" mat-stroked-button color="warn" (click)="prevStep()" *ngIf="expansionStep !== 0">Previous</button>
+              <button type="button" mat-stroked-button color="accent" (click)="nextStep()" *ngIf="expansionStep !== expansionMax">Next</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+        </ng-container>
+    </mat-accordion>
+  </mat-card-content>
+  <mat-card-actions>
+    <button *ngIf="!this.loading" type="button" mat-raised-button color="accent" (click)="load()">{{ 'pages.contract.review.buttons.load' | translate }}</button>
+  </mat-card-actions>
+  <mat-progress-bar *ngIf="this.loading" mode="indeterminate"></mat-progress-bar>
+</mat-card>

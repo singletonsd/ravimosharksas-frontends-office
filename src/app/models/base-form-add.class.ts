@@ -67,7 +67,7 @@ export abstract class BaseFormAddComponent<T> implements AfterViewInit {
     this.finishSubmit();
   }
   protected abstract finishSubmit(): void;
-  button
+
   hasFieldError(fieldName: string): boolean {
     if (!this.form.controls[fieldName]) {
       return false;

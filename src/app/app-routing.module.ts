@@ -16,6 +16,7 @@ import { ClientsMainComponent } from './components/pages/clients/clients/clients
 
 // import { ContractsAddComponent } from './components/pages/contracts/contracts-add/contracts-add.component';
 import { ContractsMainComponent } from './components/pages/contracts/contracts-main/contracts-main.component';
+import { ContractsReviewComponent } from './components/pages/contracts/contracts-review/contracts-review.component';
 
 import { MachinesAddComponent } from './components/pages/machines/machines-add/machines-add.component';
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: appRoutesNames.CLIENTS.MAIN, component: ClientsMainComponent },
   { path: appRoutesNames.CLIENTS.ADD, component: ClientsAddComponent },
   { path: appRoutesNames.CONTRACTS.MAIN, component: ContractsMainComponent },
+  { path: appRoutesNames.CONTRACTS.REVIEW, component: ContractsReviewComponent },
   // { path: appRoutesNames.CONTRACTS.ADD, component: ContractsAddComponent },
   { path: appRoutesNames.MACHINES.ADD, component: MachinesAddComponent },
   { path: appRoutesNames.ROOT, redirectTo: '/home', pathMatch: 'full' },
