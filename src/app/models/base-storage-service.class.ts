@@ -17,7 +17,7 @@ export abstract class BaseStorageService<T> {
       // tslint:disable-next-line:no-require-imports
       this.items.next(require(`../../../test/mock_data/${jsonFile}.json`));
     } else {
-      this.refresh();
+      // this.refresh();
     }
   }
 

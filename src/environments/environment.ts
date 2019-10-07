@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  mockApiCalls: true,
+  mockApiCalls: false,
   apiRavimoContract: {
     API_BASE_PATH: 'http://127.0.0.1:4201'
   }

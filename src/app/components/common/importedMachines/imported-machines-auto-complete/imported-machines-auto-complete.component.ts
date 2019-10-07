@@ -24,16 +24,23 @@ ngOnInit(): void {
 
 protected _filter(value: string): Array<ImportedMachines> {
   const filterValue = value.toLowerCase();
+  let items = 0;
 
   return this.options.filter((option: ImportedMachines) => {
+    if (items > this.maxResults) {
+      return false;
+    }
     if (option.identification && option.identification.toLowerCase()
-        .includes(filterValue)
-    ) {
+        .includes(filterValue)) {
+      items++;
+
       return true;
     }
     if (option.machine && option.machine.piece
         && option.machine.piece.refArticle && option.machine.piece.refArticle.toLowerCase()
       .includes(filterValue)) {
+      items++;
+
       return true;
     }
   });

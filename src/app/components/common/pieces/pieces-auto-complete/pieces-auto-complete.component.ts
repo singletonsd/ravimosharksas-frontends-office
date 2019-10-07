@@ -26,16 +26,24 @@ implements OnInit {
 
   protected _filter(value: string): Array<Pieces> {
     const filterValue = value.toLowerCase();
+    let items = 0;
 
     return this.options.filter((option: Pieces) => {
+      if (items > this.maxResults) {
+        return false;
+      }
       if (option.refArticle && option.refArticle.toLowerCase()
           .includes(filterValue)
       ) {
+        items++;
+
         return true;
       }
       if (option.name && option.name.toLowerCase()
         .includes(filterValue)) {
-        return true;
+          items++;
+
+          return true;
       }
     });
   }

@@ -12,6 +12,7 @@ export class StorageContractsService extends BaseStorageService<Contracts> {
   constructor(private readonly service: ContractsService
             , logger: NGXLogger) {
     super('SERVICE_CONTRACTS', logger, 'contracts');
+    this.refresh();
   }
 
   public refresh(): void {

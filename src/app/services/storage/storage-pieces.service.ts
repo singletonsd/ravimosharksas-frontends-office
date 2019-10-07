@@ -12,6 +12,7 @@ export class StoragePiecesService extends BaseStorageService<Pieces> {
   constructor(private readonly piecesService: PiecesService
             , logger: NGXLogger) {
     super('SERVICE_PIECES', logger, 'pieces');
+    this.refresh();
   }
 
   public refresh(): void {

@@ -26,19 +26,28 @@ export class ClientsAutocompleteComponent extends BaseAutocompleteComponent<Clie
 
   protected _filter(value: string): Array<Clients> {
     const filterValue = value.toLowerCase();
+    let items = 0;
 
     return this.options.filter((option: Clients) => {
+      if (items > this.maxResults) {
+        return false;
+      }
       if (option.refClient && option.refClient.toLowerCase()
-          .includes(filterValue)
-      ) {
+          .includes(filterValue)) {
+        items++;
+
         return true;
       }
       if (option.name && option.name.toLowerCase()
         .includes(filterValue)) {
+        items++;
+
         return true;
       }
       if (option.nickname && option.nickname.toLowerCase()
         .includes(filterValue)) {
+        items++;
+
         return true;
       }
     });

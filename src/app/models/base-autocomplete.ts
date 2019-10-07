@@ -16,6 +16,8 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
   public loading = new BehaviorSubject<boolean>(false);
   public loading$ = this.loading.asObservable();
 
+  protected maxResults = 10;
+
   options: Array<T> = [];
 
   constructor(
@@ -37,7 +39,7 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
         startWith(''),
         distinctUntilChanged(),
         map(value => typeof value === 'string' ? value : this.displayFn(value)),
-        map(client => client ? this._filter(client) : this.options.slice()))
+        map(client => client ? this._filter(client) : this.options.slice(0, this.maxResults)))
         .subscribe((clients: Array<T>) => {
           this.filteredOptions.next(clients);
       });
