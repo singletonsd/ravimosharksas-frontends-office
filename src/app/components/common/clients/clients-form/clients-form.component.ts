@@ -49,7 +49,10 @@ export class ClientsFormComponent extends BaseFormNewComponent<Clients> {
     // .setValue(this.item.email);
     // this.form.get('forbidden')
     // .setValue(this.item.forbidden);
-    // this.form.get('vat')
-    // .setValue(this.item.vat);
+    // this.form.get('vat')value: { form: FormGroup | FormArray; name: string; }
+    // .setValue(this.item.vat);value: { form: FormGroup | FormArray; name: string; }
+  }
+
+  protected afterControlAdded(): void {
   }
 }

@@ -31,7 +31,7 @@ export class ImportedMachinesAddFormComponent extends BaseFormAddComponent<Impor
       this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
       // tslint:disable-next-line:no-require-imports
       this.item = require('../../../../../../test/mock_data/imported_machines.json')[0];
-      this.item.machine = { id: 123355, numSerie: 'serialDS', piece: { name: 'C20', refArticle: '12as2'}};
+      this.item.machine = { id: 123355, serialNumber: 'serialDS', piece: { name: 'C20', refArticle: '12as2'}};
       this.logger.debug(this.item);
     }
   }

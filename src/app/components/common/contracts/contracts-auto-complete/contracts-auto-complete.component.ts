@@ -48,8 +48,10 @@ public identify(entity: Contracts): string | undefined {
   return entity.refContract ? entity.refContract.toString() : undefined;
 }
 
-public displayFn(client?: Contracts): string | undefined {
-  return client ? `${client.refContract} - ${client.identification}` : undefined;
+public displayFn(client?: Contracts | number): string | undefined {
+  if (client) {
+    return typeof client === 'number' ? client.toString() : `${client.refContract} - ${client.identification}`;
+  }
 }
 
 }

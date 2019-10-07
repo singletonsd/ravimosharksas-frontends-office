@@ -22,7 +22,7 @@ export class MachinesAddFormComponent extends BaseFormAddComponent<Machines> imp
 
   ngOnInit(): void {
     if (!this.item && !environment.production) {
-      this.item = { id: 123123, numSerie: '12312123', piece: { refArticle: '12345', name: 'C20'} };
+      this.item = { id: 123123, serialNumber: '12312123', piece: { refArticle: '12345', name: 'C20'} };
       this.logger.info(this.COMPONENT_NAME, 'Added mock data', this.item);
     }
   }

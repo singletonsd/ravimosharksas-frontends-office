@@ -1,8 +1,9 @@
 import { EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormArray, FormGroup, ValidatorFn } from '@angular/forms';
 import { NGXLogger } from 'ngx-logger';
+import { BaseExpandedClass } from './base-expanded.class';
 
-export abstract class BaseFormNewComponent<T> implements OnInit {
+export abstract class BaseFormNewComponent<T> extends BaseExpandedClass implements OnInit {
 
   // tslint:disable-next-line: max-line-length
   public static emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -18,6 +19,7 @@ export abstract class BaseFormNewComponent<T> implements OnInit {
             , public readonly logger: NGXLogger
             , public readonly formName: string
             , protected readonly items?: FormArray) {
+    super();
     // this.form = formArray ? formArray : new FormGroup({});
     this.form = new FormGroup({});
   }
@@ -41,14 +43,22 @@ export abstract class BaseFormNewComponent<T> implements OnInit {
     return this.form.controls[fieldName].invalid && (this.form.controls[fieldName].touched);
   }
 
-  childInitialized(value: {form: FormGroup | FormArray, name: string}): void {
+  childInitialized(value: {form: FormGroup, name: string}): void {
     if (this.items) {
       this.items.push(value.form);
+      this.afterControlAdded(value, this.items.length - 1);
     } else {
       this.form.setControl(value.name, value.form);
+      this.afterControlAdded(value);
     }
   }
   protected abstract fillForm(): void;
+
+  protected abstract afterControlAdded(value: {form: FormGroup, name: string}, item?: number): void;
+
+  lastItem(): void {
+
+  }
 }
 
 export const equalValueValidator = (targetKey: string, toMatchKey: string): ValidatorFn => {

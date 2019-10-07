@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 // tslint:disable-next-line:no-implicit-dependencies
 import { BaseFormNewComponent } from '@app/models/base-form-new.class';
 import { ImportedMachines } from '@ravimosharksas/apis-contract-libs-typescript';
@@ -12,12 +12,20 @@ import { NGXLogger } from 'ngx-logger';
 })
 export class ImportedMachinesFormComponent extends BaseFormNewComponent<ImportedMachines> {
 
+  @Input() showContract = true;
+
   constructor(logger: NGXLogger) {
-    super('IMPORTED_MACHINES_FORM', 'models.contract.', logger, 'imported_machine');
+    super('IMPORTED_MACHINES_FORM', 'models.imported_machine.', logger, 'imported_machine');
     this.form.addControl('id', new FormControl('', [ ]));
     this.form.addControl('identification', new FormControl('', [ Validators.required ]));
     this.form.addControl('contract', new FormControl('', [ Validators.required ]));
-    this.form.addControl('reviewed', new FormControl('', [ Validators.required ]));
+    this.form.addControl('reviewed', new FormControl('', [ Validators.requiredTrue ]));
+    this.form.get('id')
+      .disable();
+    this.form.get('identification')
+      .disable();
+    this.form.get('contract')
+      .disable();
   }
 
   protected fillForm(): void {
@@ -35,5 +43,12 @@ export class ImportedMachinesFormComponent extends BaseFormNewComponent<Imported
     }
     this.form.get(`reviewed`)
       .setValue(this.item.reviewed);
+  }
+
+  afterControlAdded(value: {form: FormGroup | FormArray, name: string}): void {
+    value.form.get('piece')
+      .setValidators([]);
+    value.form.get('serialNumber')
+      .setValidators([]);
   }
 }

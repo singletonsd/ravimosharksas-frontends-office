@@ -15,17 +15,22 @@ export class MachinesFormComponent extends BaseFormNewComponent<Machines> {
   constructor(logger: NGXLogger) {
     super('MACHINES_FORM', 'models.machine.', logger, 'machine');
     this.form.addControl('id', new FormControl('', [ ]));
-    this.form.addControl('numSerie', new FormControl('', [ Validators.required ]));
+    this.form.addControl('serialNumber', new FormControl('', [ Validators.required ]));
     this.form.addControl('piece', new FormControl('', [ Validators.required ]));
+    this.form.get('id')
+      .disable();
   }
 
   protected fillForm(): void {
     this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
     this.form.get('id')
     .setValue(this.item.id);
-    this.form.get('numSerie')
-    .setValue(this.item.numSerie);
+    this.form.get('serialNumber')
+    .setValue(this.item.serialNumber);
     this.form.get('piece')
     .setValue(this.item.piece);
+  }
+
+  protected afterControlAdded(): void {
   }
 }

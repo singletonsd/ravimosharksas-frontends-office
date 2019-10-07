@@ -31,7 +31,7 @@ protected _filter(value: string): Array<Machines> {
     ) {
       return true;
     }
-    if (option.numSerie && option.refArticle.toLowerCase()
+    if (option.serialNumber && option.refArticle.toLowerCase()
         .includes(filterValue)
     ) {
       return true;
@@ -58,7 +58,7 @@ public displayFn(entity?: Machines): string | undefined {
     return undefined;
   }
 
-  return entity.piece ? `${entity.piece.name} - ${entity.numSerie}` : `${entity.refArticle} - ${entity.numSerie}`;
+  return entity.piece ? `${entity.piece.name} - ${entity.serialNumber}` : `${entity.refArticle} - ${entity.serialNumber}`;
 }
 
 }
