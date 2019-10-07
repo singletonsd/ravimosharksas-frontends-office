@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, EventEmitter, Input, Output } from '@angular/core';
-import { FormArray, FormGroup } from '@angular/forms';
+import { AbstractControl, FormArray, FormControl, FormGroup } from '@angular/forms';
 // tslint:disable-next-line: no-implicit-dependencies
 import { NotificationClass, NotificationStatus } from '@components/basics/notification/simple/notification-simple.class';
 import { NGXLogger } from 'ngx-logger';
@@ -26,6 +26,37 @@ export abstract class BaseFormAddComponent<T> implements AfterViewInit {
             , public readonly formRootName: string) {
   }
 
+  private static resetField(control: AbstractControl): void {
+    if (control.enabled) {
+      control.reset();
+      control.updateValueAndValidity();
+    }
+  }
+
+  private static resetGroup(controls: FormGroup): void {
+    for (const i in controls.controls) {
+      if (controls.controls[i]) {
+        if (controls.controls[i] instanceof FormGroup) {
+          BaseFormAddComponent.resetGroup(controls.controls[i] as FormGroup);
+        } else if (controls.controls[i] instanceof FormArray) {
+          BaseFormAddComponent.resetArray(controls.controls[i] as FormArray);
+        } else {
+          BaseFormAddComponent.resetField(controls.controls[i]);
+        }
+      }
+    }
+  }
+
+  private static resetArray(controls: FormArray): void {
+    for (const element of controls.controls) {
+      if (element instanceof FormGroup) {
+        BaseFormAddComponent.resetGroup(element);
+      } else {
+        BaseFormAddComponent.resetField(element);
+      }
+    }
+  }
+
   ngAfterViewInit(): void {
     this.form.statusChanges.subscribe(status => {
       this.buttonSubmitDisabled = status === 'INVALID' ? true : false;
@@ -39,16 +70,12 @@ export abstract class BaseFormAddComponent<T> implements AfterViewInit {
     this.submitted = false;
     for (const i in this.form.controls) {
       if (this.form.controls[i]) {
-        if (this.form.controls[i] instanceof FormArray) {
-          const array = this.form.get(i) as FormArray;
-          while (array.length !== 0) {
-            array.removeAt(0);
-          }
-        }
-        if (this.form.controls[i].enabled) {
-          this.form.controls[i].reset();
-          this.form.controls[i].clearValidators();
-          this.form.controls[i].updateValueAndValidity();
+        if (this.form.controls[i] instanceof FormGroup) {
+          BaseFormAddComponent.resetGroup(this.form.controls[i] as FormGroup);
+        } else if (this.form.controls[i] instanceof FormArray) {
+          BaseFormAddComponent.resetArray(this.form.controls[i] as FormArray);
+        } else if (this.form.controls[i] instanceof FormControl) {
+          BaseFormAddComponent.resetField(this.form.controls[i]);
         }
       }
     }
