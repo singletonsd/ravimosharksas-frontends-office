@@ -1,0 +1,29 @@
+<mat-expansion-panel [disabled]="item?.length === 0" [expanded]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <h4 style="display: table; text-align: center;">
+        <app-badge [isInvalid]="items?.invalid"></app-badge>
+        {{ 'models.contract.importedMachines' | translate }}
+        <span *ngIf="item?.length" class="badge" [ngClass]="(items?.invalid) ? 'badge-danger' : 'badge-success'">{{ item?.length }}</span>
+      </h4>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-accordion>
+    <ng-container *ngFor="let importedMachine of item; trackBy: identify; let i = index">
+      <mat-expansion-panel [expanded]="expansionStep === i" (opened)="setStep(i)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h5>
+              <app-badge [isInvalid]="items.at(i)?.invalid"></app-badge>
+              {{ importedMachine.identification }}</h5>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-imported-machines-form [showContract]="false" [item]="importedMachine" (formReady)="childInitialized($event)"></app-imported-machines-form>
+        <mat-action-row>
+          <button type="button" mat-stroked-button color="warn" (click)="prevStep()" *ngIf="expansionStep !== 0">Previous</button>
+          <button type="button" mat-stroked-button color="accent" (click)="nextStep()" *ngIf="expansionStep !== item.length -1">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </ng-container>
+</mat-accordion>
+</mat-expansion-panel>
