@@ -1,0 +1,39 @@
+<mat-expansion-panel [disabled]="item?.length === 0" [expanded]="expanded">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h5 style="display: table; text-align: center;">
+          <app-badge *ngIf="item?.length !== 0" [isInvalid]="items?.invalid"></app-badge>
+          {{ 'models.contract.locations' | translate }}
+          <span *ngIf="item?.length" class="badge" [ngClass]="(items?.invalid) ? 'badge-danger' : 'badge-success'">{{ item?.length }}</span>
+        </h5>
+      </mat-panel-title>
+      <mat-panel-description>
+        <span></span>
+        <button [disabled]="disableAddMachine" mat-button color="primary" (click)="addMachine($event)"><mat-icon>add</mat-icon></button>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-accordion>
+      <ng-container *ngFor="let location of item; trackBy: identify; let i = index">
+        <mat-expansion-panel [expanded]="expansionStep === i" (opened)="setStep(i)">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h6>
+                <app-badge [isInvalid]="items.at(i)?.invalid"></app-badge>
+                <ng-container *ngIf="location?.machine?.serialNumber; else newMachine">{{ location?.machine.serialNumber }}</ng-container>
+                <ng-template #newMachine>{{ 'actions.add' | translate }}</ng-template>
+              </h6>
+            </mat-panel-title>
+            <mat-panel-description>
+              <span></span>
+              <button mat-button color="accent" (click)="deleteMachine($event, i)"><mat-icon>delete</mat-icon></button>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <app-machines-form [item]="location?.machine" (formReady)="childInitialized($event)"></app-machines-form>
+          <mat-action-row>
+            <button type="button" mat-stroked-button color="warn" (click)="prevStep()" *ngIf="expansionStep !== 0">Previous</button>
+            <button type="button" mat-stroked-button color="accent" (click)="nextStep()" *ngIf="expansionStep !== item.length -1">Next</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </ng-container>
+  </mat-accordion>
+  </mat-expansion-panel>

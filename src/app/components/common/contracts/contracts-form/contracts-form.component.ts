@@ -16,13 +16,13 @@ export class ContractsFormComponent extends BaseFormNewComponent<Contracts> {
     super('CONTRACTS_FORM', 'models.contract.', logger, 'contract');
     this.form.addControl('refContract', new FormControl('', [ ]));
     this.form.addControl('client', new FormControl('', [ Validators.required ]));
-    this.form.addControl('identification', new FormControl('', []));
+    this.form.addControl('identification', new FormControl('', [ Validators.required ]));
     this.form.addControl('dateDebut', new FormControl('', [ ]));
     this.form.addControl('dateFin', new FormControl('', [ Validators.required ]));
     this.form.addControl('reconduction', new FormControl('', []));
     this.form.addControl('loyer', new FormControl('', []));
     this.form.addControl('miniconso', new FormControl('', []));
-    this.form.addControl('reviewed', new FormControl('', []));
+    this.form.addControl('reviewed', new FormControl('', [ Validators.requiredTrue ]));
     this.form.addControl('valid', new FormControl('', []));
   }
 
@@ -59,5 +59,8 @@ export class ContractsFormComponent extends BaseFormNewComponent<Contracts> {
       .disable();
     this.form.get('dateFin')
       .disable();
+  }
+
+  protected afterControlAdded(): void {
   }
 }

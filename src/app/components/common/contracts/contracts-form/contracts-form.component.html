@@ -11,5 +11,8 @@
   <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'loyer'"></app-base-input>
   <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'miniconso'"></app-base-input>
   <app-base-input class="col-12 col-sm-4" [parent]="this" [controlName]="'reconduction'"></app-base-input>
-  <app-contracts-machine-panel (formReady)="childInitialized($event)" [item]="item?.importedMachines"></app-contracts-machine-panel>
+  <mat-accordion>
+    <app-contracts-panel-imported-machines (formReady)="childInitialized($event)" [item]="item?.importedMachines"></app-contracts-panel-imported-machines>
+    <app-contracts-panel-locations (formReady)="childInitialized($event)" [item]="item?.locations"></app-contracts-panel-locations>
+  </mat-accordion>
 </div>

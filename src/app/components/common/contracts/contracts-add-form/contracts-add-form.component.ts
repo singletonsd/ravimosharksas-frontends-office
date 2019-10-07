@@ -26,7 +26,6 @@ export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> i
       this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
       // tslint:disable-next-line:no-require-imports
       this.item = require('../../../../../../test/mock_data/contracts.json')[0];
-      this.logger.debug(this.item);
     }
   }
 

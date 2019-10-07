@@ -1,5 +1,8 @@
+import { Input } from '@angular/core';
+
 export abstract class BaseExpandedClass {
 
+  @Input() public expanded = true;
   public expansionStep = 0;
   public expansionMax;
 

@@ -24,21 +24,31 @@ ngOnInit(): void {
 
 protected _filter(value: string): Array<Machines> {
   const filterValue = value.toLowerCase();
+  let items = 0;
 
   return this.options.filter((option: Machines) => {
+    if (items > 10) {
+      return false;
+    }
     if (option.refArticle && option.refArticle.toLowerCase()
         .includes(filterValue)
     ) {
+      items++;
+
       return true;
     }
     if (option.serialNumber && option.refArticle.toLowerCase()
         .includes(filterValue)
     ) {
+      items++;
+
       return true;
     }
     if (option.piece && option.piece.refArticle && option.piece.refArticle.toLowerCase()
       .includes(filterValue)) {
-      return true;
+        items++;
+
+        return true;
     }
   });
 }

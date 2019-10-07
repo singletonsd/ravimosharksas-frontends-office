@@ -2,7 +2,7 @@
   <mat-expansion-panel-header>
     <mat-panel-title>
       <h4 style="display: table; text-align: center;">
-        <app-badge [isInvalid]="items?.invalid"></app-badge>
+        <app-badge *ngIf="item?.length !== 0" [isInvalid]="items?.invalid"></app-badge>
         {{ 'models.contract.importedMachines' | translate }}
         <span *ngIf="item?.length" class="badge" [ngClass]="(items?.invalid) ? 'badge-danger' : 'badge-success'">{{ item?.length }}</span>
       </h4>

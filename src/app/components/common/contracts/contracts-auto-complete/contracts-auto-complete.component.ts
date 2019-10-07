@@ -26,15 +26,22 @@ ngOnInit(): void {
 
 protected _filter(value: string): Array<Contracts> {
   const filterValue = value.toLowerCase();
+  let items = 0;
 
   return this.options.filter((option: Contracts) => {
+    if (items > this.maxResults) {
+      return false;
+    }
     if (option.identification && option.identification.toLowerCase()
-        .includes(filterValue)
-    ) {
+        .includes(filterValue)) {
+      items++;
+
       return true;
     }
     if (option.refContract && option.refContract.toString()
       .includes(filterValue)) {
+      items++;
+
       return true;
     }
   });

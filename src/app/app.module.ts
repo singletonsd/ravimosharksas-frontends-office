@@ -12,7 +12,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatAutocompleteModule, MatBadgeModule
   , MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule
   , MatDatepickerModule, MatDialogModule, MatExpansionModule, MatIconModule, MatInputModule
-  , MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule, MatProgressBarModule } from '@angular/material';
+  , MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { CUSTOM_FORMATS } from './app.dates.formats';
 
@@ -80,6 +80,8 @@ import { ContractsAutoCompleteComponent } from './components/common/contracts/co
 import { ContractsFormComponent } from './components/common/contracts/contracts-form/contracts-form.component';
 import { ContractsMachinePanelComponent } from './components/common/contracts/contracts-machine-panel/contracts-machine-panel.component';
 
+import { ContractsPanelImportedMachinesComponent } from './components/common/contracts/contracts-panel-imported-machines/contracts-panel-imported-machines.component';
+import { ContractsPanelLocationsComponent } from './components/common/contracts/contracts-panel-locations/contracts-panel-locations.component';
 import { ContractsTableOptionsComponent } from './components/common/contracts/contracts-table/contracts-table-options/contracts-table-options.component';
 import { ContractsTableToolbarComponent } from './components/common/contracts/contracts-table/contracts-table-toolbar/contracts-table-toolbar.component';
 import { ContractsTableComponent } from './components/common/contracts/contracts-table/contracts-table.component';
@@ -99,6 +101,10 @@ import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-a
 
 import { ImportedMachinesAutoCompleteComponent } from './components/common/importedMachines/imported-machines-auto-complete/imported-machines-auto-complete.component';
 import { ImportedMachinesFormComponent } from './components/common/importedMachines/imported-machines-form/imported-machines-form.component';
+
+import { StorageClientsService } from './services/storage/storage-clients.service';
+import { StorageContractsService } from './services/storage/storage-contracts.service';
+import { StoragePiecesService } from './services/storage/storage-pieces.service';
 
 @NgModule({
   declarations: [
@@ -142,7 +148,10 @@ import { ImportedMachinesFormComponent } from './components/common/importedMachi
     ContractsFormComponent,
     ContractsMachinePanelComponent,
     ContractsMainComponent,
+    ContractsPanelImportedMachinesComponent,
+    ContractsPanelLocationsComponent,
     ContractsReviewComponent,
+    ContractsReviewFormComponent,
     ContractsTableComponent,
     ContractsTableOptionsComponent,
     ContractsTableToolbarComponent,
@@ -153,8 +162,7 @@ import { ImportedMachinesFormComponent } from './components/common/importedMachi
     PiecesAutoCompleteComponent,
     ImportedMachinesAddFormComponent,
     ImportedMachinesAutoCompleteComponent,
-    ImportedMachinesFormComponent,
-    ContractsReviewFormComponent
+    ImportedMachinesFormComponent
   ],
   imports: [
     BrowserModule,
@@ -211,6 +219,9 @@ import { ImportedMachinesFormComponent } from './components/common/importedMachi
     GoogleAnalyticsService,
     GuardService,
     StorageService,
+    StorageClientsService,
+    StorageContractsService,
+    StoragePiecesService,
     MenuService,
     PreviousRouteService,
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },

@@ -41,4 +41,6 @@ export class ContractsMachinePanelComponent extends BaseFormNewComponent<Array<I
     this.expansionStep--;
   }
 
+  protected afterControlAdded(): void {
+  }
 }

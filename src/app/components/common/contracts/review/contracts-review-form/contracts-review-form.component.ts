@@ -22,11 +22,13 @@ export class ContractsReviewFormComponent extends BaseExpandedClass implements O
   constructor(private readonly contractsService: ContractsService
             , private readonly logger: NGXLogger) {
     super();
-    if (!environment.production) {
+    if (!environment.production && environment.mockApiCalls) {
       this.logger.debug(this.COMPONENT_NAME, 'adding data from mock json...');
       // tslint:disable-next-line:no-require-imports
       this.setNewData(require('../../../../../../../test/mock_data/contracts_review.json'));
       // this.setNewData({ metadata: last })
+    } else {
+     this.load();
     }
   }
 
@@ -52,7 +54,7 @@ export class ContractsReviewFormComponent extends BaseExpandedClass implements O
   load(): void {
     this.loading = true;
     this.contractsService.getContracts(0, 5, undefined, undefined
-      , Deleted.ACTIVE, true, undefined, Reviewed.REVIEWED)
+      , Deleted.ACTIVE, true, undefined, Reviewed.UNREVIEWED)
       .subscribe(response => {
         this.setNewData(response);
         this.loading = false;

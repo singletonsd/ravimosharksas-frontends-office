@@ -203,7 +203,20 @@
       "loyer": "Rent",
       "miniconso": "Consommation Min",
       "reviewed": "Reviewed",
-      "valid": "Valid"
+      "valid": "Valid",
+      "importedMachines": "Imported Machines Found",
+      "locations": "Machines"
+    },
+    "imported_machine": {
+      "contract": "Contract",
+      "identification": "Identification",
+      "id": "#",
+      "reviewed": "Reviewed"
+    },
+    "machine": {
+      "id": "#",
+      "serialNumber": "Serial Number",
+      "piece": "Machine Type"
     }
   },
   "pages": {
