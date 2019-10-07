@@ -1,12 +1,10 @@
 import { Input, OnInit } from '@angular/core';
-// tslint:disable-next-line:no-implicit-dependencies
-import { environment } from '@env/environment';
 import { NGXLogger } from 'ngx-logger';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, finalize, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { BaseInputFormComponent } from './base-input-form.class';
+import { BaseStorageService } from './base-storage-service.class';
 
-declare var require: any;
 export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponent
   implements OnInit {
 
@@ -23,20 +21,10 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
   constructor(
     private readonly logger: NGXLogger,
     protected readonly COMPONENT_NAME: string,
-    jsonFile?: string
-  ) {
+    service?: BaseStorageService<T>) {
     super();
-    if (!environment.production) {
-      logger.debug(COMPONENT_NAME, 'adding data from mock json...');
-      if (jsonFile) {
-        // tslint:disable-next-line:no-require-imports
-        this.options.push(
-          ...require('../../../test/mock_data/'.concat(
-            jsonFile,
-            '.json'
-          ))
-        );
-      }
+    if (service) {
+      service.items$.subscribe(items => this.options = items);
     }
   }
 
@@ -52,8 +40,7 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
         map(client => client ? this._filter(client) : this.options.slice()))
         .subscribe((clients: Array<T>) => {
           this.filteredOptions.next(clients);
-      })
-      ;
+      });
     } else {
       this.parent.form.controls[this.controlName].valueChanges
       .pipe(

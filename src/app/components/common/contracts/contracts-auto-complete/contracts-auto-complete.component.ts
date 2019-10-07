@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// tslint:disable-next-line:no-implicit-dependencies
+// tslint:disable:no-implicit-dependencies
 import { BaseAutocompleteComponent } from '@app/models/base-autocomplete';
+import { StorageContractsService } from '@app/services/storage/storage-contracts.service';
 import { Contracts, ContractsService } from '@ravimosharksas/apis-contract-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
 import { map } from 'rxjs/operators';
@@ -13,9 +14,10 @@ import { map } from 'rxjs/operators';
 export class ContractsAutoCompleteComponent extends BaseAutocompleteComponent<Contracts>
 implements OnInit {
 
-constructor(private readonly pieceService: ContractsService,
-            logger: NGXLogger) {
-  super(logger, 'CONTRACTS_AUTO_COMPLETE', 'contracts');
+constructor(private readonly pieceService: ContractsService
+          , logger: NGXLogger
+          , storageService: StorageContractsService) {
+  super(logger, 'CONTRACTS_AUTO_COMPLETE', storageService);
 }
 
 ngOnInit(): void {

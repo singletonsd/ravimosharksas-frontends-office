@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// tslint:disable-next-line:no-implicit-dependencies
+// tslint:disable:no-implicit-dependencies
 import { BaseAutocompleteComponent } from '@app/models/base-autocomplete';
+import { StoragePiecesService } from '@app/services/storage/storage-pieces.service';
 import { Pieces, PiecesService } from '@ravimosharksas/apis-contract-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
 import { map } from 'rxjs/operators';
@@ -13,43 +14,44 @@ import { map } from 'rxjs/operators';
 export class PiecesAutoCompleteComponent extends BaseAutocompleteComponent<Pieces>
 implements OnInit {
 
-constructor(private readonly pieceService: PiecesService,
-            logger: NGXLogger) {
-  super(logger, 'PIECES_AUTO_COMPLETE', 'pieces');
-}
+  constructor(private readonly pieceService: PiecesService,
+              logger: NGXLogger
+            , storageService: StoragePiecesService) {
+    super(logger, 'PIECES_AUTO_COMPLETE', storageService);
+  }
 
-ngOnInit(): void {
-  super.ngOnInit();
-}
+  ngOnInit(): void {
+    super.ngOnInit();
+  }
 
-protected _filter(value: string): Array<Pieces> {
-  const filterValue = value.toLowerCase();
+  protected _filter(value: string): Array<Pieces> {
+    const filterValue = value.toLowerCase();
 
-  return this.options.filter((option: Pieces) => {
-    if (option.refArticle && option.refArticle.toLowerCase()
-        .includes(filterValue)
-    ) {
-      return true;
-    }
-    if (option.name && option.name.toLowerCase()
-      .includes(filterValue)) {
-      return true;
-    }
-  });
-}
+    return this.options.filter((option: Pieces) => {
+      if (option.refArticle && option.refArticle.toLowerCase()
+          .includes(filterValue)
+      ) {
+        return true;
+      }
+      if (option.name && option.name.toLowerCase()
+        .includes(filterValue)) {
+        return true;
+      }
+    });
+  }
 
-protected _apiCall(entity: any): import('rxjs').Observable<Array<Pieces>> {
-  return this.pieceService
-    .getPieces(0, 10, undefined, entity)
-    .pipe(map(value => value.items));
-}
+  protected _apiCall(entity: any): import('rxjs').Observable<Array<Pieces>> {
+    return this.pieceService
+      .getPieces(0, 10, undefined, entity)
+      .pipe(map(value => value.items));
+  }
 
-public identify(entity: Pieces): string {
-  return entity.refArticle;
-}
+  public identify(entity: Pieces): string {
+    return entity.refArticle;
+  }
 
-public displayFn(client?: Pieces): string | undefined {
-  return client ? `${client.refArticle} - ${client.name}` : undefined;
-}
+  public displayFn(client?: Pieces): string | undefined {
+    return client ? `${client.refArticle} - ${client.name}` : undefined;
+  }
 
 }

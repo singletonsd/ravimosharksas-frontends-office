@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// tslint:disable-next-line:no-implicit-dependencies
+// tslint:disable:no-implicit-dependencies
 import { BaseAutocompleteComponent } from '@app/models/base-autocomplete';
+import { StorageClientsService } from '@app/services/storage/storage-clients.service';
 import { Clients, ClientsService } from '@ravimosharksas/apis-contract-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
 import { map } from 'rxjs/operators';
@@ -14,8 +15,9 @@ export class ClientsAutocompleteComponent extends BaseAutocompleteComponent<Clie
   implements OnInit {
 
   constructor(private readonly clientService: ClientsService,
-              logger: NGXLogger) {
-    super(logger, 'CLIENTS_AUTO_COMPLETE', 'clients');
+              logger: NGXLogger
+            , storageService: StorageClientsService) {
+    super(logger, 'CLIENTS_AUTO_COMPLETE', storageService);
   }
 
   ngOnInit(): void {

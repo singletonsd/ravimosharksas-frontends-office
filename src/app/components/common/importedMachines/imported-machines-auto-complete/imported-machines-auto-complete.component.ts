@@ -15,7 +15,7 @@ implements OnInit {
 
 constructor(private readonly pieceService: ImportedMachinesService,
             logger: NGXLogger) {
-  super(logger, 'IMPORTED_MACHINES_AUTO_COMPLETE', 'pieces');
+  super(logger, 'IMPORTED_MACHINES_AUTO_COMPLETE');
 }
 
 ngOnInit(): void {
