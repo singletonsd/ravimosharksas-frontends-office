@@ -78,8 +78,6 @@ import { ClientsMainComponent } from './components/pages/clients/clients/clients
 import { ContractsAddFormComponent } from './components/common/contracts/contracts-add-form/contracts-add-form.component';
 import { ContractsAutoCompleteComponent } from './components/common/contracts/contracts-auto-complete/contracts-auto-complete.component';
 import { ContractsFormComponent } from './components/common/contracts/contracts-form/contracts-form.component';
-import { ContractsMachinePanelComponent } from './components/common/contracts/contracts-machine-panel/contracts-machine-panel.component';
-
 import { ContractsPanelImportedMachinesComponent } from './components/common/contracts/contracts-panel-imported-machines/contracts-panel-imported-machines.component';
 import { ContractsPanelLocationsComponent } from './components/common/contracts/contracts-panel-locations/contracts-panel-locations.component';
 import { ContractsTableOptionsComponent } from './components/common/contracts/contracts-table/contracts-table-options/contracts-table-options.component';
@@ -146,7 +144,6 @@ import { StoragePiecesService } from './services/storage/storage-pieces.service'
     ContractsAddComponent,
     ContractsAutoCompleteComponent,
     ContractsFormComponent,
-    ContractsMachinePanelComponent,
     ContractsMainComponent,
     ContractsPanelImportedMachinesComponent,
     ContractsPanelLocationsComponent,
