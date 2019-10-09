@@ -1,14 +1,14 @@
 [
   {
     "refContract": 123,
-    "identification": "CONTRAT VA/10092014-0002",
+    "identification": "VA/10092014-0002",
     "dateDebut": "2005-12-31T23:00:00.000Z",
     "dateFin": "2020-12-30T23:00:00.000Z",
     "reconduction": null,
     "loyer": null,
     "miniconso": null,
-    "reviewed": false,
-    "valid": false,
+    "reviewed": true,
+    "valid": true,
     "createdAt": "2019-09-23T10:17:25.512Z",
     "updatedAt": "2019-09-23T10:17:25.512Z",
     "deleted": false,
@@ -18,27 +18,58 @@
       "name": ".2I INTER INVESTI",
       "deleted": false
     },
-    "locations": [],
+    "locations": [
+      {
+        "id": 10,
+        "createdAt": "2019-10-09T13:22:50.780Z",
+        "updatedAt": "2019-10-09T13:22:50.780Z",
+        "deleted": false,
+        "machine": {
+          "id": 3615,
+          "serialNumber": "123456",
+          "createdAt": "2019-10-09T13:22:50.624Z",
+          "updatedAt": "2019-10-09T13:22:50.624Z",
+          "deleted": false,
+          "refArticle": "00035840"
+        },
+        "machineId": 3615,
+        "refContract": 123
+      },
+      {
+        "id": 11,
+        "createdAt": "2019-10-09T13:50:16.718Z",
+        "updatedAt": "2019-10-09T13:50:16.718Z",
+        "deleted": false,
+        "machine": {
+          "id": 3616,
+          "serialNumber": "465",
+          "createdAt": "2019-10-09T13:50:16.593Z",
+          "updatedAt": "2019-10-09T13:50:16.593Z",
+          "deleted": false,
+          "refArticle": "00037240"
+        },
+        "machineId": 3616,
+        "refContract": 123
+      }
+    ],
     "importedMachines": [
       {
         "id": 123,
         "identification": "LOCATION GLOBALE Machines adou",
-        "reviewed": false,
+        "reviewed": true,
         "createdAt": "2019-09-23T13:11:50.718Z",
         "updatedAt": "2019-09-23T13:11:50.718Z",
         "deleted": false,
-        "machine": null,
+        "machine": {
+          "id": 3615,
+          "serialNumber": "123456",
+          "createdAt": "2019-10-09T13:22:50.624Z",
+          "updatedAt": "2019-10-09T13:22:50.624Z",
+          "deleted": false,
+          "refArticle": "00035840"
+        },
+        "machineId": 3615,
         "refContract": 123
-      },
-      {
-        "id": 562,
-        "identification": "FOUR COMPACT MAGIC CHG + SOCLE INSE",
-        "reviewed": false,
-        "createdAt": "2019-09-23T13:11:51.890Z",
-        "updatedAt": "2019-09-23T13:11:51.890Z",
-        "deleted": false,
-        "machine": null,
-        "refContract": 562
       }
     ],
     "refClient": "C4004"
