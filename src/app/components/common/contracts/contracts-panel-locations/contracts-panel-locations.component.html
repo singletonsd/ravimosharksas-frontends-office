@@ -28,7 +28,7 @@
               <button type="button" mat-button color="accent" (click)="deleteMachine($event, i)"><mat-icon>delete</mat-icon></button>
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <app-machines-form [item]="location?.machine" (formReady)="childInitialized($event)"></app-machines-form>
+          <app-locations-form [item]="location" (formReady)="childInitialized($event)"></app-locations-form>
           <mat-action-row>
             <button type="button" mat-stroked-button color="warn" (click)="prevStep()" *ngIf="expansionStep !== 0">Previous</button>
             <button type="button" mat-stroked-button color="accent" (click)="nextStep()" *ngIf="expansionStep !== item.length -1">Next</button>
