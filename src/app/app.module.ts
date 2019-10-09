@@ -95,6 +95,8 @@ import { MachinesAutoCompleteComponent } from './components/common/machines/mach
 import { MachinesFormComponent } from './components/common/machines/machines-form/machines-form.component';
 import { MachinesAddComponent } from './components/pages/machines/machines-add/machines-add.component';
 
+import { LocationsFormComponent } from './components/common/locations/locations-form/locations-form.component';
+
 import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-auto-complete/pieces-auto-complete.component';
 
 import { ImportedMachinesAutoCompleteComponent } from './components/common/importedMachines/imported-machines-auto-complete/imported-machines-auto-complete.component';
@@ -156,6 +158,7 @@ import { StoragePiecesService } from './services/storage/storage-pieces.service'
     MachinesAutoCompleteComponent,
     MachinesAddComponent,
     MachinesFormComponent,
+    LocationsFormComponent,
     PiecesAutoCompleteComponent,
     ImportedMachinesAddFormComponent,
     ImportedMachinesAutoCompleteComponent,

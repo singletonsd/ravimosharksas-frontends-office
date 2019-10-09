@@ -1,0 +1,8 @@
+<div [formGroup]="form" class="row">
+  <ng-container *ngIf="showOnlyMachine">
+    <app-base-input class="col-6" [parent]="this" [controlName]="'id'" [type]="'number'"></app-base-input>
+    <app-contracts-auto-complete class="col-6" [parent]="this" [controlName]="'contract'">
+    </app-contracts-auto-complete>
+  </ng-container>
+  <app-machines-form class="col-12" [item]="item?.machine" (formReady)="childInitialized($event)"></app-machines-form>
+</div>
