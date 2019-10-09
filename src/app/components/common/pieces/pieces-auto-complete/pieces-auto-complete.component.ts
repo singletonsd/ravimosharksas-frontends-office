@@ -58,8 +58,10 @@ implements OnInit {
     return entity.refArticle;
   }
 
-  public displayFn(client?: Pieces): string | undefined {
-    return client ? `${client.refArticle} - ${client.name}` : undefined;
+  public displayFn(piece?: Pieces): string {
+    if (piece) {
+      return typeof piece === 'string' ? piece : `${piece.refArticle} - ${piece.name}`;
+    }
   }
 
 }

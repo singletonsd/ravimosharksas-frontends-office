@@ -15,10 +15,11 @@ export class ContractsPanelImportedMachinesComponent extends BaseFormNewComponen
   public expansionStep = 0;
 
   constructor(logger: NGXLogger) {
-    super('CONTRACT_PANEL_IMPORTED_MACHINES', 'models.contract.', logger, 'importedMachines', new FormArray([]));
+    super('CONTRACTS_PANEL_IMPORTED_MACHINES', 'models.contract.', logger, 'importedMachines', new FormArray([]));
   }
 
   protected fillForm(): void {
+    this.expansionMax = this.item.length - 1;
   }
 
   identify(item: ImportedMachines): number {
@@ -33,4 +34,7 @@ export class ContractsPanelImportedMachinesComponent extends BaseFormNewComponen
     });
   }
 
+  public lastItem(): void {
+    this.expanded = false;
+  }
 }

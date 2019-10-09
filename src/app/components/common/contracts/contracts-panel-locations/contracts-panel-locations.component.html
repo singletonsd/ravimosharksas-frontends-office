@@ -9,7 +9,7 @@
       </mat-panel-title>
       <mat-panel-description>
         <span></span>
-        <button [disabled]="disableAddMachine" mat-button color="primary" (click)="addMachine($event)"><mat-icon>add</mat-icon></button>
+        <button type="button" [disabled]="disableAddMachine" mat-button color="primary" (click)="addMachine($event)"><mat-icon>add</mat-icon></button>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <mat-accordion>
@@ -25,7 +25,7 @@
             </mat-panel-title>
             <mat-panel-description>
               <span></span>
-              <button mat-button color="accent" (click)="deleteMachine($event, i)"><mat-icon>delete</mat-icon></button>
+              <button type="button" mat-button color="accent" (click)="deleteMachine($event, i)"><mat-icon>delete</mat-icon></button>
             </mat-panel-description>
           </mat-expansion-panel-header>
           <app-machines-form [item]="location?.machine" (formReady)="childInitialized($event)"></app-machines-form>

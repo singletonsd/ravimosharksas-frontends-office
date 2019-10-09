@@ -11,7 +11,7 @@ export abstract class BaseExpandedClass {
   }
 
   nextStep(): void {
-    if (this.expansionStep !== this.expansionMax) {
+    if (this.expansionStep < this.expansionMax) {
       this.expansionStep++;
     } else {
       this.lastItem();

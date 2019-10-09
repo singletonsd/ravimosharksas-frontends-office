@@ -28,7 +28,7 @@ export class MachinesFormComponent extends BaseFormNewComponent<Machines> {
     this.form.get('serialNumber')
     .setValue(this.item.serialNumber);
     this.form.get('piece')
-    .setValue(this.item.piece);
+    .setValue(this.item.piece || this.item.refArticle);
   }
 
   protected afterControlAdded(): void {

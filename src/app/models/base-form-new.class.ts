@@ -57,7 +57,6 @@ export abstract class BaseFormNewComponent<T> extends BaseExpandedClass implemen
   protected abstract afterControlAdded(value: {form: FormGroup, name: string}, item?: number): void;
 
   lastItem(): void {
-
   }
 }
 

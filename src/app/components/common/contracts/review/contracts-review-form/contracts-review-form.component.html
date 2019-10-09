@@ -5,7 +5,7 @@
       <ng-container *ngIf="data?.items?.length; else noItems">
         <h3>{{ 'pages.contract.review.title' | translate}}<strong *ngIf="!this.loading">{{ data?.metadata?.last }}</strong>
         </h3>
-        <button *ngIf="!this.loading" type="button" mat-raised-button color="accent" (click)="load()">{{ 'pages.contract.review.buttons.load' | translate }}</button>
+        <button *ngIf="!this.loading" type="button" mat-raised-button color="accent" (click)="load()" class="ml-5">{{ 'pages.contract.review.buttons.load' | translate }}</button>
       </ng-container>
       <ng-template #noItems>
         <h1>{{ 'pages.contract.review.no_data.title' | translate}}<mat-icon>insert_emoticon</mat-icon></h1>

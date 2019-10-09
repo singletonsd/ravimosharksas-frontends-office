@@ -19,7 +19,7 @@ export class ContractsPanelLocationsComponent  extends BaseFormNewComponent<Arra
 
   constructor(logger: NGXLogger
             , private cdf: ChangeDetectorRef) {
-    super('CONTRACT_PANEL_LOCATIONS', 'models.contract.', logger, 'locations', new FormArray([]));
+    super('CONTRACTS_PANEL_LOCATIONS', 'models.contract.', logger, 'locations', new FormArray([]));
   }
 
   protected fillForm(): void {
