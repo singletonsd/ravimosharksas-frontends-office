@@ -17,7 +17,9 @@ export class StoragePiecesService extends BaseStorageService<Pieces> {
 
   public refresh(): void {
     this.piecesService.getPieces(undefined, undefined, undefined, undefined, Deleted.ACTIVE)
-      .subscribe(response => this.items.next(response.items));
+      .subscribe(response => {
+        this.items.next(response.items);
+      });
   }
 
 }

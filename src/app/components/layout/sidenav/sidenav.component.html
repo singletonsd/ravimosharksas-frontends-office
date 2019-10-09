@@ -1,7 +1,7 @@
 <!-- <mat-toolbar></mat-toolbar> -->
 <mat-nav-list>
   <a mat-list-item (click)="toggleSideNav()">
-    <span *ngIf="( isOpened() | async); else open">
+    <span *ngIf="( this.menuService.$displaySideNavNames | async); else open">
         <mat-icon matListIcon>keyboard_arrow_left</mat-icon>
     </span>
       <ng-template #open>
@@ -12,9 +12,9 @@
   </a>
   <a mat-list-item routerLink='/'>
     <mat-icon matListIcon>home</mat-icon>
-    <span *ngIf="( isOpened() | async)">{{ 'side-nav.home' | translate }}</span>
+    <span *ngIf="( this.menuService.$displaySideNavNames | async)">{{ 'side-nav.home' | translate }}</span>
   </a>
   <div *ngFor="let option of options; trackBy: identify">
-    <app-sidenav-item [opened]="( isOpened() | async)" [option]="option"></app-sidenav-item>
+    <app-sidenav-item [opened]="( this.menuService.$displaySideNavNames | async)" [option]="option"></app-sidenav-item>
   </div>
 </mat-nav-list>

@@ -17,6 +17,8 @@ export class StorageContractsService extends BaseStorageService<Contracts> {
 
   public refresh(): void {
     this.service.getContracts(undefined, undefined, undefined, undefined, Deleted.ACTIVE)
-      .subscribe(response => this.items.next(response.items));
+      .subscribe(response => {
+        this.items.next(response.items);
+      });
   }
 }

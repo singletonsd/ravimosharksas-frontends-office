@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
     );
 
   constructor(private readonly breakpointObserver: BreakpointObserver
-            , private readonly menuService: MenuService
+            , public readonly menuService: MenuService
             , router: Router) {
     router.events.pipe(
       withLatestFrom(this.isHandset$),
@@ -34,10 +34,6 @@ export class MainComponent implements OnInit {
 
   toggleSideNav(): void {
     this.menuService.toggle();
-  }
-
-  isOpened(): Observable<boolean> {
-    return this.menuService.$displaySideNav;
   }
 
 }

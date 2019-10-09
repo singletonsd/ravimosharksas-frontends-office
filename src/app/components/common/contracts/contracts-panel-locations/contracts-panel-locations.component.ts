@@ -18,7 +18,7 @@ export class ContractsPanelLocationsComponent  extends BaseFormNewComponent<Arra
   public expansionStep = 0;
 
   constructor(logger: NGXLogger
-            , private cdf: ChangeDetectorRef) {
+            , private readonly cdf: ChangeDetectorRef) {
     super('CONTRACTS_PANEL_LOCATIONS', 'models.contract.', logger, 'locations', new FormArray([]));
   }
 

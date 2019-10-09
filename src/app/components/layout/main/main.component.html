@@ -1,7 +1,7 @@
 <mat-sidenav-container style="height: calc(100vh - 130px);" autosize>
   <mat-sidenav
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isOpened() | async)">
+    [opened]="(this.menuService.$displaySideNav | async)">
     <app-sidenav></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
