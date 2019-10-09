@@ -7,6 +7,6 @@
     <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'id'"></app-base-input>
   </ng-template>
   <app-base-input class="col-12 col-sm-8" [parent]="this" [controlName]="'identification'"></app-base-input>
-  <app-machines-form [item]="item?.machine" (formReady)="childInitialized($event)"></app-machines-form>
+  <app-machines-form class="col-12" [item]="item?.machine" (formReady)="childInitialized($event)"></app-machines-form>
   <mat-checkbox class="col-12" formControlName="reviewed">{{ 'models.contract.reviewed' | translate }}</mat-checkbox>
 </div>
