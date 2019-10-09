@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
 // tslint:disable-next-line:no-implicit-dependencies
 import { BaseFormNewComponent } from '@app/models/base-form-new.class';
@@ -10,12 +10,18 @@ import { NGXLogger } from 'ngx-logger';
   templateUrl: './contracts-panel-imported-machines.component.html',
   styleUrls: ['./contracts-panel-imported-machines.component.scss']
 })
-export class ContractsPanelImportedMachinesComponent extends BaseFormNewComponent<Array<ImportedMachines>> {
+export class ContractsPanelImportedMachinesComponent extends BaseFormNewComponent<Array<ImportedMachines>>
+  implements AfterViewInit {
 
   public expansionStep = 0;
 
-  constructor(logger: NGXLogger) {
+  constructor(logger: NGXLogger
+            , private cdf: ChangeDetectorRef) {
     super('CONTRACTS_PANEL_IMPORTED_MACHINES', 'models.contract.', logger, 'importedMachines', new FormArray([]));
+  }
+
+  ngAfterViewInit(): void {
+    this.cdf.detectChanges();
   }
 
   protected fillForm(): void {

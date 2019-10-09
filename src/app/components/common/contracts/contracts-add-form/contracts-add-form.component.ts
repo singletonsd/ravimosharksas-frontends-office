@@ -2,9 +2,9 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 // tslint:disable: no-implicit-dependencies
 import { BaseFormAddComponent } from '@app/models/base-form-add.class';
 import { environment } from '@env/environment';
-import { Contracts } from '@ravimosharksas/apis-contract-libs-typescript';
+import { TranslateService } from '@ngx-translate/core';
+import { Contracts, ContractsService } from '@ravimosharksas/apis-contract-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
-// import { TranslateService } from '@ngx-translate/core';
 
 declare var require: any;
 @Component({
@@ -15,7 +15,8 @@ declare var require: any;
 export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> implements OnInit {
 
   constructor(logger: NGXLogger
-            // , private readonly translate: TranslateService
+            , private readonly translate: TranslateService
+            , private readonly service: ContractsService
             , cdr: ChangeDetectorRef
             ) {
     super('CONTRACTS_ADD_FORM', 'models.contract.', cdr, logger, 'contract');
@@ -33,53 +34,57 @@ export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> i
   }
 
   finishSubmit(): void {
-    const data = this.form.value;
+    const data: Contracts = {};
+    Object.assign(data, this.form.getRawValue());
+    for (const imported of data.importedMachines) {
+      if (typeof imported.contract === 'string' || typeof imported.contract === 'number') {
+        imported.contract = { refContract: imported.contract };
+      }
+    }
     this.logger.debug(this.COMPONENT_NAME, 'form submitted.', data);
     if (this.item) {
-      this.logger.debug(this.COMPONENT_NAME, 'edit', this.item);
-      // const prevName = this.contract.name;
+      this.logger.debug(this.COMPONENT_NAME, 'edit');
       this.item = data;
-      // this.addresssService.editaddress(this.contract)
-      // .subscribe(() => {
-      //   this.translate.get('pages.contract.results.success.edit')
-      //     .subscribe(text => {
-      //       this.notification.success(text);
-      //       this.logger.debug(this.COMPONENT_NAME, 'success', this.contract);
-      //       this.finishAPICall(false);
-      //     });
-      // }, error => {
-      //   const translate = (error && error.error && error.error.message ? error.error.message : 'fields.errors.unknown');
-      //   this.contract.name = prevName;
-      //   this.translate.get(translate)
-      //     .subscribe(text => {
-      //       this.notification.error(text);
-      //       this.logger.warn(this.COMPONENT_NAME, 'An error occur', error);
-      //       this.finishAPICall(false);
-      //     });
-      // });
+      this.service.editContract(data)
+      .subscribe(editedContract => {
+        this.translate.get('pages.contract.results.success.edit')
+          .subscribe(text => {
+            this.added.next(editedContract);
+            this.notification.success(text);
+            this.logger.debug(this.COMPONENT_NAME, 'success', editedContract);
+            this.finishAPICall(false);
+          });
+      }, error => {
+        const translate = (error && error.error && error.error.message ? error.error.message : 'fields.errors.unknown');
+        this.translate.get(translate)
+          .subscribe(text => {
+            this.notification.error(text);
+            this.logger.warn(this.COMPONENT_NAME, 'An error occur', error);
+            this.finishAPICall(false);
+          });
+      });
     } else {
       this.logger.debug(this.COMPONENT_NAME, 'add');
-      // this.addresssService.addaddress({ name: data })
-      // .subscribe((newAddress: addresss) => {
-      //   this.translate.get('pages.contract.results.success.add')
-      //     .subscribe(text => {
-      //       this.notification.success(text);
-      //       this.logger.debug(this.COMPONENT_NAME, 'success', newAddress);
-      //       this.added.next(newAddress);
-      //       this.finishAPICall(false);
-      //     });
-      // }, error => {
-      //   const translate = (error && error.error && error.error.message ? error.error.message : 'fields.errors.unknown');
-      //   this.translate.get(translate)
-      //     .subscribe(text => {
-      //       this.notification.error(text);
-      //       this.logger.warn(this.COMPONENT_NAME, 'An error occur', error);
-      //       this.finishAPICall(false);
-      //     });
-      // });
+      this.service.addContract(data)
+      .subscribe(newItem => {
+        this.translate.get('pages.contract.results.success.add')
+          .subscribe(text => {
+            this.notification.success(text);
+            this.logger.debug(this.COMPONENT_NAME, 'success', newItem);
+            this.added.next(newItem);
+            this.finishAPICall(false);
+          });
+      }, error => {
+        const translate = (error && error.error && error.error.message ? error.error.message : 'fields.errors.unknown');
+        this.translate.get(translate)
+          .subscribe(text => {
+            this.notification.error(text);
+            this.logger.warn(this.COMPONENT_NAME, 'An error occur', error);
+            this.finishAPICall(false);
+          });
+      });
     }
-    this.added.next(data);
-    // this.finishAPICall();
+
   }
 
 }

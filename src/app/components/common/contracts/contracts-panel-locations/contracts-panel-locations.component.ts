@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component, Input } from '@angular/core';
+// tslint:disable-next-line:ordered-imports
+import { ChangeDetectorRef, Component, Input, AfterViewInit } from '@angular/core';
 import { FormArray } from '@angular/forms';
 // tslint:disable-next-line:no-implicit-dependencies
 import { BaseFormNewComponent } from '@app/models/base-form-new.class';
@@ -10,7 +11,8 @@ import { NGXLogger } from 'ngx-logger';
   templateUrl: './contracts-panel-locations.component.html',
   styleUrls: ['./contracts-panel-locations.component.scss']
 })
-export class ContractsPanelLocationsComponent  extends BaseFormNewComponent<Array<Locations>> {
+export class ContractsPanelLocationsComponent  extends BaseFormNewComponent<Array<Locations>>
+  implements AfterViewInit {
 
   @Input() disableAddMachine = false;
   @Input() contract: Contracts;
@@ -20,6 +22,10 @@ export class ContractsPanelLocationsComponent  extends BaseFormNewComponent<Arra
   constructor(logger: NGXLogger
             , private readonly cdf: ChangeDetectorRef) {
     super('CONTRACTS_PANEL_LOCATIONS', 'models.contract.', logger, 'locations', new FormArray([]));
+  }
+
+  ngAfterViewInit(): void {
+    this.cdf.detectChanges();
   }
 
   protected fillForm(): void {
