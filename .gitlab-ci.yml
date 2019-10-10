@@ -10,7 +10,10 @@ variables:
   GLOBAL_IMAGE_TAG: "8-alpine"
   TEST_STATIC_ALL: "true"
   ORIGINAL_REPOSITORY: "ravimosharksas/frontends/office"
-  AWS_DEPLOY: "false"
+  NG_APP_AWS_S3_DEPLOY: "false"
+  NG_APP_AWS_S3_REGION: eu-west-3
+  NG_APP_AWS_S3_ACCESS_KEY_ID: "${AWS_S3_SINGLETON_RAVIMO_ID}"
+  NG_APP_AWS_S3_SECRET_ACCESS_KEY: "${AWS_S3_SINGLETON_RAVIMO_KEY}"
 
 stages:
   - install
@@ -33,24 +36,3 @@ build:
       - dist/
     expire_in: 20 yrs
 
-deploy-singleton-server:
-  image: python:3.7.3-alpine3.10
-  stage: deploy
-  variables:
-    AWS_DEFAULT_REGION: eu-west-3 # The region of S3 bucket
-    AWS_ACCESS_KEY_ID: ${AWS_S3_SINGLETON_RAVIMO_ID}
-    AWS_SECRET_ACCESS_KEY: ${AWS_S3_SINGLETON_RAVIMO_KEY}
-  before_script:
-    - apk --no-cache add bash lftp
-    - export DATE="$(date '+%Y-%m-%d--%H:%M:%S')"
-    - pip install awscli # Install the SDK
-  script:
-    - if [ "${CI_REGISTRY_IMAGE}" == "registry.gitlab.com/ravimosharksas/frontends/office" ]; then
-        ./scripts/uploader_amazon_s3.sh ${AWS_S3_BUCKET_SINGLETON_RAVIMO} ${CI_COMMIT_REF_NAME};
-      else
-        echo "Deploy to server only in ravimoshark pipeline";
-      fi
-  when: on_success
-  only:
-    variables:
-      - $CI_PROJECT_PATH == $ORIGINAL_REPOSITORY && $AWS_DEPLOY == "true"

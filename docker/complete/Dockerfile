@@ -35,7 +35,7 @@ FROM nginx:1.13.3-alpine
 ## Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
 
-#COPY nginx /etc/nginx/conf.d/
+COPY conf/nginx/nginx.config /etc/nginx/conf.d/default.conf
 
 ## From 'builder' stage copy over the artifacts in dist folder to default nginx public folder
 COPY --from=0 /usr/app/dist /usr/share/nginx/html
