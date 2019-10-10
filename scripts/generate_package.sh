@@ -36,7 +36,8 @@ PATH_BASE=frontends/office/
 if [ $# -ne 1 ]; then
   echo -e "Illegal number of parameters"
   echo -e "$(usage)"
-  exit 1
+  BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
+  # exit 1
 else
   BRANCH=${1}
 fi
