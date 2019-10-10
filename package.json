@@ -8,7 +8,7 @@
     "static": "static dist/dist -p 9000",
     "static-build": "npm run build && npm run static",
     "serve": "ng serve",
-    "build": "ng build --prod --build-Optimizer",
+    "build": "ng build --prod --buildOptimizer",
     "build-all": "./scripts/generate_package.sh",
     "test": "ng test",
     "lint": "ng lint",

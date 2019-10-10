@@ -63,17 +63,14 @@ fi
 if [ -d "dist" ]; then
   rm -r dist
 fi
-mkdir -p dist
-cd dist
 
 # Create one for root folder
-npm run ng build --prod --build-optimizer #> /dev/null 2>&1
-mv dist dist-root
+npm run build #> /dev/null 2>&1
+mv dist/dist dist/dist-root
 
 # Create for each stage
 for i in $( eval echo {0..$TOTAL_STAGES} )
 do
   echo "Task ${i}/${TOTAL_STAGES} - ${TARGETS[$i]}: Generating binaries for path: ${PATHS[$i]}"
-  npm run ng build --prod --build-optimizer --base-href="/${PATHS[${i}]}/" #> /dev/null 2>&1
-  mv dist ${TARGETS[${i}]}
+  npm run build -- --base-href="/${PATHS[${i}]}/" --outputPath="dist/dist-${TARGETS[$i]}" #> /dev/null 2>&1
 done
