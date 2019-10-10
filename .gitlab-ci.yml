@@ -1,42 +1,24 @@
 image: "${GLOBAL_IMAGE_NAME}:${GLOBAL_IMAGE_TAG}"
 
+# https://gitlab.com/singletonsd/pipelines/angular
+include:
+  - project: 'singletonsd/pipelines/angular'
+    file: '/src/.gitlab-ci-app.yml'
+
 variables:
   GLOBAL_IMAGE_NAME: "node"
   GLOBAL_IMAGE_TAG: "8-alpine"
   TEST_STATIC_ALL: "true"
   ORIGINAL_REPOSITORY: "ravimosharksas/frontends/office"
-
-include:
-  - project: 'singletonsd/pipelines/npm'
-    file: '/src/.gitlab-ci-test-static.yml'
-
-# cache:
-#   paths:
-#     - node_modules/
-#     - dist/
+  AWS_DEPLOY: false
 
 stages:
   - install
   - test_static
   - build
-  - test
+  - test_dynamic
+  - pre_deploy
   - deploy
-
-install:
-  stage: install
-  before_script: []
-  script:
-    - npm install --no-optional
-  artifacts:
-    paths:
-      - node_modules/
-
-# lint:
-#   stage: lint
-#   script:
-#     - npm run lint
-#     - npm audit
-#   allow_failure: true
 
 build:
   stage: build
@@ -44,48 +26,12 @@ build:
     - apk --no-cache add git bash
     - rm -rf dist
   script:
-    - ./scripts/generate_package.sh ${CI_COMMIT_REF_NAME}
+    - npm run build-all ${CI_COMMIT_REF_NAME}
   artifacts:
     name: "$CI_PROJECT_NAME-${CI_COMMIT_REF_NAME}"
     paths:
       - dist/
     expire_in: 20 yrs
-
-test:
-  before_script:
-    - apk --no-cache add chromium xvfb
-    - export CHROME_BIN=/usr/bin/chromium-browser
-    - export CHROME_PATH=/usr/lib/chromium/
-    # Launch Xvfb
-    - Xvfb :0 -ac -screen 0 1024x768x24 &
-    # Export display for Chrome
-    - export DISPLAY=:99
-    - npm install -g @angular/cli --no-optional
-  stage: test
-  script:
-    - echo test
-    # - ng test
-    # - ng e2e
-
-deploy-image-branches:
-  image: docker:latest
-  services:
-    - docker:dind
-  variables:
-    DOCKER_DRIVER: overlay2
-    DOCKER_IMAGE_BASE_NAME: ${CI_REGISTRY_IMAGE}
-  stage: deploy
-  before_script:
-    - docker login registry.gitlab.com -u ${REGISTRY_GITLAB_USER} -p ${REGISTRY_GITLAB_PASS}
-    - apk add --no-cache bash curl gawk git sed util-linux pciutils usbutils coreutils binutils findutils grep
-  script:
-    - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then
-        export DOCKER_IMAGE_TAG=latest;
-      else
-        export DOCKER_IMAGE_TAG=${CI_COMMIT_REF_NAME};
-      fi
-    - ./scripts/generate_docker_image.sh ${DOCKER_IMAGE_BASE_NAME} ${DOCKER_IMAGE_TAG} ${CI_COMMIT_SHA} 1
-  when: on_success
 
 deploy-singleton-server:
   image: python:3.7.3-alpine3.10
@@ -107,4 +53,4 @@ deploy-singleton-server:
   when: on_success
   only:
     variables:
-      - $CI_PROJECT_PATH == $ORIGINAL_REPOSITORY
+      - $CI_PROJECT_PATH == $ORIGINAL_REPOSITORY && $AWS_DEPLOY == true
