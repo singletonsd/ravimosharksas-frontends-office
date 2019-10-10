@@ -71,9 +71,12 @@ else
     fi
 fi
 
-export DATE="$(date --rfc-2822 | sed 's/ /T/; s/\(\....\).*-/\1-/g')"
+DATE="$(date --rfc-2822 | sed 's/ /T/; s/\(\....\).*-/\1-/g')"
 
-  docker build --rm -f docker/${DOCKERFILE}/Dockerfile -t \
+rm -f .dockerignore
+ln -fs docker/${DOCKERFILE}/.dockerignore .dockerignore
+
+docker build --rm -f docker/${DOCKERFILE}/Dockerfile -t \
     ${NAME}:${TAG} \
     --label "version=${TAG}" \
     --label "vcs-ref=${CI_COMMIT_SHA}" \

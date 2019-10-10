@@ -3,7 +3,7 @@ FROM nginx:1.13.3-alpine
 LABEL mainteiner="Patricio Perpetua <patricio.perpetua.arg@gmail.com>" \
     name="ravimosharksas/frontends/office" \
     architecture="x86_64" \
-    vendor="SINGLETON" \
+    vendor="SINGLETON SD" \
     vcs-type="git" \
     vcs-url="https://gitlab.com/ravimosharksas/frontends/office.git" \
     distribution-scope="private" \
@@ -14,10 +14,10 @@ ARG ASSET_FOLDER=
 ## Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
 
-#COPY nginx /etc/nginx/conf.d/
+COPY conf/nginx/nginx.config /etc/nginx/conf.d/default.conf
 
 ## From 'assets' copy over the artifacts in dist folder to default nginx public folder
-COPY ./dist/${ASSET_FOLDER}/* /usr/share/nginx/html/
+COPY ./dist/${ASSET_FOLDER} /usr/share/nginx/html/
 
 EXPOSE 80
 

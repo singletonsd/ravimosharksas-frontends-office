@@ -3,7 +3,7 @@ FROM node:8.12.0-alpine
 LABEL mainteiner="Patricio Perpetua <patricio.perpetua.arg@gmail.com>" \
     name="ravimosharksas/frontends/office" \
     architecture="x86_64" \
-    vendor="SINGLETON" \
+    vendor="SINGLETON SD" \
     vcs-type="git" \
     vcs-url="https://gitlab.com/ravimosharksas/frontends/office.git" \
     distribution-scope="private" \
@@ -38,7 +38,7 @@ RUN rm -rf /usr/share/nginx/html/*
 #COPY nginx /etc/nginx/conf.d/
 
 ## From 'builder' stage copy over the artifacts in dist folder to default nginx public folder
-COPY --from=0 /usr/app/dist/* /usr/share/nginx/html
+COPY --from=0 /usr/app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
