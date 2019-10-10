@@ -1,7 +1,5 @@
-export declare type DeletedParameter = 'NOT_DELETED' | 'DELETED' | 'ALL';
+import { Deleted } from '@ravimosharksas/apis-contract-libs-typescript';
 
-export declare const DeletedParameter: {
-    NOT_DELETED: 'NOT_DELETED' | 'DELETED' | 'ALL';
-    DELETED: 'NOT_DELETED' | 'DELETED' | 'ALL';
-    ALL: 'NOT_DELETED' | 'DELETED' | 'ALL';
-};
+export declare type DeletedParameter = Deleted;
+
+export declare const DeletedParameter: Deleted;

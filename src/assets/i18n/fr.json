@@ -48,7 +48,7 @@
   "deletedOptions": {
     "ALL": "Tout",
     "DELETED": "Supprimé",
-    "NOT_DELETED": "Actif"
+    "ACTIVE": "Actif"
   },
   "error": {
     "auth": {

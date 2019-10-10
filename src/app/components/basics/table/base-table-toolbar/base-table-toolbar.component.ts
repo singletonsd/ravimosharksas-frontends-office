@@ -16,10 +16,10 @@ export class BaseTableToolbarComponent implements OnInit {
   @Input() disableAdd = false;
 
   @Input() implementation: BaseTableToolbarInterface;
-  @Input() selectedDeletedValue: DeletedParameter = 'NOT_DELETED';
+  @Input() selectedDeletedValue: DeletedParameter = 'ACTIVE';
 
   @ViewChild(MatSelect) readonly deleteSelector: MatSelect;
-  public readonly deleteOptions: Array<DeletedParameter> = [ 'ALL', 'DELETED', 'NOT_DELETED'];
+  public readonly deleteOptions: Array<DeletedParameter> = [ 'ALL', 'DELETED', 'ACTIVE'];
 
   @ViewChild(MatPaginator) readonly paginator: MatPaginator;
 

@@ -66,11 +66,11 @@ export abstract class TableDataSourceBase<T> extends DataSource<T> {
       switch (option) {
         case 'ALL':
         case 'DELETED':
-        case 'NOT_DELETED':
+        case 'ACTIVE':
           deletedOption = this.deletedOption.value;
           break;
         default:
-          deletedOption = 'NOT_DELETED';
+          deletedOption = 'ACTIVE';
           break;
       }
     }

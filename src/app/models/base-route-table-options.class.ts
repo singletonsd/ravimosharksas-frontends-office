@@ -23,11 +23,11 @@ export class BaseRouterTableOptions<T> {
       switch (deleteOption) {
         case 'ALL':
         case 'DELETED':
-        case 'NOT_DELETED':
+        case 'ACTIVE':
           this.deletedOption = params['deletedOption'];
           break;
         default:
-          this.deletedOption = 'NOT_DELETED';
+          this.deletedOption = 'ACTIVE';
           break;
       }
       if (typeof this.tableObjectType === 'string') {
