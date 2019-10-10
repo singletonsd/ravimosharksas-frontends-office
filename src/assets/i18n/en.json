@@ -1,303 +1,303 @@
 {
   "actions": {
-    "print": "Print",
-    "open_sidebar": "Open menu",
-    "close_sidebar": "Close menu",
-    "clear_form": "Clean",
-    "submit": "Submit",
-    "cancel": "Cancel",
-    "map": {
-      "see": "See on Google Maps",
-      "validate": "Get coordinates"
-    },
-    "refresh": "Refresh",
     "add": "Add new",
-    "valid": {
-      "state": "Valid",
-      "verb": "Validate"
+    "cancel": "Cancel",
+    "clear_form": "Clean",
+    "close_sidebar": "Close menu",
+    "completed": "Completed",
+    "delete": "Delete",
+    "disable": "Disable",
+    "edit": "Edit",
+    "enable": "Enable",
+    "export": {
+      "pdf": "Export to pdf"
     },
-    "invalid":  {
+    "insert": "Insert",
+    "invalid": {
       "state": "Invalid",
       "verb": "Invalidate"
     },
-    "review": {
-      "state": "Reviewed",
-      "verb": "Set Not Reviewed"
+    "load": "Load",
+    "map": {
+      "see": "See on Google Maps",
+      "validate": "Get coordinates"
     },
     "not_review": {
       "state": "Not Reviewed",
       "verb": "Review"
     },
-    "show_more": "Show more",
-    "show_less": "Show less",
+    "open_sidebar": "Open menu",
+    "print": "Print",
+    "refresh": "Refresh",
+    "review": {
+      "state": "Reviewed",
+      "verb": "Set Not Reviewed"
+    },
     "show_columns": {
       "less": "Show less columns",
       "more": "Show more columns"
     },
-    "export": {
-      "pdf": "Export to pdf"
-    },
-    "edit": "Edit",
-    "disable": "Disable",
-    "enable": "Enable",
-    "delete": "Delete",
-    "insert": "Insert",
-    "completed": "Completed",
-    "load": "Load"
+    "show_less": "Show less",
+    "show_more": "Show more",
+    "submit": "Submit",
+    "valid": {
+      "state": "Valid",
+      "verb": "Validate"
+    }
   },
   "deletedOptions": {
-    "NOT_DELETED": "Active",
+    "ALL": "All",
     "DELETED": "Deleted",
-    "ALL": "All"
+    "NOT_DELETED": "Active"
   },
   "error": {
     "auth": {
       "token": {
-        "user": "User's token invalid",
-        "app": "App's Token invalid"
+        "app": "App's Token invalid",
+        "user": "User's token invalid"
       },
       "unprivileged": "Unprivileged user"
-    },
-    "params": {
-      "missing": "Missing parameters",
-      "malformed": {
-        "orderby": "Operator OrderBy malformed"
-      }
     },
     "email": {
       "not_registered": "Unregistered email",
       "not_verified": "Not verified user",
       "verification": {
         "token": {
-          "unrecognized": "Email's Token not recognized",
-          "expired": "Email's Token expired"
+          "expired": "Email's Token expired",
+          "unrecognized": "Email's Token not recognized"
         }
       }
-    },
-    "password": {
-      "not_matched": "Wrong previous password",
-      "matched": "Previous and new password are equals",
-      "reset": "Reset password, check your email",
-      "insecure": "Password insecure",
-      "verification": {
-        "token": {
-          "unrecognized": "Password's token unrecognized",
-          "expired": "Password's token expired"
-        }
-      }
-    },
-    "validation": {
-      "user": {
-        "registered": {
-          "email": "Email registered",
-          "identification": "ID registered"
-        },
-        "email": "Email invalid",
-        "password": "Password insecure or invalid",
-        "role": "Rol invalid",
-        "id": "ID invalid"
-      },
-      "name": "Name invalid or missing",
-      "id": "ID invalid or missing"
     },
     "exists": "Entity registered",
+    "not_deleted": "Entity active",
     "not_exist": {
       "main": "Entity unregistered",
       "user": "user unregistered"
     },
-    "not_deleted": "Entity active",
-    "unrecognized": "Error Unrecognized"
+    "params": {
+      "malformed": {
+        "orderby": "Operator OrderBy malformed"
+      },
+      "missing": "Missing parameters"
+    },
+    "password": {
+      "insecure": "Password insecure",
+      "matched": "Previous and new password are equals",
+      "not_matched": "Wrong previous password",
+      "reset": "Reset password, check your email",
+      "verification": {
+        "token": {
+          "expired": "Password's token expired",
+          "unrecognized": "Password's token unrecognized"
+        }
+      }
+    },
+    "unrecognized": "Error Unrecognized",
+    "validation": {
+      "id": "ID invalid or missing",
+      "name": "Name invalid or missing",
+      "user": {
+        "email": "Email invalid",
+        "id": "ID invalid",
+        "password": "Password insecure or invalid",
+        "registered": {
+          "email": "Email registered",
+          "identification": "ID registered"
+        },
+        "role": "Rol invalid"
+      }
+    }
   },
   "fields": {
     "errors": {
-      "unknown": "Error unknown, try again",
-      "required": "Mandatory field",
-      "only_numbers": "Only numbers",
-      "format": "Format invalid",
-      "min": "Must exceed the minimum number of characters",
-      "login": "User and password combination invalid",
-      "password": "Password must have 1 number, 1 letter, 1 special character and 8 characters long",
-      "password_repeat": "Passwords not match",
       "email": "Email invalid",
       "email_repeat": "Emails not match",
-      "result": "Something happened, try again."
+      "format": "Format invalid",
+      "login": "User and password combination invalid",
+      "min": "Must exceed the minimum number of characters",
+      "only_numbers": "Only numbers",
+      "password": "Password must have 1 number, 1 letter, 1 special character and 8 characters long",
+      "password_repeat": "Passwords not match",
+      "required": "Mandatory field",
+      "result": "Something happened, try again.",
+      "unknown": "Error unknown, try again"
     }
-  },
-  "translator":{
-    "title": "Language",
-    "languages": {
-      "es": "ES",
-      "en": "EN",
-      "it": "IT",
-      "fr": "FR"
-    }
-  },
-  "side-nav": {
-    "home": "Home",
-    "tasks": "Tasks",
-    "unfinished": "Unfinished",
-    "clients": "Clients",
-    "block": "Block",
-    "blocked": "Blocked",
-    "unblocked": "Unblocked",
-    "addresses": "Addresses",
-    "contracts": "Contracts",
-    "machines": "Machines",
-    "pieces": "Pieces",
-    "users": "Users",
-    "technicians": "Technicians",
-    "office": "Office",
-    "actions": "Actions",
-    "settings": "Settings",
-    "review": "To Review",
-    "valid": "Valid",
-    "invalid": "Invalid",
-    "add": "Add",
-    "list": "List",
-    "finished": "Finished",
-    "password": "Change password",
-    "email": "Change Email"
   },
   "models": {
     "address": {
+      "city": "City",
+      "client": "Client",
+      "complement": "Complement",
       "complete": "Complete Address",
-      "client":"Client",
-      "name":"Name",
-      "number":"Number",
-      "street":"Street Name",
-      "postal_code":"Postal Code",
-      "complement":"Complement",
-      "city":"City",
-      "country":"Country",
-      "telephone":"Telephone",
-      "restaurant_name":"Restaurant",
-      "delivery":"Delivery",
-      "latitude":"Latitude",
-      "longitude":"Longitude",
-      "type":"Type"
+      "country": "Country",
+      "delivery": "Delivery",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "name": "Name",
+      "number": "Number",
+      "postal_code": "Postal Code",
+      "restaurant_name": "Restaurant",
+      "street": "Street Name",
+      "telephone": "Telephone",
+      "type": "Type"
+    },
+    "client": {
+      "company_name": "Company",
+      "email": "Email",
+      "forbidden": "Forbidden",
+      "group": "Group",
+      "name": "Name",
+      "nickname": "Nickname",
+      "reference": "Reference",
+      "score": "Score",
+      "sector": "Sector",
+      "surname": "Surname",
+      "vat": "VAT"
     },
     "common": {
       "id": "#",
       "options": "Options"
     },
-    "client": {
-      "reference": "Reference",
-      "nickname": "Nickname",
-      "name": "Name",
-      "surname": "Surname",
-      "group": "Group",
-      "company_name": "Company",
-      "score": "Score",
-      "sector": "Sector",
-      "email": "Email",
-      "forbidden": "Forbidden",
-      "vat": "VAT"
-    },
     "contract": {
-      "refContract": "#",
       "client": "Client",
-      "identification": "Identification",
       "dateDebut": "Date From",
       "dateFin": "Date Until",
-      "reconduction": "Renew",
+      "identification": "Identification",
+      "importedMachines": "Imported machines found",
+      "locations": "Machines",
       "loyer": "Rent",
       "miniconso": "Consommation Min",
+      "reconduction": "Renew",
+      "refContract": "#",
       "reviewed": "Reviewed",
-      "valid": "Valid",
-      "importedMachines": "Imported Machines Found",
-      "locations": "Machines"
+      "valid": "Valid"
     },
     "imported_machine": {
       "contract": "Contract",
-      "identification": "Identification",
       "id": "#",
+      "identification": "Identification",
       "reviewed": "Reviewed"
     },
     "machine": {
       "id": "#",
-      "serialNumber": "Serial Number",
-      "piece": "Machine Type"
+      "piece": "Machine Type",
+      "serialNumber": "Serial Number"
     }
   },
   "pages": {
-    "not-available": {
-      "title": "Can't connect to servers",
-      "text": "It seems that you can't connect to ours servers or they are not available for the moment.",
-      "buttons": {
-        "retry": "Try again",
-        "report": "Report error"
-      }
-    },
-    "not-found": {
-      "title": "Page not found",
-      "text": "It seems to be that the page you are looking for doesn't exist, have been removed, name changed or it is temporarily disabled.",
-      "buttons": {
-        "home": "Go to Home",
-        "report": "Report error"
-      }
-    },
-    "not-access": {
-      "status": "Status Code:",
-      "title": "ERROR!! Something went wrong..",
-      "text": "It seems that you don't have access to the requested section ",
-      "text2": "Please go back to the previous section or contact administrator to grant access.",
-      "level": "Your user privilege is {{ levelUser }} and you should be {{ levelPage }} to access.",
-      "buttons": {
-        "go_back": "Go Back"
-      }
-    },
     "address": {
-      "title": {
-        "add": "Add Address",
-        "edit": "Edit Address"
-      },
       "results": {
         "success": {
           "add": "Address added successfully: ",
+          "disabled": "Address disabled: ",
           "edit": "Address edited successfully: ",
-          "enabled": "Address enabled: ",
-          "disabled": "Address disabled: "
+          "enabled": "Address enabled: "
         }
+      },
+      "title": {
+        "add": "Add Address",
+        "edit": "Edit Address"
       }
     },
     "client": {
-      "title": {
-        "add": "Add Client",
-        "edit": "Edit Client"
-      },
       "results": {
         "success": {
           "add": "Client added successfully: ",
+          "disabled": "Client disabled: ",
           "edit": "Client edited successfully: ",
-          "enabled": "Client enabled: ",
-          "disabled": "Client disabled: "
+          "enabled": "Client enabled: "
         }
+      },
+      "title": {
+        "add": "Add Client",
+        "edit": "Edit Client"
       }
     },
     "contract": {
-      "title": {
-        "add": "Add Contract",
-        "edit": "Edit Contract"
-      },
       "results": {
         "success": {
           "add": "Contract added successfully: ",
+          "disabled": "Contract disabled: ",
           "edit": "Contract edited successfully: ",
-          "enabled": "Contract enabled: ",
-          "disabled": "Contract disabled: "
+          "enabled": "Contract enabled: "
         }
       },
       "review": {
-        "title": "Contracts to Review: ",
-        "subtitle": "Displaying ",
-        "subtitle_2": "contracts",
         "buttons": {
           "load": "Load contracts"
         },
         "no_data": {
           "title": "All good! Nothing to do"
-        }
+        },
+        "subtitle": "Displaying ",
+        "subtitle_2": "contracts",
+        "title": "Contracts to Review: "
+      },
+      "title": {
+        "add": "Add Contract",
+        "edit": "Edit Contract"
       }
+    },
+    "not-access": {
+      "buttons": {
+        "go_back": "Go Back"
+      },
+      "level": "Your user privilege is {{ levelUser }} and you should be {{ levelPage }} to access.",
+      "status": "Status Code:",
+      "text": "It seems that you don't have access to the requested section ",
+      "text2": "Please go back to the previous section or contact administrator to grant access.",
+      "title": "ERROR!! Something went wrong.."
+    },
+    "not-available": {
+      "buttons": {
+        "report": "Report error",
+        "retry": "Try again"
+      },
+      "text": "It seems that you can't connect to ours servers or they are not available for the moment.",
+      "title": "Can't connect to servers"
+    },
+    "not-found": {
+      "buttons": {
+        "home": "Go to Home",
+        "report": "Report error"
+      },
+      "text": "It seems to be that the page you are looking for doesn't exist, have been removed, name changed or it is temporarily disabled.",
+      "title": "Page not found"
     }
+  },
+  "side-nav": {
+    "actions": "Actions",
+    "add": "Add",
+    "addresses": "Addresses",
+    "block": "Block",
+    "blocked": "Blocked",
+    "clients": "Clients",
+    "contracts": "Contracts",
+    "email": "Change Email",
+    "finished": "Finished",
+    "home": "Home",
+    "invalid": "Invalid",
+    "list": "List",
+    "machines": "Machines",
+    "office": "Office",
+    "password": "Change password",
+    "pieces": "Pieces",
+    "review": "To Review",
+    "settings": "Settings",
+    "tasks": "Tasks",
+    "technicians": "Technicians",
+    "unblocked": "Unblocked",
+    "unfinished": "Unfinished",
+    "users": "Users",
+    "valid": "Valid"
+  },
+  "translator": {
+    "languages": {
+      "en": "EN",
+      "es": "ES",
+      "fr": "FR",
+      "it": "IT"
+    },
+    "title": "Language"
   }
 }

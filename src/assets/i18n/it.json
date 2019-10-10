@@ -1,277 +1,303 @@
 {
   "actions": {
-    "print": "Stampare",
-    "open_sidebar": "Apri menu",
-    "close_sidebar": "Chiudi menu",
-    "clear_form": "Pulire",
-    "submit": "Invio",
-    "cancel": "Cancellare",
-    "map": {
-      "see": "Vedi su Google Maps",
-      "validate": "Ottenere coordinate"
-    },
-    "refresh": "Ricaricare",
     "add": "Aggiungere nuova",
-    "valid": {
-      "state": "Valido",
-      "verb": "Convalidare"
+    "cancel": "Cancellare",
+    "clear_form": "Pulire",
+    "close_sidebar": "Chiudi menu",
+    "completed": "Completato",
+    "delete": "Cancellare",
+    "disable": "Disattivare",
+    "edit": "Modificare",
+    "enable": "Abilitare",
+    "export": {
+      "pdf": "Esporta in pdf"
     },
-    "invalid":  {
+    "insert": "Inserire",
+    "invalid": {
       "state": "Non Valido",
       "verb": "Infirmare"
     },
-    "review": {
-      "state": "Rivisto",
-      "verb": "Imposta non rivista"
+    "load": "Caricare",
+    "map": {
+      "see": "Vedi su Google Maps",
+      "validate": "Ottenere coordinate"
     },
     "not_review": {
       "state": "Non recensito",
       "verb": "Revisione"
     },
-    "show_more": "Mostra più",
-    "show_less": "Mostra meno",
+    "open_sidebar": "Apri menu",
+    "print": "Stampare",
+    "refresh": "Ricaricare",
+    "review": {
+      "state": "Rivisto",
+      "verb": "Imposta non rivista"
+    },
     "show_columns": {
       "less": "Mostra meno colonne",
       "more": "Mostra più colonne"
     },
-    "export": {
-      "pdf": "Esporta in pdf"
-    },
-    "edit": "Modificare",
-    "disable": "Disattivare",
-    "enable": "Abilitare",
-    "delete": "Cancellare",
-    "insert": "Inserire"
+    "show_less": "Mostra meno",
+    "show_more": "Mostra più",
+    "submit": "Invio",
+    "valid": {
+      "state": "Valido",
+      "verb": "Convalidare"
+    }
   },
   "deletedOptions": {
-    "NOT_DELETED": "Attivo",
+    "ALL": "Tutti",
     "DELETED": "Eliminata",
-    "ALL": "Tutti"
+    "NOT_DELETED": "Attivo"
   },
   "error": {
     "auth": {
       "token": {
-        "user": "Token dell'utente non valido",
-        "app": "Token dell'app non valido"
+        "app": "Token dell'app non valido",
+        "user": "Token dell'utente non valido"
       },
       "unprivileged": "Utente non privilegiato"
-    },
-    "params": {
-      "missing": "Parametri mancanti",
-      "malformed": {
-        "orderby": "Operatore OrderBy malformati"
-      }
     },
     "email": {
       "not_registered": "Email non registrata",
       "not_verified": "Utente non verificato",
       "verification": {
         "token": {
-          "unrecognized": "Token e-mail non riconosciuto",
-          "expired": "Token email scaduto"
+          "expired": "Token email scaduto",
+          "unrecognized": "Token e-mail non riconosciuto"
         }
       }
-    },
-    "password": {
-      "not_matched": "Password precedente errata",
-      "matched": "La password precedente e nuova sono uguali",
-      "reset": "Reimposta password, controlla la tua email",
-      "insecure": "Password non sicura",
-      "verification": {
-        "token": {
-          "unrecognized": "Token della password non riconosciuto",
-          "expired": "Il token della password è scaduto"
-        }
-      }
-    },
-    "validation": {
-      "user": {
-        "registered": {
-          "email": "Email registrata",
-          "identification": "ID registrato"
-        },
-        "email": "Email non valida",
-        "password": "Password non sicura o non valida",
-        "role": "Rol non valido",
-        "id": "ID non valido"
-      },
-      "name": "Nome non valido o mancante",
-      "id": "ID non valido o mancante"
     },
     "exists": "Entità registrata",
+    "not_deleted": "Entità attiva",
     "not_exist": {
       "main": "Entità non registrata",
       "user": "Utente non registrato"
     },
-    "not_deleted": "Entità attiva",
-    "unrecognized": "Error Unrecognized"
+    "params": {
+      "malformed": {
+        "orderby": "Operatore OrderBy malformati"
+      },
+      "missing": "Parametri mancanti"
+    },
+    "password": {
+      "insecure": "Password non sicura",
+      "matched": "La password precedente e nuova sono uguali",
+      "not_matched": "Password precedente errata",
+      "reset": "Reimposta password, controlla la tua email",
+      "verification": {
+        "token": {
+          "expired": "Il token della password è scaduto",
+          "unrecognized": "Token della password non riconosciuto"
+        }
+      }
+    },
+    "unrecognized": "Error Unrecognized",
+    "validation": {
+      "id": "ID non valido o mancante",
+      "name": "Nome non valido o mancante",
+      "user": {
+        "email": "Email non valida",
+        "id": "ID non valido",
+        "password": "Password non sicura o non valida",
+        "registered": {
+          "email": "Email registrata",
+          "identification": "ID registrato"
+        },
+        "role": "Rol non valido"
+      }
+    }
   },
   "fields": {
     "errors": {
-      "unknown": "Errore sconosciuto, riprovare",
-      "required": "Campo obbligatorio",
-      "only_numbers": "Solo numeri",
-      "format": "Formato non valido",
-      "min": "Deve superare il numero minimo di caratteri",
-      "login": "Combinazione utente e password non valida",
-      "password": "La password deve contenere 1 numero, 1 lettera, 1 carattere speciale e 8 caratteri",
-      "password_repeat": "Le password non corrispondono",
       "email": "Email non valida",
       "email_repeat": "Le email non corrispondono",
-      "result": "È successo qualcosa, riprova."
+      "format": "Formato non valido",
+      "login": "Combinazione utente e password non valida",
+      "min": "Deve superare il numero minimo di caratteri",
+      "only_numbers": "Solo numeri",
+      "password": "La password deve contenere 1 numero, 1 lettera, 1 carattere speciale e 8 caratteri",
+      "password_repeat": "Le password non corrispondono",
+      "required": "Campo obbligatorio",
+      "result": "È successo qualcosa, riprova.",
+      "unknown": "Errore sconosciuto, riprovare"
     }
-  },
-  "translator": {
-    "title": "Lingua",
-    "languages": {
-      "es": "ES",
-      "en": "EN",
-      "it": "IT",
-      "fr": "FR"
-    }
-  },
-  "side-nav": {
-    "home": "Casa",
-    "tasks": "Compiti",
-    "unfinished": "Incompiuto",
-    "clients": "Clienti",
-    "block": "Bloccare",
-    "blocked": "Bloccato",
-    "unblocked": "Sbloccato",
-    "addresses": "Indirizzi",
-    "contracts": "Contratti",
-    "machines": "Macchine",
-    "pieces": "Pezzi",
-    "users": "Utenti",
-    "technicians": "Tecnici",
-    "office": "Ufficio",
-    "actions": "Azioni",
-    "settings": "Impostazioni",
-    "review": "Revisionare",
-    "valid": "Valido",
-    "invalid": "Non valido",
-    "add": "Inserisci",
-    "list": "Elencare",
-    "finished": "Finito",
-    "password": "Cambia la password",
-    "email": "Cambia email"
   },
   "models": {
     "address": {
-      "complete": "Indirizzo completo",
-      "client": "Cliente",
-      "name": "Nome",
-      "number": "Numero",
-      "street": "Nome della strada",
-      "postal_code": "Codice Postale",
-      "complement": "Complemento",
       "city": "Città",
+      "client": "Cliente",
+      "complement": "Complemento",
+      "complete": "Indirizzo completo",
       "country": "Nazione",
-      "telephone": "Telefono",
-      "restaurant_name": "Ristorante",
       "delivery": "Consegna",
       "latitude": "Latitudine",
       "longitude": "Longitudine",
+      "name": "Nome",
+      "number": "Numero",
+      "postal_code": "Codice Postale",
+      "restaurant_name": "Ristorante",
+      "street": "Nome della strada",
+      "telephone": "Telefono",
       "type": "Tipo"
+    },
+    "client": {
+      "company_name": "Azienda",
+      "email": "Email",
+      "forbidden": "Proibito",
+      "group": "Gruppo",
+      "name": "Nome",
+      "nickname": "Soprannome",
+      "reference": "Riferimento",
+      "score": "Punto",
+      "sector": "Settore",
+      "surname": "Cognome",
+      "vat": "IVA"
     },
     "common": {
       "id": "#",
       "options": "Opzioni"
     },
-    "client": {
-      "reference": "Riferimento",
-      "nickname": "Soprannome",
-      "name": "Nome",
-      "surname": "Cognome",
-      "group": "Gruppo",
-      "company_name": "Azienda",
-      "score": "Punto",
-      "sector": "Settore",
-      "email": "Email",
-      "forbidden": "Proibito",
-      "vat": "IVA"
-    },
     "contract": {
-      "refContract": "#",
       "client": "Cliente",
-      "identification": "Identificazione",
       "dateDebut": "Data Inizio",
       "dateFin": "Data Fine",
-      "reconduction": "Rinnovo",
+      "identification": "Identificazione",
+      "importedMachines": "Macchine importate trovati",
+      "locations": "Macchine",
       "loyer": "Affito",
       "miniconso": "Consumo Min",
+      "reconduction": "Rinnovo",
+      "refContract": "#",
       "reviewed": "Rivisto",
       "valid": "Valido"
+    },
+    "imported_machine": {
+      "contract": "Contratto",
+      "id": "#",
+      "identification": "Identificazione",
+      "reviewed": "Rivisto"
+    },
+    "machine": {
+      "id": "#",
+      "piece": "Tipo di Macchina",
+      "serialNumber": "Numero di serie"
     }
   },
   "pages": {
-    "not-available": {
-      "title": "Impossibile connettersi ai server",
-      "text": "Sembra che non sia possibile connettersi ai nostri server o che al momento non siano disponibili.",
-      "buttons": {
-        "retry": "Riprova",
-        "report": "Segnala errore"
-      }
-    },
-    "not-found": {
-      "title": "Pagina non trovata",
-      "text": "Sembra che la pagina che stai cercando non esista, sia stata rimossa, il nome sia cambiato o sia temporaneamente disabilitato.",
-      "buttons": {
-        "home": "Vai a casa",
-        "report": "Segnala errore"
-      }
-    },
-    "not-access": {
-      "status": "Codice di stato:",
-      "title": "ERRORE!! Qualcosa è andato storto..",
-      "text": "Sembra che tu non abbia accesso alla sezione richiesta ",
-      "text2": "Torna alla sezione precedente o contatta l'amministratore per concedere l'accesso.",
-      "level": "Il tuo privilegio utente è {{ levelUser }} e dovresti essere {{ levelPage }} per accedere.",
-      "buttons": {
-        "go_back": "Torna indietro"
-      }
-    },
     "address": {
-      "title": {
-        "add": "Aggiungi indirizzo",
-        "edit": "Modifica indirizzo"
-      },
       "results": {
         "success": {
           "add": "Indirizzo aggiunto correttamente: ",
+          "disabled": "Indirizzo disabilitato: ",
           "edit": "Indirizzo modificato con successo: ",
-          "enabled": "Indirizzo abilitato: ",
-          "disabled": "Indirizzo disabilitato: "
+          "enabled": "Indirizzo abilitato: "
         }
+      },
+      "title": {
+        "add": "Aggiungi indirizzo",
+        "edit": "Modifica indirizzo"
       }
     },
     "client": {
-      "title": {
-        "add": "Aggiungi cliente",
-        "edit": "Modifica cliente"
-      },
       "results": {
         "success": {
           "add": "Cliente aggiunto correttamente: ",
+          "disabled": "Cliente disabilitato: ",
           "edit": "Cliente modificato con successo: ",
-          "enabled": "Cliente abilitato: ",
-          "disabled": "Cliente disabilitato: "
+          "enabled": "Cliente abilitato: "
         }
+      },
+      "title": {
+        "add": "Aggiungi cliente",
+        "edit": "Modifica cliente"
       }
     },
     "contract": {
-      "title": {
-        "add": "Aggiungi Contratto",
-        "edit": "Modifica Contratto"
-      },
       "results": {
         "success": {
           "add": "Contratto aggiunto correttamente: ",
+          "disabled": "Contratto disabilitato: ",
           "edit": "Contratto modificato con successo: ",
-          "enabled": "Contratto abilitato: ",
-          "disabled": "Contratto disabilitato: "
+          "enabled": "Contratto abilitato: "
         }
+      },
+      "review": {
+        "buttons": {
+          "load": "Carica contratti"
+        },
+        "no_data": {
+          "title": "Tutto bene! Niente da fare"
+        },
+        "subtitle": "Visualizzati ",
+        "subtitle_2": "contratti",
+        "title": "Contratti da rivedere: "
+      },
+      "title": {
+        "add": "Aggiungi Contratto",
+        "edit": "Modifica Contratto"
       }
+    },
+    "not-access": {
+      "buttons": {
+        "go_back": "Torna indietro"
+      },
+      "level": "Il tuo privilegio utente è {{ levelUser }} e dovresti essere {{ levelPage }} per accedere.",
+      "status": "Codice di stato:",
+      "text": "Sembra che tu non abbia accesso alla sezione richiesta ",
+      "text2": "Torna alla sezione precedente o contatta l'amministratore per concedere l'accesso.",
+      "title": "ERRORE!! Qualcosa è andato storto.."
+    },
+    "not-available": {
+      "buttons": {
+        "report": "Segnala errore",
+        "retry": "Riprova"
+      },
+      "text": "Sembra che non sia possibile connettersi ai nostri server o che al momento non siano disponibili.",
+      "title": "Impossibile connettersi ai server"
+    },
+    "not-found": {
+      "buttons": {
+        "home": "Vai a casa",
+        "report": "Segnala errore"
+      },
+      "text": "Sembra che la pagina che stai cercando non esista, sia stata rimossa, il nome sia cambiato o sia temporaneamente disabilitato.",
+      "title": "Pagina non trovata"
     }
+  },
+  "side-nav": {
+    "actions": "Azioni",
+    "add": "Inserisci",
+    "addresses": "Indirizzi",
+    "block": "Bloccare",
+    "blocked": "Bloccato",
+    "clients": "Clienti",
+    "contracts": "Contratti",
+    "email": "Cambia email",
+    "finished": "Finito",
+    "home": "Casa",
+    "invalid": "Non valido",
+    "list": "Elencare",
+    "machines": "Macchine",
+    "office": "Ufficio",
+    "password": "Cambia la password",
+    "pieces": "Pezzi",
+    "review": "Revisionare",
+    "settings": "Impostazioni",
+    "tasks": "Compiti",
+    "technicians": "Tecnici",
+    "unblocked": "Sbloccato",
+    "unfinished": "Incompiuto",
+    "users": "Utenti",
+    "valid": "Valido"
+  },
+  "translator": {
+    "languages": {
+      "en": "EN",
+      "es": "ES",
+      "fr": "FR",
+      "it": "IT"
+    },
+    "title": "Lingua"
   }
 }

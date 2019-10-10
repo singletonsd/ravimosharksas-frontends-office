@@ -1,277 +1,303 @@
 {
   "actions": {
-    "print": "Imprimer",
-    "open_sidebar": "Ouvrir menu",
-    "close_sidebar": "Fermer menu",
-    "clear_form": "Nettoyer",
-    "submit": "Soumettre",
-    "cancel": "Annuler",
-    "map": {
-      "see": "Voir surGoogle Maps",
-      "validate": "Obtenir des coordonnées"
-    },
-    "refresh": "Rafraîchir",
     "add": "Ajouter un nouveau",
-    "valid": {
-      "state": "Valide",
-      "verb": "Valider"
+    "cancel": "Annuler",
+    "clear_form": "Nettoyer",
+    "close_sidebar": "Fermer menu",
+    "completed": "Complété",
+    "delete": "Supprimer",
+    "disable": "Désactiver",
+    "edit": "Modifier",
+    "enable": "Activer",
+    "export": {
+      "pdf": "Exporter en pdf"
     },
-    "invalid":  {
+    "insert": "Insérer",
+    "invalid": {
       "state": "Invalide",
       "verb": "Invalider"
     },
-    "review": {
-      "state": "Examiné",
-      "verb": "Ensemble non examiné"
+    "load": "Charge",
+    "map": {
+      "see": "Voir surGoogle Maps",
+      "validate": "Obtenir des coordonnées"
     },
     "not_review": {
       "state": "Pas révisé",
       "verb": "Réviser"
     },
-    "show_more": "Afficher plus",
-    "show_less": "Afficher moins",
+    "open_sidebar": "Ouvrir menu",
+    "print": "Imprimer",
+    "refresh": "Rafraîchir",
+    "review": {
+      "state": "Examiné",
+      "verb": "Ensemble non examiné"
+    },
     "show_columns": {
       "less": "Afficher moins de colonnes",
       "more": "Afficher plus de colonnes"
     },
-    "export": {
-      "pdf": "Exporter en pdf"
-    },
-    "edit": "Modifier",
-    "disable": "Désactiver",
-    "enable": "Activer",
-    "delete": "Supprimer",
-    "insert": "Insérer"
+    "show_less": "Afficher moins",
+    "show_more": "Afficher plus",
+    "submit": "Soumettre",
+    "valid": {
+      "state": "Valide",
+      "verb": "Valider"
+    }
   },
   "deletedOptions": {
-    "NOT_DELETED": "Actif",
+    "ALL": "Tout",
     "DELETED": "Supprimé",
-    "ALL": "Tout"
+    "NOT_DELETED": "Actif"
   },
   "error": {
     "auth": {
       "token": {
-        "user": "Jeton de l'utilisateur invalide",
-        "app": "Jeton de l'application invalide"
+        "app": "Jeton de l'application invalide",
+        "user": "Jeton de l'utilisateur invalide"
       },
       "unprivileged": "Utilisateur non privilégié"
-    },
-    "params": {
-      "missing": "Paramètres manquants",
-      "malformed": {
-        "orderby": "Opérateur OrderBy malformé"
-      }
     },
     "email": {
       "not_registered": "Email non enregistré",
       "not_verified": "Utilisateur non vérifié",
       "verification": {
         "token": {
-          "unrecognized": "Le jeton de l'e-mail n'est pas reconnu",
-          "expired": "Le jeton de l'e-mail a expiré"
+          "expired": "Le jeton de l'e-mail a expiré",
+          "unrecognized": "Le jeton de l'e-mail n'est pas reconnu"
         }
       }
-    },
-    "password": {
-      "not_matched": "Mauvais mot de passe précédent",
-      "matched": "Le mot de passe précédent et nouveau sont égaux",
-      "reset": "Réinitialiser le mot de passe, vérifiez votre email",
-      "insecure": "Mot de passe non sécurisé",
-      "verification": {
-        "token": {
-          "unrecognized": "Le jeton du mot de passe n'est pas reconnu",
-          "expired": "Le jeton du mot de passe a expiré"
-        }
-      }
-    },
-    "validation": {
-      "user": {
-        "registered": {
-          "email": "Email enregistré",
-          "identification": "ID enregistré"
-        },
-        "email": "Email invalide",
-        "password": "Mot de passe non sécurisé ou invalide",
-        "role": "Rol invalide",
-        "id": "ID invalide"
-      },
-      "name": "Nom invalide ou manquant",
-      "id": "ID invalid or missing"
     },
     "exists": "Entité enregistrée",
+    "not_deleted": "Entité active",
     "not_exist": {
       "main": "Entité non enregistrée",
       "user": "Utilisateur non enregistré"
     },
-    "not_deleted": "Entité active",
-    "unrecognized": "Erreur non reconnue"
+    "params": {
+      "malformed": {
+        "orderby": "Opérateur OrderBy malformé"
+      },
+      "missing": "Paramètres manquants"
+    },
+    "password": {
+      "insecure": "Mot de passe non sécurisé",
+      "matched": "Le mot de passe précédent et nouveau sont égaux",
+      "not_matched": "Mauvais mot de passe précédent",
+      "reset": "Réinitialiser le mot de passe, vérifiez votre email",
+      "verification": {
+        "token": {
+          "expired": "Le jeton du mot de passe a expiré",
+          "unrecognized": "Le jeton du mot de passe n'est pas reconnu"
+        }
+      }
+    },
+    "unrecognized": "Erreur non reconnue",
+    "validation": {
+      "id": "ID invalid or missing",
+      "name": "Nom invalide ou manquant",
+      "user": {
+        "email": "Email invalide",
+        "id": "ID invalide",
+        "password": "Mot de passe non sécurisé ou invalide",
+        "registered": {
+          "email": "Email enregistré",
+          "identification": "ID enregistré"
+        },
+        "role": "Rol invalide"
+      }
+    }
   },
   "fields": {
     "errors": {
-      "unknown": "Erreur inconnue, réessayez",
-      "required": "Champ obligatoire",
-      "only_numbers": "Seulement chiffres",
-      "format": "Format invalide",
-      "min": "Doit dépasser le nombre minimum de caractères",
-      "login": "Combinaison utilisateur et mot de passe invalide",
-      "password": "Le mot de passe doit comporter 1 chiffre, 1 lettre, 1 caractère spécial et 8 caractères",
-      "password_repeat": "Les mots de passe ne correspondent pas",
       "email": "Email invalide",
       "email_repeat": "Les emails ne correspondent pas",
-      "result": "Quelque chose est arrivé, essayez à nouveau."
+      "format": "Format invalide",
+      "login": "Combinaison utilisateur et mot de passe invalide",
+      "min": "Doit dépasser le nombre minimum de caractères",
+      "only_numbers": "Seulement chiffres",
+      "password": "Le mot de passe doit comporter 1 chiffre, 1 lettre, 1 caractère spécial et 8 caractères",
+      "password_repeat": "Les mots de passe ne correspondent pas",
+      "required": "Champ obligatoire",
+      "result": "Quelque chose est arrivé, essayez à nouveau.",
+      "unknown": "Erreur inconnue, réessayez"
     }
-  },
-  "translator": {
-    "title": "Langue",
-    "languages": {
-      "es": "ES",
-      "en": "EN",
-      "it": "IT",
-      "fr": "FR"
-    }
-  },
-  "side-nav": {
-    "home": "Maison",
-    "tasks": "Tâches",
-    "unfinished": "Incomplet",
-    "clients": "Clients",
-    "block": "Bloquer",
-    "blocked": "Bloqué",
-    "unblocked": "Débloqué",
-    "addresses": "Addresses",
-    "contracts": "Contrats",
-    "machines": "Machines",
-    "pieces": "Pièces",
-    "users": "Utilisateurs",
-    "technicians": "Techniciens",
-    "office": "Bureau",
-    "actions": "Actions",
-    "settings": "Paramètres",
-    "review": "Réviser",
-    "valid": "Valide",
-    "invalid": "Invalide",
-    "add": "Ajouter",
-    "list": "Liste",
-    "finished": "Fini",
-    "password": "Changer mot de passe",
-    "email": "Changer Email"
   },
   "models": {
     "address": {
-      "complete": "Adresse complète",
-      "client": "Client",
-      "name": "Nom",
-      "number": "Nombre",
-      "street": "Nom de rue",
-      "postal_code": "Code Postal",
-      "complement": "Complément",
       "city": "Ville",
+      "client": "Client",
+      "complement": "Complément",
+      "complete": "Adresse complète",
       "country": "Pays",
-      "telephone": "Téléphone",
-      "restaurant_name": "Restaurant",
       "delivery": "Livraison",
       "latitude": "Latitude",
       "longitude": "Longitude",
+      "name": "Nom",
+      "number": "Nombre",
+      "postal_code": "Code Postal",
+      "restaurant_name": "Restaurant",
+      "street": "Nom de rue",
+      "telephone": "Téléphone",
       "type": "Type"
+    },
+    "client": {
+      "company_name": "Entreprise",
+      "email": "Email",
+      "forbidden": "Interdit",
+      "group": "Groupe",
+      "name": "Prénom",
+      "nickname": "Surnom",
+      "reference": "Référence",
+      "score": "Score",
+      "sector": "Secteur",
+      "surname": "Nom",
+      "vat": "TVA."
     },
     "common": {
       "id": "#",
       "options": "Options"
     },
-    "client": {
-      "reference": "Référence",
-      "nickname": "Surnom",
-      "name": "Prénom",
-      "surname": "Nom",
-      "group": "Groupe",
-      "company_name": "Entreprise",
-      "score": "Score",
-      "sector": "Secteur",
-      "email": "Email",
-      "forbidden": "Interdit",
-      "vat": "TVA."
-    },
     "contract": {
-      "refContract": "#",
       "client": "Client",
-      "identification": "Identification",
       "dateDebut": "Date Début",
       "dateFin": "Date Fin",
-      "reconduction": "Reconduction",
+      "identification": "Identification",
+      "importedMachines": "Machines importées trouvées",
+      "locations": "Machines",
       "loyer": "Loyer",
       "miniconso": "Consommation Min",
+      "reconduction": "Reconduction",
+      "refContract": "#",
       "reviewed": "Révisé",
       "valid": "Valide"
+    },
+    "imported_machine": {
+      "contract": "Contrat",
+      "id": "#",
+      "identification": "Identification",
+      "reviewed": "Révisé"
+    },
+    "machine": {
+      "id": "#",
+      "piece": "Type de Machine",
+      "serialNumber": "Numéro de série"
     }
   },
   "pages": {
-    "not-available": {
-      "title": "Impossible de se connecter aux serveurs",
-      "text": "Il semble que vous ne puissiez pas vous connecter à nos serveurs ou qu'ils ne sont pas disponibles pour le moment.",
-      "buttons": {
-        "retry": "Réessayer",
-        "report": "Signaler une erreur"
-      }
-    },
-    "not-found": {
-      "title": "Page non trouvée",
-      "text": "Il semble que la page que vous recherchez n'existe pas, qu'elle ait été supprimée, que son nom ait été modifié ou qu'elle soit temporairement désactivée.",
-      "buttons": {
-        "home": "Aller à la maison",
-        "report": "Signaler une erreur"
-      }
-    },
-    "not-access": {
-      "status": "Code de statut:",
-      "title": "ERREUR!! Quelque chose a mal tourné ..",
-      "text": "Il semble que vous n'ayez pas accès à la section demandée ",
-      "text2": "Revenez à la section précédente ou contactez l'administrateur pour accorder l'accès.",
-      "level": "Votre privilège d'utilisateur est {{ levelUser }} et vous devriez être {{ levelPage }} pour y accéder.",
-      "buttons": {
-        "go_back": "Retourner"
-      }
-    },
     "address": {
-      "title": {
-        "add": "Ajouter une adresse",
-        "edit": "Modifier l'adresse"
-      },
       "results": {
         "success": {
           "add": "Adresse ajoutée avec succès: ",
+          "disabled": "Adresse désactivée: ",
           "edit": "Adresse modifiée avec succès: ",
-          "enabled": "Adresse activée: ",
-          "disabled": "Adresse désactivée: "
+          "enabled": "Adresse activée: "
         }
+      },
+      "title": {
+        "add": "Ajouter une adresse",
+        "edit": "Modifier l'adresse"
       }
     },
     "client": {
-      "title": {
-        "add": "Ajouter une client",
-        "edit": "Modifier client"
-      },
       "results": {
         "success": {
           "add": "Client ajoutée avec succès: ",
+          "disabled": "Client désactivée: ",
           "edit": "Client modifiée avec succès: ",
-          "enabled": "Client activée: ",
-          "disabled": "Client désactivée: "
+          "enabled": "Client activée: "
         }
-      }
-    },
-    "contract": {
+      },
       "title": {
         "add": "Ajouter une client",
         "edit": "Modifier client"
-      },
+      }
+    },
+    "contract": {
       "results": {
         "success": {
           "add": "Contrat ajoutée avec succès: ",
+          "disabled": "Contrat désactivée: ",
           "edit": "Contrat modifiée avec succès: ",
-          "enabled": "Contrat activée: ",
-          "disabled": "Contrat désactivée: "
+          "enabled": "Contrat activée: "
         }
+      },
+      "review": {
+        "buttons": {
+          "load": "Charge contrats"
+        },
+        "no_data": {
+          "title": "Tout bon! Rien à faire"
+        },
+        "subtitle": "Visualisation",
+        "subtitle_2": "contrats",
+        "title": "Contrats à revoir: "
+      },
+      "title": {
+        "add": "Ajouter une client",
+        "edit": "Modifier client"
       }
+    },
+    "not-access": {
+      "buttons": {
+        "go_back": "Retourner"
+      },
+      "level": "Votre privilège d'utilisateur est {{ levelUser }} et vous devriez être {{ levelPage }} pour y accéder.",
+      "status": "Code de statut:",
+      "text": "Il semble que vous n'ayez pas accès à la section demandée ",
+      "text2": "Revenez à la section précédente ou contactez l'administrateur pour accorder l'accès.",
+      "title": "ERREUR!! Quelque chose a mal tourné .."
+    },
+    "not-available": {
+      "buttons": {
+        "report": "Signaler une erreur",
+        "retry": "Réessayer"
+      },
+      "text": "Il semble que vous ne puissiez pas vous connecter à nos serveurs ou qu'ils ne sont pas disponibles pour le moment.",
+      "title": "Impossible de se connecter aux serveurs"
+    },
+    "not-found": {
+      "buttons": {
+        "home": "Aller à la maison",
+        "report": "Signaler une erreur"
+      },
+      "text": "Il semble que la page que vous recherchez n'existe pas, qu'elle ait été supprimée, que son nom ait été modifié ou qu'elle soit temporairement désactivée.",
+      "title": "Page non trouvée"
     }
+  },
+  "side-nav": {
+    "actions": "Actions",
+    "add": "Ajouter",
+    "addresses": "Addresses",
+    "block": "Bloquer",
+    "blocked": "Bloqué",
+    "clients": "Clients",
+    "contracts": "Contrats",
+    "email": "Changer Email",
+    "finished": "Fini",
+    "home": "Maison",
+    "invalid": "Invalide",
+    "list": "Liste",
+    "machines": "Machines",
+    "office": "Bureau",
+    "password": "Changer mot de passe",
+    "pieces": "Pièces",
+    "review": "Réviser",
+    "settings": "Paramètres",
+    "tasks": "Tâches",
+    "technicians": "Techniciens",
+    "unblocked": "Débloqué",
+    "unfinished": "Incomplet",
+    "users": "Utilisateurs",
+    "valid": "Valide"
+  },
+  "translator": {
+    "languages": {
+      "en": "EN",
+      "es": "ES",
+      "fr": "FR",
+      "it": "IT"
+    },
+    "title": "Langue"
   }
 }
