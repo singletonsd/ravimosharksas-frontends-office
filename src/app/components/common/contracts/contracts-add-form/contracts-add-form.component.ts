@@ -41,6 +41,9 @@ export class ContractsAddFormComponent extends BaseFormAddComponent<Contracts> i
         imported.contract = { refContract: imported.contract };
       }
     }
+    for (const location of data.locations) {
+      location.contract = !location.contract ? { refContract: data.refContract } : location.contract;
+    }
     this.logger.debug(this.COMPONENT_NAME, 'form submitted.', data);
     if (this.item) {
       this.logger.debug(this.COMPONENT_NAME, 'edit');

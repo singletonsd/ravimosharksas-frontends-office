@@ -15,7 +15,7 @@ export class MachinesFormComponent extends BaseFormNewComponent<Machines> {
   constructor(logger: NGXLogger) {
     super('MACHINES_FORM', 'models.machine.', logger, 'machine');
     this.form.addControl('id', new FormControl('', [ ]));
-    this.form.addControl('serialNumber', new FormControl('', [ Validators.required ]));
+    this.form.addControl('serialNumber', new FormControl('', [ ]));
     this.form.addControl('piece', new FormControl('', [ Validators.required ]));
     this.form.get('id')
       .disable();
