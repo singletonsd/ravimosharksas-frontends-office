@@ -34,7 +34,7 @@ export class AddressesTableComponent extends BaseTableComponent<any> implements 
 
   initComponent(): void {
     this.dataSource = new AddressesTableDataSource(this.paginator, this.sort, this.deleteSelector
-      , this.logger, this.localData);
+      , this.logger);
   }
 
   add(): void {

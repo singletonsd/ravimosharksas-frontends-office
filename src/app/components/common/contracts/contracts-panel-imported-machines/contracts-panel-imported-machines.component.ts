@@ -16,7 +16,7 @@ export class ContractsPanelImportedMachinesComponent extends BaseFormNewComponen
   public expansionStep = 0;
 
   constructor(logger: NGXLogger
-            , private cdf: ChangeDetectorRef) {
+            , private readonly cdf: ChangeDetectorRef) {
     super('CONTRACTS_PANEL_IMPORTED_MACHINES', 'models.contract.', logger, 'importedMachines', new FormArray([]));
   }
 

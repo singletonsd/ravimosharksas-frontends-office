@@ -18,7 +18,7 @@ export class ClientsTableComponent extends BaseTableComponent<any> implements On
     { name: 'reference', showOnMobile: true, showShort: true },
     { name: 'name', showOnMobile: false, showShort: true },
     { name: 'nickname', showOnMobile: false, showShort: true },
-    // { name: 'group', showOnMobile: false, showShort: false },
+    { name: 'group', showOnMobile: true, showShort: true },
     // { name: 'company_name', showOnMobile: true, showShort: false },
     // { name: 'score', showOnMobile: false, showShort: false },
     // { name: 'sector', showOnMobile: false, showShort: false },
@@ -36,7 +36,7 @@ export class ClientsTableComponent extends BaseTableComponent<any> implements On
 
   initComponent(): void {
     this.dataSource = new ClientsTableDataSource(this.paginator, this.sort, this.deleteSelector
-      , this.logger, this.localData);
+      , this.logger);
   }
 
   add(): void {

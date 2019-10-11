@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 // tslint:disable-next-line:no-implicit-dependencies
 import { BaseTableComponent, ColumnDefinition } from '@app/models/base-table.class';
-import { Contracts } from '@ravimosharksas/apis-contract-libs-typescript';
+import { Contracts, ContractsService } from '@ravimosharksas/apis-contract-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
 import { ContractsAddFormComponent } from '../contracts-add-form/contracts-add-form.component';
 import { ContractsTableDataSource } from './contracts-table-data-source';
@@ -21,21 +21,23 @@ export class ContractsTableComponent  extends BaseTableComponent<Contracts> impl
     { name: 'client', showOnMobile: true, showShort: true },
     { name: 'dateDebut', showOnMobile: false, showShort: true },
     { name: 'dateFin', showOnMobile: false, showShort: true },
-    { name: 'reconduction', showOnMobile: false, showShort: false },
-    { name: 'loyer', showOnMobile: false, showShort: false },
+    { name: 'locations', showOnMobile: true, showShort: true },
+    // { name: 'reconduction', showOnMobile: false, showShort: false },
+    // { name: 'loyer', showOnMobile: false, showShort: false },
     { name: 'miniconso', showOnMobile: false, showShort: false },
     { name: 'options', showOnMobile: true, showShort: true }
   ];
 
   constructor(logger: NGXLogger
             , private readonly dialog: MatDialog
-            , breakpointObserver: BreakpointObserver) {
+            , breakpointObserver: BreakpointObserver
+            , private readonly service: ContractsService) {
     super(logger, 'CONTRACTS_TABLE', breakpointObserver);
 }
 
   initComponent(): void {
     this.dataSource = new ContractsTableDataSource(this.paginator, this.sort, this.deleteSelector
-      , this.logger, this.localData);
+      , this.logger, this.service);
   }
 
   add(): void {
@@ -56,7 +58,7 @@ export class ContractsTableComponent  extends BaseTableComponent<Contracts> impl
 
   changeValidation(contract: Contracts): void {
     const newContract = {...contract};
-    this.logger.debug(this.COMPONENT_NAME, 'changeValidation', contract.refContract, newContract);
+    this.logger.debug(this.COMPONENT_NAME, 'change validation', contract.refContract, newContract);
     newContract.valid = !newContract.valid;
     newContract.reviewed = true;
     const dialog = this.dialog.open(ContractsAddFormComponent, {

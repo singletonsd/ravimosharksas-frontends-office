@@ -2,7 +2,10 @@
 import { MatPaginator, MatSelect, MatSort } from '@angular/material';
 import { TableDataSourceBase } from '@app/models/base-table-source-data.class';
 // import { DeletedParameter } from '@app/models/deleted-parameter.class';
+import { environment } from '@env/environment';
 import { NGXLogger } from 'ngx-logger';
+
+declare var require: any;
 
 /**
  * Data source for the Table view. This class should
@@ -12,9 +15,8 @@ import { NGXLogger } from 'ngx-logger';
 export class AddressesTableDataSource extends TableDataSourceBase<any> {
 
   constructor(paginator: MatPaginator, sort: MatSort
-            , deletedOption: MatSelect, logger: NGXLogger
-            , localData: Array<any>) {
-    super(paginator, sort, deletedOption, logger, 'TABLE_DATA_SOURCE_ADDRESSES', localData);
+            , deletedOption: MatSelect, logger: NGXLogger) {
+    super(paginator, sort, deletedOption, logger, 'TABLE_DATA_SOURCE_ADDRESSES');
   }
 
   loadApi(
@@ -59,5 +61,17 @@ export class AddressesTableDataSource extends TableDataSourceBase<any> {
     //     }
     //     this.loadingSubject.next(false);
     //   });
+  }
+
+  protected loadLocalJson(): void {
+    if (!environment.production && environment.mockApiCalls) {
+      this.logger.info(`${this.COMPONENT_NAME} loading mock data`);
+      // tslint:disable-next-line:no-require-imports
+      const data = require('../../../../../../test/mock_data/address.json');
+      if (data) {
+        this.data.next(data);
+      }
+      this.loadingSubject.next(false);
+    }
   }
 }

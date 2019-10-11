@@ -1,7 +1,7 @@
 <span *ngIf="client">
   {{ client.refClient }}
   <ng-container *ngIf="withName; else noDeleted">
-    <span> - {{ client.nom }}</span>
+    <span> - {{ client.name }}</span>
     <button mat-icon-button (click)="withName = false"><mat-icon matTooltip="{{ 'actions.show_less' | translate }}" matListIcon style="color: red">expand_less</mat-icon></button>
   </ng-container>
   <ng-template #noDeleted>
