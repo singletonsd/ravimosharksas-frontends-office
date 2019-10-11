@@ -1,0 +1,31 @@
+<mat-form-field [formGroup]="parent.form" style="width: 100%">
+    <input placeholder="{{ placeHolder | translate }}" formControlName="{{ controlName }}" [matAutocomplete]="auto" matInput type="{{ type }}" (keydown)=onKeydownEvent($event)>
+    <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption [displayWith]="displayFn" position="below">
+      <ng-container *ngIf="loading$ | async; else loaded">
+        <mat-option><mat-spinner [diameter]="40" style="margin:0 auto;"></mat-spinner></mat-option>
+      </ng-container>
+      <ng-template #loaded>
+        <mat-option *ngFor="let option of filteredOptions$ | async; trackBy: identify" [value]="option">
+          <ng-container *ngIf="showRefClient; noClient">
+            <ng-container *ngIf="option.client; else noRefClient">
+              <span>{{ option.client.refClient }} | </span>
+            </ng-container>
+            <ng-template>
+              <span>{{ option.refClient }} | </span>
+            </ng-template>
+            <small>{{ option.streetNumber }} {{ option.streetName }} - {{ option.postalCode }}</small>
+          </ng-container>
+          <ng-template #noClient>
+            <span>{{ option.postalCode }} |</span>
+            <small>{{ option.streetNumber }} {{ option.streetName }}</small>
+          </ng-template>
+        </mat-option>
+      </ng-template>
+    </mat-autocomplete>
+    <mat-error *ngIf="hasError()">
+      <ng-container *ngIf="isRequiredError()">
+        {{ 'fields.errors.required' | translate }}
+      </ng-container>
+    </mat-error>
+    <mat-icon (click)="clear()" matSuffix matTooltip="{{ 'actions.cancel' | translate }}" class="icons-color">cancel</mat-icon>
+  </mat-form-field>

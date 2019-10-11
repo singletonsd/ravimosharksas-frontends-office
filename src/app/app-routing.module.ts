@@ -20,6 +20,9 @@ import { ContractsReviewComponent } from './components/pages/contracts/contracts
 
 import { MachinesAddComponent } from './components/pages/machines/machines-add/machines-add.component';
 
+import { PagesTasksAddComponent } from './components/pages/tasks/pages-tasks-add/pages-tasks-add.component';
+import { PagesTasksMainComponent } from './components/pages/tasks/pages-tasks-main/pages-tasks-main.component';
+
 const routes: Routes = [
   { path: appRoutesNames.ADDRESSES.MAIN, component: AddressesMainComponent },
   { path: appRoutesNames.ADDRESSES.ADD, component: AddressesAddComponent },
@@ -31,6 +34,8 @@ const routes: Routes = [
   { path: appRoutesNames.MACHINES.ADD, component: MachinesAddComponent },
   { path: appRoutesNames.ROOT, redirectTo: '/home', pathMatch: 'full' },
   { path: appRoutesNames.HOME, component: HomeComponent },
+  { path: appRoutesNames.TASKS.ADD, component: PagesTasksAddComponent },
+  { path: appRoutesNames.TASKS.MAIN, component: PagesTasksMainComponent },
   { path: appRoutesNames.NOT.ACCESS, component: MainNotAccessComponent },
   { path: appRoutesNames.NOT.AVAILABLE, component: MainNotAvailableComponent },
   { path: appRoutesNames.NOT.FOUND, component: MainNotFoundComponent }// Always the last route.

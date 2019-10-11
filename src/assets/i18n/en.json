@@ -183,6 +183,29 @@
       "id": "#",
       "piece": "Machine Type",
       "serialNumber": "Serial Number"
+    },
+    "task": {
+      "id": "#",
+      "address": "Client Address",
+      "technician": "Technician",
+      "machine": "Machine",
+      "dateCall": "Call Date",
+      "dateFix": "Fix Date",
+      "problem": "Problem",
+      "solution": "Solution",
+      "priority": "Priority",
+      "initiator": "Initiator",
+      "ratingClient": "Client Score",
+      "ratingTech": "Tech Score",
+      "type": "Type",
+      "types": {
+        "cancellation": "Cancellation",
+        "changepiece": "Change Piece",
+        "stopparcial": "Stop Partial",
+        "stoptotal": "Stop Total",
+        "problemresult": "Problem Results",
+        "unknown": "Unknown"
+      }
     }
   },
   "pages": {

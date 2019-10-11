@@ -61,6 +61,7 @@ import { MainNotFoundComponent } from './components/pages/not-found/not-found.co
 import { HomeComponent } from './components/pages/home/home.component';
 
 import { AddressesAddFormComponent } from './components/common/addresses/addresses-add-form/addresses-add-form.component';
+import { AddressesAutoCompleteComponent } from './components/common/addresses/addresses-auto-complete/addresses-auto-complete.component';
 import { AddressesTableOptionsComponent } from './components/common/addresses/addresses-table/addresses-table-options/addresses-table-options.component';
 import { AddressesTableComponent } from './components/common/addresses/addresses-table/addresses-table.component';
 import { AddressesAddComponent } from './components/pages/addresses/addresses-add/addresses-add.component';
@@ -106,6 +107,12 @@ import { StorageClientsService } from './services/storage/storage-clients.servic
 import { StorageContractsService } from './services/storage/storage-contracts.service';
 import { StoragePiecesService } from './services/storage/storage-pieces.service';
 
+import { TasksAddFormComponent } from './components/common/tasks/tasks-add-form/tasks-add-form.component';
+import { TasksFormComponent } from './components/common/tasks/tasks-form/tasks-form.component';
+import { TasksTypeSelectComponent } from './components/common/tasks/tasks-type-select/tasks-type-select.component';
+import { PagesTasksAddComponent } from './components/pages/tasks/pages-tasks-add/pages-tasks-add.component';
+import { PagesTasksMainComponent } from './components/pages/tasks/pages-tasks-main/pages-tasks-main.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -130,6 +137,7 @@ import { StoragePiecesService } from './services/storage/storage-pieces.service'
     MainNotAvailableComponent,
     MainNotFoundComponent,
     AddressesAddComponent,
+    AddressesAutoCompleteComponent,
     AddressesAddFormComponent,
     AddressesMainComponent,
     AddressesTableComponent,
@@ -162,7 +170,12 @@ import { StoragePiecesService } from './services/storage/storage-pieces.service'
     PiecesAutoCompleteComponent,
     ImportedMachinesAddFormComponent,
     ImportedMachinesAutoCompleteComponent,
-    ImportedMachinesFormComponent
+    ImportedMachinesFormComponent,
+    TasksAddFormComponent,
+    TasksFormComponent,
+    TasksTypeSelectComponent,
+    PagesTasksAddComponent,
+    PagesTasksMainComponent
   ],
   imports: [
     BrowserModule,

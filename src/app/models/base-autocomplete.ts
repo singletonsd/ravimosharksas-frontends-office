@@ -20,10 +20,9 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
 
   options: Array<T> = [];
 
-  constructor(
-    private readonly logger: NGXLogger,
-    protected readonly COMPONENT_NAME: string,
-    service?: BaseStorageService<T>) {
+  constructor(private readonly logger: NGXLogger,
+              protected readonly COMPONENT_NAME: string,
+              service?: BaseStorageService<T>) {
     super();
     if (service) {
       service.items$.subscribe(items => this.options = items);
@@ -78,7 +77,7 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
     if (event.key === 'Escape') {// escape pressed
       this.clear();
     }
- }
+  }
 
   public log(message: any, ...additional: Array<any>): void {
     this.logger.debug(this.COMPONENT_NAME, message, additional);
