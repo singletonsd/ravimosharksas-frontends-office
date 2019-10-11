@@ -12,7 +12,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatAutocompleteModule, MatBadgeModule
   , MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule
   , MatDatepickerModule, MatDialogModule, MatExpansionModule, MatIconModule, MatInputModule
-  , MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+  , MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule
+  , MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSnackBarModule
+  , MatSortModule, MatTableModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { CUSTOM_FORMATS } from './app.dates.formats';
 
@@ -21,11 +23,12 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { LanguageSelectorComponent } from './components/basics/language-selector/language-selector.component';
 import { HttpLoaderFactory, LanguageService } from './services/language/language.service';
 
-import { ApiModule as ApiRavimoContractModule, BASE_PATH } from '@ravimosharksas/apis-contract-libs-typescript';
+import { ApiModule as ApiRavimoContractModule, BASE_PATH as CONTRACT_BASE_PATH } from '@ravimosharksas/apis-contract-libs-typescript';
+import { ApiModule as ApiRavimoTaskModule, BASE_PATH as TASK_BASE_PATH } from '@ravimosharksas/apis-task-libs-typescript';
 
 // tslint:disable-next-line: no-implicit-dependencies
 import { environment } from '@env/environment';
-import { apiConfigFactory } from './app.configuration';
+import { apiContractConfigFactory, apiTaskConfigFactory } from './app.configuration';
 
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
@@ -106,12 +109,15 @@ import { ImportedMachinesFormComponent } from './components/common/importedMachi
 import { StorageClientsService } from './services/storage/storage-clients.service';
 import { StorageContractsService } from './services/storage/storage-contracts.service';
 import { StoragePiecesService } from './services/storage/storage-pieces.service';
+import { StorageTechniciansService } from './services/storage/storage-technicians.service';
 
 import { TasksAddFormComponent } from './components/common/tasks/tasks-add-form/tasks-add-form.component';
 import { TasksFormComponent } from './components/common/tasks/tasks-form/tasks-form.component';
 import { TasksTypeSelectComponent } from './components/common/tasks/tasks-type-select/tasks-type-select.component';
 import { PagesTasksAddComponent } from './components/pages/tasks/pages-tasks-add/pages-tasks-add.component';
 import { PagesTasksMainComponent } from './components/pages/tasks/pages-tasks-main/pages-tasks-main.component';
+
+import { TechniciansAutoCompleteComponent } from './components/common/technicians/technicians-auto-complete/technicians-auto-complete.component';
 
 @NgModule({
   declarations: [
@@ -175,7 +181,8 @@ import { PagesTasksMainComponent } from './components/pages/tasks/pages-tasks-ma
     TasksFormComponent,
     TasksTypeSelectComponent,
     PagesTasksAddComponent,
-    PagesTasksMainComponent
+    PagesTasksMainComponent,
+    TechniciansAutoCompleteComponent
   ],
   imports: [
     BrowserModule,
@@ -206,6 +213,7 @@ import { PagesTasksMainComponent } from './components/pages/tasks/pages-tasks-ma
     MatMenuModule,
     MatProgressBarModule,
     MatSelectModule,
+    MatSliderModule,
     MatSnackBarModule,
     MatTableModule,
     MatPaginatorModule,
@@ -224,7 +232,8 @@ import { PagesTasksMainComponent } from './components/pages/tasks/pages-tasks-ma
       disableConsoleLogging: false
     }),
     LayoutModule,
-    ApiRavimoContractModule.forRoot(apiConfigFactory)
+    ApiRavimoContractModule.forRoot(apiContractConfigFactory),
+    ApiRavimoTaskModule.forRoot(apiTaskConfigFactory)
   ],
   providers: [
     TranslateService,
@@ -235,11 +244,13 @@ import { PagesTasksMainComponent } from './components/pages/tasks/pages-tasks-ma
     StorageClientsService,
     StorageContractsService,
     StoragePiecesService,
+    StorageTechniciansService,
     MenuService,
     PreviousRouteService,
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
     { provide: MAT_DATE_FORMATS, useValue: CUSTOM_FORMATS },
-    { provide: BASE_PATH, useValue: environment.apiRavimoContract.API_BASE_PATH }
+    { provide: CONTRACT_BASE_PATH, useValue: environment.apiRavimoContract.API_BASE_PATH },
+    { provide: TASK_BASE_PATH, useValue: environment.apiRavimoContract.API_BASE_PATH }
   ],
   bootstrap: [AppComponent],
   exports: [
