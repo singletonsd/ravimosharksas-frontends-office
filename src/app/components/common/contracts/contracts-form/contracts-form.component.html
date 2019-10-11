@@ -10,7 +10,7 @@
   </div>
   <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'loyer'" [type]="'number'"></app-base-input>
   <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'miniconso'" [type]="'number'"></app-base-input>
-  <app-base-input class="col-12 col-sm-4" [parent]="this" [controlName]="'reconduction'" [type]="'number'"></app-base-input>
+  <app-base-input class="col-12 col-sm-4" [parent]="this" [controlName]="'reconduction'"></app-base-input>
   <mat-accordion>
     <app-contracts-panel-imported-machines (formReady)="childInitialized($event)" [item]="item?.importedMachines"></app-contracts-panel-imported-machines>
     <app-contracts-panel-locations (formReady)="childInitialized($event)" [item]="item?.locations" [expanded]="item?.locations.length > 0"></app-contracts-panel-locations>
