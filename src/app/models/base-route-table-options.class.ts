@@ -1,4 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
+import { Contracts } from '@ravimosharksas/apis-contract-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
 import { DeletedParameter } from './deleted-parameter.class';
 
@@ -30,20 +31,37 @@ export class BaseRouterTableOptions<T> {
           this.deletedOption = 'ACTIVE';
           break;
       }
-      if (typeof this.tableObjectType === 'string') {
+      this.tableFilter = params['filter'];
+      if (!params['orderBy'] || !params['orderType']) {
+        return;
       }
-      switch (params['orderBy']) {
-        // TODO: check this value by parameters of the tableObjectType.
-        case 'id':
-        case 'Type':
-        case 'Name':
-        case 'Identification':
-        case 'Email':
-          this.orderBy = params['orderBy'];
-          break;
-        default:
-          this.orderBy = 'Name';
-          break;
+      this.logger.debug(this.COMPONENT_NAME, this.tableObjectType, params['orderBy']);
+      if (this.tableObjectType as Contracts) {
+        switch (params['orderBy']) {
+          case 'client':
+          case 'refContract':
+          case 'refClient':
+          case 'identification':
+            this.orderBy = params['orderBy'];
+            break;
+          default:
+            this.orderBy = 'refContract';
+            break;
+        }
+      } else {
+        switch (params['orderBy']) {
+          // TODO: check this value by parameters of the tableObjectType.
+          case 'id':
+          case 'Type':
+          case 'Name':
+          case 'Identification':
+          case 'Email':
+            this.orderBy = params['orderBy'];
+            break;
+          default:
+            this.orderBy = 'id';
+            break;
+        }
       }
       switch (params['orderType']) {
         case 'asc':
@@ -54,7 +72,6 @@ export class BaseRouterTableOptions<T> {
           this.orderType = 'asc';
           break;
       }
-      this.tableFilter = params['filter'];
     });
   }
 }

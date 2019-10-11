@@ -1,5 +1,7 @@
 import { DataSource } from '@angular/cdk/table';
 import { MatPaginator, MatSelect, MatSort } from '@angular/material';
+// tslint:disable-next-line: no-implicit-dependencies
+import { environment } from '@env/environment';
 import { NGXLogger } from 'ngx-logger';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { DeletedParameter } from './deleted-parameter.class';
@@ -12,14 +14,11 @@ export abstract class TableDataSourceBase<T> extends DataSource<T> {
   public loading$ = this.loadingSubject.asObservable();
   protected data$ = this.data.asObservable();
 
-  workWithLocalData = false;
-
   constructor(protected readonly paginator: MatPaginator
     ,         protected readonly sort: MatSort
     ,         protected readonly deletedOption: MatSelect
     ,         protected readonly logger: NGXLogger
-    ,         protected readonly COMPONENT_NAME: string
-    ,         localData?: Array<T>) {
+    ,         protected readonly COMPONENT_NAME: string) {
     super();
     if (!paginator.pageIndex) {
       paginator.pageIndex = 0;
@@ -28,10 +27,6 @@ export abstract class TableDataSourceBase<T> extends DataSource<T> {
       paginator.pageSize = 20;
     }
     paginator.pageSizeOptions = [5, 10, 20, 50, 100];
-    if (localData) {
-      this.workWithLocalData = true;
-      this.data.next(localData);
-    }
   }
 
   connect(): Observable<Array<T>> {
@@ -46,7 +41,8 @@ export abstract class TableDataSourceBase<T> extends DataSource<T> {
   protected abstract loadApi(filter?: string, sortDirection?: string
                           ,  skip?: number, limit?: number
                           ,  deletedOption?: DeletedParameter): void;
-// tslint:disable: no-parameter-reassignment
+
+  // tslint:disable: no-parameter-reassignment
   public load(filter?: string, sortDirection?: string
             , skip?: number, limit?: number
             , deletedOption?: DeletedParameter): void {
@@ -75,7 +71,8 @@ export abstract class TableDataSourceBase<T> extends DataSource<T> {
       }
     }
     this.loadingSubject.next(true);
-    if (this.workWithLocalData) {
+    if (!environment.production && environment.mockApiCalls) {
+      this.logger.debug(this.COMPONENT_NAME, 'working with mock data');
       this.loadLocal();
     } else {
       this.logger.debug(this.COMPONENT_NAME, 'running load api data');
@@ -91,12 +88,15 @@ export abstract class TableDataSourceBase<T> extends DataSource<T> {
     return this.data.getValue();
   }
 
+  protected abstract loadLocalJson(): void;
+
   public loadLocal(
-                //   filter?: string, sortDirection?: string
-                // ,  skip?: number, limit?: number
-                // ,  deletedOption?: DeletedParameter
-                ): void {
+    // filter?: string, sortDirection?: string
+    //             ,  skip?: number, limit?: number
+    //             ,  deletedOption?: DeletedParameter
+    ): void {
     this.logger.debug(this.COMPONENT_NAME, 'running load local data');
+    this.loadLocalJson();
   }
   /**
    * Paginate the data (client-side). If you're using server-side pagination,
