@@ -15,9 +15,12 @@ export abstract class BaseStorageService<T> {
     if (!environment.production && environment.mockApiCalls && jsonFile) {
       logger.debug(this.SERVICE_NAME, 'adding data from mock json...');
       // tslint:disable-next-line:no-require-imports
-      this.items.next(require(`../../../test/mock_data/${jsonFile}.json`));
+      const data = require(`../../../test/mock_data/${jsonFile}.json`);
+      if (data) {
+        this.items.next(data);
+      }
     } else {
-      // this.refresh();
+      this.refresh();
     }
   }
 

@@ -250,7 +250,7 @@ import { TechniciansAutoCompleteComponent } from './components/common/technician
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
     { provide: MAT_DATE_FORMATS, useValue: CUSTOM_FORMATS },
     { provide: CONTRACT_BASE_PATH, useValue: environment.apiRavimoContract.API_BASE_PATH },
-    { provide: TASK_BASE_PATH, useValue: environment.apiRavimoContract.API_BASE_PATH }
+    { provide: TASK_BASE_PATH, useValue: environment.apiRavimoTask.API_BASE_PATH }
   ],
   bootstrap: [AppComponent],
   exports: [

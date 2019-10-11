@@ -11,7 +11,7 @@ import { TaskTypes } from '@ravimosharksas/apis-task-libs-typescript';
 })
 export class TasksTypeSelectComponent extends BaseInputFormComponent {
 
-  @Input() selected: TaskTypes = 'STOP_PARCIAL';
+  @Input() selected: TaskTypes = 'STOP_PARTIAL';
 
   @ViewChild(MatSelect) readonly selector: MatSelect;
   public options = [];

@@ -262,6 +262,20 @@
         "edit": "Edit Contract"
       }
     },
+    "task": {
+      "results": {
+        "success": {
+          "add": "Task added successfully: ",
+          "disabled": "Task disabled: ",
+          "edit": "Task edited successfully: ",
+          "enabled": "Task enabled: "
+        }
+      },
+      "title": {
+        "add": "Add Client",
+        "edit": "Edit Client"
+      }
+    },
     "not-access": {
       "buttons": {
         "go_back": "Go Back"
