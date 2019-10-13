@@ -1,0 +1,16 @@
+<div [formGroup]="form" class="row">
+  <app-base-input class="col-2" [parent]="this" [controlName]="'id'" [type]="'number'"></app-base-input>
+  <app-addresses-auto-complete class="col-6 col-sm-5" [parent]="this" [controlName]="'address'" [useGlobal]="false"></app-addresses-auto-complete>
+  <app-machines-auto-complete class="col-6 col-sm-5" [parent]="this" [controlName]="'machine'" [useGlobal]="false"></app-machines-auto-complete>
+  <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateCall'"></app-date-input>
+  <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateFix'"></app-date-input>
+  <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'priority'" [type]="'number'"></app-base-input>
+  <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'initiator'"></app-base-input>
+  <app-tasks-type-select class="col-6 col-sm-4" [parent]="this" [controlName]="'taskType'"></app-tasks-type-select>
+  <app-technicians-auto-complete class="col-6 col-sm-4" [parent]="this" [controlName]="'technician'"></app-technicians-auto-complete>
+  <!-- <div class="col-6">
+    <mat-form-field style="width: 100%;" [formGroup]="form" style="width: 100%">
+      <mat-slider [disabled]="disabled" formControlName="'ratingTech'" [max]="5" [min]="0" [step]="0.5" [thumbLabel]="true"></mat-slider>
+    </mat-form-field>
+  </div> -->
+</div>

@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>
+        <ng-container *ngIf="item; else register">
+          <h2>
+            <span>{{ 'pages.task.title.edit' | translate }}</span>
+            <strong> #{{ item.id }}</strong>
+          </h2>
+        </ng-container>
+        <ng-template #register>
+          <h2>{{ 'pages.task.title.add' | translate }}</h2>
+        </ng-template>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex justify-content-center" *ngIf="(loading$ | async); else loaded">
+        <mat-spinner></mat-spinner>
+      </div>
+      <ng-template #loaded>
+        <app-base-notification-simple [notification]="notification"></app-base-notification-simple>
+        <app-tasks-form [item]="item" (formReady)="formInitialized($event)"></app-tasks-form>
+      </ng-template>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="row">
+        <div class="col-6">
+          <button mat-raised-button color="primary" type="submit" [disabled]="buttonSubmitDisabled" style="width: 100%">
+            <mat-icon matTooltip="{{ 'actions.submit' | translate }}" matListIcon>add</mat-icon>
+            {{ 'actions.submit' | translate }}
+          </button>
+        </div>
+        <div class="col-6">
+          <button mat-raised-button color="accent" type="button" (click)="resetForm()" style="width: 100%">
+            <mat-icon matTooltip="{{ 'actions.clear_form' | translate }}" matListIcon>clear_all</mat-icon>
+            {{ 'actions.clear_form' | translate }}
+          </button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</form>
