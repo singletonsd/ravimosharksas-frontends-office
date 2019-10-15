@@ -18,3 +18,11 @@ export function apiTaskConfigFactory(): Configuration {
 
   return new Configuration(params);
 }
+
+export function apiClientConfigFactory(): Configuration {
+  const params: ConfigurationParameters = {
+    basePath: environment.apiRavimoTask.API_BASE_PATH
+  };
+
+  return new Configuration(params);
+}
