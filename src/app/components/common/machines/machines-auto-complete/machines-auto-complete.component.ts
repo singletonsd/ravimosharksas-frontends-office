@@ -56,7 +56,7 @@ protected _filter(value: string): Array<Machines> {
 protected _apiCall(entity: any): import('rxjs').Observable<Array<Machines>> {
   return this.pieceService
     .getMachines(0, 10, undefined, entity)
-    .pipe(map(value => value.items));
+    .pipe(map(value => value ? value.items : []));
 }
 
 public identify(entity: Machines): string {

@@ -10,6 +10,9 @@ export const environment = {
   },
   apiRavimoTask: {
     API_BASE_PATH: 'http://localhost:8001'
+  },
+  apiRavimoClient: {
+    API_BASE_PATH: 'http://localhost:8002'
   }
 };
 

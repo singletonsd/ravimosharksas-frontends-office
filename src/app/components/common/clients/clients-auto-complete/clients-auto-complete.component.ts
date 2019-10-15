@@ -56,7 +56,7 @@ export class ClientsAutocompleteComponent extends BaseAutocompleteComponent<Clie
   protected _apiCall(entity: string): import('rxjs').Observable<Array<Clients>> {
     return this.clientService
       .getClients(0, 10, undefined, entity)
-      .pipe(map(value => value.items));
+      .pipe(map(value => value ? value.items : []));
   }
 
   public identify(entity: Clients): string {

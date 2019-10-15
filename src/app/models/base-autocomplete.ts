@@ -1,7 +1,7 @@
 import { Input, OnInit } from '@angular/core';
 import { NGXLogger } from 'ngx-logger';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, finalize, map, startWith, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, finalize, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { BaseInputFormComponent } from './base-input-form.class';
 import { BaseStorageService } from './base-storage-service.class';
 
@@ -34,9 +34,10 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
     if (this.useGlobal) {
       this.parent.form.controls[this.controlName].valueChanges
       .pipe(
-        // debounceTime(500),
         startWith(''),
         distinctUntilChanged(),
+        filter((query: string) => query && query.length > 2),
+        debounceTime(200),
         map(value => typeof value === 'string' ? value : this.displayFn(value)),
         map(client => client ? this._filter(client) : this.options.slice(0, this.maxResults)))
         .subscribe((clients: Array<T>) => {
@@ -45,8 +46,11 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
     } else {
       this.parent.form.controls[this.controlName].valueChanges
       .pipe(
-        debounceTime(500)
-        , tap(() => {
+        startWith(''),
+        distinctUntilChanged(),
+        filter((query: string) => query && query.length > 2),
+        debounceTime(200),
+        tap(() => {
           this.filteredOptions.next([]);
           this.loading.next(true);
         })

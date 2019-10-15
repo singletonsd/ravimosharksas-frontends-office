@@ -6,5 +6,8 @@ export const environment = {
   },
   apiRavimoTask: {
     API_BASE_PATH: 'http://192.168.1.19:8001'
+  },
+  apiRavimoClient: {
+    API_BASE_PATH: 'http://192.168.1.19:8002'
   }
 };
