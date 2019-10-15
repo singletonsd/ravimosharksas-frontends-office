@@ -7,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesTasksMainComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

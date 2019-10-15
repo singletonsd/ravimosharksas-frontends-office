@@ -201,7 +201,7 @@
       "types": {
         "cancellation": "Cancellation",
         "changepiece": "Change Piece",
-        "stopparcial": "Stop Partial",
+        "stoppartial": "Stop Partial",
         "stoptotal": "Stop Total",
         "problemresult": "Problem Results",
         "unknown": "Unknown"

@@ -1,6 +1,6 @@
 <mat-form-field [formGroup]="parent.form" style="width: 100%">
   <mat-label>{{ 'models.task.type' | translate }}</mat-label>
-  <mat-select [value]="selectedValue" formControlName="{{ controlName }}">
+  <mat-select [value]="selected" formControlName="{{ controlName }}">
     <mat-option *ngFor="let option of options; trackBy: identify" [value]="option">
       {{ 'models.task.types.' + option.toLowerCase() | translate }}
     </mat-option>
