@@ -197,6 +197,7 @@
       "initiator": "Initiator",
       "ratingClient": "Client Score",
       "ratingTech": "Tech Score",
+      "taskTime": "Time spent",
       "type": "Type",
       "types": {
         "cancellation": "Cancellation",
@@ -272,8 +273,8 @@
         }
       },
       "title": {
-        "add": "Add Client",
-        "edit": "Edit Client"
+        "add": "Add Task",
+        "edit": "Edit Task"
       }
     },
     "not-access": {

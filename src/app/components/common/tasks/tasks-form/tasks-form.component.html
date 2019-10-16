@@ -1,16 +1,22 @@
 <div [formGroup]="form" class="row">
-  <app-base-input class="col-2" [parent]="this" [controlName]="'id'" [type]="'number'"></app-base-input>
-  <app-addresses-auto-complete class="col-6 col-sm-5" [parent]="this" [controlName]="'address'" [useGlobal]="false"></app-addresses-auto-complete>
-  <app-machines-auto-complete class="col-6 col-sm-5" [parent]="this" [controlName]="'machine'" [useGlobal]="false"></app-machines-auto-complete>
+  <app-base-input class="col-12 col-sm-2" [parent]="this" [controlName]="'id'" [type]="'number'"></app-base-input>
+  <app-addresses-auto-complete class="col-12 col-sm-5" [parent]="this" [controlName]="'address'" [useGlobal]="false"></app-addresses-auto-complete>
+  <app-machines-auto-complete class="col-12 col-sm-5" [parent]="this" [controlName]="'machine'" [useGlobal]="false"></app-machines-auto-complete>
   <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateCall'"></app-date-input>
-  <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateFix'"></app-date-input>
+  <app-date-input [hidden]="isSubmitting" class="col-6 col-sm-4" [parent]="this" [controlName]="'dateFix'"></app-date-input>
   <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'priority'" [type]="'number'"></app-base-input>
   <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'initiator'"></app-base-input>
   <app-tasks-type-select class="col-6 col-sm-4" [parent]="this" [controlName]="'taskType'"></app-tasks-type-select>
-  <app-technicians-auto-complete class="col-6 col-sm-4" [parent]="this" [controlName]="'technician'"></app-technicians-auto-complete>
-  <!-- <div class="col-6">
-    <mat-form-field style="width: 100%;" [formGroup]="form" style="width: 100%">
-      <mat-slider [disabled]="disabled" formControlName="'ratingTech'" [max]="5" [min]="0" [step]="0.5" [thumbLabel]="true"></mat-slider>
-    </mat-form-field>
-  </div> -->
+  <app-technicians-auto-complete [ngClass]="(isSubmitting) ? 'col-12 col-sm-8' : 'col-6 col-sm-4'" [parent]="this" [controlName]="'technician'"></app-technicians-auto-complete>
+  <app-base-area class="col-12" [ngClass]="{'col-sm-6': !isSubmitting}" [parent]="this" [controlName]="'problem'" [type]="'number'"></app-base-area>
+  <app-base-area class="col-12 col-sm-6" [hidden]="isSubmitting" [parent]="this" [controlName]="'solution'" [type]="'number'"></app-base-area>
+  <app-base-input [hidden]="isSubmitting" class="col-6 col-sm-4" [parent]="this" [controlName]="'taskTime'" [type]="'number'"></app-base-input>
+  <div class="col-6 col-sm-4" [hidden]="isSubmitting">
+    <mat-label>{{ 'models.task.ratingTech' | translate }}</mat-label>
+    <mat-slider class="col-12" formControlName="ratingTech" [max]="5" [min]="0" [step]="0.5" [thumbLabel]="true"></mat-slider>
+  </div>
+  <div class="col-6 col-sm-4" [hidden]="isSubmitting">
+    <mat-label>{{ 'models.task.ratingClient' | translate }}</mat-label>
+    <mat-slider class="col-12" formControlName="ratingClient" [max]="5" [min]="0" [step]="0.5" [thumbLabel]="true"></mat-slider>
+  </div>
 </div>

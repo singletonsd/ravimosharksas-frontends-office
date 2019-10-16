@@ -12,14 +12,14 @@ import { NGXLogger } from 'ngx-logger';
 })
 export class TasksFormComponent extends BaseFormNewComponent<Tasks> {
 
-  @Input() isSubmitting = true;
+  @Input() isSubmitting = false;
 
   constructor(logger: NGXLogger) {
     super('TASKS_FORM', 'models.task.', logger, 'tasks');
     this.form.addControl('id', new FormControl('', [ ]));
     this.form.addControl('address', new FormControl('', [ Validators.required ]));
     this.form.addControl('technician', new FormControl('', [ Validators.required ]));
-    this.form.addControl('machine', new FormControl('', [ Validators.required ]));
+    this.form.addControl('machine', new FormControl('', [ ]));
     this.form.addControl('dateCall', new FormControl('', [ Validators.required ]));
     this.form.addControl('dateFix', new FormControl('', [ ]));
     this.form.addControl('problem', new FormControl('', []));
@@ -27,43 +27,47 @@ export class TasksFormComponent extends BaseFormNewComponent<Tasks> {
     this.form.addControl('taskType', new FormControl('', [ Validators.required ]));
     this.form.addControl('priority', new FormControl('', []));
     this.form.addControl('initiator', new FormControl('', [ Validators.required ]));
+    this.form.addControl('taskTime', new FormControl('', [ ]));
     this.form.addControl('ratingClient', new FormControl('', []));
     this.form.addControl('ratingTech', new FormControl('', []));
-  }
-
-  protected fillForm(): void {
-    this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
-    // this.form.get('refContract')
-    // .setValue(this.item.refContract);
-    // this.form.get('dateDebut')
-    // .setValue(this.item.dateDebut);
-    // this.form.get('dateFin')
-    // .setValue(this.item.dateFin);
-    // this.form.get('loyer')
-    // .setValue(this.item.loyer);
-    // this.form.get('miniconso')
-    // .setValue(this.item.miniconso);
-    // this.form.get('reconduction')
-    // .setValue(this.item.reconduction);
-    // this.form.get('identification')
-    // .setValue(this.item.identification);
-    // this.form.get('client')
-    // .setValue(this.item.client);
-    // this.form.get('reviewed')
-    // .setValue(this.item.reviewed);
-    // this.form.get('valid')
-    // .setValue(this.item.valid);
 
     this.form.get('id')
       .disable();
-    // this.form.get('client')
-    //   .disable();
-    // this.form.get('refContract')
-    //   .disable();
-    // this.form.get('dateDebut')
-    //   .disable();
-    // this.form.get('dateFin')
-    //   .disable();
+  }
+
+  protected fillForm(): void {
+    this.logger.info(this.COMPONENT_NAME, 'filling form');
+    if (this.item) {
+      this.logger.debug(this.COMPONENT_NAME, 'filling form with data of', this.item.id);
+      this.form.get('id')
+      .setValue(this.item.id);
+      this.form.get('address')
+      .setValue(this.item.address);
+      this.form.get('technician')
+      .setValue(this.item.technician);
+      this.form.get('machine')
+      .setValue(this.item.machine);
+      this.form.get('dateCall')
+      .setValue(this.item.dateCall);
+      this.form.get('dateFix')
+      .setValue(this.item.dateFix);
+      this.form.get('problem')
+      .setValue(this.item.problem);
+      this.form.get('solution')
+      .setValue(this.item.solution);
+      this.form.get('taskType')
+      .setValue(this.item.taskType);
+      this.form.get('priority')
+      .setValue(this.item.priority);
+      this.form.get('initiator')
+      .setValue(this.item.initiator);
+      this.form.get('taskTime')
+      .setValue(this.item.taskTime);
+      this.form.get('ratingClient')
+      .setValue(this.item.ratingClient);
+      this.form.get('ratingTech')
+      .setValue(this.item.ratingTech);
+    }
   }
 
   protected afterControlAdded(): void {
