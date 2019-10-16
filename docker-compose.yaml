@@ -1,7 +1,16 @@
 version: "3.3"
 
 services:
-  api:
+  api_client:
+    image: registry.gitlab.com/ravimosharksas/apis/client/app-nodejs/${API_BASE:-alpine}:${API_VERSION:-8-alpine-latest}
+    environment:
+      SWAGGER_URL: http://localhost:8000
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      APP_PORT: ${APP_PORT:-8000}
+    ports:
+      - "${HOST_PORT:-8001}:${APP_PORT:-8000}"
+  api_contract:
     image: registry.gitlab.com/ravimosharksas/apis/contract/app-nodejs/${API_BASE:-alpine}:${API_VERSION:-8-alpine-latest}
     environment:
       SWAGGER_URL: http://localhost:8000
@@ -10,3 +19,12 @@ services:
       APP_PORT: ${APP_PORT:-8000}
     ports:
       - "${HOST_PORT:-8000}:${APP_PORT:-8000}"
+  api_task:
+    image: registry.gitlab.com/ravimosharksas/apis/task/app-nodejs/${API_BASE:-alpine}:${API_VERSION:-8-alpine-latest}
+    environment:
+      SWAGGER_URL: http://localhost:8000
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      APP_PORT: ${APP_PORT:-8000}
+    ports:
+      - "${HOST_PORT:-8003}:${APP_PORT:-8000}"
