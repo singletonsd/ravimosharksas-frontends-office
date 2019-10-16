@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 // tslint:disable:no-implicit-dependencies
 import { BaseAutocompleteComponent } from '@app/models/base-autocomplete';
+import { AddressesService } from '@ravimosharksas/apis-client-libs-typescript';
 import { Addresses } from '@ravimosharksas/apis-task-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
-import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-addresses-auto-complete',
@@ -15,8 +16,7 @@ implements OnInit {
 
   @Input() showRefClient = true;
 
-  constructor(
-    // private readonly clientService: ClientsService,
+  constructor(private readonly service: AddressesService,
               logger: NGXLogger) {
     super(logger, 'ADDRESSES_AUTO_COMPLETE');
   }
@@ -61,18 +61,14 @@ implements OnInit {
     });
   }
 
-  // TODO: make the api call.
-  protected _apiCall(): import('rxjs').Observable<Array<Addresses>> {
-    const obs = new BehaviorSubject<Array<Addresses>>([]);
-
-    return obs.asObservable();
-    // return this.clientService
-    //   .getClients(0, 10, undefined, entity)
-    //   .pipe(map(value => value.items));
+  protected _apiCall(entity: string): import('rxjs').Observable<Array<Addresses>> {
+    return this.service
+      .getAddresses(0, 10, undefined, entity)
+      .pipe(map(value => value.items));
   }
 
-  public identify(entity: Addresses): string {
-    return entity.id.toString();
+  public identify(entity: Addresses | number): string {
+    return typeof entity === 'number' ? entity.toString() : entity.id.toString();
   }
 
   public displayFn(address?: Addresses): string | undefined {

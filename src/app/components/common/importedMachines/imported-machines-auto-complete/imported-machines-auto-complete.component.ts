@@ -53,7 +53,7 @@ protected _apiCall(entity: any): import('rxjs').Observable<Array<ImportedMachine
 }
 
 public identify(entity: ImportedMachines): string {
-  return entity.id.toString();
+  return entity ? entity.id.toString() : undefined;
 }
 
 public displayFn(client?: ImportedMachines): string | undefined {
