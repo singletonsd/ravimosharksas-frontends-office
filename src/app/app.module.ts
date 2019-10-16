@@ -50,6 +50,7 @@ import { StorageService } from './services/storage/storage.service';
 
 import { BadgeComponent } from './components/basics/badge/badge.component';
 import { BaseDialogComponent } from './components/basics/dialog/base-dialog/base-dialog.component';
+import { BaseAreaComponent } from './components/basics/forms/base-area/base-area.component';
 import { BaseAutoCompleteComponent } from './components/basics/forms/base-auto-complete/base-auto-complete.component';
 import { BaseInputComponent } from './components/basics/forms/base-input/base-input.component';
 import { DateInputComponent } from './components/basics/forms/date-input/date-input.component';
@@ -131,6 +132,7 @@ import { TechniciansAutoCompleteComponent } from './components/common/technician
     SidenavSubitemComponent,
     BadgeComponent,
     BaseInputComponent,
+    BaseAreaComponent,
     BaseAutoCompleteComponent,
     BaseDialogComponent,
     BaseNotificationComponent,

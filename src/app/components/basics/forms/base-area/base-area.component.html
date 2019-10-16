@@ -1,0 +1,8 @@
+<mat-form-field [formGroup]="parent.form" style="width: 100%">
+  <textarea matInput placeholder="{{ placeHolder | translate }}" formControlName="{{ controlName }}" type="{{ type }}"></textarea>
+  <mat-error *ngIf="hasError()">
+    <ng-container *ngIf="isRequiredError()">
+      {{ 'fields.errors.required' | translate }}
+    </ng-container>
+  </mat-error>
+</mat-form-field>
