@@ -66,7 +66,7 @@ implements OnInit {
   protected _apiCall(entity: string): import('rxjs').Observable<Array<Addresses>> {
     return this.service
       .getAddresses(0, 10, undefined, entity)
-      .pipe(map(value => value.items));
+      .pipe(map(value => value ? value.items : []));
   }
 
   public identify(entity: Addresses | number): string {

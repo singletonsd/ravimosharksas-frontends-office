@@ -49,7 +49,7 @@ protected _filter(value: string): Array<ImportedMachines> {
 protected _apiCall(entity: any): import('rxjs').Observable<Array<ImportedMachines>> {
   return this.pieceService
     .getImportedMachines(0, 10, undefined, entity)
-    .pipe(map(value => value.items));
+    .pipe(map(value => value ? value.items : []));
 }
 
 public identify(entity: ImportedMachines): string {

@@ -1,4 +1,4 @@
-import { Input, OnInit } from '@angular/core';
+import { EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NGXLogger } from 'ngx-logger';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, finalize, map, startWith, switchMap, tap } from 'rxjs/operators';
@@ -9,6 +9,8 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
   implements OnInit {
 
   @Input() useGlobal = true;
+
+  @Output() readonly optionSelected = new EventEmitter<any>();
 
   public filteredOptions = new BehaviorSubject<Array<T>>([]);
   public filteredOptions$ = this.filteredOptions.asObservable();

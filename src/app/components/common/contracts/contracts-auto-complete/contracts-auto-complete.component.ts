@@ -50,7 +50,7 @@ implements OnInit {
   protected _apiCall(entity: any): import('rxjs').Observable<Array<Contracts>> {
     return this.pieceService
       .getContracts(0, 10, undefined, entity)
-      .pipe(map(value => value.items));
+      .pipe(map(value => value ? value.items : []));
   }
 
   public identify(entity: Contracts): string | undefined {
