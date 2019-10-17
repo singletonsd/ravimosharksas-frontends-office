@@ -14,10 +14,18 @@ export class StorageAddressesService  extends BaseStorageService<Addresses> {
     super('SERVICE_ADDRESSES', logger, 'clients');
   }
 
-  public refresh(): void {
-    this.service.getAddresses(undefined, undefined, undefined, undefined, Deleted.ACTIVE)
-      .subscribe(response => {
-        this.items.next(response.items);
-      });
+  public refreshImp(): Promise<boolean> {
+    return new Promise(resolve => {
+      this.service.getAddresses(undefined, undefined, undefined, undefined, Deleted.ACTIVE)
+        .subscribe(response => {
+          this.logger.info(`${this.SERVICE_NAME} - got`,  response.items.length);
+          this.logger.debug(`${this.SERVICE_NAME} - got`,  response);
+          this.items.next(response.items);
+          resolve(true);
+        }, error => {
+          this.logger.error(`${this.SERVICE_NAME} - error`,  error);
+          resolve(false);
+        });
+    });
   }
 }

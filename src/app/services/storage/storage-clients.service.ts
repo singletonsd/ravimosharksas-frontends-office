@@ -14,10 +14,18 @@ export class StorageClientsService extends BaseStorageService<Clients> {
     super('SERVICE_CLIENTS', logger, 'clients');
   }
 
-  public refresh(): void {
-    this.service.getClients(undefined, undefined, undefined, undefined, Deleted.ACTIVE)
+  public refreshImp(): Promise<boolean> {
+    return new Promise(resolve => {
+      this.service.getClients(undefined, undefined, undefined, undefined, Deleted.ACTIVE)
       .subscribe(response => {
+        this.logger.info(`${this.SERVICE_NAME} - got`,  response.items.length);
+        this.logger.debug(`${this.SERVICE_NAME} - got`,  response);
         this.items.next(response.items);
+        resolve(true);
+      }, error => {
+        this.logger.error(`${this.SERVICE_NAME} - error`,  error);
+        resolve(false);
       });
+    });
   }
 }

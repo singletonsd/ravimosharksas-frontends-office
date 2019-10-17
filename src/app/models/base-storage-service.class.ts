@@ -9,6 +9,8 @@ export abstract class BaseStorageService<T> {
   public items = new BehaviorSubject<Array<T>>([]);
   public items$ = this.items.asObservable();
 
+  workingLocal: boolean;
+
   constructor(protected readonly SERVICE_NAME
             , protected readonly logger: NGXLogger
             , jsonFile?: string) {
@@ -17,12 +19,23 @@ export abstract class BaseStorageService<T> {
       // tslint:disable-next-line:no-require-imports
       const data = require(`../../../test/mock_data/${jsonFile}.json`);
       if (data) {
+        this.workingLocal = true;
         this.items.next(data);
+      } else {
+        this.workingLocal = false;
       }
-    } else {
-      this.refresh();
     }
   }
 
-  protected abstract refresh(): void;
+  refresh(): Promise<boolean> {
+    if (!this.workingLocal) {
+      this.logger.info(`${this.SERVICE_NAME} - refreshing data`);
+
+      return this.refreshImp();
+    }
+
+    return new Promise<boolean>(resolve => resolve(true));
+  }
+
+  protected abstract refreshImp(): Promise<boolean>;
 }

@@ -14,11 +14,19 @@ export class StoragePiecesService extends BaseStorageService<Pieces> {
     super('SERVICE_PIECES', logger, 'pieces');
   }
 
-  public refresh(): void {
-    this.piecesService.getPieces(undefined, undefined, undefined, undefined, Deleted.ACTIVE)
-      .subscribe(response => {
-        this.items.next(response.items);
-      });
+  public refreshImp(): Promise<boolean> {
+    return new Promise(resolve => {
+      this.piecesService.getPieces(undefined, undefined, undefined, undefined, Deleted.ACTIVE)
+        .subscribe(response => {
+          this.logger.info(`${this.SERVICE_NAME} - got`,  response.items.length);
+          this.logger.debug(`${this.SERVICE_NAME} - got`,  response);
+          this.items.next(response.items);
+          resolve(true);
+        }, error => {
+          this.logger.error(`${this.SERVICE_NAME} - error`,  error);
+          resolve(false);
+        });
+    });
   }
 
 }
