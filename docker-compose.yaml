@@ -9,7 +9,7 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       APP_PORT: ${APP_PORT:-8000}
     ports:
-      - "${HOST_PORT:-8001}:${APP_PORT:-8000}"
+      - "${HOST_PORT_CLIENT:-8002}:${APP_PORT:-8000}"
   api_contract:
     image: registry.gitlab.com/ravimosharksas/apis/contract/app-nodejs/${API_BASE:-alpine}:${API_VERSION:-8-alpine-latest}
     environment:
@@ -18,7 +18,7 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       APP_PORT: ${APP_PORT:-8000}
     ports:
-      - "${HOST_PORT:-8000}:${APP_PORT:-8000}"
+      - "${HOST_PORT_CONTRACT:-8000}:${APP_PORT:-8000}"
   api_task:
     image: registry.gitlab.com/ravimosharksas/apis/task/app-nodejs/${API_BASE:-alpine}:${API_VERSION:-8-alpine-latest}
     environment:
@@ -27,4 +27,4 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       APP_PORT: ${APP_PORT:-8000}
     ports:
-      - "${HOST_PORT:-8003}:${APP_PORT:-8000}"
+      - "${HOST_PORT_TASK:-8001}:${APP_PORT:-8000}"
