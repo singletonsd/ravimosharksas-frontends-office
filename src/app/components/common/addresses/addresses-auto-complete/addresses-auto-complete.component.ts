@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 // tslint:disable:no-implicit-dependencies
 import { BaseAutocompleteComponent } from '@app/models/base-autocomplete';
+import { StorageAddressesService } from '@app/services/storage/storage-addresses.service';
 import { AddressesService } from '@ravimosharksas/apis-client-libs-typescript';
 import { Addresses } from '@ravimosharksas/apis-task-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
@@ -17,8 +18,9 @@ implements OnInit {
   @Input() showRefClient = true;
 
   constructor(private readonly service: AddressesService,
-              logger: NGXLogger) {
-    super(logger, 'ADDRESSES_AUTO_COMPLETE');
+              logger: NGXLogger
+            , storageService: StorageAddressesService) {
+    super(logger, 'ADDRESSES_AUTO_COMPLETE', storageService);
   }
 
   ngOnInit(): void {

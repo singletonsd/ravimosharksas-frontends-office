@@ -32,6 +32,7 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
   ngOnInit(): void {
     super.ngOnInit();
     if (this.useGlobal) {
+      this.logger.info(`${this.COMPONENT_NAME} using global values...`);
       this.parent.form.controls[this.controlName].valueChanges
       .pipe(
         startWith(''),
@@ -40,8 +41,10 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
         debounceTime(200),
         map(value => typeof value === 'string' ? value : this.displayFn(value)),
         map(client => client ? this._filter(client) : this.options.slice(0, this.maxResults)))
-        .subscribe((clients: Array<T>) => {
-          this.filteredOptions.next(clients);
+        .subscribe((items: Array<T>) => {
+          this.logger.info(`${this.COMPONENT_NAME} got ${items.length} of ${this.options.length}`);
+          this.logger.debug(`${this.COMPONENT_NAME} got values`, items);
+          this.filteredOptions.next(items);
       });
     } else {
       this.parent.form.controls[this.controlName].valueChanges
