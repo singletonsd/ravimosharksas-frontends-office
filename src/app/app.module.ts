@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,13 +23,11 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { LanguageSelectorComponent } from './components/basics/language-selector/language-selector.component';
 import { HttpLoaderFactory, LanguageService } from './services/language/language.service';
 
-import { ApiModule as ApiRavimoClientModule, BASE_PATH as CLIENT_BASE_PATH } from '@ravimosharksas/apis-client-libs-typescript';
-import { ApiModule as ApiRavimoContractModule, BASE_PATH as CONTRACT_BASE_PATH } from '@ravimosharksas/apis-contract-libs-typescript';
-import { ApiModule as ApiRavimoTaskModule, BASE_PATH as TASK_BASE_PATH } from '@ravimosharksas/apis-task-libs-typescript';
+import { ApiModule as ApiRavimoClientModule } from '@ravimosharksas/apis-client-libs-typescript';
+import { ApiModule as ApiRavimoContractModule } from '@ravimosharksas/apis-contract-libs-typescript';
+import { ApiModule as ApiRavimoTaskModule } from '@ravimosharksas/apis-task-libs-typescript';
 
-// tslint:disable-next-line: no-implicit-dependencies
-import { environment } from '@env/environment';
-import { apiClientConfigFactory, apiContractConfigFactory, apiTaskConfigFactory } from './app.configuration';
+import { apiClientConfigFactory, apiContractConfigFactory, apiTaskConfigFactory, configServicesFactory } from './app.configuration';
 
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
@@ -107,12 +105,6 @@ import { PiecesAutoCompleteComponent } from './components/common/pieces/pieces-a
 
 import { ImportedMachinesAutoCompleteComponent } from './components/common/importedMachines/imported-machines-auto-complete/imported-machines-auto-complete.component';
 import { ImportedMachinesFormComponent } from './components/common/importedMachines/imported-machines-form/imported-machines-form.component';
-
-import { StorageAddressesService } from './services/storage/storage-addresses.service';
-import { StorageClientsService } from './services/storage/storage-clients.service';
-import { StorageContractsService } from './services/storage/storage-contracts.service';
-import { StoragePiecesService } from './services/storage/storage-pieces.service';
-import { StorageTechniciansService } from './services/storage/storage-technicians.service';
 
 import { TasksAddFormComponent } from './components/common/tasks/tasks-add-form/tasks-add-form.component';
 import { TasksFormComponent } from './components/common/tasks/tasks-form/tasks-form.component';
@@ -245,19 +237,12 @@ import { TechniciansAutoCompleteComponent } from './components/common/technician
     LanguageService,
     GoogleAnalyticsService,
     GuardService,
-    StorageService,
-    { provide: StorageAddressesService, deps: [ CLIENT_BASE_PATH ] },
-    { provide: StorageClientsService, deps: [ CLIENT_BASE_PATH ]},
-    { provide: StorageContractsService, deps: [ CONTRACT_BASE_PATH ]},
-    { provide: StoragePiecesService, deps: [ CONTRACT_BASE_PATH ]},
-    { provide: StorageTechniciansService, deps: [ TASK_BASE_PATH ]},
     MenuService,
     PreviousRouteService,
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
     { provide: MAT_DATE_FORMATS, useValue: CUSTOM_FORMATS },
-    { provide: CLIENT_BASE_PATH, useValue: environment.apiRavimoClient.API_BASE_PATH },
-    { provide: CONTRACT_BASE_PATH, useValue: environment.apiRavimoContract.API_BASE_PATH },
-    { provide: TASK_BASE_PATH, useValue: environment.apiRavimoTask.API_BASE_PATH }
+    StorageService,
+    { provide: APP_INITIALIZER, useFactory: configServicesFactory, multi: true, deps: [ StorageService ] }
   ],
   bootstrap: [AppComponent],
   exports: [

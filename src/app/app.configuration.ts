@@ -6,6 +6,7 @@ import { Configuration as ConfigurationContract
   , ConfigurationParameters as ConfigurationParametersContract } from '@ravimosharksas/apis-contract-libs-typescript';
 import { Configuration as ConfigurationTask
   , ConfigurationParameters as ConfigurationParametersTask } from '@ravimosharksas/apis-task-libs-typescript';
+import { StorageService } from './services/storage/storage.service';
 
 // tslint:disable: only-arrow-functions
 export function apiContractConfigFactory(): ConfigurationContract {
@@ -30,4 +31,8 @@ export function apiClientConfigFactory(): ConfigurationClient {
   };
 
   return new ConfigurationClient(params);
+}
+
+export function configServicesFactory(config: StorageService): any {
+  return () => config.load();
 }

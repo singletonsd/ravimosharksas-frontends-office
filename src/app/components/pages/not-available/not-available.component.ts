@@ -27,7 +27,7 @@ export class MainNotAvailableComponent implements OnInit {
 
   retry(): void {
     this.loadingSubject.next(true);
-    this.storage.reconnect()
+    this.storage.load()
     .then(response => {
       this.loadingSubject.next(false);
       if (response) {
@@ -35,7 +35,7 @@ export class MainNotAvailableComponent implements OnInit {
         .catch(() => {});
       }
     }, () => {
-      this.logger.debug('Cant connect to api.');
+      this.logger.error('Cant connect to api.');
     });
   }
 }
