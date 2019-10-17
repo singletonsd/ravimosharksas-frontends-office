@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 // tslint:disable-next-line:no-implicit-dependencies
 import { BaseFormNewComponent } from '@app/models/base-form-new.class';
+import { Addresses, Clients } from '@ravimosharksas/apis-client-libs-typescript';
 import { Tasks } from '@ravimosharksas/apis-task-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
 
@@ -13,6 +14,8 @@ import { NGXLogger } from 'ngx-logger';
 export class TasksFormComponent extends BaseFormNewComponent<Tasks> {
 
   @Input() isSubmitting = false;
+
+  public selectedClient: Clients | string;
 
   constructor(logger: NGXLogger) {
     super('TASKS_FORM', 'models.task.', logger, 'tasks');
@@ -32,6 +35,8 @@ export class TasksFormComponent extends BaseFormNewComponent<Tasks> {
     this.form.addControl('ratingTech', new FormControl('', []));
 
     this.form.get('id')
+      .disable();
+    this.form.get('machine')
       .disable();
   }
 
@@ -73,4 +78,10 @@ export class TasksFormComponent extends BaseFormNewComponent<Tasks> {
   protected afterControlAdded(): void {
   }
 
+  public loadMachines(address: Addresses): void {
+    this.selectedClient = address.client ? address.client : address.refClient;
+    this.logger.info(`${this.COMPONENT_NAME} selected address ${address.id} of ${this.selectedClient}`);
+    this.form.get('machine')
+      .enable();
+  }
 }
