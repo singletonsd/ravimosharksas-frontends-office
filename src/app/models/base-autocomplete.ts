@@ -11,6 +11,7 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
   @Input() useGlobal = true;
 
   @Output() readonly optionSelected = new EventEmitter<any>();
+  @Output() readonly clearEvent = new EventEmitter<any>();
 
   public filteredOptions = new BehaviorSubject<Array<T>>([]);
   public filteredOptions$ = this.filteredOptions.asObservable();
@@ -75,6 +76,7 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
 
   clear(): void {
     if (this.parent.form.get(this.controlName).enabled) {
+      this.clearEvent.emit();
       this.parent.form.get(this.controlName)
         .setValue('');
       this.parent.form.get(this.controlName)

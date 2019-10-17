@@ -84,4 +84,10 @@ export class TasksFormComponent extends BaseFormNewComponent<Tasks> {
     this.form.get('machine')
       .enable();
   }
+
+  public addressClear(): void {
+    this.logger.info(`${this.COMPONENT_NAME} clear address, disabling machine`);
+    this.form.get('machine')
+      .disable();
+  }
 }

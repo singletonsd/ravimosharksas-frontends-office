@@ -57,7 +57,8 @@ implements OnInit {
   }
 
   protected _apiCall(entity: any): import('rxjs').Observable<Array<Machines>> {
-    const refClient = typeof this.refClient === 'string' ? this.refClient : this.refClient.refClient;
+    // TODO:
+    // const refClient = typeof this.refClient === 'string' ? this.refClient : this.refClient.refClient;
 
     return this.pieceService
       .getMachines(0, 10, undefined, entity)
