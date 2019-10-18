@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { FocusDirectiveDirective } from './directives/focus-directive.directive';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LayoutModule } from '@angular/cdk/layout';
@@ -117,6 +119,7 @@ import { TechniciansAutoCompleteComponent } from './components/common/technician
 @NgModule({
   declarations: [
     AppComponent,
+    FocusDirectiveDirective,
     ToolbarComponent,
     FooterComponent,
     SidenavComponent,

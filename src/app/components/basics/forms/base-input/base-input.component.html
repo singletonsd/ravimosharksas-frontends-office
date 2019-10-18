@@ -1,5 +1,7 @@
 <mat-form-field [formGroup]="parent.form" style="width: 100%">
-  <input matInput placeholder="{{ placeHolder | translate }}" formControlName="{{ controlName }}" type="{{ type }}">
+  <input matInput placeholder="{{ placeHolder | translate }}"
+    formControlName="{{ controlName }}" type="{{ type }}"
+    [appFocusDirective]="customFocus">
   <mat-error *ngIf="hasError()">
     <ng-container *ngIf="isRequiredError()">
       {{ 'fields.errors.required' | translate }}

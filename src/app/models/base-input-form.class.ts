@@ -11,6 +11,7 @@ export class BaseInputFormComponent implements OnInit {
   @Input() type = 'text';
   @Input() error: string;
   @Input() errors: Array<string>;
+  @Input() customFocus = false;
 
   ngOnInit(): void {
     // tslint:disable-next-line:prefer-conditional-expression
