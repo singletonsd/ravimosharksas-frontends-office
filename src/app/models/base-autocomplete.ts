@@ -9,6 +9,9 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
   implements OnInit {
 
   @Input() useGlobal = true;
+  @Input() showOptionsOnFocus = false;
+
+  @Input() options: Array<T> = [];
 
   @Output() readonly optionSelected = new EventEmitter<any>();
   @Output() readonly clearEvent = new EventEmitter<any>();
@@ -21,11 +24,10 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
 
   protected maxResults = 10;
 
-  options: Array<T> = [];
-
   constructor(private readonly logger: NGXLogger,
               protected readonly COMPONENT_NAME: string,
-              service?: BaseStorageService<T>) {
+              service?: BaseStorageService<T>,
+              private readonly characterLengthChange: number = 2) {
     super();
     if (service) {
       service.items$.subscribe(items => this.options = items);
@@ -40,7 +42,7 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
       .pipe(
         startWith(''),
         distinctUntilChanged(),
-        filter((query: string) => query && query.length > 2),
+        filter((query: string) => query && query.length > this.characterLengthChange),
         debounceTime(200),
         map(value => typeof value === 'string' ? value : this.displayFn(value)),
         map(client => client ? this._filter(client) : this.options.slice(0, this.maxResults)))
@@ -87,6 +89,12 @@ export abstract class BaseAutocompleteComponent<T> extends BaseInputFormComponen
   onKeydownEvent(event: KeyboardEvent): void {
     if (event.key === 'Escape') {// escape pressed
       this.clear();
+    }
+  }
+
+  public onFocus(): void {
+    if (this.useGlobal && this.showOptionsOnFocus) {
+      this.filteredOptions.next(this.options);
     }
   }
 

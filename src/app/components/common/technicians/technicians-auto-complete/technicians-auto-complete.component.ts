@@ -17,7 +17,7 @@ implements OnInit {
   constructor(private readonly service: TechniciansService,
               logger: NGXLogger
             , storageService: StorageTechniciansService) {
-    super(logger, 'TECHNICIANS_AUTO_COMPLETE', storageService);
+    super(logger, 'TECHNICIANS_AUTO_COMPLETE', storageService, 0);
   }
 
   ngOnInit(): void {

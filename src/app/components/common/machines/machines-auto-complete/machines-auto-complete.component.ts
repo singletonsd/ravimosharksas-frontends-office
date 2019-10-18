@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 // tslint:disable-next-line:no-implicit-dependencies
 import { BaseAutocompleteComponent } from '@app/models/base-autocomplete';
 import { Clients } from '@ravimosharksas/apis-client-libs-typescript';
-import { Machines, MachinesService } from '@ravimosharksas/apis-contract-libs-typescript';
+import { Deleted, Machines, MachinesService } from '@ravimosharksas/apis-contract-libs-typescript';
 import { NGXLogger } from 'ngx-logger';
 import { map } from 'rxjs/operators';
 
@@ -57,11 +57,10 @@ implements OnInit {
   }
 
   protected _apiCall(entity: any): import('rxjs').Observable<Array<Machines>> {
-    // TODO:
-    // const refClient = typeof this.refClient === 'string' ? this.refClient : this.refClient.refClient;
+    const refClient = typeof this.refClient === 'string' ? this.refClient : this.refClient.refClient;
 
     return this.pieceService
-      .getMachines(0, 10, undefined, entity)
+      .getMachines(0, 10, undefined, entity, Deleted.ACTIVE, undefined, refClient)
       .pipe(map(value => value ? value.items : []));
   }
 
@@ -73,8 +72,10 @@ implements OnInit {
     if (!entity) {
       return undefined;
     }
+    let response = entity.piece ? `${entity.piece.name}` : `${entity.refArticle}`;
+    response = entity.serialNumber ? ` ${response} - ${entity.serialNumber}` : `${response}`;
 
-    return entity.piece ? `${entity.piece.name} - ${entity.serialNumber}` : `${entity.refArticle} - ${entity.serialNumber}`;
+    return response;
   }
 
 }

@@ -1,7 +1,7 @@
 <div *ngIf="checkStatus()" [ngSwitch]="notification.type">
   <div *ngSwitchCase="notificationType.ERROR" class="alert alert-danger text-center">
     <div class="text-right">
-      <button (click)="changeStatus()"><mat-icon class="text-danger" matListIcon>cancel</mat-icon></button>
+      <button mat-button (click)="changeStatus()"><mat-icon class="text-danger">cancel</mat-icon></button>
     </div>
     <div class="d-none d-sm-block">
       <mat-icon class="text-danger" matListIcon>error</mat-icon>
@@ -14,7 +14,7 @@
   </div>
   <div *ngSwitchCase="notificationType.WARNING" class="alert alert-warning text-center">
       <div class="text-right">
-        <button (click)="changeStatus()"><mat-icon class="text-warning" matListIcon>cancel</mat-icon></button>
+        <button mat-button (click)="changeStatus()"><mat-icon class="text-warning">cancel</mat-icon></button>
       </div>
       <div class="d-none d-sm-block">
         <mat-icon class="text-warning" matListIcon>warning</mat-icon>

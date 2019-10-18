@@ -1,5 +1,5 @@
 <mat-form-field [formGroup]="parent.form" style="width: 100%">
-  <input placeholder="{{ placeHolder | translate }}" formControlName="{{ controlName }}" [matAutocomplete]="auto" matInput type="{{ type }}" (keydown)=onKeydownEvent($event)>
+  <input (focus)="onFocus()" placeholder="{{ placeHolder | translate }}" formControlName="{{ controlName }}" [matAutocomplete]="auto" matInput type="{{ type }}" (keydown)=onKeydownEvent($event)>
   <mat-autocomplete (optionSelected)="optionSelected.emit($event.option.value)" #auto="matAutocomplete" autoActiveFirstOption [displayWith]="displayFn.bind(this)" position="below">
     <ng-container *ngIf="loading$ | async; else loaded">
       <mat-option><mat-spinner [diameter]="40" style="margin:0 auto;"></mat-spinner></mat-option>
