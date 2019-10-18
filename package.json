@@ -35,7 +35,7 @@
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
     "@ravimosharksas/apis-client-libs-typescript": "^1.0.0-SNAPSHOT.190924134440",
-    "@ravimosharksas/apis-contract-libs-typescript": "^1.0.0-SNAPSHOT.191010152823",
+    "@ravimosharksas/apis-contract-libs-typescript": "^1.0.0-SNAPSHOT.191018141521",
     "@ravimosharksas/apis-task-libs-typescript": "^1.0.0-SNAPSHOT.191016122930",
     "bootstrap": "4.3.1",
     "core-js": "2.6.5",
