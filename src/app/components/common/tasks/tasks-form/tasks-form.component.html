@@ -2,7 +2,7 @@
   <app-base-input class="col-12 col-sm-2" [parent]="this" [controlName]="'id'" [type]="'number'" autofocus></app-base-input>
   <app-addresses-auto-complete [customFocus]="addressFocus$" (optionSelected)="loadMachines($event)" (clearEvent)="addressClear()"
     class="col-12 col-sm-5" [parent]="this" [controlName]="'address'" [useGlobal]="false"></app-addresses-auto-complete>
-  <app-machines-auto-complete [customFocus]="machineFocus" [options]="machines" [showOptionsOnFocus]="true" class="col-12 col-sm-5" [refClient]="selectedClient" [parent]="this" [controlName]="'machine'"></app-machines-auto-complete>
+  <app-machines-auto-complete [customFocus]="machineFocus$" [options]="machines" [showOptionsOnFocus]="true" class="col-12 col-sm-5" [refClient]="selectedClient" [parent]="this" [controlName]="'machine'"></app-machines-auto-complete>
   <app-date-input class="col-6 col-sm-4" [parent]="this" [controlName]="'dateCall'"></app-date-input>
   <app-date-input [hidden]="isSubmitting" class="col-6 col-sm-4" [parent]="this" [controlName]="'dateFix'"></app-date-input>
   <app-base-input class="col-6 col-sm-4" [parent]="this" [controlName]="'priority'" [type]="'number'"></app-base-input>
