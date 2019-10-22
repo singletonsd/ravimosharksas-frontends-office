@@ -1,6 +1,6 @@
 <mat-form-field [formGroup]="parent.form" style="width: 100%">
   <input matInput placeholder="{{ placeHolder | translate }}" formControlName="{{ controlName }}"
-    name="{{ controlName }}" [matDatepicker]="picker" type="date">
+    name="{{ controlName }}" [matDatepicker]="picker">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
   <mat-error *ngIf="hasError()">
